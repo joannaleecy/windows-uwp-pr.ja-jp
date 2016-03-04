@@ -1662,7 +1662,7 @@
  Source File | Status | Details 
  ----------- | ------ | ------- 
  [.gitignore](https://github.com/Microsoft/windows-apps/blob/d3fa537143eee0b6a03be9fe7e4baa49f940a63c/.gitignore) | Ignored | [Details](#cbed467678cc7243e97f7f2a055e1c090b8625be0)
- [.localization-config](https://github.com/Microsoft/windows-apps/blob/d3fa537143eee0b6a03be9fe7e4baa49f940a63c/.localization-config) | Ignored | [Details](#18a32a9ec9c1309cdfc472d2dd532bf9fb7dfc2d1)
+ [.localization-config](https://github.com/Microsoft/windows-apps/blob/d3fa537143eee0b6a03be9fe7e4baa49f940a63c/.localization-config) | Ignored | [Details](#a9f256448b4b0b55102ca49eb8c6db86ee87dff71)
  [.openpublishing.build.ps1](https://github.com/Microsoft/windows-apps/blob/d3fa537143eee0b6a03be9fe7e4baa49f940a63c/.openpublishing.build.ps1) | Ignored | [Details](#21cd29cbfb24b46f4feb52e76e167967ec26b21b2)
  [.openpublishing.publish.config.json](https://github.com/Microsoft/windows-apps/blob/d3fa537143eee0b6a03be9fe7e4baa49f940a63c/.openpublishing.publish.config.json) | Ignored | [Details](#8949575a311cda2a001c62b589df17588097d00d3)
  [README.md](https://github.com/Microsoft/windows-apps/blob/d3fa537143eee0b6a03be9fe7e4baa49f940a63c/README.md) | Ignored | [Details](#bbc074f3c2f12dcdd8bbb800c20c3f5987be1a3f4)
@@ -3431,7 +3431,7 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='18a32a9ec9c1309cdfc472d2dd532bf9fb7dfc2d1'></a> Source: [.localization-config](https://github.com/Microsoft/windows-apps/blob/d3fa537143eee0b6a03be9fe7e4baa49f940a63c/.localization-config)
+##### <a name='a9f256448b4b0b55102ca49eb8c6db86ee87dff71'></a> Source: [.localization-config](https://github.com/Microsoft/windows-apps/blob/d3fa537143eee0b6a03be9fe7e4baa49f940a63c/.localization-config)
 * Status: Ignored
 * Target File: 
 * Handoff File: 
