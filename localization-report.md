@@ -5,13 +5,13 @@
  -------- | ----- 
  Total Files | 3404
 [ Handoff Failed Files ](#handoff-failed-list)| 180
-[ Handoff Success Files ](#handoff-success-list)| 1447
+[ Handoff Success Files ](#handoff-success-list)| 1434
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 0
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 0
-[ Ignored Files ](#ignored-list)| 1777
+[ Ignored Files ](#ignored-list)| 1790
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
  Source File | Status | Details 
@@ -1052,7 +1052,6 @@
  [windows-apps-src\in-app-help\images\instructional-ui-movie.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/in-app-help/images/instructional-ui-movie.png) | HandedOffSuccess | [Details](#12350faf3048b52f30d54bafab392e2ece93db322502)
  [windows-apps-src\in-app-help\in-app-help-and-instructions.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/in-app-help/in-app-help-and-instructions.md) | HandedOffSuccess | [Details](#61ac1ca6899f8e64dc9b19bc47cd0b6e6710674f2503)
  [windows-apps-src\in-app-help\instructional-ui.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/in-app-help/instructional-ui.md) | HandedOffSuccess | [Details](#76dda5dbc23b746325aa9d0bbe4514bcaf0fedd92504)
- [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/index.md) | HandedOffSuccess | [Details](#855ca081879b043e9d89d0c931964ace73a72b802505)
  [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/input-and-devices/convert-ink-to-text.md) | HandedOffSuccess | [Details](#8279af980f0022382bf47036028f7da8ab14c5392506)
  [windows-apps-src\input-and-devices\cortana-design-guidelines.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/input-and-devices/cortana-design-guidelines.md) | HandedOffSuccess | [Details](#959e62801241440aadbba0b74645a37e1b785feb2507)
  [windows-apps-src\input-and-devices\cortana-interactions.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/input-and-devices/cortana-interactions.md) | HandedOffSuccess | [Details](#584809a1806bcd461d79ed399aaee5983ef3b4722508)
@@ -1372,7 +1371,6 @@
  [windows-apps-src\monetize\use-receipts-to-verify-product-purchases.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/use-receipts-to-verify-product-purchases.md) | HandedOffSuccess | [Details](#a6198986c994e36161e336924d1cebb7883c07db3085)
  [windows-apps-src\monetize\using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/using-windows-store-services.md) | HandedOffSuccess | [Details](#b601a14edc7595f06c330a009a4ad69108f4fbc43086)
  [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/view-and-grant-products-from-a-service.md) | HandedOffSuccess | [Details](#742e866cbce848d3cf1c8966b394549dea46803d3087)
- [windows-apps-src\networking\background-transfers.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/background-transfers.md) | HandedOffSuccess | [Details](#856953930cfd13edaadee7796cf6aadaa8c56c9b3088)
  [windows-apps-src\networking\httpclient.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/httpclient.md) | HandedOffSuccess | [Details](#2ba0c22d0dc6d60c19e65fee5b28a74184d1bd063093)
  [windows-apps-src\networking\index.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/index.md) | HandedOffSuccess | [Details](#77f54cf5c2a2cda3f4f34ff177cb8ec2913b18053094)
  [windows-apps-src\networking\network-communications-in-the-background.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/network-communications-in-the-background.md) | HandedOffSuccess | [Details](#0a6468e9e92d89353beb00812445a0bfa83dd9183095)
@@ -1596,27 +1594,16 @@
  [windows-apps-src\security\share-certificates.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/security/share-certificates.md) | HandedOffSuccess | [Details](#29b0955543fc8e69bf21fb3f262e9f3db3ace82d3328)
  [windows-apps-src\security\smart-cards.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/security/smart-cards.md) | HandedOffSuccess | [Details](#0ea623c2590df8a58520a971415185a0969009a13329)
  [windows-apps-src\security\web-authentication-broker.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/security/web-authentication-broker.md) | HandedOffSuccess | [Details](#6577390b2dd483f17c1173be16d513c80ec6ab9f3330)
- [windows-apps-src\threading-async\asynchronous-programming-in-cpp-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md) | HandedOffSuccess | [Details](#6ae92e7e2e7f03b48348e182130a5626bf572bc83331)
  [windows-apps-src\threading-async\asynchronous-programming-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/asynchronous-programming-universal-windows-platform-apps.md) | HandedOffSuccess | [Details](#2a0f4772e002479333abf6a271468269c4f46deb3332)
  [windows-apps-src\threading-async\best-practices-for-using-the-thread-pool.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/best-practices-for-using-the-thread-pool.md) | HandedOffSuccess | [Details](#c8e2abc71b1a6613d4c8aa39fdb54add746dc3893353)
  [windows-apps-src\threading-async\call-asynchronous-apis-in-csharp-or-visual-basic.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md) | HandedOffSuccess | [Details](#8d626d907c089daa2426c2905b269d6ba37f5ae63354)
- [windows-apps-src\threading-async\create-a-periodic-work-item.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/create-a-periodic-work-item.md) | HandedOffSuccess | [Details](#ecf1ccbba7b55bf5715f78bb72822b83e25272df3355)
  [windows-apps-src\threading-async\index.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/index.md) | HandedOffSuccess | [Details](#b34d9448dbe2707cb715e47eac11dfe64f74b5dc3356)
  [windows-apps-src\threading-async\submit-a-work-item-to-the-thread-pool.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/submit-a-work-item-to-the-thread-pool.md) | HandedOffSuccess | [Details](#2d6bc6d750027e26359e24d4d95ad4c52d9c86e93357)
- [windows-apps-src\threading-async\use-a-timer-to-submit-a-work-item.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/use-a-timer-to-submit-a-work-item.md) | HandedOffSuccess | [Details](#f418ec9cfe9f8f26b6c74e5b5ae42098f0e4f9cf3358)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#9db6d19a99b674b60e32902448f3ca7a7add32d33359)
  [windows-apps-src\winrt-components\creating-windows-runtime-components-in-cpp.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md) | HandedOffSuccess | [Details](#35087243690e8b7bf5a0e8692a964042295289543360)
- [windows-apps-src\winrt-components\creating-windows-runtime-components-in-csharp-and-visual-basic.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) | HandedOffSuccess | [Details](#b9064f2b3ff6eff803b82cb54cb8a39b6fe010c03361)
- [windows-apps-src\winrt-components\custom-events-and-event-accessors-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md) | HandedOffSuccess | [Details](#d20020351a0be1954f9451a8cdaf65a832a662953362)
- [windows-apps-src\winrt-components\diagnosing-windows-runtime-component-error-conditions.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/diagnosing-windows-runtime-component-error-conditions.md) | HandedOffSuccess | [Details](#fa9cd898c78040c304448fbb504d11bdb6af7d483363)
- [windows-apps-src\winrt-components\distributing-a-managed-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/distributing-a-managed-windows-runtime-component.md) | HandedOffSuccess | [Details](#15c1eedaf8ebe50c36c99f58f25ec8bbabd268513364)
  [windows-apps-src\winrt-components\images\debuggererrormissingproxy.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/images/debuggererrormissingproxy.png) | HandedOffSuccess | [Details](#12efc2bc1a90c20c8d38ffe228bf4be493f77ba53366)
  [windows-apps-src\winrt-components\index.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/index.md) | HandedOffSuccess | [Details](#51a376b1ec7224fcaa2115099bbe99353bfaa2de3368)
  [windows-apps-src\winrt-components\net-framework-mappings-of-windows-runtime-types.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/net-framework-mappings-of-windows-runtime-types.md) | HandedOffSuccess | [Details](#d002bf0c8f15145dfa4fe5a04dca8093e7659cb53369)
- [windows-apps-src\winrt-components\passing-arrays-to-a-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/passing-arrays-to-a-windows-runtime-component.md) | HandedOffSuccess | [Details](#bdafd85b165b57da511bf00bafc7dd698888a4473370)
- [windows-apps-src\winrt-components\raising-events-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/raising-events-in-windows-runtime-components.md) | HandedOffSuccess | [Details](#787131cf37fe9758ce054a9e60d3f031e743cae13371)
  [windows-apps-src\winrt-components\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md) | HandedOffSuccess | [Details](#92b4381538b434280fa07eba76444ed0027d39ac3372)
- [windows-apps-src\winrt-components\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) | HandedOffSuccess | [Details](#ae5d57900d887d1640cf32675ce39f61885315503373)
  [windows-apps-src\xaml-platform\attached-properties-overview.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/xaml-platform/attached-properties-overview.md) | HandedOffSuccess | [Details](#c20a0d1bcfda3c28c6289b7c745ef2e7f8a612cb3374)
  [windows-apps-src\xaml-platform\binding-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/xaml-platform/binding-markup-extension.md) | HandedOffSuccess | [Details](#462849c03887dcef8de6d73fe5c6f694469ede843375)
  [windows-apps-src\xaml-platform\custom-attached-properties.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/xaml-platform/custom-attached-properties.md) | HandedOffSuccess | [Details](#4433307ce4ea0a0e9f43328bfab0c594e4bbad0d3376)
@@ -3191,6 +3178,7 @@
  [windows-apps-src\get-started\images\xaml-vsnewevent.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/get-started/images/xaml-vsnewevent.png) | Ignored | [Details](#c8aaaecbac8badc368da1d90d9aec308a137000e2438)
  [windows-apps-src\get-started\images\xaml-vsnewitem.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/get-started/images/xaml-vsnewitem.png) | Ignored | [Details](#b53d8f9dcc0e4030e642582f80acdd1bbb72d0f72439)
  [windows-apps-src\get-started\images\xaml-vsnewproject.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/get-started/images/xaml-vsnewproject.png) | Ignored | [Details](#346e0196bb46d36f1ff810b624591873c10776ea2440)
+ [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/index.md) | Ignored | [Details](#02fae94dc137ee1d2ad0fc369d6f3292d7c1df4c2505)
  [windows-apps-src\input-and-devices\images\adjust-selection.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/input-and-devices/images/adjust-selection.png) | Ignored | [Details](#9954dd4c9067a2b38dc054d629dc12f4032d49522525)
  [windows-apps-src\input-and-devices\images\feedback-keyboard-cursor.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/input-and-devices/images/feedback-keyboard-cursor.png) | Ignored | [Details](#e3be99d702a431a89a71b07c8fca6da5949e4aab2567)
  [windows-apps-src\input-and-devices\images\feedback-mouse-cursor2.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/input-and-devices/images/feedback-mouse-cursor2.png) | Ignored | [Details](#45d8701e5d5f886c238b43a8d99be830a4bc69b22568)
@@ -3412,11 +3400,13 @@
  [windows-apps-src\maps-and-location\images\mapctrl-simplemap.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/maps-and-location/images/mapctrl-simplemap.png) | Ignored | [Details](#a1d695579d800a8b325baf0056651e7f3b4af7133042)
  [windows-apps-src\maps-and-location\images\mapsinmapcontrolbasicmsdn-730width.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/maps-and-location/images/mapsinmapcontrolbasicmsdn-730width.png) | Ignored | [Details](#83e8316c73dbba7b2eb74c46165f0ff9f6a305cb3044)
  [windows-apps-src\maps-and-location\images\win10fa\controls-maps-3dstreetview.jpg](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/maps-and-location/images/win10fa/controls-maps-3dstreetview.jpg) | Ignored | [Details](#48ebaeb1e7558d01b60a65ceb880bca32266242a3048)
+ [windows-apps-src\networking\background-transfers.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/background-transfers.md) | Ignored | [Details](#88cba2a34686ccb77ae78d1f67b043d4460e686c3088)
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstart\js\main.js](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/code/backgroundtransfer/download_quickstart/js/main.js) | Ignored | [Details](#639df51fbe4cbdc8364d8a4c17dc7a5e0f40f3d33089)
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstartcs\cs\main.cs](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/code/backgroundtransfer/download_quickstartcs/cs/main.cs) | Ignored | [Details](#d2f1964af629846416bee9445f7c564660fd72ff3090)
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstartcs\cs\main.xaml.cs](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/code/backgroundtransfer/download_quickstartcs/cs/main.xaml.cs) | Ignored | [Details](#4d2b2e0b87673696d9c7fcfb48cc309729099f303091)
  [windows-apps-src\networking\code\backgroundtransfer\upload_quickstart\js\main.js](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/code/backgroundtransfer/upload_quickstart/js/main.js) | Ignored | [Details](#1af01b63e3a1c6178ab3c6f62ae57ea1b9fdb81e3092)
  [windows-apps-src\porting\images\ios-to-uwp\porting-your-android-or-ios-app-video-thumbnail.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/porting/images/ios-to-uwp/porting-your-android-or-ios-app-video-thumbnail.png) | Ignored | [Details](#cfee271c3f827566bb7691296cc82b7bd8ea42ae3132)
+ [windows-apps-src\threading-async\asynchronous-programming-in-cpp-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md) | Ignored | [Details](#faeff640baf522ac09d958042d3fe2f3214dd9b13331)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\App.xaml](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/AsyncSnippets/csharp/App.xaml) | Ignored | [Details](#236cce255e2fb88a4730bc835da46f5e2ad881933333)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\App.xaml.cs](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/AsyncSnippets/csharp/App.xaml.cs) | Ignored | [Details](#5fe4b50b0ecd38d9f54650f315434382e60ebf6c3334)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\AsyncSnippets.csproj](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/AsyncSnippets/csharp/AsyncSnippets.csproj) | Ignored | [Details](#06450872e2e7fede582e023139fc3f0acb5748923335)
@@ -3437,7 +3427,17 @@
  [windows-apps-src\threading-async\AsyncSnippets\vbnet\My Project\AssemblyInfo.vb](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/AsyncSnippets/vbnet/My Project/AssemblyInfo.vb) | Ignored | [Details](#9330ad5b077989dcfe92b1055480db8ed7212ee73350)
  [windows-apps-src\threading-async\AsyncSnippets\vbnet\Package.appxmanifest](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/AsyncSnippets/vbnet/Package.appxmanifest) | Ignored | [Details](#86de7932acf1ad56d65ff8b0c68c4e4a4da2e53a3351)
  [windows-apps-src\threading-async\AsyncSnippets\vbnet\VBAsync.vbproj](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/AsyncSnippets/vbnet/VBAsync.vbproj) | Ignored | [Details](#1e9df380bcf03b42e8b6618be85b7686ef61fe7a3352)
+ [windows-apps-src\threading-async\create-a-periodic-work-item.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/create-a-periodic-work-item.md) | Ignored | [Details](#8767acecce0e38725a8b03296b6cdf27f2b133703355)
+ [windows-apps-src\threading-async\use-a-timer-to-submit-a-work-item.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/use-a-timer-to-submit-a-work-item.md) | Ignored | [Details](#cbfd24134820acbb570a5b81c2b04b99b0eb15433358)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/TOC.md) | Ignored | [Details](#9950b7bc08112e613acacd43b671409ab27db8313359)
+ [windows-apps-src\winrt-components\creating-windows-runtime-components-in-csharp-and-visual-basic.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) | Ignored | [Details](#683bc282c17e5658b0c3c713342aa7199b14248f3361)
+ [windows-apps-src\winrt-components\custom-events-and-event-accessors-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md) | Ignored | [Details](#5b4535c0a9017d0577758681ae49a9efaf214cff3362)
+ [windows-apps-src\winrt-components\diagnosing-windows-runtime-component-error-conditions.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/diagnosing-windows-runtime-component-error-conditions.md) | Ignored | [Details](#375ab0622c1cbcfc1967ed6b2245133f580900923363)
+ [windows-apps-src\winrt-components\distributing-a-managed-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/distributing-a-managed-windows-runtime-component.md) | Ignored | [Details](#74cddbd27bda69a6962cc1fd1eb617e8ce1285463364)
  [windows-apps-src\winrt-components\images\buildevents.png](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/images/buildevents.png) | Ignored | [Details](#73597c689abe7946a4896c6a123c8d8fa513dbe03365)
+ [windows-apps-src\winrt-components\passing-arrays-to-a-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/passing-arrays-to-a-windows-runtime-component.md) | Ignored | [Details](#6275227dc8cbeb489d0317336ea4b99825e17db53370)
+ [windows-apps-src\winrt-components\raising-events-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/raising-events-in-windows-runtime-components.md) | Ignored | [Details](#c948a4c1fc41f9883d4dbd0d9a48e03398a01e663371)
+ [windows-apps-src\winrt-components\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) | Ignored | [Details](#728e6d26f7685be9029511c44376a48888ea95eb3373)
 
 ## Item Details
 ##### <a name='cbed467678cc7243e97f7f2a055e1c090b8625be0'></a> Source: [.gitignore](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/.gitignore)
@@ -34168,12 +34168,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='855ca081879b043e9d89d0c931964ace73a72b802505'></a> Source: [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/index.md)
-* Status: HandedOffSuccess
+##### <a name='02fae94dc137ee1d2ad0fc369d6f3292d7c1df4c2505'></a> Source: [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/index.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -41402,12 +41402,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='856953930cfd13edaadee7796cf6aadaa8c56c9b3088'></a> Source: [windows-apps-src\networking\background-transfers.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/background-transfers.md)
-* Status: HandedOffSuccess
+##### <a name='88cba2a34686ccb77ae78d1f67b043d4460e686c3088'></a> Source: [windows-apps-src\networking\background-transfers.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/networking/background-transfers.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -44413,12 +44413,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='6ae92e7e2e7f03b48348e182130a5626bf572bc83331'></a> Source: [windows-apps-src\threading-async\asynchronous-programming-in-cpp-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
-* Status: HandedOffSuccess
+##### <a name='faeff640baf522ac09d958042d3fe2f3214dd9b13331'></a> Source: [windows-apps-src\threading-async\asynchronous-programming-in-cpp-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [asynchronous-programming-in-cpp-universal-windows-platform-apps.3a5e3fdfc7dbcd7b4e2876e5b5dc6c130d2ac1af.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/asynchronous-programming-in-cpp-universal-windows-platform-apps.3a5e3fdfc7dbcd7b4e2876e5b5dc6c130d2ac1af.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -44701,12 +44701,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='ecf1ccbba7b55bf5715f78bb72822b83e25272df3355'></a> Source: [windows-apps-src\threading-async\create-a-periodic-work-item.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/create-a-periodic-work-item.md)
-* Status: HandedOffSuccess
+##### <a name='8767acecce0e38725a8b03296b6cdf27f2b133703355'></a> Source: [windows-apps-src\threading-async\create-a-periodic-work-item.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/create-a-periodic-work-item.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [create-a-periodic-work-item.88bf2e4724fd375630a2c9cb780eeed45f757bf6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-a-periodic-work-item.88bf2e4724fd375630a2c9cb780eeed45f757bf6.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -44737,24 +44737,24 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='f418ec9cfe9f8f26b6c74e5b5ae42098f0e4f9cf3358'></a> Source: [windows-apps-src\threading-async\use-a-timer-to-submit-a-work-item.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/use-a-timer-to-submit-a-work-item.md)
-* Status: HandedOffSuccess
+##### <a name='cbfd24134820acbb570a5b81c2b04b99b0eb15433358'></a> Source: [windows-apps-src\threading-async\use-a-timer-to-submit-a-work-item.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/use-a-timer-to-submit-a-work-item.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [use-a-timer-to-submit-a-work-item.dd90df05d9a7403e12ffc029a8e0f1a9d452de18.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/use-a-timer-to-submit-a-work-item.dd90df05d9a7403e12ffc029a8e0f1a9d452de18.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='9db6d19a99b674b60e32902448f3ca7a7add32d33359'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/TOC.md)
-* Status: HandedOffSuccess
+##### <a name='9950b7bc08112e613acacd43b671409ab27db8313359'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/TOC.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -44773,48 +44773,48 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='b9064f2b3ff6eff803b82cb54cb8a39b6fe010c03361'></a> Source: [windows-apps-src\winrt-components\creating-windows-runtime-components-in-csharp-and-visual-basic.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* Status: HandedOffSuccess
+##### <a name='683bc282c17e5658b0c3c713342aa7199b14248f3361'></a> Source: [windows-apps-src\winrt-components\creating-windows-runtime-components-in-csharp-and-visual-basic.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [creating-windows-runtime-components-in-csharp-and-visual-basic.06a96ce103137024969843d1e8e0c65f01d2b9e9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/creating-windows-runtime-components-in-csharp-and-visual-basic.06a96ce103137024969843d1e8e0c65f01d2b9e9.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='d20020351a0be1954f9451a8cdaf65a832a662953362'></a> Source: [windows-apps-src\winrt-components\custom-events-and-event-accessors-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md)
-* Status: HandedOffSuccess
+##### <a name='5b4535c0a9017d0577758681ae49a9efaf214cff3362'></a> Source: [windows-apps-src\winrt-components\custom-events-and-event-accessors-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [custom-events-and-event-accessors-in-windows-runtime-components.efbc06325c5d11af1ee0812e6056e3c99da3d023.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/custom-events-and-event-accessors-in-windows-runtime-components.efbc06325c5d11af1ee0812e6056e3c99da3d023.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='fa9cd898c78040c304448fbb504d11bdb6af7d483363'></a> Source: [windows-apps-src\winrt-components\diagnosing-windows-runtime-component-error-conditions.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/diagnosing-windows-runtime-component-error-conditions.md)
-* Status: HandedOffSuccess
+##### <a name='375ab0622c1cbcfc1967ed6b2245133f580900923363'></a> Source: [windows-apps-src\winrt-components\diagnosing-windows-runtime-component-error-conditions.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/diagnosing-windows-runtime-component-error-conditions.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [diagnosing-windows-runtime-component-error-conditions.fa24e84a507cfc0e2be9e7bc610f1f4a22090bf2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/diagnosing-windows-runtime-component-error-conditions.fa24e84a507cfc0e2be9e7bc610f1f4a22090bf2.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='15c1eedaf8ebe50c36c99f58f25ec8bbabd268513364'></a> Source: [windows-apps-src\winrt-components\distributing-a-managed-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/distributing-a-managed-windows-runtime-component.md)
-* Status: HandedOffSuccess
+##### <a name='74cddbd27bda69a6962cc1fd1eb617e8ce1285463364'></a> Source: [windows-apps-src\winrt-components\distributing-a-managed-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/distributing-a-managed-windows-runtime-component.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [distributing-a-managed-windows-runtime-component.418af7f4c4006b9743bdc616b25d978a52bd19e3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/distributing-a-managed-windows-runtime-component.418af7f4c4006b9743bdc616b25d978a52bd19e3.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -44883,24 +44883,24 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='bdafd85b165b57da511bf00bafc7dd698888a4473370'></a> Source: [windows-apps-src\winrt-components\passing-arrays-to-a-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/passing-arrays-to-a-windows-runtime-component.md)
-* Status: HandedOffSuccess
+##### <a name='6275227dc8cbeb489d0317336ea4b99825e17db53370'></a> Source: [windows-apps-src\winrt-components\passing-arrays-to-a-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/passing-arrays-to-a-windows-runtime-component.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [passing-arrays-to-a-windows-runtime-component.a97864e444036971aab7cd3f3a0e229ee2479e63.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/passing-arrays-to-a-windows-runtime-component.a97864e444036971aab7cd3f3a0e229ee2479e63.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='787131cf37fe9758ce054a9e60d3f031e743cae13371'></a> Source: [windows-apps-src\winrt-components\raising-events-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/raising-events-in-windows-runtime-components.md)
-* Status: HandedOffSuccess
+##### <a name='c948a4c1fc41f9883d4dbd0d9a48e03398a01e663371'></a> Source: [windows-apps-src\winrt-components\raising-events-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/raising-events-in-windows-runtime-components.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [raising-events-in-windows-runtime-components.9dcd42380e6831c2c348811df4df77e42cbda6ae.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/raising-events-in-windows-runtime-components.9dcd42380e6831c2c348811df4df77e42cbda6ae.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -44919,12 +44919,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='ae5d57900d887d1640cf32675ce39f61885315503373'></a> Source: [windows-apps-src\winrt-components\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-* Status: HandedOffSuccess
+##### <a name='728e6d26f7685be9029511c44376a48888ea95eb3373'></a> Source: [windows-apps-src\winrt-components\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.132cae49fe9966ed29cd9cf5d3c778bdf6569f3f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.132cae49fe9966ed29cd9cf5d3c778bdf6569f3f.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
