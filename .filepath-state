@@ -2515,6 +2515,9 @@
   "0b5665bcfae3e9a96859a5c1cb92fda686804ec5": [
     "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-flyout.png"
   ],
+  "02fae94dc137ee1d2ad0fc369d6f3292d7c1df4c": [
+    "windows-apps-src\\index.md"
+  ],
   "855ca081879b043e9d89d0c931964ace73a72b80": [
     "windows-apps-src\\index.md"
   ],
@@ -3417,6 +3420,9 @@
   "742e866cbce848d3cf1c8966b394549dea46803d": [
     "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
   ],
+  "88cba2a34686ccb77ae78d1f67b043d4460e686c": [
+    "windows-apps-src\\networking\\background-transfers.md"
+  ],
   "856953930cfd13edaadee7796cf6aadaa8c56c9b": [
     "windows-apps-src\\networking\\background-transfers.md"
   ],
@@ -4131,6 +4137,9 @@
   "fd7f039f2767ee2939ae44f6b3d88e24c9dc4e52": [
     "windows-apps-src\\security\\images\\wab-event-viewer-2.png"
   ],
+  "faeff640baf522ac09d958042d3fe2f3214dd9b1": [
+    "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md"
+  ],
   "6ae92e7e2e7f03b48348e182130a5626bf572bc8": [
     "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md"
   ],
@@ -4143,6 +4152,9 @@
   "8d626d907c089daa2426c2905b269d6ba37f5ae6": [
     "windows-apps-src\\threading-async\\call-asynchronous-apis-in-csharp-or-visual-basic.md"
   ],
+  "8767acecce0e38725a8b03296b6cdf27f2b13370": [
+    "windows-apps-src\\threading-async\\create-a-periodic-work-item.md"
+  ],
   "ecf1ccbba7b55bf5715f78bb72822b83e25272df": [
     "windows-apps-src\\threading-async\\create-a-periodic-work-item.md"
   ],
@@ -4152,8 +4164,14 @@
   "2d6bc6d750027e26359e24d4d95ad4c52d9c86e9": [
     "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md"
   ],
+  "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
+    "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
   "f418ec9cfe9f8f26b6c74e5b5ae42098f0e4f9cf": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "9950b7bc08112e613acacd43b671409ab27db831": [
+    "windows-apps-src\\TOC.md"
   ],
   "9db6d19a99b674b60e32902448f3ca7a7add32d3": [
     "windows-apps-src\\TOC.md"
@@ -4161,14 +4179,26 @@
   "35087243690e8b7bf5a0e8692a96404229528954": [
     "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-cpp.md"
   ],
+  "683bc282c17e5658b0c3c713342aa7199b14248f": [
+    "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-csharp-and-visual-basic.md"
+  ],
   "b9064f2b3ff6eff803b82cb54cb8a39b6fe010c0": [
     "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-csharp-and-visual-basic.md"
+  ],
+  "5b4535c0a9017d0577758681ae49a9efaf214cff": [
+    "windows-apps-src\\winrt-components\\custom-events-and-event-accessors-in-windows-runtime-components.md"
   ],
   "d20020351a0be1954f9451a8cdaf65a832a66295": [
     "windows-apps-src\\winrt-components\\custom-events-and-event-accessors-in-windows-runtime-components.md"
   ],
+  "375ab0622c1cbcfc1967ed6b2245133f58090092": [
+    "windows-apps-src\\winrt-components\\diagnosing-windows-runtime-component-error-conditions.md"
+  ],
   "fa9cd898c78040c304448fbb504d11bdb6af7d48": [
     "windows-apps-src\\winrt-components\\diagnosing-windows-runtime-component-error-conditions.md"
+  ],
+  "74cddbd27bda69a6962cc1fd1eb617e8ce128546": [
+    "windows-apps-src\\winrt-components\\distributing-a-managed-windows-runtime-component.md"
   ],
   "15c1eedaf8ebe50c36c99f58f25ec8bbabd26851": [
     "windows-apps-src\\winrt-components\\distributing-a-managed-windows-runtime-component.md"
@@ -4179,8 +4209,14 @@
   "d002bf0c8f15145dfa4fe5a04dca8093e7659cb5": [
     "windows-apps-src\\winrt-components\\net-framework-mappings-of-windows-runtime-types.md"
   ],
+  "6275227dc8cbeb489d0317336ea4b99825e17db5": [
+    "windows-apps-src\\winrt-components\\passing-arrays-to-a-windows-runtime-component.md"
+  ],
   "bdafd85b165b57da511bf00bafc7dd698888a447": [
     "windows-apps-src\\winrt-components\\passing-arrays-to-a-windows-runtime-component.md"
+  ],
+  "c948a4c1fc41f9883d4dbd0d9a48e03398a01e66": [
+    "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
   ],
   "787131cf37fe9758ce054a9e60d3f031e743cae1": [
     "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
@@ -4193,6 +4229,9 @@
   ],
   "92b4381538b434280fa07eba76444ed0027d39ac": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md"
+  ],
+  "728e6d26f7685be9029511c44376a48888ea95eb": [
+    "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
   ],
   "ae5d57900d887d1640cf32675ce39f6188531550": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
