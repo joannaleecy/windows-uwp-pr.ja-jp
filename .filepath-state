@@ -2515,6 +2515,9 @@
   "0b5665bcfae3e9a96859a5c1cb92fda686804ec5": [
     "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-flyout.png"
   ],
+  "2ebbb5faef7cd2777359235420554e6f05060fcb": [
+    "windows-apps-src\\index.md"
+  ],
   "02fae94dc137ee1d2ad0fc369d6f3292d7c1df4c": [
     "windows-apps-src\\index.md"
   ],
@@ -4169,6 +4172,9 @@
   ],
   "f418ec9cfe9f8f26b6c74e5b5ae42098f0e4f9cf": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "c660fab62e39e526fb76d5d9ff5ea1ffa1db0811": [
+    "windows-apps-src\\TOC.md"
   ],
   "9950b7bc08112e613acacd43b671409ab27db831": [
     "windows-apps-src\\TOC.md"
