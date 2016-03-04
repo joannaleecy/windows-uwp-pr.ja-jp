@@ -1640,6 +1640,9 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
+  "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "97c82c9a06ad120110e748250f687a54b604b755": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
@@ -2274,27 +2277,6 @@
   ],
   "ee2bde728bf1df26366c8e59e3c787effa97c0d5": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
-  ],
-  "ead1d64ee6515974a434ea77c4ef0f14031d8958": [
-    "windows-apps-src\\get-started\\images\\latestenabledialog.png"
-  ],
-  "834e44aa121a8071febd7e495e0d14b9a1da8e10": [
-    "windows-apps-src\\get-started\\images\\devmode-pc-options.png"
-  ],
-  "1226f248f29981f9645e7dd833eb9ff80f5d0202": [
-    "windows-apps-src\\get-started\\images\\devmode-mob.png"
-  ],
-  "d209a2f9e87fbd7e39a595fe28ebb9479355b46b": [
-    "windows-apps-src\\get-started\\images\\devmode-mob-options.png"
-  ],
-  "1efd7c8d330b047d6d3e90afc4824597e33b2964": [
-    "windows-apps-src\\get-started\\images\\devmode-mob-pairing.png"
-  ],
-  "67a8d613493a7b1d6fdda3d7eeae0ab23043d07d": [
-    "windows-apps-src\\get-started\\images\\devportal-phone.png"
-  ],
-  "46b6f0dd49dd16ae8364d050cd7684b496e2b9e6": [
-    "windows-apps-src\\get-started\\images\\devmode-mob-portal.png"
   ],
   "5a92b2591e7157c09dc3c54b1eb271e28f7d60b4": [
     "windows-apps-src\\get-started\\get-set-up.md"
