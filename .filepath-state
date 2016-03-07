@@ -215,6 +215,9 @@
   "8064fb60db4863f36ac1b875cf731f24260ec9f0": [
     "windows-apps-src\\controls-and-patterns\\images\\uap-subway-pc-phone-700.png"
   ],
+  "72bb9cbba3662bb4bbbb0d45d02b6f3d122d169f": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
   "75fb0f54dffab0833e4d7454634d31e702c345e1": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
@@ -248,6 +251,9 @@
   "8f1fc7c00968cf850970311af7e0cc6ab42e010a": [
     "windows-apps-src\\controls-and-patterns\\images\\AppbarGuidelines_Illustration.png"
   ],
+  "90999e137aafe08cf79b9e623db72f907568e415": [
+    "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
+  ],
   "e51ed989c7b9af06cf87e5e3d3b4b4fbaf4c48b6": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
@@ -260,14 +266,11 @@
   "2c835e27da1b2d12abbbc4d8f8241b58d353612f": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_autosuggest_noresults.png"
   ],
-  "e54a751a4d9bb30c4c22391ed5e60890a019c30d": [
+  "9af3aa134e9b068fecf62358018662bbe0eb9b73": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
-  "d2ab0bc5e604004bda3e30d1981504a47f7fbbe5": [
-    "windows-apps-src\\controls-and-patterns\\images\\controls_button_example.png"
-  ],
-  "d3507cf66b06ac71104f3434edd5cd4f03c1dfab": [
-    "windows-apps-src\\controls-and-patterns\\images\\controls_button_example_dialog.png"
+  "e54a751a4d9bb30c4c22391ed5e60890a019c30d": [
+    "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
   "717000533b9ba8abb574c68c3c84d6b8648fbf36": [
     "windows-apps-src\\controls-and-patterns\\images\\button-orange.png"
@@ -287,6 +290,9 @@
   "cbb22a8e8cd0e47c804c65b5068a61222ccb5f31": [
     "windows-apps-src\\controls-and-patterns\\images\\nav-back-surfacehub.png"
   ],
+  "04c383474abf9c85058bf75ed820128e1762ddba": [
+    "windows-apps-src\\controls-and-patterns\\calendar-date-picker.md"
+  ],
   "73e9006d5ef33a7f4e229040ce4a606763fd26d6": [
     "windows-apps-src\\controls-and-patterns\\calendar-date-picker.md"
   ],
@@ -295,6 +301,9 @@
   ],
   "e2adcabe4787c4269a1f8ceed6985b11e7df5e5d": [
     "windows-apps-src\\controls-and-patterns\\images\\calendar-date-picker-closed.png"
+  ],
+  "f9ab1d6ee6820fcd6896d3c25545298096e74c23": [
+    "windows-apps-src\\controls-and-patterns\\calendar-view.md"
   ],
   "a7dd44b157b9930a7091033668409b5576fa37df": [
     "windows-apps-src\\controls-and-patterns\\calendar-view.md"
@@ -311,14 +320,11 @@
   "5149f3092fb31f2c21b3447389aa46dab8f196b7": [
     "windows-apps-src\\controls-and-patterns\\images\\calendar-view-density-bars.png"
   ],
-  "08fb831be256fa32a3391e0ac22696081e31c021": [
+  "1e3ac5a102a744603ac6c76b3d4caa45c82ba9d8": [
     "windows-apps-src\\controls-and-patterns\\checkbox.md"
   ],
-  "837d20304a45bbee70b2bf9f6dafae68aeb4981d": [
-    "windows-apps-src\\controls-and-patterns\\images\\checkboxstates.png"
-  ],
-  "8b1ab3231c71d0b052855ee46c94ecc356cfce8d": [
-    "windows-apps-src\\controls-and-patterns\\images\\CheckBox_Standard.png"
+  "08fb831be256fa32a3391e0ac22696081e31c021": [
+    "windows-apps-src\\controls-and-patterns\\checkbox.md"
   ],
   "3019038d06c63acb5523675f37a6aaad8d00879f": [
     "windows-apps-src\\controls-and-patterns\\images\\checkbox1.png"
@@ -343,6 +349,9 @@
   ],
   "9f3b04d331e7eaa3f0bf68169aa73ba0e2524705": [
     "windows-apps-src\\controls-and-patterns\\images\\templates-checkbox-states.png"
+  ],
+  "3aae15c6a71990b56ab3a3db41a8949418f90cbe": [
+    "windows-apps-src\\controls-and-patterns\\controls-and-events-intro.md"
   ],
   "dce89044c70d37c5b4a93691e8a37bfcd2c0e30b": [
     "windows-apps-src\\controls-and-patterns\\controls-and-events-intro.md"
@@ -371,11 +380,17 @@
   "137714b83057ccc3129f9850edb40fece310ec8d": [
     "windows-apps-src\\controls-and-patterns\\images\\add-controls-add-event-xaml.png"
   ],
+  "f992488243d3eb25323bad5d145a1a844d5c30d2": [
+    "windows-apps-src\\controls-and-patterns\\controls-by-function.md"
+  ],
   "1b737354fbd801932aabc2ccf1c0e4ee08aecc0a": [
     "windows-apps-src\\controls-and-patterns\\controls-by-function.md"
   ],
   "a0a86971d0c663daa7d2374ddebbb95b5ca56c3c": [
     "windows-apps-src\\controls-and-patterns\\custom-transport-controls.md"
+  ],
+  "0226dc9c3cd902389ee4f2c411f846325156c462": [
+    "windows-apps-src\\controls-and-patterns\\date-and-time.md"
   ],
   "2b1ba70a4fcfb4624dc2858aa78ed0cdc3fe6b40": [
     "windows-apps-src\\controls-and-patterns\\date-and-time.md"
@@ -395,8 +410,14 @@
   "78fd1a9464ca9fcc66dfacac6403d092fc757d5c": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_timepicker_expand.png"
   ],
+  "f9c16baaa2cd21d976c5d316c3a691430d7f4a56": [
+    "windows-apps-src\\controls-and-patterns\\date-picker.md"
+  ],
   "598870df73558020a8cc458f01e5ccdc0dbf475e": [
     "windows-apps-src\\controls-and-patterns\\date-picker.md"
+  ],
+  "2468d90d645052f182b5194c18f1e2a92dd36960": [
+    "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
   ],
   "94986b7f482fc526ce948ee9f4070a4be7a7578e": [
     "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
@@ -413,6 +434,9 @@
   "ea06324c5561ed3030108a445b0496ce45046e36": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_dialog_twobutton.png"
   ],
+  "0ad8e79c0a11ef315703c3585aa08e17dd47a33d": [
+    "windows-apps-src\\controls-and-patterns\\flipview.md"
+  ],
   "1ecd855c940487c3aea401472c64820cd8bfed98": [
     "windows-apps-src\\controls-and-patterns\\flipview.md"
   ],
@@ -427,6 +451,9 @@
   ],
   "a0d387e957e1e922b5d0dc401fcf9cc1afa8c80b": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_contextindicator.jpg"
+  ],
+  "98085dff4bd23e01896c022f9234f3e5def8dc8b": [
+    "windows-apps-src\\controls-and-patterns\\fonts.md"
   ],
   "67ea8a03355779581a59039edbeb06a924837a4e": [
     "windows-apps-src\\controls-and-patterns\\fonts.md"
@@ -458,6 +485,9 @@
   "e967e9a7f44667e5ef3374717c9c050dcd9ba924": [
     "windows-apps-src\\controls-and-patterns\\images\\phone_hub_example.png"
   ],
+  "9066a7c4a8bbcc3b84023020660a2dc027824c9b": [
+    "windows-apps-src\\controls-and-patterns\\hyperlinks.md"
+  ],
   "fb6f7a7a8a547c49e26c5025e4f008ec205d3cec": [
     "windows-apps-src\\controls-and-patterns\\hyperlinks.md"
   ],
@@ -485,11 +515,17 @@
   "d65773007182584c70f112dcd5a9b375c1976464": [
     "windows-apps-src\\controls-and-patterns\\images\\Image_Opacity.jpg"
   ],
+  "488eca598ee3b56252840dcb59f83a89752224c0": [
+    "windows-apps-src\\controls-and-patterns\\labels.md"
+  ],
   "530db219d6df35ac8fc5f2dd0fbd8f7d66c7ac5b": [
     "windows-apps-src\\controls-and-patterns\\labels.md"
   ],
   "3ae5dff13e5670c23ed3e0538115c0cb2532b870": [
     "windows-apps-src\\controls-and-patterns\\images\\label-standard.png"
+  ],
+  "204b33ef3f9e1587695a0406f241cb8ea488feed": [
+    "windows-apps-src\\controls-and-patterns\\lists.md"
   ],
   "3c0dde416645ca9377562dec1552b680eb332977": [
     "windows-apps-src\\controls-and-patterns\\lists.md"
@@ -534,6 +570,9 @@
   "aec40b20ac7f2fda6726ac5bd948d643d810b7ee": [
     "windows-apps-src\\controls-and-patterns\\images\\uap-finance-phone-masterdetails-600.png"
   ],
+  "edeac3259047fe4b05d3e35c9479c19f2fe19385": [
+    "windows-apps-src\\controls-and-patterns\\media-playback.md"
+  ],
   "66ee152c36b95d357b682dfb62ecc245128f5240": [
     "windows-apps-src\\controls-and-patterns\\media-playback.md"
   ],
@@ -542,6 +581,9 @@
   ],
   "abdb784635e5d8d2175fe825cd2f6e8f308c1db7": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_mtc_doublerow_phone.png"
+  ],
+  "87ed59c2e3053edf1500c2ed5079b038bdfea707": [
+    "windows-apps-src\\controls-and-patterns\\nav-pane.md"
   ],
   "2b78121befdb4f5c265c0fee0120e200d2f68f08": [
     "windows-apps-src\\controls-and-patterns\\nav-pane.md"
@@ -585,10 +627,10 @@
   "7a80e13a39aafa010f76517a1465b30c9f68e05d": [
     "windows-apps-src\\controls-and-patterns\\images\\passwordbox-custom-reveal.png"
   ],
-  "fdeb4e97d76bec20a050813706de609b2a895463": [
+  "48ac2285275f9685dd67b187fe8b852beec00609": [
     "windows-apps-src\\controls-and-patterns\\progress-controls.md"
   ],
-  "48ac2285275f9685dd67b187fe8b852beec00609": [
+  "fdeb4e97d76bec20a050813706de609b2a895463": [
     "windows-apps-src\\controls-and-patterns\\progress-controls.md"
   ],
   "a650a9cf8e0af5160775616c7ac0490349c5ade9": [
@@ -657,14 +699,11 @@
   "88bb274460621d31617ca07c8e382a2ecb009d12": [
     "windows-apps-src\\controls-and-patterns\\images\\progress_indeterminate_bar_redline.png"
   ],
-  "a65ee8e592f5720be837173092f908b758f3c1a3": [
+  "1d14ed97fd7f7bdb6adc312177553187e507fd2d": [
     "windows-apps-src\\controls-and-patterns\\radio-button.md"
   ],
-  "b874c9d0e5d1bf6a6e071938412518144001cbbc": [
-    "windows-apps-src\\controls-and-patterns\\images\\ws_radio_buttons.png"
-  ],
-  "a55481bfe117878fe3b923aaf46dcbef5d23c956": [
-    "windows-apps-src\\controls-and-patterns\\images\\RadioButton_Standard.png"
+  "a65ee8e592f5720be837173092f908b758f3c1a3": [
+    "windows-apps-src\\controls-and-patterns\\radio-button.md"
   ],
   "ac5106e8787c277bb0e1c74d8b5d4377098edc10": [
     "windows-apps-src\\controls-and-patterns\\images\\radiobutton_basic.png"
@@ -674,6 +713,9 @@
   ],
   "362bf53b9290ad4c550f0e5bbacfa3fe71580b22": [
     "windows-apps-src\\controls-and-patterns\\images\\radiobutton_layout1.png"
+  ],
+  "6012c225b320c480f8db94ad83ac6d832529b2fa": [
+    "windows-apps-src\\controls-and-patterns\\resourcedictionary-and-xaml-resource-references.md"
   ],
   "ac039162bb8486b82aa63819c0bed7af5c61b78a": [
     "windows-apps-src\\controls-and-patterns\\resourcedictionary-and-xaml-resource-references.md"
@@ -698,6 +740,9 @@
   ],
   "d005c00f2bab0cf251fb9429d65f02e8459a9f81": [
     "windows-apps-src\\controls-and-patterns\\images\\ScrollBar_Standard.jpg"
+  ],
+  "bdcd140f309a25a88794101f95b0faf76c842af6": [
+    "windows-apps-src\\controls-and-patterns\\search.md"
   ],
   "ca0223af01e59c313565f53f3edbf907c314e987": [
     "windows-apps-src\\controls-and-patterns\\search.md"
@@ -743,6 +788,9 @@
   ],
   "777b264685ef352a94c5809a1f08974f1fc2d76a": [
     "windows-apps-src\\controls-and-patterns\\images\\findinpage-counter.png"
+  ],
+  "9f5500c8e707201ad806932c1da630378ba7088d": [
+    "windows-apps-src\\controls-and-patterns\\segoe-ui-symbol-font.md"
   ],
   "4faa04ecdf8688cbdee3158de91e2f16e8b1abca": [
     "windows-apps-src\\controls-and-patterns\\segoe-ui-symbol-font.md"
@@ -1010,23 +1058,29 @@
   "ef71b92a357dcfd975346198e1c22298065af4c3": [
     "windows-apps-src\\controls-and-patterns\\images\\mobbatterysaver10.png"
   ],
+  "384ec66ba53f6f59d8acb0947d0c8746f4252319": [
+    "windows-apps-src\\controls-and-patterns\\semantic-zoom.md"
+  ],
   "a10223b8f80ad9fea97d4debfec7d79f4752fda2": [
     "windows-apps-src\\controls-and-patterns\\semantic-zoom.md"
   ],
   "5eb53d7389e8e56730e639653fa3eda80ef01363": [
     "windows-apps-src\\controls-and-patterns\\images\\semanticzoom-win10.png"
   ],
-  "3cb6fa4ed586c2a62164362214136250bca95fab": [
+  "d74ec4196ffd8529e6f4b57217c55b27bb00d8e6": [
     "windows-apps-src\\controls-and-patterns\\slider.md"
   ],
-  "b2112f500d828c61dbd2a4dfa8121ac0b54ac37b": [
-    "windows-apps-src\\controls-and-patterns\\images\\slider_basic.PNG"
+  "3cb6fa4ed586c2a62164362214136250bca95fab": [
+    "windows-apps-src\\controls-and-patterns\\slider.md"
   ],
   "8e3922caac6281a1c1ee65578e098406506b5830": [
     "windows-apps-src\\controls-and-patterns\\spell-checking-and-prediction.md"
   ],
   "87aacbe3934312d52c62bcbaa72f7b94f4db5890": [
     "windows-apps-src\\controls-and-patterns\\images\\spellchecking.png"
+  ],
+  "4e7b3c1166e500b247e866a9ccaea60195e4bdce": [
+    "windows-apps-src\\controls-and-patterns\\split-view.md"
   ],
   "3def34ef1135e1f7e1277ca37a3ab204f0213ced": [
     "windows-apps-src\\controls-and-patterns\\split-view.md"
@@ -1045,6 +1099,9 @@
   ],
   "f94a7006c6cc9e93e225113e4809315df4bf0f85": [
     "windows-apps-src\\controls-and-patterns\\images\\styles-buttons-based-on.png"
+  ],
+  "be7eb7d4d13655951949138b50e8b1bbc4dda26b": [
+    "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
   ],
   "7a94e45a8e548c615237cad62eab0e9fdef95853": [
     "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
@@ -1133,8 +1190,14 @@
   "e49635b77b385480933c49630edeea1b81d9bd30": [
     "windows-apps-src\\controls-and-patterns\\images\\adaptivetoasts-xmlsample07.png"
   ],
+  "9d0f28d33461e3c22b9e70f2c3006b6b7d6cdf66": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-tiles-schema.md"
+  ],
   "7f909d9b30eea543dc77fde72a106408c16fbb44": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-tiles-schema.md"
+  ],
+  "86702ca46d5e99a3663f15ffda3d67ed60ad684d": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-app-assets.md"
   ],
   "0383d29e7ad781f7f3427d6503f5dab20586599a": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-app-assets.md"
@@ -1240,6 +1303,9 @@
   ],
   "0b14184f7c6dc61ba171dcdef9965c249790f3a3": [
     "windows-apps-src\\controls-and-patterns\\images\\assetguidance28.png"
+  ],
+  "aeab4b44e44fce5538686deb0f2978824683b92e": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md"
   ],
   "b89be39b89c978a897cf9501a4fbb44301b3f176": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md"
@@ -1397,8 +1463,14 @@
   "343776f1104fdf67b5bef189f4f162dd643da437": [
     "windows-apps-src\\controls-and-patterns\\tiles-badges-notifications.md"
   ],
+  "36171367a0418a953b03623999413a0fd752cb97": [
+    "windows-apps-src\\controls-and-patterns\\time-picker.md"
+  ],
   "b29262d1a941bad4914a33244424ac0f2ced09fe": [
     "windows-apps-src\\controls-and-patterns\\time-picker.md"
+  ],
+  "09ea0f8d35c70f997c76bc6dd84587ab7c937345": [
+    "windows-apps-src\\controls-and-patterns\\toggles.md"
   ],
   "1c91b39a63a542fb5df84a1b28acfeb40e23c9a8": [
     "windows-apps-src\\controls-and-patterns\\toggles.md"
@@ -1415,14 +1487,11 @@
   "e13354293e742ff98bf70065d2348879346b7b63": [
     "windows-apps-src\\controls-and-patterns\\images\\guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png"
   ],
-  "7711252ee7782d5765e2b3b10e5155629a249d55": [
+  "3c94dcb94e6654a9a4752eb6b3fc79ed45211951": [
     "windows-apps-src\\controls-and-patterns\\tooltips.md"
   ],
-  "965d4e38103d6a6b423a86fee55d78570e751814": [
-    "windows-apps-src\\controls-and-patterns\\images\\tooltip-484x101.png"
-  ],
-  "e117ed78e948d05978ac7ffad697279eddadb0d0": [
-    "windows-apps-src\\controls-and-patterns\\images\\tooltip-standard.png"
+  "7711252ee7782d5765e2b3b10e5155629a249d55": [
+    "windows-apps-src\\controls-and-patterns\\tooltips.md"
   ],
   "14538159188b38a173ef58a3aa954f8328c07e70": [
     "windows-apps-src\\controls-and-patterns\\web-view.md"
@@ -4445,5 +4514,161 @@
   ],
   "af817df780f291b6367a374e535cce22a84ba4c1": [
     "windows-apps-src\\xaml-platform\\xaml-syntax-guide.md"
+  ],
+  "743848d76285055d9d3d374f633e5848dc17e4c4": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-edge.png"
+  ],
+  "302792ef62bb237d319e9e77b30c45c641e0c14e": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-calendar-phone.png"
+  ],
+  "2fdeba5c66f31f755c6ceee0a457e7dbd5229745": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-mtc.png"
+  ],
+  "7648313723ea7fb66b5b60220413f287965d8423": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\auto-suggest-box-open.png"
+  ],
+  "9c1f15791dbcce9776ff6b44e361b23b12c4d53f": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\auto-suggest-box-groove.png"
+  ],
+  "8dfacafcd8701329b6b69078b9dc4d2c5e221dc7": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\button.png"
+  ],
+  "4415fdb3ab8838f2f3b251947392db3de6d05232": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\buttons-edge.png"
+  ],
+  "90cc7602bc9c8c3c58ca62c6b934ab9d252a5fa1": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\check-box-edge.png"
+  ],
+  "6220162e55cdc7def8eb4000957b43a61b46681b": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\check-box-alarm.png"
+  ],
+  "a238376f5a1459ebf45429df97e61d027407a73d": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\app-bar-buttons.png"
+  ],
+  "36476dd87c8e809e90583de592698c20bc70448f": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\hyperlink-button.png"
+  ],
+  "93ecdec22fc95257c4f168e27f3eede385d5686f": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\repeat-button.png"
+  ],
+  "5c23443ba19850be204f398584129c8c78b78699": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\calendar-date-picker-open.png"
+  ],
+  "ff4725dceb9ae6a173718b4a0c2c60f07eca9e77": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\date-picker.png"
+  ],
+  "390d1ba020392970522ab13219cff40c6ffb1e99": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\time-picker.png"
+  ],
+  "75f530dc4d042896cfc4c7af280c597b2d2e0cb8": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\flyout.png"
+  ],
+  "5f02126d5fc28bf6fde08c52045cc769de1734fe": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\menu-flyout.png"
+  ],
+  "639d6325f95228566296eede12926014d1cda816": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\tool-tip.png"
+  ],
+  "606748e07e491ec2e47fde2c7795d7ab4ad73366": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\shapes-polygon.png"
+  ],
+  "7db1455e9eab4d295bea57338e85f8c442968b36": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\shapes-path.png"
+  ],
+  "b105dc2e651983136f645ce0fd74507b9d0fd5d0": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\border.png"
+  ],
+  "d890fb7a73ac2c83a2314d41a31fa195acd10baa": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\canvas.png"
+  ],
+  "fa9f80bfe07552d9a334552b4979188f26115296": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\grid.png"
+  ],
+  "1d2e88bccbbdb39c933fd89f082d3b3dc01499f5": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\relative-panel.png"
+  ],
+  "5cc001b67afa08d95281016e8ef211399eaf6e7f": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\stack-panel.png"
+  ],
+  "1221765b135e676c0e0707cf672f0f69f5f7d33a": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\variable-sized-wrap-grid.png"
+  ],
+  "406601d8d576c27ffa894a4225e9f444a35eca92": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\view-box.png"
+  ],
+  "8e663ea072774fdb31b09d441481edb5c7054bd0": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\media-transport-controls.png"
+  ],
+  "d7b3383c96a78296f7fc380e2d67e921dc5f3f24": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\split-view.png"
+  ],
+  "6bc89c1009cc7b3803a521ffac9ab560e1ec84ec": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\progress-bar-determinate.png"
+  ],
+  "c022a77a60ad91bba514342f34fa2d729d0c8b7b": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\progress-bar-indeterminate.png"
+  ],
+  "9ada676d7b40691dfb5ba432d775a26bbc22990d": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\progress-ring.png"
+  ],
+  "93eccba57fa7288a72b42c2d1ebc64c24dc59d9f": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\auto-suggest-box.png"
+  ],
+  "d61f26679a94cfbf377a89d2d64e7ae92ea09d7e": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\password-box.png"
+  ],
+  "1bcd12b8b190aa0adf978977841d6567f8574202": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\text-block.png"
+  ],
+  "bb1bd8a833e161a9e9b68da11308d4fac6216d10": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\text-box.png"
+  ],
+  "77daf0fe45800d3bceebaed28dbd00a02c8bf9b6": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\combo-box-open.png"
+  ],
+  "f8cf75fd9722e892f816c75ef0f4ba22a687a9e7": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\list-box.png"
+  ],
+  "8e5e929c53a5ecd7cccd04af4ddab2f3d76b4d40": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\radio-button.png"
+  ],
+  "b258204b63b919894f6784d91d7de261b9808dd3": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\slider.png"
+  ],
+  "a0b6dd9d0cbc21ec39bae02159e7c5bb48f3d604": [
+    "windows-apps-src\\controls-and-patterns\\images\\controls\\toggle-switch.png"
+  ],
+  "5cba068996340d4f208c2600c1ab148c6080527c": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\hyperlinks-calculator.png"
+  ],
+  "0423e56bdf5f9152055b66d7da8c2074940516fb": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\media-element-getstarted.png"
+  ],
+  "382b99522812137252f065d73cc2269c03ec3bee": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\radio-buttons-edge.png"
+  ],
+  "3be3dc17769a245e32c70f2b6fa2388f18d2db64": [
+    "windows-apps-src\\controls-and-patterns\\images\\radio-button-groups.png"
+  ],
+  "86894e13740cec1ae46b2ad289111d3b2fdcf4b5": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\semantic-zoom-photos.png"
+  ],
+  "1e465502d17a0b17da6ffe67dab514cbccd03a40": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-phone.png"
+  ],
+  "2d4909257bb4006d3f85b7207438e36fece6e6b2": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-display-settings.png"
+  ],
+  "86cf56f14db4e1d1d4135eeba22fb62fb153a642": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\toggle-switch-news.png"
+  ],
+  "fb1e9bd5d3a1f7bb2be2f4d1970a4dfdbe53542a": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\toggle-switch-start-settings.png"
+  ],
+  "64b1d8c5bc8069dafbd743ecf496b14b359be912": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\tool-tip-maps.png"
+  ],
+  "6feae624441c686128bb5af6b8980435f1e6f7c4": [
+    "windows-apps-src\\monetize\\get-app-failures.md"
   ]
 }
