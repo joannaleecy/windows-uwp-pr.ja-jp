@@ -26,6 +26,9 @@
   "70accacb24ef18e60101ded39f5d2e48bbc8eb28": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
   ],
+  "19b991686461d12e511fadf6ff40831d4b284815": [
+    "windows-apps-src\\accessibility\\custom-automation-peers.md"
+  ],
   "4ba50671931ca2f41b11f0746982b50829016bfc": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
   ],
@@ -582,6 +585,9 @@
   "7a80e13a39aafa010f76517a1465b30c9f68e05d": [
     "windows-apps-src\\controls-and-patterns\\images\\passwordbox-custom-reveal.png"
   ],
+  "fdeb4e97d76bec20a050813706de609b2a895463": [
+    "windows-apps-src\\controls-and-patterns\\progress-controls.md"
+  ],
   "48ac2285275f9685dd67b187fe8b852beec00609": [
     "windows-apps-src\\controls-and-patterns\\progress-controls.md"
   ],
@@ -668,6 +674,9 @@
   ],
   "362bf53b9290ad4c550f0e5bbacfa3fe71580b22": [
     "windows-apps-src\\controls-and-patterns\\images\\radiobutton_layout1.png"
+  ],
+  "ac039162bb8486b82aa63819c0bed7af5c61b78a": [
+    "windows-apps-src\\controls-and-patterns\\resourcedictionary-and-xaml-resource-references.md"
   ],
   "2e93d9203f0de608d95c3e0b0db29abbc3640fb8": [
     "windows-apps-src\\controls-and-patterns\\resourcedictionary-and-xaml-resource-references.md"
@@ -1496,6 +1505,9 @@
   "1bf24ecf8953e254cfab6e72b060d65e2ee15b91": [
     "windows-apps-src\\data-binding\\images\\xaml-masterdetails.png"
   ],
+  "32372bdef6cf58479527e149c2917e6dec556009": [
+    "windows-apps-src\\data-binding\\index.md"
+  ],
   "05077cfa25a79cdd5edfbe0bbc5d4bbc8025be35": [
     "windows-apps-src\\data-binding\\index.md"
   ],
@@ -1525,6 +1537,9 @@
   ],
   "4d48e0a8011192d2d96a9fb9c1cea9801523a15d": [
     "windows-apps-src\\debug-test-perf\\improve-garbage-collection-performance.md"
+  ],
+  "badf46d0a23f28b8279c90e2075ab082a8fc0449": [
+    "windows-apps-src\\debug-test-perf\\index.md"
   ],
   "a5ddb41bb030c88f74f4f2bc14cfd9a54f1a9219": [
     "windows-apps-src\\debug-test-perf\\index.md"
@@ -1809,6 +1824,9 @@
   "c1b88a124f704e345c3c6853b2d0af627931a038": [
     "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md"
   ],
+  "4c44cd6f9a29513f91dc2162ae159af364bfb105": [
+    "windows-apps-src\\files\\index.md"
+  ],
   "a11b02e4f35de86ccafdf504b5d046146f5e8812": [
     "windows-apps-src\\files\\index.md"
   ],
@@ -1820,6 +1838,9 @@
   ],
   "db7d61c5fdc1d098c04a3a06c5d7cea6f36ba9b3": [
     "windows-apps-src\\files\\quickstart-getting-file-properties.md"
+  ],
+  "e9f0823fd27e9eee35d04ea0537721f7fb3e00ce": [
+    "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
   ],
   "685d2a51518882d28802c71783955582d61ac787": [
     "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
@@ -1946,6 +1967,9 @@
   ],
   "a07d8a867bdca9e4e3cb17bc9a063dbccfa5afd5": [
     "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
+  ],
+  "29e438752a2f90079e6b3f516b27f2f1fa0829ee": [
+    "windows-apps-src\\gaming\\index.md"
   ],
   "1d7633d8cc03a3abd50a6c46e29eb7db114ab6f9": [
     "windows-apps-src\\gaming\\index.md"
@@ -2341,6 +2365,9 @@
   "4adc00dd1386fb0505e21823fce9a0fa4cf223ba": [
     "windows-apps-src\\get-started\\your-first-app.md"
   ],
+  "71a9991961059fdd618e5cb50a53901a9dbb554a": [
+    "windows-apps-src\\globalizing\\adjust-layout-and-fonts--and-support-rtl.md"
+  ],
   "a767ca9a377ffdf9ae8f34d6316097f4eaec0dd4": [
     "windows-apps-src\\globalizing\\adjust-layout-and-fonts--and-support-rtl.md"
   ],
@@ -2410,6 +2437,9 @@
   "c9abe8937b77fc9bd9d9c3b426c7adec7816fb75": [
     "windows-apps-src\\graphics\\composition-animation.md"
   ],
+  "0507504cd6e2e4834032cb7544095e2abd574c5b": [
+    "windows-apps-src\\graphics\\composition-brushes.md"
+  ],
   "35dcae7a582f7ff74bce0ed8e9525aea0adc993a": [
     "windows-apps-src\\graphics\\composition-brushes.md"
   ],
@@ -2451,6 +2481,9 @@
   ],
   "813b962bbf8f45896a9dbf1f53dc2fd43698e81b": [
     "windows-apps-src\\graphics\\images\\shapes-path.jpg"
+  ],
+  "2502569d101bbe4d1456915ea04fdd994d6fb103": [
+    "windows-apps-src\\graphics\\index.md"
   ],
   "612821e7db46ce0c7c851e32f984408125150829": [
     "windows-apps-src\\graphics\\index.md"
@@ -2742,6 +2775,9 @@
   "243073efd6a5caf6af8ac14f60fd08533ed4bdd4": [
     "windows-apps-src\\input-and-devices\\guidelines-for-user-interaction.md"
   ],
+  "dd09206cc7975f6b54ffe4e7a7e303bddfc1a616": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
+  ],
   "f7680f82001e713d46b2a86f0330539ec2bd3cc2": [
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
   ],
@@ -2750,6 +2786,9 @@
   ],
   "06e437a91bf2846bf2a4ad9fe96b0ba49446a883": [
     "windows-apps-src\\input-and-devices\\images\\flyout.png"
+  ],
+  "9f449718b718beb9512b2d05828d2ad326c1a38c": [
+    "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
   ],
   "b7641b7512e08759ed175bd71b2eddd3803274c8": [
     "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
@@ -2796,6 +2835,9 @@
   "25bf53888a79cdb18252cfde65d773d011b2b9e1": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
+  "24ba2386709b046259bca0c81abafd8bcd3bb31d": [
+    "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
+  ],
   "890031cbd7bf3645504547172ff72fbb218bad43": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
@@ -2839,6 +2881,9 @@
   ],
   "94dbf523e0d4e1e31d02d5a09adf9bbccca963af": [
     "windows-apps-src\\input-and-devices\\images\\input-patterns\\notepad.png"
+  ],
+  "95a625e6e2c692eefb02a962966830abec615e19": [
+    "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
   ],
   "62c5aaaf77a2a6ed6cb3a6dd2c93913a3a532432": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
@@ -2942,6 +2987,9 @@
     "windows-apps-src\\input-and-devices\\images\\speech\\speech-listening-complete.png",
     "windows-apps-src\\input-and-devices\\images\\speech-listening-complete.png"
   ],
+  "6a84cec5bbbfad28407eb421330cebbb73b2ce90": [
+    "windows-apps-src\\input-and-devices\\speech-recognition.md"
+  ],
   "147f48b734dfab3c78ae4c91e04c4a6a02930a47": [
     "windows-apps-src\\input-and-devices\\speech-recognition.md"
   ],
@@ -2978,20 +3026,35 @@
   "77b11abd9b843c7e57f00f0984cf15775d56b82f": [
     "windows-apps-src\\launch-resume\\images\\appmanifest.png"
   ],
+  "ca5bdfd411b1e072890af1b7b2ac31a4c9bfec3c": [
+    "windows-apps-src\\launch-resume\\app-lifecycle.md"
+  ],
   "e5c1240bafd8601c7de7729d7750f07ccbd750b1": [
     "windows-apps-src\\launch-resume\\app-lifecycle.md"
   ],
   "44d4e9576db8dd1877b454c2c9f8e8be93771853": [
     "windows-apps-src\\launch-resume\\images\\state-diagram.png"
   ],
+  "7380a6c7d1c4795362c0e6487bf30e574dced396": [
+    "windows-apps-src\\launch-resume\\auto-launching-with-autoplay.md"
+  ],
   "b74b41085b0d49ee9e3b65d1c779b111abd6c80a": [
     "windows-apps-src\\launch-resume\\auto-launching-with-autoplay.md"
+  ],
+  "915d388ee2a9810acfba98ca7791b625fa472c3d": [
+    "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
   ],
   "c106cf4b181b82b95c298f27a5b2d8d6efbd09d2": [
     "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
   ],
+  "5865fa4b645858c14437f1a31848274e6d995e02": [
+    "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
+  ],
   "bea1eb7d12904a4038e6f524d7e8e8fd009c669c": [
     "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
+  ],
+  "b18a63a7bc364262b41c94eb4942699e19e81455": [
+    "windows-apps-src\\launch-resume\\debug-a-background-task.md"
   ],
   "fdc0b59ade67817558c3347f0d9502bf6c487e53": [
     "windows-apps-src\\launch-resume\\debug-a-background-task.md"
@@ -3019,6 +3082,9 @@
   ],
   "d18aeb8841db433d476b4673d539c08d50c9ec68": [
     "windows-apps-src\\launch-resume\\handle-uri-activation.md"
+  ],
+  "8638da16ff2e8b52f8998b06b8a1f996201556d3": [
+    "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
   ],
   "18c2576909db462f4431d6b5a2659a7742877030": [
     "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
@@ -3078,6 +3144,9 @@
   "df3a4f57f844da1b3381505affa558c8455df03f": [
     "windows-apps-src\\launch-resume\\respond-to-system-events-with-background-tasks.md"
   ],
+  "3ea21a7b4768425732207bcd76b2f7470d3e07ff": [
+    "windows-apps-src\\launch-resume\\resume-an-app.md"
+  ],
   "2151fb224e32126f15caef1d0762d8c8998d4a7c": [
     "windows-apps-src\\launch-resume\\resume-an-app.md"
   ],
@@ -3092,6 +3161,9 @@
   ],
   "39443720dcf7954a572603a489115066c3e3e4c8": [
     "windows-apps-src\\launch-resume\\suspend-an-app.md"
+  ],
+  "f1cb301b5bedc2ce09bb8f1d25698ae3dd085871": [
+    "windows-apps-src\\launch-resume\\update-a-live-tile-from-a-background-task.md"
   ],
   "e5f61e8c984a4e8bd6c8cf9fdd7469fdb031221c": [
     "windows-apps-src\\launch-resume\\update-a-live-tile-from-a-background-task.md"
@@ -3243,6 +3315,9 @@
   "4634916fa6960c25710a03e5bf66ee2f55d8df46": [
     "windows-apps-src\\layout\\images\\nav-peertopeer-2page.png"
   ],
+  "72007d22c9494e1a9a390ad9d391ef7a1c1927c0": [
+    "windows-apps-src\\layout\\screen-sizes-and-breakpoints-for-responsive-design.md"
+  ],
   "d374585f3b238c544fa350b5a213287265e844b9": [
     "windows-apps-src\\layout\\screen-sizes-and-breakpoints-for-responsive-design.md"
   ],
@@ -3335,6 +3410,9 @@
   ],
   "89441ce6f828b659bb17dfc7c6cc98d8e18f0cf2": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
+  ],
+  "1779c72b90abdc24491febfde59cf75c0affac32": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
   "b597e6f3bf0b8baa3bc2dcb35d93e36410e452e9": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
@@ -4161,6 +4239,9 @@
   "ecf1ccbba7b55bf5715f78bb72822b83e25272df": [
     "windows-apps-src\\threading-async\\create-a-periodic-work-item.md"
   ],
+  "e8708e4e847fc4bb085418f5b0ba4be5f1651e42": [
+    "windows-apps-src\\threading-async\\index.md"
+  ],
   "b34d9448dbe2707cb715e47eac11dfe64f74b5dc": [
     "windows-apps-src\\threading-async\\index.md"
   ],
@@ -4182,8 +4263,14 @@
   "9db6d19a99b674b60e32902448f3ca7a7add32d3": [
     "windows-apps-src\\TOC.md"
   ],
+  "00dee3becd8f84a4f80c8a1c32fe33de36608a5b": [
+    "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-cpp.md"
+  ],
   "35087243690e8b7bf5a0e8692a96404229528954": [
     "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-cpp.md"
+  ],
+  "fe18c8200e4bcdc3420ee4f6d279839ef20963e6": [
+    "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-csharp-and-visual-basic.md"
   ],
   "683bc282c17e5658b0c3c713342aa7199b14248f": [
     "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-csharp-and-visual-basic.md"
@@ -4191,11 +4278,17 @@
   "b9064f2b3ff6eff803b82cb54cb8a39b6fe010c0": [
     "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-csharp-and-visual-basic.md"
   ],
+  "e0a63e9e79cf385ac1fedc3943db0d3791a360b5": [
+    "windows-apps-src\\winrt-components\\custom-events-and-event-accessors-in-windows-runtime-components.md"
+  ],
   "5b4535c0a9017d0577758681ae49a9efaf214cff": [
     "windows-apps-src\\winrt-components\\custom-events-and-event-accessors-in-windows-runtime-components.md"
   ],
   "d20020351a0be1954f9451a8cdaf65a832a66295": [
     "windows-apps-src\\winrt-components\\custom-events-and-event-accessors-in-windows-runtime-components.md"
+  ],
+  "2bd617ae202c357b469bbd0e41d9a396d73f4c2a": [
+    "windows-apps-src\\winrt-components\\diagnosing-windows-runtime-component-error-conditions.md"
   ],
   "375ab0622c1cbcfc1967ed6b2245133f58090092": [
     "windows-apps-src\\winrt-components\\diagnosing-windows-runtime-component-error-conditions.md"
@@ -4203,23 +4296,38 @@
   "fa9cd898c78040c304448fbb504d11bdb6af7d48": [
     "windows-apps-src\\winrt-components\\diagnosing-windows-runtime-component-error-conditions.md"
   ],
+  "1574b88a9bc4bca3d25709c073e4fb333e77cb5f": [
+    "windows-apps-src\\winrt-components\\distributing-a-managed-windows-runtime-component.md"
+  ],
   "74cddbd27bda69a6962cc1fd1eb617e8ce128546": [
     "windows-apps-src\\winrt-components\\distributing-a-managed-windows-runtime-component.md"
   ],
   "15c1eedaf8ebe50c36c99f58f25ec8bbabd26851": [
     "windows-apps-src\\winrt-components\\distributing-a-managed-windows-runtime-component.md"
   ],
+  "02160ebbfade7cabebb40e3450548320a2cf0264": [
+    "windows-apps-src\\winrt-components\\index.md"
+  ],
   "51a376b1ec7224fcaa2115099bbe99353bfaa2de": [
     "windows-apps-src\\winrt-components\\index.md"
   ],
+  "2a813f157c45c1f45180589e63ce472bea801279": [
+    "windows-apps-src\\winrt-components\\net-framework-mappings-of-windows-runtime-types.md"
+  ],
   "d002bf0c8f15145dfa4fe5a04dca8093e7659cb5": [
     "windows-apps-src\\winrt-components\\net-framework-mappings-of-windows-runtime-types.md"
+  ],
+  "156b6139e592ed62488feb8c2e0bc6d39ae2e7be": [
+    "windows-apps-src\\winrt-components\\passing-arrays-to-a-windows-runtime-component.md"
   ],
   "6275227dc8cbeb489d0317336ea4b99825e17db5": [
     "windows-apps-src\\winrt-components\\passing-arrays-to-a-windows-runtime-component.md"
   ],
   "bdafd85b165b57da511bf00bafc7dd698888a447": [
     "windows-apps-src\\winrt-components\\passing-arrays-to-a-windows-runtime-component.md"
+  ],
+  "3b57eb3d1d59f1d1aa9f6e1cb8f70789ad752d8e": [
+    "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
   ],
   "c948a4c1fc41f9883d4dbd0d9a48e03398a01e66": [
     "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
@@ -4233,8 +4341,14 @@
   "1be774c2dbb7027fefb8ca573845aee224723b20": [
     "windows-apps-src\\winrt-components\\images\\guidgeneratortool.png"
   ],
+  "be6fb5fc439de3213ef0815ea205ac51112bb202": [
+    "windows-apps-src\\winrt-components\\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md"
+  ],
   "92b4381538b434280fa07eba76444ed0027d39ac": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md"
+  ],
+  "ba83782609107aaa9dea458175d50c158ec5cd05": [
+    "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
   ],
   "728e6d26f7685be9029511c44376a48888ea95eb": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
