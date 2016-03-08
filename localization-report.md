@@ -5,13 +5,13 @@
  -------- | ----- 
  Total Files | 3463
 [ Handoff Failed Files ](#handoff-failed-list)| 1
-[ Handoff Success Files ](#handoff-success-list)| 1678
+[ Handoff Success Files ](#handoff-success-list)| 1677
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 0
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 0
-[ Ignored Files ](#ignored-list)| 1784
+[ Ignored Files ](#ignored-list)| 1785
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
  Source File | Status | Details 
@@ -1647,7 +1647,6 @@
  [windows-apps-src\security\share-certificates.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/security/share-certificates.md) | HandedOffSuccess | [Details](#29b0955543fc8e69bf21fb3f262e9f3db3ace82d3387)
  [windows-apps-src\security\smart-cards.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/security/smart-cards.md) | HandedOffSuccess | [Details](#0ea623c2590df8a58520a971415185a0969009a13388)
  [windows-apps-src\security\web-authentication-broker.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/security/web-authentication-broker.md) | HandedOffSuccess | [Details](#6577390b2dd483f17c1173be16d513c80ec6ab9f3389)
- [windows-apps-src\threading-async\asynchronous-programming-in-cpp-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md) | HandedOffSuccess | [Details](#faeff640baf522ac09d958042d3fe2f3214dd9b13390)
  [windows-apps-src\threading-async\asynchronous-programming-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/asynchronous-programming-universal-windows-platform-apps.md) | HandedOffSuccess | [Details](#2a0f4772e002479333abf6a271468269c4f46deb3391)
  [windows-apps-src\threading-async\best-practices-for-using-the-thread-pool.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/best-practices-for-using-the-thread-pool.md) | HandedOffSuccess | [Details](#c8e2abc71b1a6613d4c8aa39fdb54add746dc3893412)
  [windows-apps-src\threading-async\call-asynchronous-apis-in-csharp-or-visual-basic.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md) | HandedOffSuccess | [Details](#8d626d907c089daa2426c2905b269d6ba37f5ae63413)
@@ -3476,6 +3475,7 @@
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstartcs\cs\main.xaml.cs](https://github.com/Microsoft/windows-apps/blob/e7ac89968b0549459a946e532062555b6de8006a/windows-apps-src/networking/code/backgroundtransfer/download_quickstartcs/cs/main.xaml.cs) | Ignored | [Details](#4d2b2e0b87673696d9c7fcfb48cc309729099f303150)
  [windows-apps-src\networking\code\backgroundtransfer\upload_quickstart\js\main.js](https://github.com/Microsoft/windows-apps/blob/e7ac89968b0549459a946e532062555b6de8006a/windows-apps-src/networking/code/backgroundtransfer/upload_quickstart/js/main.js) | Ignored | [Details](#1af01b63e3a1c6178ab3c6f62ae57ea1b9fdb81e3151)
  [windows-apps-src\porting\images\ios-to-uwp\porting-your-android-or-ios-app-video-thumbnail.png](https://github.com/Microsoft/windows-apps/blob/e7ac89968b0549459a946e532062555b6de8006a/windows-apps-src/porting/images/ios-to-uwp/porting-your-android-or-ios-app-video-thumbnail.png) | Ignored | [Details](#cfee271c3f827566bb7691296cc82b7bd8ea42ae3191)
+ [windows-apps-src\threading-async\asynchronous-programming-in-cpp-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/e7ac89968b0549459a946e532062555b6de8006a/windows-apps-src/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md) | Ignored | [Details](#8e580d7698bd61babf3c2c1a068d9abc166f5e7f3390)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\App.xaml](https://github.com/Microsoft/windows-apps/blob/e7ac89968b0549459a946e532062555b6de8006a/windows-apps-src/threading-async/AsyncSnippets/csharp/App.xaml) | Ignored | [Details](#236cce255e2fb88a4730bc835da46f5e2ad881933392)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\App.xaml.cs](https://github.com/Microsoft/windows-apps/blob/e7ac89968b0549459a946e532062555b6de8006a/windows-apps-src/threading-async/AsyncSnippets/csharp/App.xaml.cs) | Ignored | [Details](#5fe4b50b0ecd38d9f54650f315434382e60ebf6c3393)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\AsyncSnippets.csproj](https://github.com/Microsoft/windows-apps/blob/e7ac89968b0549459a946e532062555b6de8006a/windows-apps-src/threading-async/AsyncSnippets/csharp/AsyncSnippets.csproj) | Ignored | [Details](#06450872e2e7fede582e023139fc3f0acb5748923394)
@@ -45231,12 +45231,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='faeff640baf522ac09d958042d3fe2f3214dd9b13390'></a> Source: [windows-apps-src\threading-async\asynchronous-programming-in-cpp-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
-* Status: HandedOffSuccess
+##### <a name='8e580d7698bd61babf3c2c1a068d9abc166f5e7f3390'></a> Source: [windows-apps-src\threading-async\asynchronous-programming-in-cpp-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/e7ac89968b0549459a946e532062555b6de8006a/windows-apps-src/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [asynchronous-programming-in-cpp-universal-windows-platform-apps.3a5e3fdfc7dbcd7b4e2876e5b5dc6c130d2ac1af.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/4e56ac0d0047914f65aa2adc55b2ee652ab870d7/ol-handoff/Microsoft/windows-apps.ja-jp/master/asynchronous-programming-in-cpp-universal-windows-platform-apps.3a5e3fdfc7dbcd7b4e2876e5b5dc6c130d2ac1af.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 20:59:28
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
