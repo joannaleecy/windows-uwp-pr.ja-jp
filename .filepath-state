@@ -4287,6 +4287,9 @@
   "fd7f039f2767ee2939ae44f6b3d88e24c9dc4e52": [
     "windows-apps-src\\security\\images\\wab-event-viewer-2.png"
   ],
+  "8e580d7698bd61babf3c2c1a068d9abc166f5e7f": [
+    "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md"
+  ],
   "faeff640baf522ac09d958042d3fe2f3214dd9b1": [
     "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md"
   ],
