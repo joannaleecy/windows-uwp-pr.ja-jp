@@ -5,13 +5,13 @@
  -------- | ----- 
  Total Files | 3463
 [ Handoff Failed Files ](#handoff-failed-list)| 1
-[ Handoff Success Files ](#handoff-success-list)| 1678
+[ Handoff Success Files ](#handoff-success-list)| 1677
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 0
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 0
-[ Ignored Files ](#ignored-list)| 1784
+[ Ignored Files ](#ignored-list)| 1785
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
  Source File | Status | Details 
@@ -1560,7 +1560,6 @@
  [windows-apps-src\publish\images\spotlight2.jpg](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/publish/images/spotlight2.jpg) | HandedOffSuccess | [Details](#578a82e5a61f5a3296d8c65a0a94099c5373ab583300)
  [windows-apps-src\publish\link-to-your-app.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/publish/link-to-your-app.md) | HandedOffSuccess | [Details](#2689b9cd7e05b3f911bef821c7763a484ffaaca63301)
  [windows-apps-src\publish\make-your-app-easier-to-promote.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/publish/make-your-app-easier-to-promote.md) | HandedOffSuccess | [Details](#a146cd95134f8549060c50c1719d20239fc24f703302)
- [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/publish/manage-account-users.md) | HandedOffSuccess | [Details](#b3fca75e2f9f532c6c0f6b258461f7ff83a2091c3303)
  [windows-apps-src\publish\manage-app-names.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/publish/manage-app-names.md) | HandedOffSuccess | [Details](#0887feb9815557b2e08a88b8b641066741b75ca43304)
  [windows-apps-src\publish\managing-your-ad-campaign.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/publish/managing-your-ad-campaign.md) | HandedOffSuccess | [Details](#03be1337963e28ddeef88e39a671e125461384623305)
  [windows-apps-src\publish\managing-your-profile.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/publish/managing-your-profile.md) | HandedOffSuccess | [Details](#90184defe421975ceec9ec17e953d5e6b3b23fe13306)
@@ -3476,6 +3475,7 @@
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstartcs\cs\main.xaml.cs](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/networking/code/backgroundtransfer/download_quickstartcs/cs/main.xaml.cs) | Ignored | [Details](#4d2b2e0b87673696d9c7fcfb48cc309729099f303150)
  [windows-apps-src\networking\code\backgroundtransfer\upload_quickstart\js\main.js](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/networking/code/backgroundtransfer/upload_quickstart/js/main.js) | Ignored | [Details](#1af01b63e3a1c6178ab3c6f62ae57ea1b9fdb81e3151)
  [windows-apps-src\porting\images\ios-to-uwp\porting-your-android-or-ios-app-video-thumbnail.png](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/porting/images/ios-to-uwp/porting-your-android-or-ios-app-video-thumbnail.png) | Ignored | [Details](#cfee271c3f827566bb7691296cc82b7bd8ea42ae3191)
+ [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/publish/manage-account-users.md) | Ignored | [Details](#278cec7f2c0f1fb4da978043dbc468fb022530283303)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\App.xaml](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/threading-async/AsyncSnippets/csharp/App.xaml) | Ignored | [Details](#236cce255e2fb88a4730bc835da46f5e2ad881933392)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\App.xaml.cs](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/threading-async/AsyncSnippets/csharp/App.xaml.cs) | Ignored | [Details](#5fe4b50b0ecd38d9f54650f315434382e60ebf6c3393)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\AsyncSnippets.csproj](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/threading-async/AsyncSnippets/csharp/AsyncSnippets.csproj) | Ignored | [Details](#06450872e2e7fede582e023139fc3f0acb5748923394)
@@ -44157,12 +44157,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='b3fca75e2f9f532c6c0f6b258461f7ff83a2091c3303'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/publish/manage-account-users.md)
-* Status: HandedOffSuccess
+##### <a name='278cec7f2c0f1fb4da978043dbc468fb022530283303'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/publish/manage-account-users.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
