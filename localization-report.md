@@ -5,13 +5,13 @@
  -------- | ----- 
  Total Files | 3463
 [ Handoff Failed Files ](#handoff-failed-list)| 0
-[ Handoff Success Files ](#handoff-success-list)| 1679
+[ Handoff Success Files ](#handoff-success-list)| 1673
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 0
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 0
-[ Ignored Files ](#ignored-list)| 1784
+[ Ignored Files ](#ignored-list)| 1790
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
 
@@ -1377,18 +1377,12 @@
  [windows-apps-src\maps-and-location\overlay-tiled-images.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/maps-and-location/overlay-tiled-images.md) | HandedOffSuccess | [Details](#3de7730bff85afc22135c0ecca95c62cc9b7e8fa3114)
  [windows-apps-src\maps-and-location\routes-and-directions.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/maps-and-location/routes-and-directions.md) | HandedOffSuccess | [Details](#cdf3d761e0e47b039fe48ad35f3c5da9fa12b5603115)
  [windows-apps-src\maps-and-location\set-up-a-geofence.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/maps-and-location/set-up-a-geofence.md) | HandedOffSuccess | [Details](#89441ce6f828b659bb17dfc7c6cc98d8e18f0cf23116)
- [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/88c71f0df5e7f89923cc717d90a6998d98fc4b03/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | HandedOffSuccess | [Details](#1779c72b90abdc24491febfde59cf75c0affac323117)
  [windows-apps-src\monetize\add-ads-to-apps-with-microsoft-advertising.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/add-ads-to-apps-with-microsoft-advertising.md) | HandedOffSuccess | [Details](#46caa280af512498dea823200678398b15e8cb423118)
  [windows-apps-src\monetize\add-and-use-the-ad-mediator-control.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/add-and-use-the-ad-mediator-control.md) | HandedOffSuccess | [Details](#e7180817e9a4a4d18722f746a8d260bf9d459fa53119)
  [windows-apps-src\monetize\enable-consumable-in-app-product-purchases.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/enable-consumable-in-app-product-purchases.md) | HandedOffSuccess | [Details](#3a2875a75f0af3ae843206c5c4fa3982ec8dc0063120)
  [windows-apps-src\monetize\enable-in-app-product-purchases.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/enable-in-app-product-purchases.md) | HandedOffSuccess | [Details](#7ff7b13cdf97f738e9fdac7cd3c7664e574d5fd03121)
  [windows-apps-src\monetize\exclude-or-limit-features-in-a-trial-version-of-your-app.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md) | HandedOffSuccess | [Details](#957574aa3996dec36380972dd93dbc7a0715fff63122)
- [windows-apps-src\monetize\get-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/get-app-acquisitions.md) | HandedOffSuccess | [Details](#6d99b3b5007a0f0e4ffed6986997ad8b8a359f133123)
  [windows-apps-src\monetize\get-app-failures.md](https://github.com/Microsoft/windows-apps/blob/e7ac89968b0549459a946e532062555b6de8006a/windows-apps-src/monetize/get-app-failures.md) | HandedOffSuccess | [Details](#6feae624441c686128bb5af6b8980435f1e6f7c43124)
- [windows-apps-src\monetize\get-app-ratings.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/get-app-ratings.md) | HandedOffSuccess | [Details](#22ce9e238d2f254a7d317e3718a0e79973ccf7de3125)
- [windows-apps-src\monetize\get-app-reviews.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/get-app-reviews.md) | HandedOffSuccess | [Details](#be47fc07fb671dd1683e6adf6a5c028a807a5ae43126)
- [windows-apps-src\monetize\get-error-reporting-data.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/get-error-reporting-data.md) | HandedOffSuccess | [Details](#43d0f14ded2af3a7182629496ef1f65faf3fe80d3127)
- [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/get-in-app-acquisitions.md) | HandedOffSuccess | [Details](#f0b6b537845b9460d55e435acd2dd34d69a1a8a53128)
  [windows-apps-src\monetize\grant-free-products.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/grant-free-products.md) | HandedOffSuccess | [Details](#fba2083caea35db71705db4181331131d3a99d883129)
  [windows-apps-src\monetize\images\ad-med-4.png](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/images/ad-med-4.png) | HandedOffSuccess | [Details](#b022a06eb8384a024302c72a9ea5c27b4cf2e7e13130)
  [windows-apps-src\monetize\images\ad-med-6.jpg](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/images/ad-med-6.jpg) | HandedOffSuccess | [Details](#8b1d375c6336d47083d49c6d1d2c7ba0b947534b3131)
@@ -3469,6 +3463,12 @@
  [windows-apps-src\maps-and-location\images\mapctrl-simplemap.png](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/maps-and-location/images/mapctrl-simplemap.png) | Ignored | [Details](#a1d695579d800a8b325baf0056651e7f3b4af7133100)
  [windows-apps-src\maps-and-location\images\mapsinmapcontrolbasicmsdn-730width.png](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/maps-and-location/images/mapsinmapcontrolbasicmsdn-730width.png) | Ignored | [Details](#83e8316c73dbba7b2eb74c46165f0ff9f6a305cb3102)
  [windows-apps-src\maps-and-location\images\win10fa\controls-maps-3dstreetview.jpg](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/maps-and-location/images/win10fa/controls-maps-3dstreetview.jpg) | Ignored | [Details](#48ebaeb1e7558d01b60a65ceb880bca32266242a3106)
+ [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | Ignored | [Details](#b9cae850d6b704867a7f014d4869170d594ee4013117)
+ [windows-apps-src\monetize\get-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-app-acquisitions.md) | Ignored | [Details](#0f58ac6c2f357aca1075dbbec8056bb8c79e24203123)
+ [windows-apps-src\monetize\get-app-ratings.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-app-ratings.md) | Ignored | [Details](#e9631d2c0cdc0e2ba22456bf15ea5ab3e7a853263125)
+ [windows-apps-src\monetize\get-app-reviews.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-app-reviews.md) | Ignored | [Details](#64907a9548bf7f486cf51f066e0489820bc4b3383126)
+ [windows-apps-src\monetize\get-error-reporting-data.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-error-reporting-data.md) | Ignored | [Details](#6a33e7e576226e9d06f329dfee92146344f8eade3127)
+ [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-in-app-acquisitions.md) | Ignored | [Details](#d17a1c52b2bff678c984eda115550b263f0fc6993128)
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstart\js\main.js](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/networking/code/backgroundtransfer/download_quickstart/js/main.js) | Ignored | [Details](#639df51fbe4cbdc8364d8a4c17dc7a5e0f40f3d33148)
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstartcs\cs\main.cs](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/networking/code/backgroundtransfer/download_quickstartcs/cs/main.cs) | Ignored | [Details](#d2f1964af629846416bee9445f7c564660fd72ff3149)
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstartcs\cs\main.xaml.cs](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/networking/code/backgroundtransfer/download_quickstartcs/cs/main.xaml.cs) | Ignored | [Details](#4d2b2e0b87673696d9c7fcfb48cc309729099f303150)
@@ -41854,12 +41854,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='1779c72b90abdc24491febfde59cf75c0affac323117'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/88c71f0df5e7f89923cc717d90a6998d98fc4b03/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
-* Status: HandedOffSuccess
+##### <a name='b9cae850d6b704867a7f014d4869170d594ee4013117'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/44d7317e76dccec80b6d5456cb4513f0affca691/ol-handoff/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
-* Handoff Datetime: 2016-03-07 17:29:36
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -41926,12 +41926,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='6d99b3b5007a0f0e4ffed6986997ad8b8a359f133123'></a> Source: [windows-apps-src\monetize\get-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/get-app-acquisitions.md)
-* Status: HandedOffSuccess
+##### <a name='0f58ac6c2f357aca1075dbbec8056bb8c79e24203123'></a> Source: [windows-apps-src\monetize\get-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-app-acquisitions.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/4e56ac0d0047914f65aa2adc55b2ee652ab870d7/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 20:59:28
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -41950,48 +41950,48 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='22ce9e238d2f254a7d317e3718a0e79973ccf7de3125'></a> Source: [windows-apps-src\monetize\get-app-ratings.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/get-app-ratings.md)
-* Status: HandedOffSuccess
+##### <a name='e9631d2c0cdc0e2ba22456bf15ea5ab3e7a853263125'></a> Source: [windows-apps-src\monetize\get-app-ratings.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-app-ratings.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [get-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/4e56ac0d0047914f65aa2adc55b2ee652ab870d7/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 20:59:28
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='be47fc07fb671dd1683e6adf6a5c028a807a5ae43126'></a> Source: [windows-apps-src\monetize\get-app-reviews.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/get-app-reviews.md)
-* Status: HandedOffSuccess
+##### <a name='64907a9548bf7f486cf51f066e0489820bc4b3383126'></a> Source: [windows-apps-src\monetize\get-app-reviews.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-app-reviews.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [get-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/4e56ac0d0047914f65aa2adc55b2ee652ab870d7/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 20:59:28
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='43d0f14ded2af3a7182629496ef1f65faf3fe80d3127'></a> Source: [windows-apps-src\monetize\get-error-reporting-data.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/get-error-reporting-data.md)
-* Status: HandedOffSuccess
+##### <a name='6a33e7e576226e9d06f329dfee92146344f8eade3127'></a> Source: [windows-apps-src\monetize\get-error-reporting-data.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-error-reporting-data.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [get-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='f0b6b537845b9460d55e435acd2dd34d69a1a8a53128'></a> Source: [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/get-in-app-acquisitions.md)
-* Status: HandedOffSuccess
+##### <a name='d17a1c52b2bff678c984eda115550b263f0fc6993128'></a> Source: [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/c5d97b212e8ae099cb54566ab0424169b2a66ee9/windows-apps-src/monetize/get-in-app-acquisitions.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
