@@ -1047,7 +1047,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8f3ec44999f8dcc62af1bd7ee0b058db077f24ac.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8f3ec44999f8dcc62af1bd7ee0b058db077f24ac.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1060,7 +1060,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [30b9fea03833fe2fea291ff306444a0ae7a4deb2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/30b9fea03833fe2fea291ff306444a0ae7a4deb2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1073,7 +1073,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [012c9abb1b7a791fcadb117e647a8aa1178196fb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/012c9abb1b7a791fcadb117e647a8aa1178196fb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1086,7 +1086,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [36cbb2fff3435f2f156cb360896b00aa1d6afa6b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/36cbb2fff3435f2f156cb360896b00aa1d6afa6b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1099,7 +1099,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [43e167d23fb544e06270d3cbf6b19077fb5d12e4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/43e167d23fb544e06270d3cbf6b19077fb5d12e4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1112,7 +1112,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e5c56f225eaef4a55b0aa77704873d8cbbd8ffa9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e5c56f225eaef4a55b0aa77704873d8cbbd8ffa9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1125,7 +1125,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cf749e20a6350f02f7ee9e37b01ae0bd48a78ffc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cf749e20a6350f02f7ee9e37b01ae0bd48a78ffc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1138,7 +1138,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c75de5d18b0ce09281359ca7e84f6b6f2b0dfdb1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c75de5d18b0ce09281359ca7e84f6b6f2b0dfdb1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1151,7 +1151,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [472a53e7432686fd2d1afa6cd0cad6de2ea7d81c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/472a53e7432686fd2d1afa6cd0cad6de2ea7d81c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1164,7 +1164,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d4995c7c3aea5045bb9da1870774fe80bb64cf96.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d4995c7c3aea5045bb9da1870774fe80bb64cf96.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1177,7 +1177,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0464adcc52453321ca70c2b962c42a432ae7f5b2.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0464adcc52453321ca70c2b962c42a432ae7f5b2.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1190,7 +1190,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1203,7 +1203,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1216,7 +1216,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [707f5fe1b594055da518870a0e688d51a164e1ca.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/707f5fe1b594055da518870a0e688d51a164e1ca.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1229,7 +1229,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [006d7dc0b7c3643582c0cd9093af223b64f94f72.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/006d7dc0b7c3643582c0cd9093af223b64f94f72.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1242,7 +1242,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4c218ef18663c8fa651fa879537af2cf0ac12ac5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4c218ef18663c8fa651fa879537af2cf0ac12ac5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1255,7 +1255,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e19e823b0ed906af1996464c7b1d4419269a55a9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e19e823b0ed906af1996464c7b1d4419269a55a9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1268,7 +1268,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3c67e901980cb3c730f441ffa5f49cfbf7361a53.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3c67e901980cb3c730f441ffa5f49cfbf7361a53.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1281,7 +1281,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ae0fe1b64320d5ab7a9d0a8655b60ef2a8ab3837.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ae0fe1b64320d5ab7a9d0a8655b60ef2a8ab3837.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1294,7 +1294,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [28df882bccc6a40ba545efbf47c2be0758b8c799.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/28df882bccc6a40ba545efbf47c2be0758b8c799.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1307,7 +1307,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2b4b4af25079612d76ed199c2e34e4f08a7ca370.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2b4b4af25079612d76ed199c2e34e4f08a7ca370.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1320,7 +1320,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b00666b7436ae4dca9c7415e795c17ed8aaebc57.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b00666b7436ae4dca9c7415e795c17ed8aaebc57.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1333,7 +1333,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f39cace3008fa84b7ab6436af105e7ba9b9237f7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f39cace3008fa84b7ab6436af105e7ba9b9237f7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1346,7 +1346,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [58db71a4cbddc48d4eb423e96299edbc9bd227b3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/58db71a4cbddc48d4eb423e96299edbc9bd227b3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1359,7 +1359,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6569de8ed7ef24e986714eb18b29a9cdb5db904b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6569de8ed7ef24e986714eb18b29a9cdb5db904b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1372,7 +1372,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [08839f3ecbeb0df39b75c3243504835d7f4605d0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/08839f3ecbeb0df39b75c3243504835d7f4605d0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1385,7 +1385,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4b51c6cee8a1625978244c2659ff21d4cd701210.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4b51c6cee8a1625978244c2659ff21d4cd701210.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1398,7 +1398,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dd77db7d8091ea8940eefd614c17a75ea142c8bf.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dd77db7d8091ea8940eefd614c17a75ea142c8bf.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1411,7 +1411,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9c24cb9f8f4599a91a36d45a78a535da39f537fb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9c24cb9f8f4599a91a36d45a78a535da39f537fb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1424,7 +1424,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [233f35074ed9bd6771073f80e752d1beb5f52d75.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/233f35074ed9bd6771073f80e752d1beb5f52d75.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1437,7 +1437,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [883f0a431b612cc216d8c510dbc39d5f032b9307.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/883f0a431b612cc216d8c510dbc39d5f032b9307.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1450,7 +1450,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [87584b713615ae0e5dec194af6fcd37014bfe967.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/87584b713615ae0e5dec194af6fcd37014bfe967.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1463,7 +1463,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [928ce529d1100081ffda1d8623ec71d624782cf0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/928ce529d1100081ffda1d8623ec71d624782cf0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1476,7 +1476,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c16c3f29a233052eabe7caf6445447a358d3a42a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c16c3f29a233052eabe7caf6445447a358d3a42a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1489,7 +1489,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a9bccffe70433c6593ff8645e9bb71a9631db904.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a9bccffe70433c6593ff8645e9bb71a9631db904.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1502,7 +1502,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6f705c82384e3ed7222291da1996cc8125dbdf71.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6f705c82384e3ed7222291da1996cc8125dbdf71.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1515,7 +1515,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0adb247bb5f9bcae8ec2c9e44b3d067dc2b799de.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0adb247bb5f9bcae8ec2c9e44b3d067dc2b799de.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1528,7 +1528,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ae4bf086749a3bda2372ea598418bea53f8e05da.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ae4bf086749a3bda2372ea598418bea53f8e05da.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1541,7 +1541,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d3c02271b9b6f4fe0c246fd5165bb4f00dfde96b.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d3c02271b9b6f4fe0c246fd5165bb4f00dfde96b.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1554,7 +1554,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [18eb73f452ef737b449a3178e66c26aa08736f4c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/18eb73f452ef737b449a3178e66c26aa08736f4c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1567,7 +1567,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [de94df71fbaec6f9377ac9dd32ecce391271ed19.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/de94df71fbaec6f9377ac9dd32ecce391271ed19.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1580,7 +1580,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a2ddc10f63ec6cb348519cbbe92f2ed8193ed470.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a2ddc10f63ec6cb348519cbbe92f2ed8193ed470.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1593,7 +1593,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [28323494e461a0d51a5ba9ccf8e2ea4ab5187bd9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/28323494e461a0d51a5ba9ccf8e2ea4ab5187bd9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1606,7 +1606,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [902bcb734ab00f36182bbaa93ccb0cdc3070b624.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/902bcb734ab00f36182bbaa93ccb0cdc3070b624.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1619,7 +1619,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c51973d70d340ee531ec33596a6b6f50c658b891.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c51973d70d340ee531ec33596a6b6f50c658b891.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1632,7 +1632,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e49635b77b385480933c49630edeea1b81d9bd30.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e49635b77b385480933c49630edeea1b81d9bd30.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1645,7 +1645,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3c91d61a7aac406b5e173763e5391ed96e497240.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3c91d61a7aac406b5e173763e5391ed96e497240.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1658,7 +1658,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [137714b83057ccc3129f9850edb40fece310ec8d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/137714b83057ccc3129f9850edb40fece310ec8d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1671,7 +1671,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [29fe67b31abf5dc866bd223f93e638c8136bece0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/29fe67b31abf5dc866bd223f93e638c8136bece0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1684,7 +1684,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5ea07b4c7f37599b6b880249646fea81b579c576.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5ea07b4c7f37599b6b880249646fea81b579c576.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1697,7 +1697,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [195baab2f03828ed96911c3e5970306a4204740e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/195baab2f03828ed96911c3e5970306a4204740e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1710,7 +1710,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d92d906e17b7da8280f9af50c2f987414d36adc7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d92d906e17b7da8280f9af50c2f987414d36adc7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1723,7 +1723,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d9268d9283c885c837fb498c1481b997299bf8b1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d9268d9283c885c837fb498c1481b997299bf8b1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1736,7 +1736,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8c7a4dbcdb4e254ff0db7200b5775ba7ccad4c5b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8c7a4dbcdb4e254ff0db7200b5775ba7ccad4c5b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1749,7 +1749,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [903431f01a3590ef3eae05b581663e4283eb25f2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/903431f01a3590ef3eae05b581663e4283eb25f2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1762,7 +1762,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f4f12373021461c3c03a28f7802c31a50f5390d8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f4f12373021461c3c03a28f7802c31a50f5390d8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1775,7 +1775,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8f1fc7c00968cf850970311af7e0cc6ab42e010a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8f1fc7c00968cf850970311af7e0cc6ab42e010a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1788,7 +1788,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3690692e5d62f2b62c6a92c9c517e8c6017a43ba.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3690692e5d62f2b62c6a92c9c517e8c6017a43ba.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1801,7 +1801,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ffcdb32286102325db363a8c3ea3009c6e701d14.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ffcdb32286102325db363a8c3ea3009c6e701d14.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1814,7 +1814,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8989e0d0afdc36fffe85a1c3bf304b9d6b8315d1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8989e0d0afdc36fffe85a1c3bf304b9d6b8315d1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1827,7 +1827,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [36cbb2fff3435f2f156cb360896b00aa1d6afa6b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/36cbb2fff3435f2f156cb360896b00aa1d6afa6b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1840,7 +1840,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e5c56f225eaef4a55b0aa77704873d8cbbd8ffa9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e5c56f225eaef4a55b0aa77704873d8cbbd8ffa9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1853,7 +1853,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cf749e20a6350f02f7ee9e37b01ae0bd48a78ffc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cf749e20a6350f02f7ee9e37b01ae0bd48a78ffc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1866,7 +1866,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d38030c573c186ac9744ed51e7e479725a2bd7ad.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d38030c573c186ac9744ed51e7e479725a2bd7ad.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1879,7 +1879,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f6bb930b466c7c682b4f611b40d717425f8bd7b2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f6bb930b466c7c682b4f611b40d717425f8bd7b2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1892,7 +1892,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6660bc2a2d49993ce76c6ca521e12b7f20c7eaf1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6660bc2a2d49993ce76c6ca521e12b7f20c7eaf1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1905,7 +1905,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [46c0ac20ed7e4c502d013e1e2e29299c5c06011d.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/46c0ac20ed7e4c502d013e1e2e29299c5c06011d.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1918,7 +1918,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c4395246f827b73f45ffef678378801c9ff16a07.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c4395246f827b73f45ffef678378801c9ff16a07.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1931,7 +1931,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [68f7082c7b0abba624a51d21b56c5face491d3ab.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/68f7082c7b0abba624a51d21b56c5face491d3ab.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1944,7 +1944,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7cb16638c87c414a5dc416b28d2e2a469c877c5a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7cb16638c87c414a5dc416b28d2e2a469c877c5a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1957,7 +1957,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d7dd9ae16d37cddd1b48f907f14d30a22997721c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d7dd9ae16d37cddd1b48f907f14d30a22997721c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1970,7 +1970,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [31c6566d5691c05ef7f199c581405ef2ddebc208.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/31c6566d5691c05ef7f199c581405ef2ddebc208.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1983,7 +1983,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bf349f4522b8fdac5e2e368737d53d088c9aba15.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bf349f4522b8fdac5e2e368737d53d088c9aba15.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1996,7 +1996,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [11c786c444ae927b28b9c5e84a50ec83d4d9399d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/11c786c444ae927b28b9c5e84a50ec83d4d9399d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2009,7 +2009,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8edd445a5bc466690f9c4dcc77f0ea972176f722.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8edd445a5bc466690f9c4dcc77f0ea972176f722.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2022,7 +2022,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5acfd48475698706e6e6cea05c4995e1538ade93.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5acfd48475698706e6e6cea05c4995e1538ade93.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2035,7 +2035,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b2462cec949803afe3e75367e5bc5069a5789f19.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b2462cec949803afe3e75367e5bc5069a5789f19.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2048,7 +2048,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [759f535279be4548074fc8542ab71ded411199c8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/759f535279be4548074fc8542ab71ded411199c8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2061,7 +2061,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fb43c2c45bbb3c6bb8bb0a6cdfd616ea488cfc39.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fb43c2c45bbb3c6bb8bb0a6cdfd616ea488cfc39.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2074,7 +2074,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [33b865fc105ecc3e91b599986a845ff6c4a0adbf.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/33b865fc105ecc3e91b599986a845ff6c4a0adbf.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2087,7 +2087,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [eac25da5a357f7c02f373448dcaa506a701f5eae.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/eac25da5a357f7c02f373448dcaa506a701f5eae.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2100,7 +2100,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2dff137a6487155e415e7928654aa73275e119ef.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2dff137a6487155e415e7928654aa73275e119ef.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2113,7 +2113,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [941fb3b94343f698315b4c70b7bee7e3dcea85e6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/941fb3b94343f698315b4c70b7bee7e3dcea85e6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2126,7 +2126,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2293fe3f33424ab5313948286e66ce9898ee6bb0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2293fe3f33424ab5313948286e66ce9898ee6bb0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2139,7 +2139,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [697ad37cb5f07ce5e0894cdba08af7c948250d7d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/697ad37cb5f07ce5e0894cdba08af7c948250d7d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2152,7 +2152,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [75d95b012e76f4115917798a0fbe6afaadc2bc8b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/75d95b012e76f4115917798a0fbe6afaadc2bc8b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2165,7 +2165,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [810f31215966858b6917f992abcf746a209b7e34.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/810f31215966858b6917f992abcf746a209b7e34.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2178,7 +2178,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ee8d3f91dd99bf73c1158f98208cb82f2985b087.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ee8d3f91dd99bf73c1158f98208cb82f2985b087.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2191,7 +2191,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2c36a99f74433c5f58c0f0606994bc1bec45f423.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2c36a99f74433c5f58c0f0606994bc1bec45f423.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2204,7 +2204,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4856adb30961f87f4681f0edc8bc08ff2293bbcc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4856adb30961f87f4681f0edc8bc08ff2293bbcc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2217,7 +2217,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7d7904581064e8f0aaa309e8dd3deb95cc03ed27.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7d7904581064e8f0aaa309e8dd3deb95cc03ed27.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2230,7 +2230,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f8f44b2f34b14981836b377145f3cfd6d602e324.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f8f44b2f34b14981836b377145f3cfd6d602e324.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2243,7 +2243,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [feebabc7a20c3ea44a46cbe162e63893d34fd3d2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/feebabc7a20c3ea44a46cbe162e63893d34fd3d2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2256,7 +2256,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5345b176ced4a6cd47fdece2f5b48a4cc28e6b91.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5345b176ced4a6cd47fdece2f5b48a4cc28e6b91.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2269,7 +2269,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ff46ca577813470dbce21679d91b017db41de605.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ff46ca577813470dbce21679d91b017db41de605.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2282,7 +2282,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a99290dd9b5a1be0c918149bf3c05474f019ab04.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a99290dd9b5a1be0c918149bf3c05474f019ab04.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2295,7 +2295,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [60282027d60cb6828472d99403614069b981ba2b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/60282027d60cb6828472d99403614069b981ba2b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2308,7 +2308,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a173107c35f3e7f37198a69d3372b4455408e6c9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a173107c35f3e7f37198a69d3372b4455408e6c9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2321,7 +2321,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1efc79d042ffa0d8e4c7220e1515a50208f532d9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1efc79d042ffa0d8e4c7220e1515a50208f532d9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2334,7 +2334,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0b14184f7c6dc61ba171dcdef9965c249790f3a3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0b14184f7c6dc61ba171dcdef9965c249790f3a3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2347,7 +2347,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f6bb930b466c7c682b4f611b40d717425f8bd7b2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f6bb930b466c7c682b4f611b40d717425f8bd7b2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2360,7 +2360,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f6bb930b466c7c682b4f611b40d717425f8bd7b2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f6bb930b466c7c682b4f611b40d717425f8bd7b2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2373,7 +2373,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6660bc2a2d49993ce76c6ca521e12b7f20c7eaf1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6660bc2a2d49993ce76c6ca521e12b7f20c7eaf1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2386,7 +2386,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6660bc2a2d49993ce76c6ca521e12b7f20c7eaf1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6660bc2a2d49993ce76c6ca521e12b7f20c7eaf1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2399,7 +2399,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a3d89da2efe2d4e859d7e84051e2714e2dfa88b0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a3d89da2efe2d4e859d7e84051e2714e2dfa88b0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2412,7 +2412,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6fcf7fffef5a8e979fdc288cb23bde8f3eb5e57b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6fcf7fffef5a8e979fdc288cb23bde8f3eb5e57b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2425,7 +2425,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b9bf9e731ed97a62742b08a4cf38a412bdb9e8cc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b9bf9e731ed97a62742b08a4cf38a412bdb9e8cc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2438,7 +2438,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7752da2aefa31dd55f3652c6bc999fac46045775.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7752da2aefa31dd55f3652c6bc999fac46045775.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2451,7 +2451,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d2e9cf2945d36735fef5fdf6b9592dc4f79ba2a3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d2e9cf2945d36735fef5fdf6b9592dc4f79ba2a3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2464,7 +2464,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0aaefd02ae1a5918a9398574fd08b80818dad231.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0aaefd02ae1a5918a9398574fd08b80818dad231.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2477,7 +2477,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [644913e4297a134433f4a36cd0b249a7988af3da.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/644913e4297a134433f4a36cd0b249a7988af3da.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2490,7 +2490,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3fd76e14a9abfcf3e5e68e03d24c3d94a9878681.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3fd76e14a9abfcf3e5e68e03d24c3d94a9878681.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2503,7 +2503,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c385b1fe8b683290e57f18cb63161188849780ff.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c385b1fe8b683290e57f18cb63161188849780ff.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2516,7 +2516,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b62c9527ee29844fd44c003d1af8562c8973ae8d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b62c9527ee29844fd44c003d1af8562c8973ae8d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2529,7 +2529,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2872a6e0f8567a5061d787aa3b2731617ec84bb2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2872a6e0f8567a5061d787aa3b2731617ec84bb2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2542,7 +2542,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [09cac7624e00c1fa9c34c42e6a61dc496d77dad6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/09cac7624e00c1fa9c34c42e6a61dc496d77dad6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2555,7 +2555,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a2adc87a08462b1dd1905465803cafa5c04f703c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a2adc87a08462b1dd1905465803cafa5c04f703c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2568,7 +2568,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3cb1ff5a71a3ec88df204a96bf2281c086887a80.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3cb1ff5a71a3ec88df204a96bf2281c086887a80.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2581,7 +2581,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ad95dfb62cac86d27908edc7c92cbb8c0d198b73.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ad95dfb62cac86d27908edc7c92cbb8c0d198b73.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2594,7 +2594,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6459f21eef0cc9efd019cbcf14fd7fed0d17530c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6459f21eef0cc9efd019cbcf14fd7fed0d17530c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2607,7 +2607,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7bb650959749f8ab21d9a6f1a886167966c88d26.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7bb650959749f8ab21d9a6f1a886167966c88d26.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2620,7 +2620,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [595c8065e83d87160d1e536aae1bb2e48a80f963.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/595c8065e83d87160d1e536aae1bb2e48a80f963.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2633,7 +2633,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [47a3acf7e5a4726d8b4f4b8b9bb1591c7b2968db.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/47a3acf7e5a4726d8b4f4b8b9bb1591c7b2968db.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2646,7 +2646,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6a126185eb5c2ef3f14d1b61d88daef1094a5677.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6a126185eb5c2ef3f14d1b61d88daef1094a5677.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2659,7 +2659,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5eeeda4eded394a2a621ad29bb7b1453278c8b3c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5eeeda4eded394a2a621ad29bb7b1453278c8b3c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2672,7 +2672,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f024c70b836f447d5a9cfd6be4083b7b80289686.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f024c70b836f447d5a9cfd6be4083b7b80289686.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2685,7 +2685,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9c8c5b6dabc26b688d57e764e40389c5432f07ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9c8c5b6dabc26b688d57e764e40389c5432f07ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2698,7 +2698,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d68719d1d1f9705a32ba0dfa1de52df71029c13b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d68719d1d1f9705a32ba0dfa1de52df71029c13b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2711,7 +2711,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [51c868652da2f06bcc896b2c69878571fc54bacc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/51c868652da2f06bcc896b2c69878571fc54bacc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2724,7 +2724,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9218d1f6b39c90859bbc42b5203709a1c94edb01.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9218d1f6b39c90859bbc42b5203709a1c94edb01.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2737,7 +2737,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [08fa6136e6b101202673b3200eeb350dd85b83b3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/08fa6136e6b101202673b3200eeb350dd85b83b3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2750,7 +2750,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [98a75f624077d4f0787d9f7d819fbffa563c1582.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/98a75f624077d4f0787d9f7d819fbffa563c1582.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2763,7 +2763,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [84b708b9cf2d5b043edcdfe102cea5d2217e78d3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/84b708b9cf2d5b043edcdfe102cea5d2217e78d3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2776,7 +2776,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f3f55fda3e308eb9f67a0baabd7abe3b4f2aed0d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f3f55fda3e308eb9f67a0baabd7abe3b4f2aed0d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2789,7 +2789,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dd18267381bbba51fda0097bd7c39cc4e303c984.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dd18267381bbba51fda0097bd7c39cc4e303c984.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2802,7 +2802,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [60e03a10852fc10a211918003753ae928f778f85.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/60e03a10852fc10a211918003753ae928f778f85.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2815,7 +2815,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [28dacd0d750f38d37d23491905138b72930f283b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/28dacd0d750f38d37d23491905138b72930f283b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2828,7 +2828,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [211f3c58b77b72a29ca607c313ff83ae029d4685.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/211f3c58b77b72a29ca607c313ff83ae029d4685.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2841,7 +2841,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a881b6c22ccb0c762a629314d35316b29be272ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a881b6c22ccb0c762a629314d35316b29be272ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2854,7 +2854,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [717000533b9ba8abb574c68c3c84d6b8648fbf36.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/717000533b9ba8abb574c68c3c84d6b8648fbf36.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2867,7 +2867,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [73fa931b8d3d139bb57a352cb35e3964d65702de.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/73fa931b8d3d139bb57a352cb35e3964d65702de.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2880,7 +2880,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e2adcabe4787c4269a1f8ceed6985b11e7df5e5d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2adcabe4787c4269a1f8ceed6985b11e7df5e5d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2893,7 +2893,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2aa8d4d89dbf9514eb8bf2df56a6e5f5cf4b45dc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2aa8d4d89dbf9514eb8bf2df56a6e5f5cf4b45dc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2906,7 +2906,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5149f3092fb31f2c21b3447389aa46dab8f196b7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5149f3092fb31f2c21b3447389aa46dab8f196b7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2919,7 +2919,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e78c7853f0bc068e685e2f1ab80d67c689564aa8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e78c7853f0bc068e685e2f1ab80d67c689564aa8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2932,7 +2932,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a66027f673849d2dbcfa2c2d725ad665ba01026b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a66027f673849d2dbcfa2c2d725ad665ba01026b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2945,7 +2945,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3019038d06c63acb5523675f37a6aaad8d00879f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3019038d06c63acb5523675f37a6aaad8d00879f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2958,7 +2958,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [183b81a080510adf726ff9937f9add97e0e02dda.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/183b81a080510adf726ff9937f9add97e0e02dda.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2971,7 +2971,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c830194165007cd2957097fa671edbe1cd6eb243.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c830194165007cd2957097fa671edbe1cd6eb243.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2984,7 +2984,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6b806a557db3042c5f5b5715068a2d3e141d7f46.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6b806a557db3042c5f5b5715068a2d3e141d7f46.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2997,7 +2997,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6b806a557db3042c5f5b5715068a2d3e141d7f46.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6b806a557db3042c5f5b5715068a2d3e141d7f46.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3010,7 +3010,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8839d7df463d44222d0d25aebd280017d46f9943.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8839d7df463d44222d0d25aebd280017d46f9943.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3023,7 +3023,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8839d7df463d44222d0d25aebd280017d46f9943.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8839d7df463d44222d0d25aebd280017d46f9943.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3036,7 +3036,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1cacb05b87e32daaf16b0d4ee27743c05d21e3b3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1cacb05b87e32daaf16b0d4ee27743c05d21e3b3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3049,7 +3049,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1cacb05b87e32daaf16b0d4ee27743c05d21e3b3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1cacb05b87e32daaf16b0d4ee27743c05d21e3b3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3062,7 +3062,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [62c262f100b51b2c7712746966b8992e78f8efdc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/62c262f100b51b2c7712746966b8992e78f8efdc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3075,7 +3075,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [62c262f100b51b2c7712746966b8992e78f8efdc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/62c262f100b51b2c7712746966b8992e78f8efdc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3088,7 +3088,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [62c262f100b51b2c7712746966b8992e78f8efdc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/62c262f100b51b2c7712746966b8992e78f8efdc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3101,7 +3101,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7dc3baf69c530bc0a6273383fd89e36cb9ab5ee2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7dc3baf69c530bc0a6273383fd89e36cb9ab5ee2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3114,7 +3114,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7dc3baf69c530bc0a6273383fd89e36cb9ab5ee2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7dc3baf69c530bc0a6273383fd89e36cb9ab5ee2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3127,7 +3127,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a66027f673849d2dbcfa2c2d725ad665ba01026b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a66027f673849d2dbcfa2c2d725ad665ba01026b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3140,7 +3140,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ee88db3aad45f9b27e924a3ee352c406ed1b4bbc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ee88db3aad45f9b27e924a3ee352c406ed1b4bbc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3153,7 +3153,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ee88db3aad45f9b27e924a3ee352c406ed1b4bbc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ee88db3aad45f9b27e924a3ee352c406ed1b4bbc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3166,7 +3166,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ee88db3aad45f9b27e924a3ee352c406ed1b4bbc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ee88db3aad45f9b27e924a3ee352c406ed1b4bbc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3179,7 +3179,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9a947d1fd6bd92b717f041c3d663fb2e48fc2642.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9a947d1fd6bd92b717f041c3d663fb2e48fc2642.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3192,7 +3192,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [44dcbae0f9b80ca55f87216ebfd196097924cb71.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/44dcbae0f9b80ca55f87216ebfd196097924cb71.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3205,7 +3205,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [19b598494c9dfe7c191f3b9b2efa01e6b23c34aa.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/19b598494c9dfe7c191f3b9b2efa01e6b23c34aa.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3218,7 +3218,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [31fb9ce0b2201867cd3186358d3c8e9ca26e84b7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/31fb9ce0b2201867cd3186358d3c8e9ca26e84b7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3231,7 +3231,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fdbfc646aeaf56067f0d837030fa6893b1d6a635.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fdbfc646aeaf56067f0d837030fa6893b1d6a635.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3244,7 +3244,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [96f1cf0c02442694da4f7cbe2986d46ec6576fa3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/96f1cf0c02442694da4f7cbe2986d46ec6576fa3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3257,7 +3257,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ec3e2299eb277757cd61bdb30feaf80faf951906.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ec3e2299eb277757cd61bdb30feaf80faf951906.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3270,7 +3270,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [faa96c9f9b3fd54135f25ee98b770ed851ff570e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/faa96c9f9b3fd54135f25ee98b770ed851ff570e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3283,7 +3283,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [278d607306ef63ffb87e91b5c7b25431ff0b0e11.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/278d607306ef63ffb87e91b5c7b25431ff0b0e11.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3296,7 +3296,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [69faddbfd3e0355059b7fc6c5a777c89c91efb73.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/69faddbfd3e0355059b7fc6c5a777c89c91efb73.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3309,7 +3309,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2e7c58903a195f88104a6963080ed38883966e39.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2e7c58903a195f88104a6963080ed38883966e39.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3322,7 +3322,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9c1f15791dbcce9776ff6b44e361b23b12c4d53f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9c1f15791dbcce9776ff6b44e361b23b12c4d53f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3335,7 +3335,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4415fdb3ab8838f2f3b251947392db3de6d05232.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4415fdb3ab8838f2f3b251947392db3de6d05232.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3348,7 +3348,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6220162e55cdc7def8eb4000957b43a61b46681b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6220162e55cdc7def8eb4000957b43a61b46681b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3361,7 +3361,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [90cc7602bc9c8c3c58ca62c6b934ab9d252a5fa1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/90cc7602bc9c8c3c58ca62c6b934ab9d252a5fa1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3374,7 +3374,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [302792ef62bb237d319e9e77b30c45c641e0c14e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/302792ef62bb237d319e9e77b30c45c641e0c14e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3387,7 +3387,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [743848d76285055d9d3d374f633e5848dc17e4c4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/743848d76285055d9d3d374f633e5848dc17e4c4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3400,7 +3400,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2fdeba5c66f31f755c6ceee0a457e7dbd5229745.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2fdeba5c66f31f755c6ceee0a457e7dbd5229745.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3413,7 +3413,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5cba068996340d4f208c2600c1ab148c6080527c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5cba068996340d4f208c2600c1ab148c6080527c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3426,7 +3426,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0423e56bdf5f9152055b66d7da8c2074940516fb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0423e56bdf5f9152055b66d7da8c2074940516fb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3439,7 +3439,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [382b99522812137252f065d73cc2269c03ec3bee.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/382b99522812137252f065d73cc2269c03ec3bee.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3452,7 +3452,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [86894e13740cec1ae46b2ad289111d3b2fdcf4b5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/86894e13740cec1ae46b2ad289111d3b2fdcf4b5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3465,7 +3465,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2d4909257bb4006d3f85b7207438e36fece6e6b2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2d4909257bb4006d3f85b7207438e36fece6e6b2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3478,7 +3478,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1e465502d17a0b17da6ffe67dab514cbccd03a40.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1e465502d17a0b17da6ffe67dab514cbccd03a40.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3491,7 +3491,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [86cf56f14db4e1d1d4135eeba22fb62fb153a642.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/86cf56f14db4e1d1d4135eeba22fb62fb153a642.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3504,7 +3504,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fb1e9bd5d3a1f7bb2be2f4d1970a4dfdbe53542a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fb1e9bd5d3a1f7bb2be2f4d1970a4dfdbe53542a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3517,7 +3517,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [64b1d8c5bc8069dafbd743ecf496b14b359be912.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/64b1d8c5bc8069dafbd743ecf496b14b359be912.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3530,7 +3530,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a238376f5a1459ebf45429df97e61d027407a73d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a238376f5a1459ebf45429df97e61d027407a73d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3543,7 +3543,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [93eccba57fa7288a72b42c2d1ebc64c24dc59d9f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/93eccba57fa7288a72b42c2d1ebc64c24dc59d9f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3556,7 +3556,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7648313723ea7fb66b5b60220413f287965d8423.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7648313723ea7fb66b5b60220413f287965d8423.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3569,7 +3569,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b105dc2e651983136f645ce0fd74507b9d0fd5d0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b105dc2e651983136f645ce0fd74507b9d0fd5d0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3582,7 +3582,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8dfacafcd8701329b6b69078b9dc4d2c5e221dc7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8dfacafcd8701329b6b69078b9dc4d2c5e221dc7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3595,7 +3595,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5c23443ba19850be204f398584129c8c78b78699.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5c23443ba19850be204f398584129c8c78b78699.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3608,7 +3608,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d890fb7a73ac2c83a2314d41a31fa195acd10baa.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d890fb7a73ac2c83a2314d41a31fa195acd10baa.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3621,7 +3621,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [77daf0fe45800d3bceebaed28dbd00a02c8bf9b6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/77daf0fe45800d3bceebaed28dbd00a02c8bf9b6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3634,7 +3634,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ff4725dceb9ae6a173718b4a0c2c60f07eca9e77.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ff4725dceb9ae6a173718b4a0c2c60f07eca9e77.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3647,7 +3647,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [75f530dc4d042896cfc4c7af280c597b2d2e0cb8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/75f530dc4d042896cfc4c7af280c597b2d2e0cb8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3660,7 +3660,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fa9f80bfe07552d9a334552b4979188f26115296.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fa9f80bfe07552d9a334552b4979188f26115296.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3673,7 +3673,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [36476dd87c8e809e90583de592698c20bc70448f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/36476dd87c8e809e90583de592698c20bc70448f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3686,7 +3686,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f8cf75fd9722e892f816c75ef0f4ba22a687a9e7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f8cf75fd9722e892f816c75ef0f4ba22a687a9e7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3699,7 +3699,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8e663ea072774fdb31b09d441481edb5c7054bd0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8e663ea072774fdb31b09d441481edb5c7054bd0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3712,7 +3712,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5f02126d5fc28bf6fde08c52045cc769de1734fe.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5f02126d5fc28bf6fde08c52045cc769de1734fe.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3725,7 +3725,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d61f26679a94cfbf377a89d2d64e7ae92ea09d7e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d61f26679a94cfbf377a89d2d64e7ae92ea09d7e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3738,7 +3738,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6bc89c1009cc7b3803a521ffac9ab560e1ec84ec.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6bc89c1009cc7b3803a521ffac9ab560e1ec84ec.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3751,7 +3751,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c022a77a60ad91bba514342f34fa2d729d0c8b7b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c022a77a60ad91bba514342f34fa2d729d0c8b7b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3764,7 +3764,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9ada676d7b40691dfb5ba432d775a26bbc22990d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9ada676d7b40691dfb5ba432d775a26bbc22990d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3777,7 +3777,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8e5e929c53a5ecd7cccd04af4ddab2f3d76b4d40.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8e5e929c53a5ecd7cccd04af4ddab2f3d76b4d40.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3790,7 +3790,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1d2e88bccbbdb39c933fd89f082d3b3dc01499f5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1d2e88bccbbdb39c933fd89f082d3b3dc01499f5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3803,7 +3803,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [93ecdec22fc95257c4f168e27f3eede385d5686f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/93ecdec22fc95257c4f168e27f3eede385d5686f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3816,7 +3816,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7db1455e9eab4d295bea57338e85f8c442968b36.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7db1455e9eab4d295bea57338e85f8c442968b36.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3829,7 +3829,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [606748e07e491ec2e47fde2c7795d7ab4ad73366.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/606748e07e491ec2e47fde2c7795d7ab4ad73366.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3842,7 +3842,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b258204b63b919894f6784d91d7de261b9808dd3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b258204b63b919894f6784d91d7de261b9808dd3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3855,7 +3855,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d7b3383c96a78296f7fc380e2d67e921dc5f3f24.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d7b3383c96a78296f7fc380e2d67e921dc5f3f24.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3868,7 +3868,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5cc001b67afa08d95281016e8ef211399eaf6e7f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5cc001b67afa08d95281016e8ef211399eaf6e7f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3881,7 +3881,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1bcd12b8b190aa0adf978977841d6567f8574202.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1bcd12b8b190aa0adf978977841d6567f8574202.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3894,7 +3894,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bb1bd8a833e161a9e9b68da11308d4fac6216d10.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bb1bd8a833e161a9e9b68da11308d4fac6216d10.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3907,7 +3907,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [390d1ba020392970522ab13219cff40c6ffb1e99.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/390d1ba020392970522ab13219cff40c6ffb1e99.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3920,7 +3920,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a0b6dd9d0cbc21ec39bae02159e7c5bb48f3d604.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a0b6dd9d0cbc21ec39bae02159e7c5bb48f3d604.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3933,7 +3933,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [639d6325f95228566296eede12926014d1cda816.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/639d6325f95228566296eede12926014d1cda816.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3946,7 +3946,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1221765b135e676c0e0707cf672f0f69f5f7d33a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1221765b135e676c0e0707cf672f0f69f5f7d33a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3959,7 +3959,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [406601d8d576c27ffa894a4225e9f444a35eca92.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/406601d8d576c27ffa894a4225e9f444a35eca92.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3972,7 +3972,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [880d1d71997a2a07338624cad4a3a26cc6fb07ee.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/880d1d71997a2a07338624cad4a3a26cc6fb07ee.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3985,7 +3985,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [174727c19f3b8698d8a0ab1c0b6a16d8f1f46489.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/174727c19f3b8698d8a0ab1c0b6a16d8f1f46489.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3998,7 +3998,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [39b330b8db8e609d50b0904895b3196599ce77a4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/39b330b8db8e609d50b0904895b3196599ce77a4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4011,7 +4011,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2c835e27da1b2d12abbbc4d8f8241b58d353612f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2c835e27da1b2d12abbbc4d8f8241b58d353612f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4024,7 +4024,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6ed61ce87ade3d2cacb548540a853c616e6e1539.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6ed61ce87ade3d2cacb548540a853c616e6e1539.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4037,7 +4037,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6a855606a38c6f61dc3c32fa09882ce1e1e7bd40.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6a855606a38c6f61dc3c32fa09882ce1e1e7bd40.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4050,7 +4050,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a0d387e957e1e922b5d0dc401fcf9cc1afa8c80b.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a0d387e957e1e922b5d0dc401fcf9cc1afa8c80b.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4063,7 +4063,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4e1595572afc34a0e9a76663d4a7267a7ab253c8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4e1595572afc34a0e9a76663d4a7267a7ab253c8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4076,7 +4076,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a089b660f0d583bbf83b959daf82750558233d53.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a089b660f0d583bbf83b959daf82750558233d53.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4089,7 +4089,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8f227d01a761672de6beb30c9107502396bf2ce4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8f227d01a761672de6beb30c9107502396bf2ce4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4102,7 +4102,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [558fdc85d51e668dfb24dfa659b66970b795eac8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/558fdc85d51e668dfb24dfa659b66970b795eac8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4115,7 +4115,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ea06324c5561ed3030108a445b0496ce45046e36.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ea06324c5561ed3030108a445b0496ce45046e36.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4128,7 +4128,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [26f4eb47ae350b82d8ef26fa35659e2deeb655d3.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/26f4eb47ae350b82d8ef26fa35659e2deeb655d3.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4141,7 +4141,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2c65714704d62725a6715be48f1fd6045f067458.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2c65714704d62725a6715be48f1fd6045f067458.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4154,7 +4154,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5edc274b0508b0d9c3d107ba2c2889f9388016d5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5edc274b0508b0d9c3d107ba2c2889f9388016d5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4167,7 +4167,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e3f9889cd76ab3c8da567ee880527fc425a39442.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e3f9889cd76ab3c8da567ee880527fc425a39442.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4180,7 +4180,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [824524ceafcc1466f17bb71e6fb3835aa4e8471d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/824524ceafcc1466f17bb71e6fb3835aa4e8471d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4193,7 +4193,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e5e973c84a00773f29f2eb19be07c69110c42410.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e5e973c84a00773f29f2eb19be07c69110c42410.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4206,7 +4206,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5e2961e2250a6486644808fa88bc79275a9ea950.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5e2961e2250a6486644808fa88bc79275a9ea950.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4219,7 +4219,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6ea1f0abc94d3277b9b932f0524c276525a6275f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6ea1f0abc94d3277b9b932f0524c276525a6275f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4232,7 +4232,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1714e24ba3c2db3d269f2c2d5fe17a29247e20e6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1714e24ba3c2db3d269f2c2d5fe17a29247e20e6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4245,7 +4245,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9e1d49ddc165c752bf3b11f853bd0af33ce3e414.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9e1d49ddc165c752bf3b11f853bd0af33ce3e414.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4258,7 +4258,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c5658fd05e08951cb50a6809b3bc03cbec1bb913.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c5658fd05e08951cb50a6809b3bc03cbec1bb913.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4271,7 +4271,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [abdb784635e5d8d2175fe825cd2f6e8f308c1db7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/abdb784635e5d8d2175fe825cd2f6e8f308c1db7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4284,7 +4284,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8b1b74c62ee3f101b6a5eabaf36674149ce71f11.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8b1b74c62ee3f101b6a5eabaf36674149ce71f11.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4297,7 +4297,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f00f3f132349db263a9bf708127b3b83afd1596f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f00f3f132349db263a9bf708127b3b83afd1596f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4310,7 +4310,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [78fd1a9464ca9fcc66dfacac6403d092fc757d5c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/78fd1a9464ca9fcc66dfacac6403d092fc757d5c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4323,7 +4323,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [de324344dd07f4d36174272d38df10d930d8aea1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/de324344dd07f4d36174272d38df10d930d8aea1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4336,7 +4336,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [14402bc0cea657c4df3019f78b4cc8e4c1661d2b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/14402bc0cea657c4df3019f78b4cc8e4c1661d2b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4349,7 +4349,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3e8725ac4e4faf39f9585ecdebaffbb10a58cf96.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3e8725ac4e4faf39f9585ecdebaffbb10a58cf96.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4362,7 +4362,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2d498c5bf7f010a824e50b77effaade64e08880a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2d498c5bf7f010a824e50b77effaade64e08880a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4375,7 +4375,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f8298f75d93fe4d3b986eb466f97c893d7f052b5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f8298f75d93fe4d3b986eb466f97c893d7f052b5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4388,7 +4388,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [815af5bf9c48ad87c08b583983e030d402601823.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/815af5bf9c48ad87c08b583983e030d402601823.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4401,7 +4401,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [569bbe71899f7a4140698b689e1dd25b837c9645.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/569bbe71899f7a4140698b689e1dd25b837c9645.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4414,7 +4414,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b7cea8ce8dcb46788f193776532dc07292858c91.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b7cea8ce8dcb46788f193776532dc07292858c91.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4427,7 +4427,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [531e03a2e4f00ca67324d14aecea88f950e44b7d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/531e03a2e4f00ca67324d14aecea88f950e44b7d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4440,7 +4440,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [db854b32d1998d5ad21d438c52e1764a3b2d714b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/db854b32d1998d5ad21d438c52e1764a3b2d714b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4453,7 +4453,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a6bde25b6e04d98347538338216ca281c0c80958.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a6bde25b6e04d98347538338216ca281c0c80958.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4466,7 +4466,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [862f6ff9bd9ae45f76605adbf6369254f27dc3d1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/862f6ff9bd9ae45f76605adbf6369254f27dc3d1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4479,7 +4479,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [894c62f9a96e2db0dcc0d8dcbf88f3f36f711225.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/894c62f9a96e2db0dcc0d8dcbf88f3f36f711225.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4492,7 +4492,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [304306f9d4932c32fb51b113a0d3dc3029e73c89.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/304306f9d4932c32fb51b113a0d3dc3029e73c89.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4505,7 +4505,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1c2a76284430a046d93332f83ea98d6e3cfb7789.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1c2a76284430a046d93332f83ea98d6e3cfb7789.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4518,7 +4518,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [777b264685ef352a94c5809a1f08974f1fc2d76a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/777b264685ef352a94c5809a1f08974f1fc2d76a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4531,7 +4531,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [06e437a91bf2846bf2a4ad9fe96b0ba49446a883.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/06e437a91bf2846bf2a4ad9fe96b0ba49446a883.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4544,7 +4544,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e985394490c62ce10fd057b9450239ab61230407.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e985394490c62ce10fd057b9450239ab61230407.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4557,7 +4557,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cc1dece7375225708f1fe6482ce1f308a34efaec.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc1dece7375225708f1fe6482ce1f308a34efaec.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4570,7 +4570,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5d1ddcc444a4caef34369530f75d3531e32b5300.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5d1ddcc444a4caef34369530f75d3531e32b5300.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4583,7 +4583,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4596,7 +4596,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f65d01db3b75c229c8c1815637539be89eb079bc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f65d01db3b75c229c8c1815637539be89eb079bc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4609,7 +4609,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [58b55d427898597031425cec8cbb618f2c732715.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/58b55d427898597031425cec8cbb618f2c732715.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4622,7 +4622,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [49968f555df3a31ca08294f8ec16cc9dd1c62d8d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/49968f555df3a31ca08294f8ec16cc9dd1c62d8d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4635,7 +4635,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c82e7f3d6a299308dab376910247b3ec8c29562f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c82e7f3d6a299308dab376910247b3ec8c29562f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4648,7 +4648,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a4dd6f52fead8615d4ad20824d9b43db7557f79b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a4dd6f52fead8615d4ad20824d9b43db7557f79b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4661,7 +4661,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b488862de6b69b080bd2055803b6c6077abeea6a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b488862de6b69b080bd2055803b6c6077abeea6a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4674,7 +4674,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e13354293e742ff98bf70065d2348879346b7b63.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e13354293e742ff98bf70065d2348879346b7b63.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4687,7 +4687,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a4dd6f52fead8615d4ad20824d9b43db7557f79b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a4dd6f52fead8615d4ad20824d9b43db7557f79b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4700,7 +4700,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b488862de6b69b080bd2055803b6c6077abeea6a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b488862de6b69b080bd2055803b6c6077abeea6a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4713,7 +4713,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e13354293e742ff98bf70065d2348879346b7b63.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e13354293e742ff98bf70065d2348879346b7b63.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4726,7 +4726,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [066080da368489e1521c67d0f13c3ad1fbacdc8f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/066080da368489e1521c67d0f13c3ad1fbacdc8f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4739,7 +4739,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b59fe4f60c0847bab3263bef9157ab7017239f82.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b59fe4f60c0847bab3263bef9157ab7017239f82.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4752,7 +4752,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e4e99a32caac7ce101e0792033dfd8083d547787.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e4e99a32caac7ce101e0792033dfd8083d547787.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4765,7 +4765,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b59fe4f60c0847bab3263bef9157ab7017239f82.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b59fe4f60c0847bab3263bef9157ab7017239f82.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4778,7 +4778,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [53262be2c73dc8932bb4a4d5bfb97f144d9e6d12.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/53262be2c73dc8932bb4a4d5bfb97f144d9e6d12.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4791,7 +4791,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d841f9ca5437d4ff1f982dfc0e2cb3b607ec05f9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d841f9ca5437d4ff1f982dfc0e2cb3b607ec05f9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4804,7 +4804,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3410ae8022bbb1b98566257fe8240411834e7d77.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3410ae8022bbb1b98566257fe8240411834e7d77.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4817,7 +4817,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3410ae8022bbb1b98566257fe8240411834e7d77.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3410ae8022bbb1b98566257fe8240411834e7d77.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4830,7 +4830,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [137e9f4e71847920eaa83ff02f31d9391762817d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/137e9f4e71847920eaa83ff02f31d9391762817d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4843,7 +4843,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1c56a2720f9d6321ab3ce87fd8cd4cf88173274f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1c56a2720f9d6321ab3ce87fd8cd4cf88173274f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4856,7 +4856,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ba11b37f4fc19bd4f90d8556b410a49b12096fe1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ba11b37f4fc19bd4f90d8556b410a49b12096fe1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4869,7 +4869,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dbe808065c92da5e2e927473047a29e8bd8308bb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dbe808065c92da5e2e927473047a29e8bd8308bb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4882,7 +4882,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bf7e05bd580ba757ef733aac1e2d5743fe39d672.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bf7e05bd580ba757ef733aac1e2d5743fe39d672.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4895,7 +4895,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dcf78494dceafd14b444139c4654bec3bbad2876.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dcf78494dceafd14b444139c4654bec3bbad2876.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4908,7 +4908,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6c99c634b4c1e58f571e41863d57ff45770f45e2.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6c99c634b4c1e58f571e41863d57ff45770f45e2.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4921,7 +4921,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d65773007182584c70f112dcd5a9b375c1976464.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d65773007182584c70f112dcd5a9b375c1976464.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4934,7 +4934,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [403d3e80578d0745228c13c7f6ae41e522dff607.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/403d3e80578d0745228c13c7f6ae41e522dff607.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4947,7 +4947,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d0e39b0c0ebc8433fe25cb8755074bc60e5f6d3c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d0e39b0c0ebc8433fe25cb8755074bc60e5f6d3c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4960,7 +4960,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [15ddd990dbce3fa1e34d96a29ef700f45bd9a23a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/15ddd990dbce3fa1e34d96a29ef700f45bd9a23a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4973,7 +4973,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0b5665bcfae3e9a96859a5c1cb92fda686804ec5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0b5665bcfae3e9a96859a5c1cb92fda686804ec5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4986,7 +4986,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [616c418d06f1f082272bc60570b8f960ff47242f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/616c418d06f1f082272bc60570b8f960ff47242f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -4999,7 +4999,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [12350faf3048b52f30d54bafab392e2ece93db32.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/12350faf3048b52f30d54bafab392e2ece93db32.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5012,7 +5012,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3ae5dff13e5670c23ed3e0538115c0cb2532b870.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3ae5dff13e5670c23ed3e0538115c0cb2532b870.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5025,7 +5025,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [373f21a6853df7ef51a8a7635c9c31f55ad16f45.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/373f21a6853df7ef51a8a7635c9c31f55ad16f45.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5038,7 +5038,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [edb2a02c7ac1ad9ba9796dc4269f7fef737e1102.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/edb2a02c7ac1ad9ba9796dc4269f7fef737e1102.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5051,7 +5051,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ea15c341629553326994b43f5b98d01568cac8d4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ea15c341629553326994b43f5b98d01568cac8d4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5064,7 +5064,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c568da9d253276f5208c5d7ada6bbd3f3e852603.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c568da9d253276f5208c5d7ada6bbd3f3e852603.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5077,7 +5077,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ea15c341629553326994b43f5b98d01568cac8d4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ea15c341629553326994b43f5b98d01568cac8d4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5090,7 +5090,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8b6f50f09437547ee263925ffbf77c82bed0ba28.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8b6f50f09437547ee263925ffbf77c82bed0ba28.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5103,7 +5103,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b70da2715e0759c6cdcd5ee6cf266f55333fa700.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b70da2715e0759c6cdcd5ee6cf266f55333fa700.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5116,7 +5116,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a5242f4375e675da738982b4ff15d8941707cc7e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a5242f4375e675da738982b4ff15d8941707cc7e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5129,7 +5129,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c8568007c618e3565feea118019f0b114121fccf.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c8568007c618e3565feea118019f0b114121fccf.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5142,7 +5142,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c22e5c5af3b601342eea971853865b1a56b1138a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c22e5c5af3b601342eea971853865b1a56b1138a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5155,7 +5155,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6a3a04d584cfb96117d94ba77de67ff77c7c7b70.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6a3a04d584cfb96117d94ba77de67ff77c7c7b70.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5168,7 +5168,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5195a2a4020f230b02bb9d685317e8d1accae72d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5195a2a4020f230b02bb9d685317e8d1accae72d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5181,7 +5181,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [34816f6e0ebfd68a6b1f0159d23727504e5467cf.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/34816f6e0ebfd68a6b1f0159d23727504e5467cf.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5194,7 +5194,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [381a1928371fe88482f9ccffbd0774d64ff7fcab.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/381a1928371fe88482f9ccffbd0774d64ff7fcab.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5207,7 +5207,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b91b33daf42bc162d47f8a4a9c96d96ac86435fb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b91b33daf42bc162d47f8a4a9c96d96ac86435fb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5220,7 +5220,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1dd072054db2fbae9cbf4ac829663529ab20f732.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1dd072054db2fbae9cbf4ac829663529ab20f732.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5233,7 +5233,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [10aa6f96d8bcad8a64cf69ed6c21d04ff23158ee.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/10aa6f96d8bcad8a64cf69ed6c21d04ff23158ee.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5246,7 +5246,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [66b3e18812d0f67da0fd8af873fbf12f74fe19b2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/66b3e18812d0f67da0fd8af873fbf12f74fe19b2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5259,7 +5259,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [72cb06efcd9c9b0634803bc9d88a09aab43001cc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/72cb06efcd9c9b0634803bc9d88a09aab43001cc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5272,7 +5272,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a0ddd54e6c6a8991918115f413b1e40309cca43d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a0ddd54e6c6a8991918115f413b1e40309cca43d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5285,7 +5285,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [369f21b7ebb2f04b504a7dc3c555acb79d97e59f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/369f21b7ebb2f04b504a7dc3c555acb79d97e59f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5298,7 +5298,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [85bc75972e3455e6acead889336dd649bba5ec3d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/85bc75972e3455e6acead889336dd649bba5ec3d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5311,7 +5311,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [31a2f60b231ee2d44d5e4e9d8540b68f2a24268a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/31a2f60b231ee2d44d5e4e9d8540b68f2a24268a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5324,7 +5324,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9b318e1305bb1b0eb680fb10736f097b207ef96b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9b318e1305bb1b0eb680fb10736f097b207ef96b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5337,7 +5337,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9d78095f9fe317bcf31dc1a9714d89c18672d593.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9d78095f9fe317bcf31dc1a9714d89c18672d593.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5350,7 +5350,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d8b4171bca129428977ab0bb07d30a60e485c954.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d8b4171bca129428977ab0bb07d30a60e485c954.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5363,7 +5363,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ef71b92a357dcfd975346198e1c22298065af4c3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ef71b92a357dcfd975346198e1c22298065af4c3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5376,7 +5376,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e93c137fd8f6f913a3815553a3414ad3ffb06f7b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e93c137fd8f6f913a3815553a3414ad3ffb06f7b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5389,7 +5389,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [93e02a343f0154923983c5404abb999d6fba149a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/93e02a343f0154923983c5404abb999d6fba149a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5402,7 +5402,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [13ed1839d45c22dead56974f1130613abd11894c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/13ed1839d45c22dead56974f1130613abd11894c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5415,7 +5415,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c27c1b0fedcf4808c397f21b863a655372cb455b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c27c1b0fedcf4808c397f21b863a655372cb455b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5428,7 +5428,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f8043d4433ba537d690517fd3f24b23bb2b5fcc3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f8043d4433ba537d690517fd3f24b23bb2b5fcc3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5441,7 +5441,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [02ad4f017b207155b881036cf49b76dc559990d1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/02ad4f017b207155b881036cf49b76dc559990d1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5454,7 +5454,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [77a4b745bdccc2c76260646d8b62aad667a2034e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/77a4b745bdccc2c76260646d8b62aad667a2034e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5467,7 +5467,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [17671005ca208088c9b330a287d6dc65f0de205e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/17671005ca208088c9b330a287d6dc65f0de205e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5480,7 +5480,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0bb7c395a01d5d375e67c083019e62a65672865d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0bb7c395a01d5d375e67c083019e62a65672865d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5493,7 +5493,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [74dcfc0bbf150bb4e101e70bc30d3ba734d95477.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/74dcfc0bbf150bb4e101e70bc30d3ba734d95477.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5506,7 +5506,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2071fa425a068823e0076eb5d99e895cc9b40533.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2071fa425a068823e0076eb5d99e895cc9b40533.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5519,7 +5519,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [face941db0c10c01e90ebec26e7139233c558bf6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/face941db0c10c01e90ebec26e7139233c558bf6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5532,7 +5532,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cbb22a8e8cd0e47c804c65b5068a61222ccb5f31.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cbb22a8e8cd0e47c804c65b5068a61222ccb5f31.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5545,7 +5545,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [eef4909e902a5f0432a23566f0594b3f219d27d2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/eef4909e902a5f0432a23566f0594b3f219d27d2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5558,7 +5558,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9ea80fea5d8e6b259d62c1dc8e8e0e5210b750fc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9ea80fea5d8e6b259d62c1dc8e8e0e5210b750fc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5571,7 +5571,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9ea80fea5d8e6b259d62c1dc8e8e0e5210b750fc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9ea80fea5d8e6b259d62c1dc8e8e0e5210b750fc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5584,7 +5584,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [72731248d50d78bef1c124f6d5e416cfb5b0ceac.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/72731248d50d78bef1c124f6d5e416cfb5b0ceac.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5597,7 +5597,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4f291606904c1317c7ae32aea2bedd8221cc915d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4f291606904c1317c7ae32aea2bedd8221cc915d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5610,7 +5610,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [54dd79901325a071a063f7a8fb3a87b5abf7d3eb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/54dd79901325a071a063f7a8fb3a87b5abf7d3eb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5623,7 +5623,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b28ca266138492e56b3d55e5e12427e30da6fff6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b28ca266138492e56b3d55e5e12427e30da6fff6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5636,7 +5636,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [00917b325fbc53196249904a885cfae92894bed4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/00917b325fbc53196249904a885cfae92894bed4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5649,7 +5649,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [70ad7216f73d42105d88eb7f8ccc44e94afd5bf8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/70ad7216f73d42105d88eb7f8ccc44e94afd5bf8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5662,7 +5662,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [59589d03af49d0b3091ab7cfbb7cf690fe1cdb5c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/59589d03af49d0b3091ab7cfbb7cf690fe1cdb5c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5675,7 +5675,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d4bbb59755cbbb75dba055429e06097c4b2dbccd.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d4bbb59755cbbb75dba055429e06097c4b2dbccd.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5688,7 +5688,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bd9fe767561c0d5e468cf7459c08088b3d688ae5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bd9fe767561c0d5e468cf7459c08088b3d688ae5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5701,7 +5701,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f350f573034dfdc1a8615484763b77b1e157c58b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f350f573034dfdc1a8615484763b77b1e157c58b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5714,7 +5714,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7a80e13a39aafa010f76517a1465b30c9f68e05d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7a80e13a39aafa010f76517a1465b30c9f68e05d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5727,7 +5727,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6cc745fb961b15b9010254c0adef98df546748e6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6cc745fb961b15b9010254c0adef98df546748e6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5740,7 +5740,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d4fd0dce34ef9d291e630682c2fb46f8dea8c74a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d4fd0dce34ef9d291e630682c2fb46f8dea8c74a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5753,7 +5753,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c7df6cf57fea9262a2d4a7a1787f3eeae8777ad7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c7df6cf57fea9262a2d4a7a1787f3eeae8777ad7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5766,7 +5766,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7b9a79ea9396ea8d4d3807a6efb22d445c59fc3e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7b9a79ea9396ea8d4d3807a6efb22d445c59fc3e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5779,7 +5779,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4c8ecff4ecce25324d49931a4b9983a803d9f80c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4c8ecff4ecce25324d49931a4b9983a803d9f80c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5792,7 +5792,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bd5f1c2c7c3a1d605893f9decbe70aaf721ad17d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bd5f1c2c7c3a1d605893f9decbe70aaf721ad17d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5805,7 +5805,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ec9f35fd406357b5c3158eeb5797c094ac2886ce.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ec9f35fd406357b5c3158eeb5797c094ac2886ce.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5818,7 +5818,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4c8ecff4ecce25324d49931a4b9983a803d9f80c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4c8ecff4ecce25324d49931a4b9983a803d9f80c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5831,7 +5831,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bd5f1c2c7c3a1d605893f9decbe70aaf721ad17d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bd5f1c2c7c3a1d605893f9decbe70aaf721ad17d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5844,7 +5844,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1c9924f7c6216b783261a98e3734a5a90b21b72a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1c9924f7c6216b783261a98e3734a5a90b21b72a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5857,7 +5857,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1c9924f7c6216b783261a98e3734a5a90b21b72a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1c9924f7c6216b783261a98e3734a5a90b21b72a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5870,7 +5870,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ec9f35fd406357b5c3158eeb5797c094ac2886ce.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ec9f35fd406357b5c3158eeb5797c094ac2886ce.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5883,7 +5883,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a974578a98a78f3d34866ec947079afd8197b926.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a974578a98a78f3d34866ec947079afd8197b926.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5896,7 +5896,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d0fd305779e9b0ed1977edab42ce28af01d2c43d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d0fd305779e9b0ed1977edab42ce28af01d2c43d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5909,7 +5909,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [05e20102a8ea373a176fdb8182a406dc71d99d84.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/05e20102a8ea373a176fdb8182a406dc71d99d84.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5922,7 +5922,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cb8684de776c9d15434e0460bcb3ac427a96e5e6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cb8684de776c9d15434e0460bcb3ac427a96e5e6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5935,7 +5935,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e967e9a7f44667e5ef3374717c9c050dcd9ba924.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e967e9a7f44667e5ef3374717c9c050dcd9ba924.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5948,7 +5948,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3310d397d6034a75924d76b50962449ac2eac843.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3310d397d6034a75924d76b50962449ac2eac843.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5961,7 +5961,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b92082000d32f5a89bbe6157564cf6a6b219a328.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b92082000d32f5a89bbe6157564cf6a6b219a328.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5974,7 +5974,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [62c262f100b51b2c7712746966b8992e78f8efdc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/62c262f100b51b2c7712746966b8992e78f8efdc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -5987,7 +5987,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c75de5d18b0ce09281359ca7e84f6b6f2b0dfdb1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c75de5d18b0ce09281359ca7e84f6b6f2b0dfdb1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6000,7 +6000,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e0a29c777573e090076f06121c72731eb5d027d2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e0a29c777573e090076f06121c72731eb5d027d2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6013,7 +6013,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f0c35b9b0e779f1026b4f885af6cacd998630520.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f0c35b9b0e779f1026b4f885af6cacd998630520.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6026,7 +6026,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [eea98f407b864a0e15ffe3ee2f9eea4c665b4cb1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/eea98f407b864a0e15ffe3ee2f9eea4c665b4cb1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6039,7 +6039,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9de6d150acc8dc222fdf48d7e140d36911e533ff.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9de6d150acc8dc222fdf48d7e140d36911e533ff.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6052,7 +6052,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [64ace646eac4faa2fc65465b140a63f63e38f942.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/64ace646eac4faa2fc65465b140a63f63e38f942.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6065,7 +6065,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [212159b010928a0ae38c4e808dc0d5df21a44916.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/212159b010928a0ae38c4e808dc0d5df21a44916.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6078,7 +6078,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fcc74aba13fe61874695475ada4b193484c6ab54.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fcc74aba13fe61874695475ada4b193484c6ab54.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6091,7 +6091,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e0a29c777573e090076f06121c72731eb5d027d2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e0a29c777573e090076f06121c72731eb5d027d2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6104,7 +6104,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f0c35b9b0e779f1026b4f885af6cacd998630520.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f0c35b9b0e779f1026b4f885af6cacd998630520.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6117,7 +6117,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [eea98f407b864a0e15ffe3ee2f9eea4c665b4cb1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/eea98f407b864a0e15ffe3ee2f9eea4c665b4cb1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6130,7 +6130,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9de6d150acc8dc222fdf48d7e140d36911e533ff.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9de6d150acc8dc222fdf48d7e140d36911e533ff.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6143,7 +6143,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3ca6622ddb416735fc4ab644a07aa768ce081685.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3ca6622ddb416735fc4ab644a07aa768ce081685.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6156,7 +6156,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [55f7be742df19a3c42f0c13ade231944728d96ab.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/55f7be742df19a3c42f0c13ade231944728d96ab.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6169,7 +6169,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [eb23b60e2a10aaa24b0cd8ae97374abb1043de2f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/eb23b60e2a10aaa24b0cd8ae97374abb1043de2f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6182,7 +6182,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6c17a0ca745a9185d67b6953e5fa3266dd83bc67.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6c17a0ca745a9185d67b6953e5fa3266dd83bc67.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6195,7 +6195,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fdfc7ab6057366e70869757bac076f61d34e6c7e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fdfc7ab6057366e70869757bac076f61d34e6c7e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6208,7 +6208,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [911729169ecafdcf7671c40b81eab4e1f0090202.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/911729169ecafdcf7671c40b81eab4e1f0090202.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6221,7 +6221,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [88bb274460621d31617ca07c8e382a2ecb009d12.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/88bb274460621d31617ca07c8e382a2ecb009d12.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6234,7 +6234,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2d6d7e9ee0fd1429baf7a459227c4520df790e0d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2d6d7e9ee0fd1429baf7a459227c4520df790e0d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6247,7 +6247,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e29a266a3e52f52e680cb79d6e21c94fa263444a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e29a266a3e52f52e680cb79d6e21c94fa263444a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6260,7 +6260,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [88335c3ea66b604b1af4cc4edc37ddaf848edfe0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/88335c3ea66b604b1af4cc4edc37ddaf848edfe0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6273,7 +6273,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a650a9cf8e0af5160775616c7ac0490349c5ade9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a650a9cf8e0af5160775616c7ac0490349c5ade9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6286,7 +6286,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c050a224da33ecfcd950339f031ad1d4c696e69d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c050a224da33ecfcd950339f031ad1d4c696e69d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6299,7 +6299,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9d16ef6a79877274c36f74996299ded7a101ae85.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9d16ef6a79877274c36f74996299ded7a101ae85.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6312,7 +6312,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3ca6622ddb416735fc4ab644a07aa768ce081685.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3ca6622ddb416735fc4ab644a07aa768ce081685.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6325,7 +6325,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [eb23b60e2a10aaa24b0cd8ae97374abb1043de2f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/eb23b60e2a10aaa24b0cd8ae97374abb1043de2f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6338,7 +6338,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [55f7be742df19a3c42f0c13ade231944728d96ab.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/55f7be742df19a3c42f0c13ade231944728d96ab.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6351,7 +6351,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6c17a0ca745a9185d67b6953e5fa3266dd83bc67.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6c17a0ca745a9185d67b6953e5fa3266dd83bc67.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6364,7 +6364,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fdfc7ab6057366e70869757bac076f61d34e6c7e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fdfc7ab6057366e70869757bac076f61d34e6c7e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6377,7 +6377,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [911729169ecafdcf7671c40b81eab4e1f0090202.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/911729169ecafdcf7671c40b81eab4e1f0090202.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6390,7 +6390,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [88bb274460621d31617ca07c8e382a2ecb009d12.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/88bb274460621d31617ca07c8e382a2ecb009d12.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6403,7 +6403,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2d6d7e9ee0fd1429baf7a459227c4520df790e0d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2d6d7e9ee0fd1429baf7a459227c4520df790e0d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6416,7 +6416,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e29a266a3e52f52e680cb79d6e21c94fa263444a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e29a266a3e52f52e680cb79d6e21c94fa263444a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6429,7 +6429,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [88335c3ea66b604b1af4cc4edc37ddaf848edfe0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/88335c3ea66b604b1af4cc4edc37ddaf848edfe0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6442,7 +6442,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [64ace646eac4faa2fc65465b140a63f63e38f942.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/64ace646eac4faa2fc65465b140a63f63e38f942.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6455,7 +6455,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [212159b010928a0ae38c4e808dc0d5df21a44916.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/212159b010928a0ae38c4e808dc0d5df21a44916.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6468,7 +6468,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fcc74aba13fe61874695475ada4b193484c6ab54.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fcc74aba13fe61874695475ada4b193484c6ab54.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6481,7 +6481,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ac5106e8787c277bb0e1c74d8b5d4377098edc10.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ac5106e8787c277bb0e1c74d8b5d4377098edc10.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6494,7 +6494,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [362bf53b9290ad4c550f0e5bbacfa3fe71580b22.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/362bf53b9290ad4c550f0e5bbacfa3fe71580b22.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6507,7 +6507,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4c959642ebd7d737919324085d3aabe32e8003a3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4c959642ebd7d737919324085d3aabe32e8003a3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6520,7 +6520,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ac5106e8787c277bb0e1c74d8b5d4377098edc10.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ac5106e8787c277bb0e1c74d8b5d4377098edc10.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6533,7 +6533,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3be3dc17769a245e32c70f2b6fa2388f18d2db64.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3be3dc17769a245e32c70f2b6fa2388f18d2db64.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6546,7 +6546,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [362bf53b9290ad4c550f0e5bbacfa3fe71580b22.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/362bf53b9290ad4c550f0e5bbacfa3fe71580b22.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6559,7 +6559,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4c959642ebd7d737919324085d3aabe32e8003a3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4c959642ebd7d737919324085d3aabe32e8003a3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6572,7 +6572,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6585,7 +6585,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [691181ba0b7a285877938aa1aafa531395c19ee8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/691181ba0b7a285877938aa1aafa531395c19ee8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6598,7 +6598,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ab51ba891b69ef0b5fca86f1486685c464664257.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ab51ba891b69ef0b5fca86f1486685c464664257.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6611,7 +6611,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d005c00f2bab0cf251fb9429d65f02e8459a9f81.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d005c00f2bab0cf251fb9429d65f02e8459a9f81.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6624,7 +6624,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f62bf70f04bb888ca45f95b2bdfee150957e265d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f62bf70f04bb888ca45f95b2bdfee150957e265d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6637,7 +6637,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f62bf70f04bb888ca45f95b2bdfee150957e265d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f62bf70f04bb888ca45f95b2bdfee150957e265d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6650,7 +6650,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bd2d89194ce943061441f69bd54e5a0b17d2150f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bd2d89194ce943061441f69bd54e5a0b17d2150f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6663,7 +6663,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bd2d89194ce943061441f69bd54e5a0b17d2150f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bd2d89194ce943061441f69bd54e5a0b17d2150f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6676,7 +6676,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9e8464554499c112aa39e2e226c01c3d18d8f6d5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9e8464554499c112aa39e2e226c01c3d18d8f6d5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6689,7 +6689,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9e8464554499c112aa39e2e226c01c3d18d8f6d5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9e8464554499c112aa39e2e226c01c3d18d8f6d5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6702,7 +6702,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [27acf88ef01fedfb9f674aa6771c22ffd616d5ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/27acf88ef01fedfb9f674aa6771c22ffd616d5ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6715,7 +6715,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [27acf88ef01fedfb9f674aa6771c22ffd616d5ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/27acf88ef01fedfb9f674aa6771c22ffd616d5ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6728,7 +6728,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [edf849e1bcc4479302d80f9e06859f3771f34f09.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/edf849e1bcc4479302d80f9e06859f3771f34f09.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6741,7 +6741,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6e9fe8e23e7e7e6b495ae68525351b40ba0a11e0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6e9fe8e23e7e7e6b495ae68525351b40ba0a11e0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6754,7 +6754,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0ee8ffcec694ab101b1bf169ed8b4923a492d3f3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0ee8ffcec694ab101b1bf169ed8b4923a492d3f3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6767,7 +6767,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2e53251ff298ac0495e9a4025d8d3247e5725fea.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2e53251ff298ac0495e9a4025d8d3247e5725fea.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6780,7 +6780,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2e53251ff298ac0495e9a4025d8d3247e5725fea.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2e53251ff298ac0495e9a4025d8d3247e5725fea.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6793,7 +6793,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5a871913bf0a394d28af3eabe32b9dc837c2c8c4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5a871913bf0a394d28af3eabe32b9dc837c2c8c4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6806,7 +6806,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [471fce95a7b746b2999896dc5f4bf4a26652c979.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/471fce95a7b746b2999896dc5f4bf4a26652c979.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6819,7 +6819,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1e759d128fe74efb34186dc6944b42cd2ac361d7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1e759d128fe74efb34186dc6944b42cd2ac361d7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6832,7 +6832,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dc4778d66a591bf758c7e1e6d48db949d9a6957f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dc4778d66a591bf758c7e1e6d48db949d9a6957f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6845,7 +6845,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [464ba0f536769188a2c00dc4994962793f99a10a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/464ba0f536769188a2c00dc4994962793f99a10a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6858,7 +6858,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [96873498e19a9029e84ba9bbdf15a07791557dda.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/96873498e19a9029e84ba9bbdf15a07791557dda.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6871,7 +6871,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [507b943341a356ef0e72b37b1ad7eea2f97e91e6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/507b943341a356ef0e72b37b1ad7eea2f97e91e6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6884,7 +6884,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6954a633e763f8aaaa53ee2acc8f017298226331.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6954a633e763f8aaaa53ee2acc8f017298226331.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6897,7 +6897,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7961175f766ee5425366019f2bd9cb9c961f3c8f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7961175f766ee5425366019f2bd9cb9c961f3c8f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6910,7 +6910,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5eb53d7389e8e56730e639653fa3eda80ef01363.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5eb53d7389e8e56730e639653fa3eda80ef01363.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6923,7 +6923,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4e8989488ed4bf7beeff102b3cfe478ef3cc6297.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4e8989488ed4bf7beeff102b3cfe478ef3cc6297.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6936,7 +6936,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6472be00a0a3835b03e8f8d58e745f203128f524.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6472be00a0a3835b03e8f8d58e745f203128f524.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6949,7 +6949,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [87a743e590249ea7cfab022a3da993869e177024.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/87a743e590249ea7cfab022a3da993869e177024.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6962,7 +6962,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [87aacbe3934312d52c62bcbaa72f7b94f4db5890.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/87aacbe3934312d52c62bcbaa72f7b94f4db5890.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6975,7 +6975,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1df80f7051cc9f16ea558f555ce325986a6d8b3c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1df80f7051cc9f16ea558f555ce325986a6d8b3c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -6988,7 +6988,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d2b70f5156a9ea0aa644f50e7cfd4c69fa49dc89.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d2b70f5156a9ea0aa644f50e7cfd4c69fa49dc89.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7001,7 +7001,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [aec40b20ac7f2fda6726ac5bd948d643d810b7ee.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/aec40b20ac7f2fda6726ac5bd948d643d810b7ee.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7014,7 +7014,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d2b70f5156a9ea0aa644f50e7cfd4c69fa49dc89.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d2b70f5156a9ea0aa644f50e7cfd4c69fa49dc89.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7027,7 +7027,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [aec40b20ac7f2fda6726ac5bd948d643d810b7ee.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/aec40b20ac7f2fda6726ac5bd948d643d810b7ee.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7040,7 +7040,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [da330c9bd23743e8ad747ff8a2b8c71cb74d5f2d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/da330c9bd23743e8ad747ff8a2b8c71cb74d5f2d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7053,7 +7053,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f94a7006c6cc9e93e225113e4809315df4bf0f85.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f94a7006c6cc9e93e225113e4809315df4bf0f85.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7066,7 +7066,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4dfac8968a6a32eca152679943ad59ffca4a51d5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4dfac8968a6a32eca152679943ad59ffca4a51d5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7079,7 +7079,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cc6527a98e2cf982eb8b0fffe5a2b75d546578bd.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc6527a98e2cf982eb8b0fffe5a2b75d546578bd.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7092,7 +7092,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [409c65fad9908159489600fbac0fa938a56fc893.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/409c65fad9908159489600fbac0fa938a56fc893.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7105,7 +7105,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c780a86a335988ef17a2c4d7d3eab16aa1a73c04.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c780a86a335988ef17a2c4d7d3eab16aa1a73c04.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7118,7 +7118,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8064fb60db4863f36ac1b875cf731f24260ec9f0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8064fb60db4863f36ac1b875cf731f24260ec9f0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7131,7 +7131,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fd589d7f39c162c2ef19cab55c89b83d5617d982.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fd589d7f39c162c2ef19cab55c89b83d5617d982.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7144,7 +7144,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9f3b04d331e7eaa3f0bf68169aa73ba0e2524705.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9f3b04d331e7eaa3f0bf68169aa73ba0e2524705.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7157,7 +7157,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e2b2ce5e1b2b601281bd0e708a534345c363d487.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2b2ce5e1b2b601281bd0e708a534345c363d487.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7170,7 +7170,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4ef3ee232ef52773586e2ac3f94fe036c061054e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4ef3ee232ef52773586e2ac3f94fe036c061054e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7183,7 +7183,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ed03af81647cf4e2f04a1664d62e502f21bdc9f4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ed03af81647cf4e2f04a1664d62e502f21bdc9f4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7196,7 +7196,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [da2c267bddcc6545dc3957e6cc9285746555d4b7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/da2c267bddcc6545dc3957e6cc9285746555d4b7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7209,7 +7209,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e51e5e6d7a84392ec22cfb725f8c38fe2d65968e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e51e5e6d7a84392ec22cfb725f8c38fe2d65968e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7222,7 +7222,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e5c4872c492f0e1d948997bd1d43bd099ecc16d6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e5c4872c492f0e1d948997bd1d43bd099ecc16d6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7235,7 +7235,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c3964646e23444a940975c91dd706cc0da9637da.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c3964646e23444a940975c91dd706cc0da9637da.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7248,7 +7248,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5e9290a4e12707d95d303f9794002fc6ee039971.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5e9290a4e12707d95d303f9794002fc6ee039971.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7261,7 +7261,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [726025b0e6c1c73c46cad7174b62993489dd498c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/726025b0e6c1c73c46cad7174b62993489dd498c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7274,7 +7274,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1b4a6a688f4843025390581e4520b03c66e3c6fa.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1b4a6a688f4843025390581e4520b03c66e3c6fa.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7287,7 +7287,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2f2fbaf9e4b1f6a776e23f75b40cbd18d4e6a048.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2f2fbaf9e4b1f6a776e23f75b40cbd18d4e6a048.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7300,7 +7300,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1bee0e6483b723489723e081083739ec5bdb42ee.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1bee0e6483b723489723e081083739ec5bdb42ee.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7313,7 +7313,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0746611f7c0f1d7aea1c4ef0cf205815342311cb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0746611f7c0f1d7aea1c4ef0cf205815342311cb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7326,7 +7326,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1bee0e6483b723489723e081083739ec5bdb42ee.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1bee0e6483b723489723e081083739ec5bdb42ee.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7339,7 +7339,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0746611f7c0f1d7aea1c4ef0cf205815342311cb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0746611f7c0f1d7aea1c4ef0cf205815342311cb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7352,7 +7352,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8de27a2125ec61d4b87a19784985eb0fa54e1f1c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8de27a2125ec61d4b87a19784985eb0fa54e1f1c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7365,7 +7365,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cc26821394587e73c69ec575ee5fd45360ce4c2f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc26821394587e73c69ec575ee5fd45360ce4c2f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7378,7 +7378,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [34ed82016e14bd3a64f1f60402093f29c4191c01.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/34ed82016e14bd3a64f1f60402093f29c4191c01.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7391,7 +7391,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cc26821394587e73c69ec575ee5fd45360ce4c2f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc26821394587e73c69ec575ee5fd45360ce4c2f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7404,7 +7404,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [34ed82016e14bd3a64f1f60402093f29c4191c01.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/34ed82016e14bd3a64f1f60402093f29c4191c01.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7417,7 +7417,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cdb796e9eac818d654575fbedf0d444f52c9604d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cdb796e9eac818d654575fbedf0d444f52c9604d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7430,7 +7430,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3019038d06c63acb5523675f37a6aaad8d00879f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3019038d06c63acb5523675f37a6aaad8d00879f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7443,7 +7443,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [183b81a080510adf726ff9937f9add97e0e02dda.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/183b81a080510adf726ff9937f9add97e0e02dda.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7456,7 +7456,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c830194165007cd2957097fa671edbe1cd6eb243.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c830194165007cd2957097fa671edbe1cd6eb243.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7469,7 +7469,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d1287e9072ff33623ca6ea5256a8d84a8a4806f6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d1287e9072ff33623ca6ea5256a8d84a8a4806f6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7482,7 +7482,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [474327cf89f0ce15df149d3587ed757615e4a6b4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/474327cf89f0ce15df149d3587ed757615e4a6b4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7495,7 +7495,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b76f8e1db0d83fadb7cc3cc52c98cc058a1e753b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b76f8e1db0d83fadb7cc3cc52c98cc058a1e753b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7508,7 +7508,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e100b596747cc12ac75ffb329a24305833f99879.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e100b596747cc12ac75ffb329a24305833f99879.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7521,7 +7521,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a881b6c22ccb0c762a629314d35316b29be272ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a881b6c22ccb0c762a629314d35316b29be272ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7534,7 +7534,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [31fb9ce0b2201867cd3186358d3c8e9ca26e84b7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/31fb9ce0b2201867cd3186358d3c8e9ca26e84b7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7547,7 +7547,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fdbfc646aeaf56067f0d837030fa6893b1d6a635.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fdbfc646aeaf56067f0d837030fa6893b1d6a635.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7560,7 +7560,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e985394490c62ce10fd057b9450239ab61230407.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e985394490c62ce10fd057b9450239ab61230407.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7573,7 +7573,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cc1dece7375225708f1fe6482ce1f308a34efaec.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc1dece7375225708f1fe6482ce1f308a34efaec.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7586,7 +7586,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5d1ddcc444a4caef34369530f75d3531e32b5300.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5d1ddcc444a4caef34369530f75d3531e32b5300.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7599,7 +7599,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b28ca266138492e56b3d55e5e12427e30da6fff6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b28ca266138492e56b3d55e5e12427e30da6fff6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7612,7 +7612,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [00917b325fbc53196249904a885cfae92894bed4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/00917b325fbc53196249904a885cfae92894bed4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7625,7 +7625,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [70ad7216f73d42105d88eb7f8ccc44e94afd5bf8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/70ad7216f73d42105d88eb7f8ccc44e94afd5bf8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7638,7 +7638,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3310d397d6034a75924d76b50962449ac2eac843.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3310d397d6034a75924d76b50962449ac2eac843.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7651,7 +7651,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8064fb60db4863f36ac1b875cf731f24260ec9f0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8064fb60db4863f36ac1b875cf731f24260ec9f0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7664,7 +7664,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b76f8e1db0d83fadb7cc3cc52c98cc058a1e753b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b76f8e1db0d83fadb7cc3cc52c98cc058a1e753b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7677,7 +7677,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d2b70f5156a9ea0aa644f50e7cfd4c69fa49dc89.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d2b70f5156a9ea0aa644f50e7cfd4c69fa49dc89.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7690,7 +7690,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [aec40b20ac7f2fda6726ac5bd948d643d810b7ee.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/aec40b20ac7f2fda6726ac5bd948d643d810b7ee.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7703,7 +7703,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c34242d3f260a26e1667ad62fc7ddd71ca35df1b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c34242d3f260a26e1667ad62fc7ddd71ca35df1b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7716,7 +7716,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8064fb60db4863f36ac1b875cf731f24260ec9f0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8064fb60db4863f36ac1b875cf731f24260ec9f0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7729,7 +7729,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cf8d08a61d97431ecc4cccb8fa193b61172994e5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cf8d08a61d97431ecc4cccb8fa193b61172994e5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7742,7 +7742,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9febff29da687712a9f24ac169ad42b6a0c0ad8b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9febff29da687712a9f24ac169ad42b6a0c0ad8b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7755,7 +7755,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f0076a866d0bd0444cba3ba34a3760aae535d6ca.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f0076a866d0bd0444cba3ba34a3760aae535d6ca.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7768,7 +7768,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6ce50e349d13150b04deecb7407554943068e5c4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6ce50e349d13150b04deecb7407554943068e5c4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7781,7 +7781,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b4f44ea13aac754396b342a8c635f00110b5dbbf.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b4f44ea13aac754396b342a8c635f00110b5dbbf.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7794,7 +7794,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e3bf6115899afe88e6c1fd9b8e58cc57dea11f39.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e3bf6115899afe88e6c1fd9b8e58cc57dea11f39.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7807,7 +7807,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [63eea12b1be28d9e903291adc1ba3f7d4cbbfd57.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/63eea12b1be28d9e903291adc1ba3f7d4cbbfd57.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7820,7 +7820,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f1910443dbf62b028f1a36b745849f2452167bb8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f1910443dbf62b028f1a36b745849f2452167bb8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7833,7 +7833,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4af74336fee65eada199824e6a11ff3728725f78.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4af74336fee65eada199824e6a11ff3728725f78.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7846,7 +7846,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [efce61a8af77aa7eecfb6c67ee3cb70e190280ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/efce61a8af77aa7eecfb6c67ee3cb70e190280ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7859,7 +7859,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6c96691673998b25d4e43058374af6d2f58f8165.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6c96691673998b25d4e43058374af6d2f58f8165.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7872,7 +7872,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [93aaa5b7f288791a98cefad4396cbbb314f2b2a5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/93aaa5b7f288791a98cefad4396cbbb314f2b2a5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7885,7 +7885,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cf0e144803035775e79b5f1cd55a8b8329e2eb4e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cf0e144803035775e79b5f1cd55a8b8329e2eb4e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7898,7 +7898,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0f646185058f50a2381fcffebd18546f161677b7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0f646185058f50a2381fcffebd18546f161677b7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7911,7 +7911,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [501babfc83cec422afb3101114bc7b47a5bb3d6a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/501babfc83cec422afb3101114bc7b47a5bb3d6a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7924,7 +7924,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [06728406b967decae963b292d2a05ca5a30a9e43.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/06728406b967decae963b292d2a05ca5a30a9e43.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7937,7 +7937,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0ae162e394fd21f54da5997ff177877db1c82b16.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0ae162e394fd21f54da5997ff177877db1c82b16.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7950,7 +7950,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [01be71decf934a04af610448477a48b86f96c945.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/01be71decf934a04af610448477a48b86f96c945.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7963,7 +7963,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0d39693d4acfeb2085a8260eb3752c2422e50676.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0d39693d4acfeb2085a8260eb3752c2422e50676.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7976,7 +7976,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dac44d30e81142f782d80e064b3db98f2d4b786c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dac44d30e81142f782d80e064b3db98f2d4b786c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -7989,7 +7989,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4f8e75bf60dbeb8d6e7e15fced438ecd946a3f1a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4f8e75bf60dbeb8d6e7e15fced438ecd946a3f1a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8002,7 +8002,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [443792c0a836f5f922314351dc29340bfb6cbe70.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/443792c0a836f5f922314351dc29340bfb6cbe70.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8015,7 +8015,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ec19385755d1dbed958f78edca60747221af31f8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ec19385755d1dbed958f78edca60747221af31f8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8028,7 +8028,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d73467f341d129a8605a93443aaed28aa8021e27.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d73467f341d129a8605a93443aaed28aa8021e27.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8041,7 +8041,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [94b020e1fa5ea7f654c31704e911ee471b673162.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/94b020e1fa5ea7f654c31704e911ee471b673162.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8054,7 +8054,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9a2ac2478bae70d7a8f8cc71bfb61af4a5df5460.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9a2ac2478bae70d7a8f8cc71bfb61af4a5df5460.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8067,7 +8067,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d002c219934d0e0601f5c6d98e9a35663ec90943.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d002c219934d0e0601f5c6d98e9a35663ec90943.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8080,7 +8080,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1620d0e73f9711b52769af3f2c81468badda85cc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1620d0e73f9711b52769af3f2c81468badda85cc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8093,7 +8093,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1bf24ecf8953e254cfab6e72b060d65e2ee15b91.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1bf24ecf8953e254cfab6e72b060d65e2ee15b91.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8106,7 +8106,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [de64362d21f090b76586193191ed6df624521fd0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/de64362d21f090b76586193191ed6df624521fd0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8119,7 +8119,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [be67298c637f11a63d6f7973c658b7d7258fbc96.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/be67298c637f11a63d6f7973c658b7d7258fbc96.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8132,7 +8132,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3c13afd3c3794a7173390bb719c152d2be9ae622.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3c13afd3c3794a7173390bb719c152d2be9ae622.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8145,7 +8145,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b57f6bfba888a9cb57bfc2242b3c6d9b65867b52.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b57f6bfba888a9cb57bfc2242b3c6d9b65867b52.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8158,7 +8158,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3b5af7218d84235781ffc7e51764f154365f4ec7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3b5af7218d84235781ffc7e51764f154365f4ec7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8171,7 +8171,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2ac42acfeb68e181714b37fd7d6675f8484fc294.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2ac42acfeb68e181714b37fd7d6675f8484fc294.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8184,7 +8184,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [49d5c6b9b25d3dee65e09aeb7726c3695132bc60.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/49d5c6b9b25d3dee65e09aeb7726c3695132bc60.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8197,7 +8197,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ea673383ad3164af72a73e80425c7e4b0982aa42.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ea673383ad3164af72a73e80425c7e4b0982aa42.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8210,7 +8210,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8330a2966313c8c81bf3082cccf18cdfd97612c0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8330a2966313c8c81bf3082cccf18cdfd97612c0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8223,7 +8223,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ca8c6bd1bba1a76f7e2fcc4673b055f7768a9631.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ca8c6bd1bba1a76f7e2fcc4673b055f7768a9631.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8236,7 +8236,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f7abe9d85d0dc10b263ebbe90fe9f3d72a1069a3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f7abe9d85d0dc10b263ebbe90fe9f3d72a1069a3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8249,7 +8249,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fbead21ab5fb26b1f04a0cdb0c39770106cbc2f0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fbead21ab5fb26b1f04a0cdb0c39770106cbc2f0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8262,7 +8262,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8f814bc4fa6eb794dc1d2d21fce479f2093ee76d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8f814bc4fa6eb794dc1d2d21fce479f2093ee76d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8275,7 +8275,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [32a52771b9a99c2d29c8b77f37b880bbdbdf612d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/32a52771b9a99c2d29c8b77f37b880bbdbdf612d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8288,7 +8288,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [45ff0e690ec5ac6c1e2db1c789cf558851cdd672.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/45ff0e690ec5ac6c1e2db1c789cf558851cdd672.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8301,7 +8301,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fe7567cf0d82bf502aeb102aac071fd560b0d47e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fe7567cf0d82bf502aeb102aac071fd560b0d47e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8314,7 +8314,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e273d46684a3fe6d157892b7db4999dce035401c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e273d46684a3fe6d157892b7db4999dce035401c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8327,7 +8327,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [68f2e5c1d62a0d70574037395b80f1d0c70fb43a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/68f2e5c1d62a0d70574037395b80f1d0c70fb43a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8340,7 +8340,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7a21e1ce72a44d286995acbb76a4813054f87533.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7a21e1ce72a44d286995acbb76a4813054f87533.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8353,7 +8353,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [055fc04e0997c7ab9ee8da2762587fd01d8b949f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/055fc04e0997c7ab9ee8da2762587fd01d8b949f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8366,7 +8366,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [70174df9d165e4b9845ed2300000bf0dd5718905.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/70174df9d165e4b9845ed2300000bf0dd5718905.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8379,7 +8379,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f1edb548dee0c9f192acedc13d7ba31c1bb4728e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f1edb548dee0c9f192acedc13d7ba31c1bb4728e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8392,7 +8392,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b8cb5db84b4f8675c88c6f2a68299770f9f2895b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b8cb5db84b4f8675c88c6f2a68299770f9f2895b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8405,7 +8405,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [294384ee98e324679fafb2b71b289a893394c8b9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/294384ee98e324679fafb2b71b289a893394c8b9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8418,7 +8418,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6d1a9a148c0284c7eb58787e97562dad238d89e8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6d1a9a148c0284c7eb58787e97562dad238d89e8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8431,7 +8431,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [37eeaaeaec2acf7ee51ab3cfa7b145faae08388f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/37eeaaeaec2acf7ee51ab3cfa7b145faae08388f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8444,7 +8444,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [34ce1ba42c93457b28691e358831a508597b298f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/34ce1ba42c93457b28691e358831a508597b298f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8457,7 +8457,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ad405137416569d6e655743fbf94c8c80f93755c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ad405137416569d6e655743fbf94c8c80f93755c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8470,7 +8470,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [db61344d5f58e7e9974e86abc07dd44c3429167a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/db61344d5f58e7e9974e86abc07dd44c3429167a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8483,7 +8483,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dc7225c2a9f6ad98c98e4e02eeecc555288b4157.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dc7225c2a9f6ad98c98e4e02eeecc555288b4157.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8496,7 +8496,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [280322bf9a41f156f092e9b52d1c6536c386e27b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/280322bf9a41f156f092e9b52d1c6536c386e27b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8509,7 +8509,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4da08a6e9faf12bb5dc7caf4f346dc50ae378ac8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4da08a6e9faf12bb5dc7caf4f346dc50ae378ac8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8522,7 +8522,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0d10b05a511c945d903d6bd82be796202912d483.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0d10b05a511c945d903d6bd82be796202912d483.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8535,7 +8535,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c43ef20d6b9d6422c0306d81e891e519666e3310.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c43ef20d6b9d6422c0306d81e891e519666e3310.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8548,7 +8548,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d1dfac2bf4fd565909a296de37cdcc7d88b2f66c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d1dfac2bf4fd565909a296de37cdcc7d88b2f66c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8561,7 +8561,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [002511e038f43b765ad0e70703796fa3f6f1f54a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/002511e038f43b765ad0e70703796fa3f6f1f54a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8574,7 +8574,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [90c7ecda71cf0000fd5b8bb0adfd17e1e0e03dfd.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/90c7ecda71cf0000fd5b8bb0adfd17e1e0e03dfd.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8587,7 +8587,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c19c414d13095c61971d3d0fe7ef2820bfb0d6cc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c19c414d13095c61971d3d0fe7ef2820bfb0d6cc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8600,7 +8600,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [85ca5217a6a62cad158009e9c26a5a9e4607b82a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/85ca5217a6a62cad158009e9c26a5a9e4607b82a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8613,7 +8613,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1e45b813bb59c1c92dc98602387180ae11d43249.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1e45b813bb59c1c92dc98602387180ae11d43249.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8626,7 +8626,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5f0f8f74ecf3a67cf978683559ec0994695068fe.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5f0f8f74ecf3a67cf978683559ec0994695068fe.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8639,7 +8639,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6e4afeadfe36ce4b91f6c9617ee00814924f2770.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6e4afeadfe36ce4b91f6c9617ee00814924f2770.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8652,7 +8652,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4f625926cc2e273d91c1f0179fc5bb3e78fbf3ad.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4f625926cc2e273d91c1f0179fc5bb3e78fbf3ad.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8665,7 +8665,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6084dfebd13ad8f42139027580920b2c316db9a0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6084dfebd13ad8f42139027580920b2c316db9a0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8678,7 +8678,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [edd67b20e8ca923aedcc76f7ee4726c2d302c972.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/edd67b20e8ca923aedcc76f7ee4726c2d302c972.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8691,7 +8691,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [58236135d6c51eeca583aa62721d60d2244a3f69.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/58236135d6c51eeca583aa62721d60d2244a3f69.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8704,7 +8704,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d0ca1c2b792d95199b7c692d4be7852a6413440d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d0ca1c2b792d95199b7c692d4be7852a6413440d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8717,7 +8717,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7245ab445177e9240f9294539c5fa108ccf52add.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7245ab445177e9240f9294539c5fa108ccf52add.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8730,7 +8730,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7551619cd5856be67a81dd891dd7b75cafa45877.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7551619cd5856be67a81dd891dd7b75cafa45877.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8743,7 +8743,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a69930f5a11a0204f3c4b5ffe7ad63fe4a54a7cb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a69930f5a11a0204f3c4b5ffe7ad63fe4a54a7cb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8756,7 +8756,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1223021b5904a53a7ae4f06400037d597608eeea.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1223021b5904a53a7ae4f06400037d597608eeea.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8769,7 +8769,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9a5d025932240178a724c75df457cf6e2e3dead6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9a5d025932240178a724c75df457cf6e2e3dead6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8782,7 +8782,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c380c2394ff9d39c56af5f382a131a8460a4a136.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c380c2394ff9d39c56af5f382a131a8460a4a136.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8795,7 +8795,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6d4b6e3ac9146763af8ef8e02271aafa2047e50c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6d4b6e3ac9146763af8ef8e02271aafa2047e50c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8808,7 +8808,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4c2ab8f763418ad089b838cfc248dd4510c8083e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4c2ab8f763418ad089b838cfc248dd4510c8083e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8821,7 +8821,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [56cfbc48ae612c57f86d49b1462beb057de6bd21.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/56cfbc48ae612c57f86d49b1462beb057de6bd21.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8834,7 +8834,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3eab486da28a9e13ba4de47061d21bfde9dc10e0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3eab486da28a9e13ba4de47061d21bfde9dc10e0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8847,7 +8847,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c9429361e07612c8992f432b86ab58486904d8f6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c9429361e07612c8992f432b86ab58486904d8f6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8860,7 +8860,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [973946d9407499dedab93c95c77442ea5b773200.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/973946d9407499dedab93c95c77442ea5b773200.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8873,7 +8873,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6f2604169218d22127724a16734ade43621a22c2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6f2604169218d22127724a16734ade43621a22c2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8886,7 +8886,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d3f4cc6ea51321101c6465e8dc422df5badde8f8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d3f4cc6ea51321101c6465e8dc422df5badde8f8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8899,7 +8899,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [10eb46f3e42119a0d7bd1175e1cc2d9cb7489fff.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/10eb46f3e42119a0d7bd1175e1cc2d9cb7489fff.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8912,7 +8912,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [da62260d6f89a9e99b400663f2afe5fc57bee251.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/da62260d6f89a9e99b400663f2afe5fc57bee251.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8925,7 +8925,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0e9e924ecf6d1d0553f39ac1f216afd72352034a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0e9e924ecf6d1d0553f39ac1f216afd72352034a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8938,7 +8938,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e9d525cbc646ad6560d9d072dd9814138e4d7596.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e9d525cbc646ad6560d9d072dd9814138e4d7596.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8951,7 +8951,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3cabfff4bb3721bfbaa554454c6d1881a205848c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3cabfff4bb3721bfbaa554454c6d1881a205848c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8964,7 +8964,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e38abe9f0053b386451656ee128566359f9e5a93.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e38abe9f0053b386451656ee128566359f9e5a93.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8977,7 +8977,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6d8616600d8274dba4594a3406968f597f866157.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6d8616600d8274dba4594a3406968f597f866157.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -8990,7 +8990,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [326dcfb72a7f8b656b0672393b0acc2777d141c2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/326dcfb72a7f8b656b0672393b0acc2777d141c2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9003,7 +9003,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d231364e4f6bb3de3cb60b7a9c1eaffe905c957c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d231364e4f6bb3de3cb60b7a9c1eaffe905c957c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9016,7 +9016,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a55c2ebc5d76f9652d83b270b416daea6a0c7fc0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a55c2ebc5d76f9652d83b270b416daea6a0c7fc0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9029,7 +9029,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ee66e9aa69b1a18d91776ea2fac2ffcd9d0be0e8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ee66e9aa69b1a18d91776ea2fac2ffcd9d0be0e8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9042,7 +9042,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1c31eda875121eda596f108b138c48facdfd69a8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1c31eda875121eda596f108b138c48facdfd69a8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9055,7 +9055,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9a7a6e0b3e08e1b68f013c1399e02ed1a7724d6c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9a7a6e0b3e08e1b68f013c1399e02ed1a7724d6c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9068,7 +9068,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [35bad2357252e55960c35d1a056bffcbb6fbdfba.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/35bad2357252e55960c35d1a056bffcbb6fbdfba.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9081,7 +9081,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bae89ebf33087efcf35bc0248027dd8ffdeef740.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bae89ebf33087efcf35bc0248027dd8ffdeef740.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9094,7 +9094,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [de4a4e637baacd1f5fdabf731c081344ccdcd339.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/de4a4e637baacd1f5fdabf731c081344ccdcd339.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9107,7 +9107,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3037333ca8ffcf97714b2c6c88bbf6af4f9370c7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3037333ca8ffcf97714b2c6c88bbf6af4f9370c7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9120,7 +9120,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6b584b018d40fcb107579e75c8a8164f5386c563.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6b584b018d40fcb107579e75c8a8164f5386c563.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9133,7 +9133,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cf4da7d00957581d4c5d792234945000f45366ce.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cf4da7d00957581d4c5d792234945000f45366ce.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9146,7 +9146,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4f8012f1dc022c207aa7ff6729bc5c660712b582.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4f8012f1dc022c207aa7ff6729bc5c660712b582.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9159,7 +9159,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2f3219548df9177f1512cad17c4d3588b900e935.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2f3219548df9177f1512cad17c4d3588b900e935.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9172,7 +9172,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [da42ce940c2dae25f4478541c5396bcd0d4e0159.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/da42ce940c2dae25f4478541c5396bcd0d4e0159.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9185,7 +9185,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [eec2adcda2190c7405be3d8ff69f31059ce8a035.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/eec2adcda2190c7405be3d8ff69f31059ce8a035.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9198,7 +9198,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [25264704ed1696688454ca35303338eb719e8e07.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/25264704ed1696688454ca35303338eb719e8e07.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9211,7 +9211,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [db150a3f10fa5f0092f3203530ab7f5e77f1f8a9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/db150a3f10fa5f0092f3203530ab7f5e77f1f8a9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9224,7 +9224,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fe46ccdeb8be5e2282351e3918e84b1ebba0d550.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fe46ccdeb8be5e2282351e3918e84b1ebba0d550.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9237,7 +9237,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [48ade3936f552a76378fd8ce372bccc745854481.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/48ade3936f552a76378fd8ce372bccc745854481.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9250,7 +9250,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7af40b951178f0453a125e3306a473442e8ab871.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7af40b951178f0453a125e3306a473442e8ab871.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9263,7 +9263,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6202620f9a2e0b2205a70103f8d32e6b041ec3dd.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6202620f9a2e0b2205a70103f8d32e6b041ec3dd.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9276,7 +9276,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2d016390c9e19e563da7cb38b9f26dd1c2cae8c6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2d016390c9e19e563da7cb38b9f26dd1c2cae8c6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9289,7 +9289,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e5669349d5734e93c555fc79118e27d4780982c8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e5669349d5734e93c555fc79118e27d4780982c8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9302,7 +9302,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f732f16f547ce3961e5a508e67177fe23cd1115c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f732f16f547ce3961e5a508e67177fe23cd1115c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9315,7 +9315,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a41085798fc6698620a0c08a0a41b87c782e799e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a41085798fc6698620a0c08a0a41b87c782e799e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9328,7 +9328,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [58b68146df767a20a719f1fb2381aee49c14e345.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/58b68146df767a20a719f1fb2381aee49c14e345.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9341,7 +9341,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [93f2f139a35a018fd2d711b9d6bf43eb95ca37a4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/93f2f139a35a018fd2d711b9d6bf43eb95ca37a4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9354,7 +9354,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [02071c86ccdf3d824540bbc817274b0a91b5a799.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/02071c86ccdf3d824540bbc817274b0a91b5a799.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9367,7 +9367,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dd22a831e56b90a22ea20d2bfd3600f0ec70d491.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dd22a831e56b90a22ea20d2bfd3600f0ec70d491.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9380,7 +9380,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8bcda54942b779ed7c7b2e2b7a23d423a994c2a6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8bcda54942b779ed7c7b2e2b7a23d423a994c2a6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9393,7 +9393,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [89649cf24d6243cd624e75dc77ac568058bed2c9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/89649cf24d6243cd624e75dc77ac568058bed2c9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9406,7 +9406,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [40b20607bf9ab5e0796476d667394ab93601fda4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/40b20607bf9ab5e0796476d667394ab93601fda4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9419,7 +9419,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [381c7c54508d15ebad22287f91b22fedb33e38a6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/381c7c54508d15ebad22287f91b22fedb33e38a6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9432,7 +9432,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [69b1c4466961119993339395d0a95fda9eee3067.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/69b1c4466961119993339395d0a95fda9eee3067.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9445,7 +9445,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2a931f1e8abb23216c8891456cc48f477ebba5eb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2a931f1e8abb23216c8891456cc48f477ebba5eb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9458,7 +9458,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7f0cb16b68bad8ae3f0383f94cfc8782846989da.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7f0cb16b68bad8ae3f0383f94cfc8782846989da.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9471,7 +9471,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ad6ba28013488a2b96091b66c3cde10ff970b252.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ad6ba28013488a2b96091b66c3cde10ff970b252.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9484,7 +9484,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8d8bdf4f5ac36a4a2dd9a2bc1113dcce5e2f76b6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8d8bdf4f5ac36a4a2dd9a2bc1113dcce5e2f76b6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9497,7 +9497,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [746d7a8b8ef5e3c687d015f0d19a65d55b0eb1ce.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/746d7a8b8ef5e3c687d015f0d19a65d55b0eb1ce.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9510,7 +9510,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b2ca7d04ca3c349f42c21b15c57678d9f5319bb5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b2ca7d04ca3c349f42c21b15c57678d9f5319bb5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9523,7 +9523,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e100b596747cc12ac75ffb329a24305833f99879.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e100b596747cc12ac75ffb329a24305833f99879.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9536,7 +9536,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a881b6c22ccb0c762a629314d35316b29be272ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a881b6c22ccb0c762a629314d35316b29be272ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9549,7 +9549,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [31fb9ce0b2201867cd3186358d3c8e9ca26e84b7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/31fb9ce0b2201867cd3186358d3c8e9ca26e84b7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9562,7 +9562,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fdbfc646aeaf56067f0d837030fa6893b1d6a635.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fdbfc646aeaf56067f0d837030fa6893b1d6a635.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9575,7 +9575,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b76f8e1db0d83fadb7cc3cc52c98cc058a1e753b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b76f8e1db0d83fadb7cc3cc52c98cc058a1e753b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9588,7 +9588,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dba1d59bb89357ccc335079c205050eee540ffd7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dba1d59bb89357ccc335079c205050eee540ffd7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9601,7 +9601,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [75575253e71fa34fcbc78e36632876714f778469.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/75575253e71fa34fcbc78e36632876714f778469.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9614,7 +9614,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8787d6e692a8f9a6a1460a41e08ac40e2166dc24.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8787d6e692a8f9a6a1460a41e08ac40e2166dc24.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9627,7 +9627,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7ffa635c4485e5697adbb5018009297820521f85.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7ffa635c4485e5697adbb5018009297820521f85.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9640,7 +9640,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ea673383ad3164af72a73e80425c7e4b0982aa42.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ea673383ad3164af72a73e80425c7e4b0982aa42.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9653,7 +9653,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ecff6f0e64a69e40fe59a7e9a91ef63355b0eab5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ecff6f0e64a69e40fe59a7e9a91ef63355b0eab5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9666,7 +9666,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [248ebd29923aa7d4e308cd717670387a5ae73e76.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/248ebd29923aa7d4e308cd717670387a5ae73e76.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9679,7 +9679,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7222f5ce1a9055c9e2f1c6baa8b9a29891617049.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7222f5ce1a9055c9e2f1c6baa8b9a29891617049.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9692,7 +9692,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8fb4e49fc4a1c7c191b0af03865c65800dd0e515.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8fb4e49fc4a1c7c191b0af03865c65800dd0e515.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9705,7 +9705,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [58ac8cc81cb6c520445d0084536eca328af7f067.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/58ac8cc81cb6c520445d0084536eca328af7f067.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9718,7 +9718,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [555649b6b18aa009da69eee7e6980365b473054e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/555649b6b18aa009da69eee7e6980365b473054e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9731,7 +9731,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [42c6de97bdb8458775c7133bebcd82617c5cb9a6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/42c6de97bdb8458775c7133bebcd82617c5cb9a6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9744,7 +9744,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9ab995d9da5bb90a07f9268cb30b0c17402d7373.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9ab995d9da5bb90a07f9268cb30b0c17402d7373.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9757,7 +9757,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b31f3782c500960ff4dd4e59dd64173218f62985.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b31f3782c500960ff4dd4e59dd64173218f62985.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9770,7 +9770,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ae478779a171a01eaccc8ee76373d33133ae7f09.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ae478779a171a01eaccc8ee76373d33133ae7f09.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9783,7 +9783,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [81eb689420c2528971333d92e085df54785f0d19.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/81eb689420c2528971333d92e085df54785f0d19.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9796,7 +9796,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [445871f38ebc82071a0c874c83fb0924ed94d8ff.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/445871f38ebc82071a0c874c83fb0924ed94d8ff.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9809,7 +9809,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6844c49abf4f6b67edaee0dd28089313a4dc2994.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6844c49abf4f6b67edaee0dd28089313a4dc2994.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9822,7 +9822,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a7a7b954c4566d3f34f0bbb5d323c7862a2cbd1e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a7a7b954c4566d3f34f0bbb5d323c7862a2cbd1e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9835,7 +9835,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c936fc981f3c81f8043f7f60f6052db253d349bc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c936fc981f3c81f8043f7f60f6052db253d349bc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9848,7 +9848,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e59b72810fbcf0acf0a2601d2cfdc656d61644eb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e59b72810fbcf0acf0a2601d2cfdc656d61644eb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9861,7 +9861,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2c93f2a215aa9b5e0a5b880a0cafaa790fb9b141.gif](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2c93f2a215aa9b5e0a5b880a0cafaa790fb9b141.gif)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9874,7 +9874,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2100f38a6a7e314a8e59b7d266b54459f07ca0ff.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2100f38a6a7e314a8e59b7d266b54459f07ca0ff.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9887,7 +9887,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e83c6f98ddb3672313fa593a9da8ef1e0f816152.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e83c6f98ddb3672313fa593a9da8ef1e0f816152.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9900,7 +9900,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c650c22eec9ba6b1cd607a9b207bae43f3d0f1f0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c650c22eec9ba6b1cd607a9b207bae43f3d0f1f0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9913,7 +9913,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b5bd3ba4b3687f765ea9f8a00fafd583f369e566.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b5bd3ba4b3687f765ea9f8a00fafd583f369e566.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9926,7 +9926,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [774157f52b1c10bcd73f220046fb6e228090c134.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/774157f52b1c10bcd73f220046fb6e228090c134.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9939,7 +9939,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [26b4cb6834188153b9ab7a5569aca02e3f34bdd8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/26b4cb6834188153b9ab7a5569aca02e3f34bdd8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9952,7 +9952,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [41ab8f5f5566e88d1a5a7d8cfa3e0fa2900ef328.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/41ab8f5f5566e88d1a5a7d8cfa3e0fa2900ef328.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9965,7 +9965,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c8d00ae363d5b144b353f44bc12e04c6611f56f7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c8d00ae363d5b144b353f44bc12e04c6611f56f7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9978,7 +9978,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [72f02b0eaba22355e9739979fed2b84e9a568f5f.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/72f02b0eaba22355e9739979fed2b84e9a568f5f.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -9991,7 +9991,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [813b962bbf8f45896a9dbf1f53dc2fd43698e81b.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/813b962bbf8f45896a9dbf1f53dc2fd43698e81b.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10004,7 +10004,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5d564ee64496783235793c77594e7eafcdb63d35.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5d564ee64496783235793c77594e7eafcdb63d35.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10017,7 +10017,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d439340618bd044bf9bb0c18146f89ec3523b133.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d439340618bd044bf9bb0c18146f89ec3523b133.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10030,7 +10030,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [25d1824ee60eda993204e42e6e77d46e2f31e309.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/25d1824ee60eda993204e42e6e77d46e2f31e309.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10043,7 +10043,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e4be63f701497f20a0ab6c46835a5625ef84dc48.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e4be63f701497f20a0ab6c46835a5625ef84dc48.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10056,7 +10056,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5bd2d62bf146a9126fae20a29ca2e78be4a6cc8e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5bd2d62bf146a9126fae20a29ca2e78be4a6cc8e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10069,7 +10069,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [25b161e3eb2a58542d9ab82c5158c020d059715c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/25b161e3eb2a58542d9ab82c5158c020d059715c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10082,7 +10082,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d0e39b0c0ebc8433fe25cb8755074bc60e5f6d3c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d0e39b0c0ebc8433fe25cb8755074bc60e5f6d3c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10095,7 +10095,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [15ddd990dbce3fa1e34d96a29ef700f45bd9a23a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/15ddd990dbce3fa1e34d96a29ef700f45bd9a23a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10108,7 +10108,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0b5665bcfae3e9a96859a5c1cb92fda686804ec5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0b5665bcfae3e9a96859a5c1cb92fda686804ec5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10121,7 +10121,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [616c418d06f1f082272bc60570b8f960ff47242f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/616c418d06f1f082272bc60570b8f960ff47242f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10134,7 +10134,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [12350faf3048b52f30d54bafab392e2ece93db32.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/12350faf3048b52f30d54bafab392e2ece93db32.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10147,7 +10147,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d38030c573c186ac9744ed51e7e479725a2bd7ad.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d38030c573c186ac9744ed51e7e479725a2bd7ad.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10160,7 +10160,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3c0abb61f8218f8ea3f8954f34344f50f981f64f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3c0abb61f8218f8ea3f8954f34344f50f981f64f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10173,7 +10173,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8e31da60d4bc7c6162f6cd59894570ef008eaba6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8e31da60d4bc7c6162f6cd59894570ef008eaba6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10186,7 +10186,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [93c185e83444347765071120637dc89797db88b2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/93c185e83444347765071120637dc89797db88b2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10199,7 +10199,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2ef3b693c980fc4acb87f77fe1fb40e2b6882923.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2ef3b693c980fc4acb87f77fe1fb40e2b6882923.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10212,7 +10212,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d73a81e72ba393aa34ce34fc81fdbe11aafc3a40.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d73a81e72ba393aa34ce34fc81fdbe11aafc3a40.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10225,7 +10225,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [28b5d1a80705e6ff7a3ac76e73e3780ce622371b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/28b5d1a80705e6ff7a3ac76e73e3780ce622371b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10238,7 +10238,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5b3dc193ac4bf71c08e009694a6b51cd7098119a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5b3dc193ac4bf71c08e009694a6b51cd7098119a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10251,7 +10251,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [54a56eda547c018c3391e05dbdeda4c033c579a1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/54a56eda547c018c3391e05dbdeda4c033c579a1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10264,7 +10264,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [362395ba3a10d79c6f4db991f18a22c3b39ed32e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/362395ba3a10d79c6f4db991f18a22c3b39ed32e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10277,7 +10277,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b51ac7c77a359a2cdbfaf2786440f5c5a19dc674.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b51ac7c77a359a2cdbfaf2786440f5c5a19dc674.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10290,7 +10290,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a6f4110cb6456c78ed5035b8a17ad8d39b4ee670.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a6f4110cb6456c78ed5035b8a17ad8d39b4ee670.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10303,7 +10303,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e414702745099885ba855377b0fbfcc4ac4ad0ea.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e414702745099885ba855377b0fbfcc4ac4ad0ea.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10316,7 +10316,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [617d30a1bf64f3795043bebcba256098ba6f3810.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/617d30a1bf64f3795043bebcba256098ba6f3810.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10329,7 +10329,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cb6989e9859a38572f4bf6d3deb3d081e1946911.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cb6989e9859a38572f4bf6d3deb3d081e1946911.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10342,7 +10342,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c169461631d4d30ad63d0e030b407c1ff2224b02.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c169461631d4d30ad63d0e030b407c1ff2224b02.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10355,7 +10355,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a1040f4045bc68278877bd700f61a3fb2db4fc51.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a1040f4045bc68278877bd700f61a3fb2db4fc51.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10368,7 +10368,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a6bde25b6e04d98347538338216ca281c0c80958.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a6bde25b6e04d98347538338216ca281c0c80958.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10381,7 +10381,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3e8725ac4e4faf39f9585ecdebaffbb10a58cf96.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3e8725ac4e4faf39f9585ecdebaffbb10a58cf96.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10394,7 +10394,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2d498c5bf7f010a824e50b77effaade64e08880a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2d498c5bf7f010a824e50b77effaade64e08880a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10407,7 +10407,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f8298f75d93fe4d3b986eb466f97c893d7f052b5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f8298f75d93fe4d3b986eb466f97c893d7f052b5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10420,7 +10420,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [815af5bf9c48ad87c08b583983e030d402601823.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/815af5bf9c48ad87c08b583983e030d402601823.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10433,7 +10433,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [569bbe71899f7a4140698b689e1dd25b837c9645.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/569bbe71899f7a4140698b689e1dd25b837c9645.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10446,7 +10446,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b7cea8ce8dcb46788f193776532dc07292858c91.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b7cea8ce8dcb46788f193776532dc07292858c91.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10459,7 +10459,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [531e03a2e4f00ca67324d14aecea88f950e44b7d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/531e03a2e4f00ca67324d14aecea88f950e44b7d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10472,7 +10472,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [531f5fd5dcc46893b56fd3559e1c5f117776e22b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/531f5fd5dcc46893b56fd3559e1c5f117776e22b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10485,7 +10485,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0a8820194c997bbdbe5ae3e425ea1314a7a35442.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0a8820194c997bbdbe5ae3e425ea1314a7a35442.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10498,7 +10498,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7e82de251c01e5a8b9a31a1f9133fa58e46537d1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7e82de251c01e5a8b9a31a1f9133fa58e46537d1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10511,7 +10511,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5088a344ec17e0aecec5794c9e80391b3b67f5f0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5088a344ec17e0aecec5794c9e80391b3b67f5f0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10524,7 +10524,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c965aecde7b5fda9eef6b1760a5d1b34ac79b6da.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c965aecde7b5fda9eef6b1760a5d1b34ac79b6da.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10537,7 +10537,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7f6511be600d2182c7faefeee03edd8483fbf5e8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7f6511be600d2182c7faefeee03edd8483fbf5e8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10550,7 +10550,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bbe9c8e50accbc005ad6cd053aba0c2855750ada.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bbe9c8e50accbc005ad6cd053aba0c2855750ada.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10563,7 +10563,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dc679ade9a3ed16eab13970275e4eb9f5e528998.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dc679ade9a3ed16eab13970275e4eb9f5e528998.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10576,7 +10576,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6b32adae929f7201c03abbbb938770b0e7bcca11.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6b32adae929f7201c03abbbb938770b0e7bcca11.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10589,7 +10589,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [95986ae49cbb4b85da8fd64104735d9ec4d72b05.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/95986ae49cbb4b85da8fd64104735d9ec4d72b05.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10602,7 +10602,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4f8012f1dc022c207aa7ff6729bc5c660712b582.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4f8012f1dc022c207aa7ff6729bc5c660712b582.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10615,7 +10615,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f122a854a62ceafb3df0ba4f14fedc0d3ac34ca2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f122a854a62ceafb3df0ba4f14fedc0d3ac34ca2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10628,7 +10628,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cbe126ed326b1b1dce6ed756feae53f121027618.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cbe126ed326b1b1dce6ed756feae53f121027618.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10641,7 +10641,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1fcc1a31e61c1850d79e4c10774092c9e9029941.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1fcc1a31e61c1850d79e4c10774092c9e9029941.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10654,7 +10654,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c190ae06cd04f5c26eeebec1c6fc7e33bcdf063f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c190ae06cd04f5c26eeebec1c6fc7e33bcdf063f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10667,7 +10667,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e290c09b898378f7fe8ab72d4d26ccac85571f00.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e290c09b898378f7fe8ab72d4d26ccac85571f00.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10680,7 +10680,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [06e437a91bf2846bf2a4ad9fe96b0ba49446a883.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/06e437a91bf2846bf2a4ad9fe96b0ba49446a883.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10693,7 +10693,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [58b55d427898597031425cec8cbb618f2c732715.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/58b55d427898597031425cec8cbb618f2c732715.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10706,7 +10706,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [49968f555df3a31ca08294f8ec16cc9dd1c62d8d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/49968f555df3a31ca08294f8ec16cc9dd1c62d8d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10719,7 +10719,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c82e7f3d6a299308dab376910247b3ec8c29562f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c82e7f3d6a299308dab376910247b3ec8c29562f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10732,7 +10732,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5ac127bd13d65194050020d7d361232ccd3f5bf3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5ac127bd13d65194050020d7d361232ccd3f5bf3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10745,7 +10745,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [89e0992ab20055f0d2b637d0abdaba68792ff6aa.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/89e0992ab20055f0d2b637d0abdaba68792ff6aa.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10758,7 +10758,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c8004b6233a15401e85be15d2ebeea65e320fe9c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c8004b6233a15401e85be15d2ebeea65e320fe9c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10771,7 +10771,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9af868d8fe59f7234b9c84649c1fac723dc164e0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9af868d8fe59f7234b9c84649c1fac723dc164e0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10784,7 +10784,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [56f614cf40e84451134e07e7a74db9eb0c6900e7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/56f614cf40e84451134e07e7a74db9eb0c6900e7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10797,7 +10797,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d1c8d9ed21703b214660e0b0b3fb35ada43cc822.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d1c8d9ed21703b214660e0b0b3fb35ada43cc822.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10810,7 +10810,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5ac127bd13d65194050020d7d361232ccd3f5bf3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5ac127bd13d65194050020d7d361232ccd3f5bf3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10823,7 +10823,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [89e0992ab20055f0d2b637d0abdaba68792ff6aa.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/89e0992ab20055f0d2b637d0abdaba68792ff6aa.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10836,7 +10836,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c8004b6233a15401e85be15d2ebeea65e320fe9c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c8004b6233a15401e85be15d2ebeea65e320fe9c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10849,7 +10849,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9af868d8fe59f7234b9c84649c1fac723dc164e0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9af868d8fe59f7234b9c84649c1fac723dc164e0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10862,7 +10862,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [56f614cf40e84451134e07e7a74db9eb0c6900e7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/56f614cf40e84451134e07e7a74db9eb0c6900e7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10875,7 +10875,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d1c8d9ed21703b214660e0b0b3fb35ada43cc822.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d1c8d9ed21703b214660e0b0b3fb35ada43cc822.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10888,7 +10888,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [42fb849e4ee9530f99672a4f33a161bdbaa01eec.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/42fb849e4ee9530f99672a4f33a161bdbaa01eec.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10901,7 +10901,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4252745b510f2984cad1a8e3556f2e644b3a1633.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4252745b510f2984cad1a8e3556f2e644b3a1633.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10914,7 +10914,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a5419df49878002bb3a5b90f9dac7317202abf4e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a5419df49878002bb3a5b90f9dac7317202abf4e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10927,7 +10927,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [78e67fe9418d3d5a6be1a056c5ad6da1f8f0b486.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/78e67fe9418d3d5a6be1a056c5ad6da1f8f0b486.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10940,7 +10940,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d109a84726ad07c9132a6a5a1aa9f4955ffaa192.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d109a84726ad07c9132a6a5a1aa9f4955ffaa192.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10953,7 +10953,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f797a3450f1cd1006692984b71bb59b238dec72a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f797a3450f1cd1006692984b71bb59b238dec72a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10966,7 +10966,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f7874fe4f86b6257151184f9378ac5c3bea63796.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f7874fe4f86b6257151184f9378ac5c3bea63796.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10979,7 +10979,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dd272bf320bed961e1cefe79cd2b02945c1921da.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dd272bf320bed961e1cefe79cd2b02945c1921da.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -10992,7 +10992,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d682a2e6c717ed7a1bdffe503a403fe350276fc4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d682a2e6c717ed7a1bdffe503a403fe350276fc4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11005,7 +11005,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e592babf5bef17037b451781918a80c37aa8b9b0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e592babf5bef17037b451781918a80c37aa8b9b0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11018,7 +11018,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [08c34e2ce65c17ac75b6e5efca4dcf5d3971e055.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/08c34e2ce65c17ac75b6e5efca4dcf5d3971e055.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11031,7 +11031,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [296b42815b1166b595b84977c99e6cbb3f2f0188.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/296b42815b1166b595b84977c99e6cbb3f2f0188.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11044,7 +11044,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [949cde4ccb4d97743ba5764e5ca26ce7263ccb79.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/949cde4ccb4d97743ba5764e5ca26ce7263ccb79.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11057,7 +11057,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [48a5a69878ef85e93255958c6b2fa919cc17c309.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/48a5a69878ef85e93255958c6b2fa919cc17c309.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11070,7 +11070,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a1dc3e5eed795b371193ee288ad778da0c4b265f.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a1dc3e5eed795b371193ee288ad778da0c4b265f.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11083,7 +11083,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c47f08c69ab3b345612ae7ea39816195aef86370.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c47f08c69ab3b345612ae7ea39816195aef86370.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11096,7 +11096,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c3974933c753f48c5b9305bfa9235c71cb56c4b6.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c3974933c753f48c5b9305bfa9235c71cb56c4b6.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11109,7 +11109,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [948e74d537f004b9415cfb83d9844e031188fded.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/948e74d537f004b9415cfb83d9844e031188fded.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11122,7 +11122,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [94dbf523e0d4e1e31d02d5a09adf9bbccca963af.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/94dbf523e0d4e1e31d02d5a09adf9bbccca963af.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11135,7 +11135,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [30ec3fe251055d5b4ff03191dd75b13c7ad7f96e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/30ec3fe251055d5b4ff03191dd75b13c7ad7f96e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11148,7 +11148,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b2a6cbb5c8249adaedc3264fcd300945e05e3dec.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b2a6cbb5c8249adaedc3264fcd300945e05e3dec.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11161,7 +11161,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7ac5b2a6a3b274f75f043d0eaf9805c99801fe62.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7ac5b2a6a3b274f75f043d0eaf9805c99801fe62.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11174,7 +11174,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [aa2980c931b45ce2d2d9c4139ee7cd2f50fd7ba4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/aa2980c931b45ce2d2d9c4139ee7cd2f50fd7ba4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11187,7 +11187,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11200,7 +11200,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f65d01db3b75c229c8c1815637539be89eb079bc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f65d01db3b75c229c8c1815637539be89eb079bc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11213,7 +11213,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e29fc5e3450d52de86d650a107b315426bdd6f5e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e29fc5e3450d52de86d650a107b315426bdd6f5e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11226,7 +11226,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [acf222ea5993c0b1b7fa5444362afb439647c779.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/acf222ea5993c0b1b7fa5444362afb439647c779.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11239,7 +11239,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [373f21a6853df7ef51a8a7635c9c31f55ad16f45.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/373f21a6853df7ef51a8a7635c9c31f55ad16f45.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11252,7 +11252,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [edb2a02c7ac1ad9ba9796dc4269f7fef737e1102.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/edb2a02c7ac1ad9ba9796dc4269f7fef737e1102.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11265,7 +11265,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6db2393a313fde6e273bac284ee962b17aba546a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6db2393a313fde6e273bac284ee962b17aba546a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11278,7 +11278,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c5a37eb43f3506d459723e890bd69845f3677ed9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c5a37eb43f3506d459723e890bd69845f3677ed9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11291,7 +11291,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bd9fe767561c0d5e468cf7459c08088b3d688ae5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bd9fe767561c0d5e468cf7459c08088b3d688ae5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11304,7 +11304,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [30ec3fe251055d5b4ff03191dd75b13c7ad7f96e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/30ec3fe251055d5b4ff03191dd75b13c7ad7f96e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11317,7 +11317,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f62bf70f04bb888ca45f95b2bdfee150957e265d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f62bf70f04bb888ca45f95b2bdfee150957e265d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11330,7 +11330,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f62bf70f04bb888ca45f95b2bdfee150957e265d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f62bf70f04bb888ca45f95b2bdfee150957e265d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11343,7 +11343,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bd2d89194ce943061441f69bd54e5a0b17d2150f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bd2d89194ce943061441f69bd54e5a0b17d2150f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11356,7 +11356,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bd2d89194ce943061441f69bd54e5a0b17d2150f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bd2d89194ce943061441f69bd54e5a0b17d2150f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11369,7 +11369,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9e8464554499c112aa39e2e226c01c3d18d8f6d5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9e8464554499c112aa39e2e226c01c3d18d8f6d5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11382,7 +11382,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9e8464554499c112aa39e2e226c01c3d18d8f6d5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9e8464554499c112aa39e2e226c01c3d18d8f6d5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11395,7 +11395,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [27acf88ef01fedfb9f674aa6771c22ffd616d5ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/27acf88ef01fedfb9f674aa6771c22ffd616d5ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11408,7 +11408,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [27acf88ef01fedfb9f674aa6771c22ffd616d5ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/27acf88ef01fedfb9f674aa6771c22ffd616d5ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11421,7 +11421,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [edf849e1bcc4479302d80f9e06859f3771f34f09.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/edf849e1bcc4479302d80f9e06859f3771f34f09.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11434,7 +11434,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6e9fe8e23e7e7e6b495ae68525351b40ba0a11e0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6e9fe8e23e7e7e6b495ae68525351b40ba0a11e0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11447,7 +11447,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0ee8ffcec694ab101b1bf169ed8b4923a492d3f3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0ee8ffcec694ab101b1bf169ed8b4923a492d3f3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11460,7 +11460,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7961175f766ee5425366019f2bd9cb9c961f3c8f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7961175f766ee5425366019f2bd9cb9c961f3c8f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11473,7 +11473,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [14402bc0cea657c4df3019f78b4cc8e4c1661d2b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/14402bc0cea657c4df3019f78b4cc8e4c1661d2b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11486,7 +11486,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a6f4110cb6456c78ed5035b8a17ad8d39b4ee670.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a6f4110cb6456c78ed5035b8a17ad8d39b4ee670.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11499,7 +11499,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cb6989e9859a38572f4bf6d3deb3d081e1946911.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cb6989e9859a38572f4bf6d3deb3d081e1946911.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11512,7 +11512,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a1040f4045bc68278877bd700f61a3fb2db4fc51.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a1040f4045bc68278877bd700f61a3fb2db4fc51.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11525,7 +11525,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6ea0582f7be5e7a8f28868a83cfd7b23a832082d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6ea0582f7be5e7a8f28868a83cfd7b23a832082d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11538,7 +11538,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [50ba0417b596766d5996b34166679e8d35f21979.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/50ba0417b596766d5996b34166679e8d35f21979.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11551,7 +11551,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [617d30a1bf64f3795043bebcba256098ba6f3810.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/617d30a1bf64f3795043bebcba256098ba6f3810.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11564,7 +11564,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [335b0a20abdc53954c4b9dd25fb187b7df9a8251.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/335b0a20abdc53954c4b9dd25fb187b7df9a8251.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11577,7 +11577,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a6bde25b6e04d98347538338216ca281c0c80958.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a6bde25b6e04d98347538338216ca281c0c80958.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11590,7 +11590,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d39f30776f776c018de7ba6a204590ecf9dbba13.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d39f30776f776c018de7ba6a204590ecf9dbba13.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11603,7 +11603,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [95d3caed8d51bb772a2e65a25534feea00b18b29.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/95d3caed8d51bb772a2e65a25534feea00b18b29.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11616,7 +11616,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f8abd48cb78fdb2aea5f7507182ee948ee35e69f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f8abd48cb78fdb2aea5f7507182ee948ee35e69f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11629,7 +11629,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d39f30776f776c018de7ba6a204590ecf9dbba13.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d39f30776f776c018de7ba6a204590ecf9dbba13.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11642,7 +11642,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [95d3caed8d51bb772a2e65a25534feea00b18b29.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/95d3caed8d51bb772a2e65a25534feea00b18b29.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11655,7 +11655,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f8abd48cb78fdb2aea5f7507182ee948ee35e69f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f8abd48cb78fdb2aea5f7507182ee948ee35e69f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11668,7 +11668,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fd589d7f39c162c2ef19cab55c89b83d5617d982.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fd589d7f39c162c2ef19cab55c89b83d5617d982.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11681,7 +11681,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1bee0e6483b723489723e081083739ec5bdb42ee.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1bee0e6483b723489723e081083739ec5bdb42ee.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11694,7 +11694,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0746611f7c0f1d7aea1c4ef0cf205815342311cb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0746611f7c0f1d7aea1c4ef0cf205815342311cb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11707,7 +11707,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8de27a2125ec61d4b87a19784985eb0fa54e1f1c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8de27a2125ec61d4b87a19784985eb0fa54e1f1c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11720,7 +11720,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cc26821394587e73c69ec575ee5fd45360ce4c2f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc26821394587e73c69ec575ee5fd45360ce4c2f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11733,7 +11733,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [34ed82016e14bd3a64f1f60402093f29c4191c01.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/34ed82016e14bd3a64f1f60402093f29c4191c01.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11746,7 +11746,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b2a6cbb5c8249adaedc3264fcd300945e05e3dec.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b2a6cbb5c8249adaedc3264fcd300945e05e3dec.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11759,7 +11759,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7ac5b2a6a3b274f75f043d0eaf9805c99801fe62.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7ac5b2a6a3b274f75f043d0eaf9805c99801fe62.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11772,7 +11772,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [aa2980c931b45ce2d2d9c4139ee7cd2f50fd7ba4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/aa2980c931b45ce2d2d9c4139ee7cd2f50fd7ba4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11785,7 +11785,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11798,7 +11798,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f65d01db3b75c229c8c1815637539be89eb079bc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f65d01db3b75c229c8c1815637539be89eb079bc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11811,7 +11811,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e29fc5e3450d52de86d650a107b315426bdd6f5e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e29fc5e3450d52de86d650a107b315426bdd6f5e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11824,7 +11824,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [acf222ea5993c0b1b7fa5444362afb439647c779.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/acf222ea5993c0b1b7fa5444362afb439647c779.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11837,7 +11837,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cf8d08a61d97431ecc4cccb8fa193b61172994e5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cf8d08a61d97431ecc4cccb8fa193b61172994e5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11850,7 +11850,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9febff29da687712a9f24ac169ad42b6a0c0ad8b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9febff29da687712a9f24ac169ad42b6a0c0ad8b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11863,7 +11863,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f0076a866d0bd0444cba3ba34a3760aae535d6ca.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f0076a866d0bd0444cba3ba34a3760aae535d6ca.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11876,7 +11876,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6ce50e349d13150b04deecb7407554943068e5c4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6ce50e349d13150b04deecb7407554943068e5c4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11889,7 +11889,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b4f44ea13aac754396b342a8c635f00110b5dbbf.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b4f44ea13aac754396b342a8c635f00110b5dbbf.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11902,7 +11902,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e3bf6115899afe88e6c1fd9b8e58cc57dea11f39.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e3bf6115899afe88e6c1fd9b8e58cc57dea11f39.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11915,7 +11915,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [63eea12b1be28d9e903291adc1ba3f7d4cbbfd57.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/63eea12b1be28d9e903291adc1ba3f7d4cbbfd57.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11928,7 +11928,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f1910443dbf62b028f1a36b745849f2452167bb8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f1910443dbf62b028f1a36b745849f2452167bb8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11941,7 +11941,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4af74336fee65eada199824e6a11ff3728725f78.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4af74336fee65eada199824e6a11ff3728725f78.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11954,7 +11954,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [efce61a8af77aa7eecfb6c67ee3cb70e190280ed.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/efce61a8af77aa7eecfb6c67ee3cb70e190280ed.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11967,7 +11967,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [77b11abd9b843c7e57f00f0984cf15775d56b82f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/77b11abd9b843c7e57f00f0984cf15775d56b82f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11980,7 +11980,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f687c1828e39fbcdf286c67447fa42eeeb58318c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f687c1828e39fbcdf286c67447fa42eeeb58318c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -11993,7 +11993,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1e45b813bb59c1c92dc98602387180ae11d43249.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1e45b813bb59c1c92dc98602387180ae11d43249.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12006,7 +12006,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [326f39670e08c524d20d980b84eeae17d3d637e8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/326f39670e08c524d20d980b84eeae17d3d637e8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12019,7 +12019,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [df5223d6522566ec6a757ce6a0a18bbb6bf0dd28.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/df5223d6522566ec6a757ce6a0a18bbb6bf0dd28.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12032,7 +12032,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [daa76fba944dfcf0f728354b4e34effccec0a295.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/daa76fba944dfcf0f728354b4e34effccec0a295.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12045,7 +12045,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c75de5d18b0ce09281359ca7e84f6b6f2b0dfdb1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c75de5d18b0ce09281359ca7e84f6b6f2b0dfdb1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12058,7 +12058,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12071,7 +12071,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [44d4e9576db8dd1877b454c2c9f8e8be93771853.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/44d4e9576db8dd1877b454c2c9f8e8be93771853.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12084,7 +12084,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3173c0aba7dbb350790f61dfd6547360e79b1303.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3173c0aba7dbb350790f61dfd6547360e79b1303.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12097,7 +12097,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ee58b39005032eb689c4340103a6819f9f903b67.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ee58b39005032eb689c4340103a6819f9f903b67.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12110,7 +12110,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c190ae06cd04f5c26eeebec1c6fc7e33bcdf063f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c190ae06cd04f5c26eeebec1c6fc7e33bcdf063f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12123,7 +12123,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4f8012f1dc022c207aa7ff6729bc5c660712b582.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4f8012f1dc022c207aa7ff6729bc5c660712b582.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12136,7 +12136,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f122a854a62ceafb3df0ba4f14fedc0d3ac34ca2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f122a854a62ceafb3df0ba4f14fedc0d3ac34ca2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12149,7 +12149,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cbe126ed326b1b1dce6ed756feae53f121027618.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cbe126ed326b1b1dce6ed756feae53f121027618.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12162,7 +12162,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1fcc1a31e61c1850d79e4c10774092c9e9029941.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1fcc1a31e61c1850d79e4c10774092c9e9029941.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12175,7 +12175,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e290c09b898378f7fe8ab72d4d26ccac85571f00.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e290c09b898378f7fe8ab72d4d26ccac85571f00.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12188,7 +12188,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4c218ef18663c8fa651fa879537af2cf0ac12ac5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4c218ef18663c8fa651fa879537af2cf0ac12ac5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12201,7 +12201,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [006d7dc0b7c3643582c0cd9093af223b64f94f72.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/006d7dc0b7c3643582c0cd9093af223b64f94f72.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12214,7 +12214,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4c218ef18663c8fa651fa879537af2cf0ac12ac5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4c218ef18663c8fa651fa879537af2cf0ac12ac5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12227,7 +12227,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2071fa425a068823e0076eb5d99e895cc9b40533.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2071fa425a068823e0076eb5d99e895cc9b40533.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12240,7 +12240,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [face941db0c10c01e90ebec26e7139233c558bf6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/face941db0c10c01e90ebec26e7139233c558bf6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12253,7 +12253,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [eef4909e902a5f0432a23566f0594b3f219d27d2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/eef4909e902a5f0432a23566f0594b3f219d27d2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12266,7 +12266,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fdbfc646aeaf56067f0d837030fa6893b1d6a635.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fdbfc646aeaf56067f0d837030fa6893b1d6a635.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12279,7 +12279,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a089b660f0d583bbf83b959daf82750558233d53.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a089b660f0d583bbf83b959daf82750558233d53.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12292,7 +12292,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cc1dece7375225708f1fe6482ce1f308a34efaec.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc1dece7375225708f1fe6482ce1f308a34efaec.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12305,7 +12305,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e985394490c62ce10fd057b9450239ab61230407.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e985394490c62ce10fd057b9450239ab61230407.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12318,7 +12318,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5d1ddcc444a4caef34369530f75d3531e32b5300.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5d1ddcc444a4caef34369530f75d3531e32b5300.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12331,7 +12331,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b59fe4f60c0847bab3263bef9157ab7017239f82.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b59fe4f60c0847bab3263bef9157ab7017239f82.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12344,7 +12344,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b59fe4f60c0847bab3263bef9157ab7017239f82.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b59fe4f60c0847bab3263bef9157ab7017239f82.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12357,7 +12357,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e4e99a32caac7ce101e0792033dfd8083d547787.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e4e99a32caac7ce101e0792033dfd8083d547787.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12370,7 +12370,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cd3c2dd4f4819f59e9c065c57e48c640aa806f25.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cd3c2dd4f4819f59e9c065c57e48c640aa806f25.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12383,7 +12383,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2af881747918c3ab0690d6a72472de10fe8e2509.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2af881747918c3ab0690d6a72472de10fe8e2509.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12396,7 +12396,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e09a77d3782ef8d7c9fbd2a6a4affb6c274ea400.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e09a77d3782ef8d7c9fbd2a6a4affb6c274ea400.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12409,7 +12409,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c10ba65d6e0035479a7f8a47253fe6d16d51012e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c10ba65d6e0035479a7f8a47253fe6d16d51012e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12422,7 +12422,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8e1083baa37deb17feb68441c26a1d30481176ab.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8e1083baa37deb17feb68441c26a1d30481176ab.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12435,7 +12435,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fbc5060dead10a0ff22cbcac139182c7084dafd0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fbc5060dead10a0ff22cbcac139182c7084dafd0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12448,7 +12448,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f370dfed0368e23301cbec72bc2527d4c8edc4cc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f370dfed0368e23301cbec72bc2527d4c8edc4cc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12461,7 +12461,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ae6343c9ca9549eaa9bee3907fe5a55766e1b337.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ae6343c9ca9549eaa9bee3907fe5a55766e1b337.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12474,7 +12474,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5aa322db92d21f3ff8fc512e072bd5e9a87aaf58.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5aa322db92d21f3ff8fc512e072bd5e9a87aaf58.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12487,7 +12487,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e1f50dd0a9b19bdc8fb7370c4c266de9ab19234d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e1f50dd0a9b19bdc8fb7370c4c266de9ab19234d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12500,7 +12500,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e756286e34ccafcaec3a4ac12aedf3e451ff0887.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e756286e34ccafcaec3a4ac12aedf3e451ff0887.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12513,7 +12513,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [aca506991b5942b0222278ea656f685759ca5311.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/aca506991b5942b0222278ea656f685759ca5311.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12526,7 +12526,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2071fa425a068823e0076eb5d99e895cc9b40533.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2071fa425a068823e0076eb5d99e895cc9b40533.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12539,7 +12539,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [face941db0c10c01e90ebec26e7139233c558bf6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/face941db0c10c01e90ebec26e7139233c558bf6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12552,7 +12552,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [eef4909e902a5f0432a23566f0594b3f219d27d2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/eef4909e902a5f0432a23566f0594b3f219d27d2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12565,7 +12565,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ae6343c9ca9549eaa9bee3907fe5a55766e1b337.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ae6343c9ca9549eaa9bee3907fe5a55766e1b337.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12578,7 +12578,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5aa322db92d21f3ff8fc512e072bd5e9a87aaf58.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5aa322db92d21f3ff8fc512e072bd5e9a87aaf58.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12591,7 +12591,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [077a2064b6a10835432c20d3b12a7832563f8001.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/077a2064b6a10835432c20d3b12a7832563f8001.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12604,7 +12604,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4634916fa6960c25710a03e5bf66ee2f55d8df46.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4634916fa6960c25710a03e5bf66ee2f55d8df46.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12617,7 +12617,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [aca506991b5942b0222278ea656f685759ca5311.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/aca506991b5942b0222278ea656f685759ca5311.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12630,7 +12630,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [54dd79901325a071a063f7a8fb3a87b5abf7d3eb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/54dd79901325a071a063f7a8fb3a87b5abf7d3eb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12643,7 +12643,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b28ca266138492e56b3d55e5e12427e30da6fff6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b28ca266138492e56b3d55e5e12427e30da6fff6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12656,7 +12656,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [00917b325fbc53196249904a885cfae92894bed4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/00917b325fbc53196249904a885cfae92894bed4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12669,7 +12669,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [70ad7216f73d42105d88eb7f8ccc44e94afd5bf8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/70ad7216f73d42105d88eb7f8ccc44e94afd5bf8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12682,7 +12682,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3310d397d6034a75924d76b50962449ac2eac843.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3310d397d6034a75924d76b50962449ac2eac843.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12695,7 +12695,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bc3b8e9fb00874297cdf7422a635d448354fb60e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bc3b8e9fb00874297cdf7422a635d448354fb60e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12708,7 +12708,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [276a35fa6db448d512f25a43eb83cd068cde4bf9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/276a35fa6db448d512f25a43eb83cd068cde4bf9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12721,7 +12721,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5753ed5e63229119bad25219b816609e77509df4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5753ed5e63229119bad25219b816609e77509df4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12734,7 +12734,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f1c2f0cb2ad698160c0271087e36fba06c4c074f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f1c2f0cb2ad698160c0271087e36fba06c4c074f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12747,7 +12747,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b323206a2c9a9d88287cfabc3f25b02c0d9029bd.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b323206a2c9a9d88287cfabc3f25b02c0d9029bd.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12760,7 +12760,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [da0620afb6f5bef34cf8e8f3a0f39845896b1d5c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/da0620afb6f5bef34cf8e8f3a0f39845896b1d5c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12773,7 +12773,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e81c62f59829f21ab4af8530b22983e5fdafca46.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e81c62f59829f21ab4af8530b22983e5fdafca46.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12786,7 +12786,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [455ce70efcbd7023b3cec959a3af66373eaaa648.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/455ce70efcbd7023b3cec959a3af66373eaaa648.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12799,7 +12799,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a8ab0f7dbf1af3ddf6c960d0bb6fdd45a5dcf8cd.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a8ab0f7dbf1af3ddf6c960d0bb6fdd45a5dcf8cd.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12812,7 +12812,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [de889815e1fc93c8e37fa8da16ebaa9c448fc255.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/de889815e1fc93c8e37fa8da16ebaa9c448fc255.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12825,7 +12825,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2ba4a6a0280c403828e77061c1084203e836ae49.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2ba4a6a0280c403828e77061c1084203e836ae49.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12838,7 +12838,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cf894ca65f60b97b24c7837ee74b4f1ac9236d88.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cf894ca65f60b97b24c7837ee74b4f1ac9236d88.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12851,7 +12851,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8064fb60db4863f36ac1b875cf731f24260ec9f0.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8064fb60db4863f36ac1b875cf731f24260ec9f0.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12864,7 +12864,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6c96691673998b25d4e43058374af6d2f58f8165.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6c96691673998b25d4e43058374af6d2f58f8165.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12877,7 +12877,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e8885dfc80a4921fc47e5cfb92cd3cd2208712b7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e8885dfc80a4921fc47e5cfb92cd3cd2208712b7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12890,7 +12890,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d514cebf733e8c5c403f412a9ee4e32293d2ca4a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d514cebf733e8c5c403f412a9ee4e32293d2ca4a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12903,7 +12903,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3cf2a0e0f1de4ffd5a0e6a1dec2665dafd4e14ce.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3cf2a0e0f1de4ffd5a0e6a1dec2665dafd4e14ce.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12916,7 +12916,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a93db298e40c0af83ba75efccb5d74fab9f9a379.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a93db298e40c0af83ba75efccb5d74fab9f9a379.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12929,7 +12929,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b4453fb550f727102b175287d8b83f58278e824d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b4453fb550f727102b175287d8b83f58278e824d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12942,7 +12942,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b4bb35bf0e30ce7e494dca3c4d2c7623b1e586b8.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b4bb35bf0e30ce7e494dca3c4d2c7623b1e586b8.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12955,7 +12955,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12968,7 +12968,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12981,7 +12981,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [707f5fe1b594055da518870a0e688d51a164e1ca.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/707f5fe1b594055da518870a0e688d51a164e1ca.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -12994,7 +12994,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f7b31c83fcc2c82cd32b7729edfdc9a02a3d42f9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f7b31c83fcc2c82cd32b7729edfdc9a02a3d42f9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13007,7 +13007,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3605647a008cd9e56015bbf1a5b79e19c8888dd2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3605647a008cd9e56015bbf1a5b79e19c8888dd2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13020,7 +13020,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [daeeb67b982cdd64e4e80a59cde2be4b085608e9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/daeeb67b982cdd64e4e80a59cde2be4b085608e9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13033,7 +13033,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b96f3ff78d108dbbef3b3e2a9edd8b5789f5a0b4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b96f3ff78d108dbbef3b3e2a9edd8b5789f5a0b4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13046,7 +13046,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [506fbbe68192f9c1a4b9944827daa08ddc5a33b9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/506fbbe68192f9c1a4b9944827daa08ddc5a33b9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13059,7 +13059,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a1f01c9f83c6bb7fc1a3569273daae2ed710f53f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a1f01c9f83c6bb7fc1a3569273daae2ed710f53f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13072,7 +13072,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [daa76fba944dfcf0f728354b4e34effccec0a295.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/daa76fba944dfcf0f728354b4e34effccec0a295.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13085,7 +13085,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [09a6022ea352421d0c3cc35de0f1f2e59c7c1c71.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/09a6022ea352421d0c3cc35de0f1f2e59c7c1c71.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13098,7 +13098,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cc82344e6d294809e64cae6238729dbc84a66c31.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc82344e6d294809e64cae6238729dbc84a66c31.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13111,7 +13111,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [bcc4acfe1dc579c21bfcc96b5c1e9f88442cba64.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/bcc4acfe1dc579c21bfcc96b5c1e9f88442cba64.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13124,7 +13124,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d9502dd53739a9f669b481687ec4ba9bde497ab1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d9502dd53739a9f669b481687ec4ba9bde497ab1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13137,7 +13137,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c12ad7c956b6e2cf9557856c44f394ae86cc555b.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c12ad7c956b6e2cf9557856c44f394ae86cc555b.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13150,7 +13150,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e50f27910dec5abf0d5d648e39ad376d330ec8fb.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e50f27910dec5abf0d5d648e39ad376d330ec8fb.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13163,7 +13163,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2aea2a69f1f93fb18d13eceb785d63d2e1b56f18.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2aea2a69f1f93fb18d13eceb785d63d2e1b56f18.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13176,7 +13176,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3173c0aba7dbb350790f61dfd6547360e79b1303.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3173c0aba7dbb350790f61dfd6547360e79b1303.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13189,7 +13189,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ee58b39005032eb689c4340103a6819f9f903b67.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ee58b39005032eb689c4340103a6819f9f903b67.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13202,7 +13202,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b022a06eb8384a024302c72a9ea5c27b4cf2e7e1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b022a06eb8384a024302c72a9ea5c27b4cf2e7e1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13215,7 +13215,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8b1d375c6336d47083d49c6d1d2c7ba0b947534b.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8b1d375c6336d47083d49c6d1d2c7ba0b947534b.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13228,7 +13228,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [334faa35ee61c8148a2a1f1b12615bfae34cf7bc.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/334faa35ee61c8148a2a1f1b12615bfae34cf7bc.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13241,7 +13241,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b37b38b9fc3db4c6b74e792576fc9de6b4334175.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b37b38b9fc3db4c6b74e792576fc9de6b4334175.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13254,7 +13254,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a28e5e07bb4bf345d2c94abaa6989f2dda7d6c56.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a28e5e07bb4bf345d2c94abaa6989f2dda7d6c56.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13267,7 +13267,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [de9206e14129239e0c9c1b17dedd8d43957508f9.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/de9206e14129239e0c9c1b17dedd8d43957508f9.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13280,7 +13280,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f0237d4947c4c90b9dd4270cbedefc074f4628bc.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f0237d4947c4c90b9dd4270cbedefc074f4628bc.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13293,7 +13293,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f357062c1e1246b25cc2f74c86d525d0e3e9a568.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f357062c1e1246b25cc2f74c86d525d0e3e9a568.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13306,7 +13306,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a3911baba272e3bc21a97ddb3d638d3c13555ae0.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a3911baba272e3bc21a97ddb3d638d3c13555ae0.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13319,7 +13319,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7af6d2fec91e26163ee54eb266d20c16ec1fd09d.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7af6d2fec91e26163ee54eb266d20c16ec1fd09d.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13332,7 +13332,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0a73c1e60d439892c4b9347cf045f31967555094.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0a73c1e60d439892c4b9347cf045f31967555094.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13345,7 +13345,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [2d289d596b7440903ca9dbb9866c77e18fcf7af9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/2d289d596b7440903ca9dbb9866c77e18fcf7af9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13358,7 +13358,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fec89f1810d4afd8b416f238fc773db059eeb3db.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fec89f1810d4afd8b416f238fc773db059eeb3db.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13371,7 +13371,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a9ad3468e77f1f134b208002338814b8d95588ce.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a9ad3468e77f1f134b208002338814b8d95588ce.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13384,7 +13384,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fc6664bd13fc97463701d666ae3b1ff56b68beba.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fc6664bd13fc97463701d666ae3b1ff56b68beba.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13397,7 +13397,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ca1e48f60d71af2a9305c03c149258835854eb90.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ca1e48f60d71af2a9305c03c149258835854eb90.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13410,7 +13410,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1ad87416ac0f430b8c8c4c10434a68c5740c8f79.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1ad87416ac0f430b8c8c4c10434a68c5740c8f79.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13423,7 +13423,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [763a545239248cde61474737a645d987e9ac60dc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/763a545239248cde61474737a645d987e9ac60dc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13436,7 +13436,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9a50c23099302fad090015c0ab894a9b43823a81.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9a50c23099302fad090015c0ab894a9b43823a81.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13449,7 +13449,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f8e4dd1a6f66cedf393e676da2055fc07db83a9f.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f8e4dd1a6f66cedf393e676da2055fc07db83a9f.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13462,7 +13462,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a8df73e0add1a2764f3786b6288bfbea53849b62.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a8df73e0add1a2764f3786b6288bfbea53849b62.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13475,7 +13475,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [69e47a39f1b570323497f1c17411cbc23d248454.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/69e47a39f1b570323497f1c17411cbc23d248454.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13488,7 +13488,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [240a7df633a0fd61a504dbb5893decad7441fecb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/240a7df633a0fd61a504dbb5893decad7441fecb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13501,7 +13501,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9fe133145205e9b505bcb3516d35cef5b2b4fb00.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9fe133145205e9b505bcb3516d35cef5b2b4fb00.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13514,7 +13514,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c2c60cd55ec72e49ee57095700a20dfe2ee2118b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c2c60cd55ec72e49ee57095700a20dfe2ee2118b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13527,7 +13527,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9a403ac8a4e3d67ec20e7415aa4f89aa08fb7dec.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9a403ac8a4e3d67ec20e7415aa4f89aa08fb7dec.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13540,7 +13540,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [94e53f25b428e18eeaeeb222960234cf957bf573.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/94e53f25b428e18eeaeeb222960234cf957bf573.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13553,7 +13553,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5cf35ca55f3d4f41f165184c3c3dd005d5aef766.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5cf35ca55f3d4f41f165184c3c3dd005d5aef766.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13566,7 +13566,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3258b588f73e2ef8b83d93b80c01a66334095c75.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3258b588f73e2ef8b83d93b80c01a66334095c75.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13579,7 +13579,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0afb1590d92a67f646a1af776114f3b51a92d4b7.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0afb1590d92a67f646a1af776114f3b51a92d4b7.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13592,7 +13592,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7df8ee5c71e6e972d4e6eed8b0c52a2d8d48dd5d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7df8ee5c71e6e972d4e6eed8b0c52a2d8d48dd5d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13605,7 +13605,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [38f71cce6292150eb46aa0d8a6eed4b8e75c3000.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/38f71cce6292150eb46aa0d8a6eed4b8e75c3000.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13618,7 +13618,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6b39f66bc2a3938794fdde9ba32678eb9c131bb2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6b39f66bc2a3938794fdde9ba32678eb9c131bb2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13631,7 +13631,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1c3779ac6f4754497cbd0c5b4d9f587a0bf141eb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1c3779ac6f4754497cbd0c5b4d9f587a0bf141eb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13644,7 +13644,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [0422f64a2e5ae05ec584a673ee9861e191a35104.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/0422f64a2e5ae05ec584a673ee9861e191a35104.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13657,7 +13657,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9955770cb33d70a357ee4412a836d13251d13ff2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9955770cb33d70a357ee4412a836d13251d13ff2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13670,7 +13670,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1bde6aeb8323fc394b46ad0b2b800543b4292940.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1bde6aeb8323fc394b46ad0b2b800543b4292940.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13683,7 +13683,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [66c230651350339643e980b943af8c458612897c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/66c230651350339643e980b943af8c458612897c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13696,7 +13696,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9c0c4cfa0b830f72f7800481729a95164ffcb372.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9c0c4cfa0b830f72f7800481729a95164ffcb372.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13709,7 +13709,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [997123fa0a769dbde55799f77b35dfb3e9b18a66.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/997123fa0a769dbde55799f77b35dfb3e9b18a66.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13722,7 +13722,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c6d5552ab7f9e090ecf9d031ef7405fd9c647eb2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c6d5552ab7f9e090ecf9d031ef7405fd9c647eb2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13735,7 +13735,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8409490788b69644e27bb04ed81da541cc4c243a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8409490788b69644e27bb04ed81da541cc4c243a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13748,7 +13748,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9da56209a25a8989122f40d0063eafd30ce39823.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9da56209a25a8989122f40d0063eafd30ce39823.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13761,7 +13761,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9f7eb40364d3d39ef124023472473b20f8d1c4f3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9f7eb40364d3d39ef124023472473b20f8d1c4f3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13774,7 +13774,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [58c63473330a8d0cd87bca2e8117e6d846ceea0b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/58c63473330a8d0cd87bca2e8117e6d846ceea0b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13787,7 +13787,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [19d9e8270eedb9d047ffa16d8e8be09ea70f1bac.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/19d9e8270eedb9d047ffa16d8e8be09ea70f1bac.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13800,7 +13800,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [76d4944c8e49e305d1e9b5b56c0783f1fcb5f411.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/76d4944c8e49e305d1e9b5b56c0783f1fcb5f411.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13813,7 +13813,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ef86a47fef29d9c2c9efd8d053228a7ea2f12fb6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ef86a47fef29d9c2c9efd8d053228a7ea2f12fb6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13826,7 +13826,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c0a8a31fc7d9fbacd82dc952525835a414bbcb4d.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c0a8a31fc7d9fbacd82dc952525835a414bbcb4d.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13839,7 +13839,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c827e2d5ac7eea022d25ff54df247539f6990f6b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c827e2d5ac7eea022d25ff54df247539f6990f6b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13852,7 +13852,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a174b2fd63e1029f0f2db347e17497b24d9205ab.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a174b2fd63e1029f0f2db347e17497b24d9205ab.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13865,7 +13865,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [533d45585964e6cdff28223c8100a96f07b08ade.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/533d45585964e6cdff28223c8100a96f07b08ade.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13878,7 +13878,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d9354757767466287693a958eb93bac4c50ba1dc.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d9354757767466287693a958eb93bac4c50ba1dc.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13891,7 +13891,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [e2966a2d47dc348c8b852b688e273e62bf1d626a.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2966a2d47dc348c8b852b688e273e62bf1d626a.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13904,7 +13904,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [151cbeda4b70a5faff11ff8db0aa152537a4c01b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/151cbeda4b70a5faff11ff8db0aa152537a4c01b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13917,7 +13917,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a112cf83216d68adfe098c7baae4f1140d0fc72e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a112cf83216d68adfe098c7baae4f1140d0fc72e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13930,7 +13930,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [490dc25cb23e7f05e15b7b133cee41dd41b540b9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/490dc25cb23e7f05e15b7b133cee41dd41b540b9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13943,7 +13943,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fd627a65f7566cda5c4ff7ab148b8727fed3a87f.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fd627a65f7566cda5c4ff7ab148b8727fed3a87f.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13956,7 +13956,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a175583ea91cabaff6ff62c8dcef338dbe793b0c.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a175583ea91cabaff6ff62c8dcef338dbe793b0c.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13969,7 +13969,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c770edbcb2fe998a703b7d4351c899537e71809e.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c770edbcb2fe998a703b7d4351c899537e71809e.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13982,7 +13982,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dc1304e5fab61156ab9204e92344e1c443470ed6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dc1304e5fab61156ab9204e92344e1c443470ed6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -13995,7 +13995,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [527711c8cc7b4b4e68b66a5d38f2adbf48e8ca17.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/527711c8cc7b4b4e68b66a5d38f2adbf48e8ca17.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14008,7 +14008,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4e86d268b3936cc2991317796d18e30113213e85.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4e86d268b3936cc2991317796d18e30113213e85.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14021,7 +14021,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [90dcc704696d4567c43b255d2ad86b78b3276d8c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/90dcc704696d4567c43b255d2ad86b78b3276d8c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14034,7 +14034,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [4e68b5e9124705e11435ecb34b6b66a6c071957b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/4e68b5e9124705e11435ecb34b6b66a6c071957b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14047,7 +14047,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ef785e580a5ed703ff49a170b98f3f7c2ad3fd60.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ef785e580a5ed703ff49a170b98f3f7c2ad3fd60.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14060,7 +14060,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [6b6461aedd11e7fec682ab732482c855138618e0.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/6b6461aedd11e7fec682ab732482c855138618e0.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14073,7 +14073,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [578a82e5a61f5a3296d8c65a0a94099c5373ab58.jpg](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/578a82e5a61f5a3296d8c65a0a94099c5373ab58.jpg)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14086,7 +14086,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [ea73d2fb9612085c3b988129dbb09d44526e1db9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/ea73d2fb9612085c3b988129dbb09d44526e1db9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14099,7 +14099,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c25f705cd14cd31725700e37f28b21f64cbf245c.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c25f705cd14cd31725700e37f28b21f64cbf245c.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14112,7 +14112,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [22473a0753b43b78ed15a1e0c1c0aa36004aaf3b.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/22473a0753b43b78ed15a1e0c1c0aa36004aaf3b.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14125,7 +14125,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7e7177197bd93af1fcb719dec8bab81696785ef3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/7e7177197bd93af1fcb719dec8bab81696785ef3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14138,7 +14138,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [3e888fe14fa9928cf16d1f5f5e617b7b9eef1fdb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/3e888fe14fa9928cf16d1f5f5e617b7b9eef1fdb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14151,7 +14151,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [c2112151adf11221e5ecdc68f17699d319586187.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/c2112151adf11221e5ecdc68f17699d319586187.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14164,7 +14164,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [43a25393867a522b00782b21ec2d44c077fedf58.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/43a25393867a522b00782b21ec2d44c077fedf58.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14177,7 +14177,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [5a6675997de02b09f92c7d7735aaa7fafa54a9c2.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/5a6675997de02b09f92c7d7735aaa7fafa54a9c2.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14190,7 +14190,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [350982b771039c530987e6a620f40c25024c4d61.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/350982b771039c530987e6a620f40c25024c4d61.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14203,7 +14203,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d394d403432ed23e762ebc301a2273e545bfe7fa.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d394d403432ed23e762ebc301a2273e545bfe7fa.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14216,7 +14216,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f4e22f247da742830d662a7fab0f23094f0c7ca9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f4e22f247da742830d662a7fab0f23094f0c7ca9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14229,7 +14229,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a7ca8054f72a67f65dd698970b7c1019c911b2e9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a7ca8054f72a67f65dd698970b7c1019c911b2e9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14242,7 +14242,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b83c7c0ce50596f42236ab5d228f9f3502f85e49.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/b83c7c0ce50596f42236ab5d228f9f3502f85e49.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14255,7 +14255,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1efefe4450eb80d8b6bf8c8ebac925df39534ccb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1efefe4450eb80d8b6bf8c8ebac925df39534ccb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14268,7 +14268,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [672294184c3b11419d921f02101f61a4f2a1e666.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/672294184c3b11419d921f02101f61a4f2a1e666.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14281,7 +14281,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d745483d9bde61c62ff5784446ae89687ef2cfb6.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d745483d9bde61c62ff5784446ae89687ef2cfb6.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14294,7 +14294,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dd0656348fb131c2221e2e3be4e1e5ef69313cfe.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dd0656348fb131c2221e2e3be4e1e5ef69313cfe.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14307,7 +14307,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [dc500d09d1c3b89b8916cb5202d310be716b5026.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/dc500d09d1c3b89b8916cb5202d310be716b5026.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14320,7 +14320,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [334788ef5e962e15c2b49fa2d19ce480ebd9e586.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/334788ef5e962e15c2b49fa2d19ce480ebd9e586.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14333,7 +14333,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [f33087e3871feeb7e8625e23069e1d29256f1616.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/f33087e3871feeb7e8625e23069e1d29256f1616.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14346,7 +14346,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cbfb7116b6de5094b8a172ba10bdf17667f276ea.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/cbfb7116b6de5094b8a172ba10bdf17667f276ea.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14359,7 +14359,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d4866de0fc89e40d882881d6f908d32f8890a167.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/d4866de0fc89e40d882881d6f908d32f8890a167.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14372,7 +14372,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [93aed3abd691f4a48f4f994d943e472b0af7b7c9.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/93aed3abd691f4a48f4f994d943e472b0af7b7c9.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14385,7 +14385,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1267aaefeac5f9341e1454bff8180278054fdd19.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1267aaefeac5f9341e1454bff8180278054fdd19.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14398,7 +14398,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a69930f5a11a0204f3c4b5ffe7ad63fe4a54a7cb.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/a69930f5a11a0204f3c4b5ffe7ad63fe4a54a7cb.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14411,7 +14411,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [67dab764804fecf10c20740a2d9b2633efa736d1.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/67dab764804fecf10c20740a2d9b2633efa736d1.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14424,7 +14424,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9aab1ec865ac67daee4c208d43ce3dacab95e1ca.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/9aab1ec865ac67daee4c208d43ce3dacab95e1ca.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14437,7 +14437,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [8750055e12474e0281e24eb6117313df94bdb7a4.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/8750055e12474e0281e24eb6117313df94bdb7a4.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14450,7 +14450,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fd7f039f2767ee2939ae44f6b3d88e24c9dc4e52.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/fd7f039f2767ee2939ae44f6b3d88e24c9dc4e52.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14463,7 +14463,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [975ff6acff2568af82366f7e8c2738385c4b4fd3.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/975ff6acff2568af82366f7e8c2738385c4b4fd3.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14476,7 +14476,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [12efc2bc1a90c20c8d38ffe228bf4be493f77ba5.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/12efc2bc1a90c20c8d38ffe228bf4be493f77ba5.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -14489,7 +14489,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [1be774c2dbb7027fefb8ca573845aee224723b20.png](https://github.com/Microsoft/WDG.handoff/blob/1518ff78d9538dd35cb976fca1aa67b84f465b02/ol-handoff/Microsoft/windows-apps.ja-jp/master/1be774c2dbb7027fefb8ca573845aee224723b20.png)
-* Handoff Datetime: 2016-03-12 17:54:41
+* Handoff Datetime: 2016-03-12 19:41:52
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
