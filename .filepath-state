@@ -3480,6 +3480,9 @@
   "89441ce6f828b659bb17dfc7c6cc98d8e18f0cf2": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "b9cae850d6b704867a7f014d4869170d594ee401": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "1779c72b90abdc24491febfde59cf75c0affac32": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -3510,17 +3513,32 @@
   "957574aa3996dec36380972dd93dbc7a0715fff6": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
+  "0f58ac6c2f357aca1075dbbec8056bb8c79e2420": [
+    "windows-apps-src\\monetize\\get-app-acquisitions.md"
+  ],
   "6d99b3b5007a0f0e4ffed6986997ad8b8a359f13": [
     "windows-apps-src\\monetize\\get-app-acquisitions.md"
+  ],
+  "e9631d2c0cdc0e2ba22456bf15ea5ab3e7a85326": [
+    "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
   "22ce9e238d2f254a7d317e3718a0e79973ccf7de": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
+  "64907a9548bf7f486cf51f066e0489820bc4b338": [
+    "windows-apps-src\\monetize\\get-app-reviews.md"
+  ],
   "be47fc07fb671dd1683e6adf6a5c028a807a5ae4": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
+  "6a33e7e576226e9d06f329dfee92146344f8eade": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
   "43d0f14ded2af3a7182629496ef1f65faf3fe80d": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
+  "d17a1c52b2bff678c984eda115550b263f0fc699": [
+    "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "f0b6b537845b9460d55e435acd2dd34d69a1a8a5": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
