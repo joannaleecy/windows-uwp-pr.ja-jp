@@ -3513,11 +3513,17 @@
   "957574aa3996dec36380972dd93dbc7a0715fff6": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
+  "d1b27fb66d836496179ab422fd105259f0e053af": [
+    "windows-apps-src\\monetize\\get-app-acquisitions.md"
+  ],
   "0f58ac6c2f357aca1075dbbec8056bb8c79e2420": [
     "windows-apps-src\\monetize\\get-app-acquisitions.md"
   ],
   "6d99b3b5007a0f0e4ffed6986997ad8b8a359f13": [
     "windows-apps-src\\monetize\\get-app-acquisitions.md"
+  ],
+  "9ac1c868d6262f08b011a7d174b97e41ba18ba24": [
+    "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
   "e9631d2c0cdc0e2ba22456bf15ea5ab3e7a85326": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
@@ -3531,11 +3537,17 @@
   "be47fc07fb671dd1683e6adf6a5c028a807a5ae4": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
+  "7dc0395d8474cab0365b15cc232dcbc82e331b4d": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
   "6a33e7e576226e9d06f329dfee92146344f8eade": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
   ],
   "43d0f14ded2af3a7182629496ef1f65faf3fe80d": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
+  "f26d716313e78b6ec6c47067a79cc85af5977a41": [
+    "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "d17a1c52b2bff678c984eda115550b263f0fc699": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"

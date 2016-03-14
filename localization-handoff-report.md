@@ -1,11 +1,65 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 4
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\monetize\get-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/704a153434e8bceb5dad6eed1c0e0fff8ee0f2cd/windows-apps-src/monetize/get-app-acquisitions.md) | HandedOffSuccess | [Details](#d1b27fb66d836496179ab422fd105259f0e053af3123)
+ [windows-apps-src\monetize\get-app-ratings.md](https://github.com/Microsoft/windows-apps/blob/704a153434e8bceb5dad6eed1c0e0fff8ee0f2cd/windows-apps-src/monetize/get-app-ratings.md) | HandedOffSuccess | [Details](#9ac1c868d6262f08b011a7d174b97e41ba18ba243125)
+ [windows-apps-src\monetize\get-error-reporting-data.md](https://github.com/Microsoft/windows-apps/blob/704a153434e8bceb5dad6eed1c0e0fff8ee0f2cd/windows-apps-src/monetize/get-error-reporting-data.md) | HandedOffSuccess | [Details](#7dc0395d8474cab0365b15cc232dcbc82e331b4d3127)
+ [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/704a153434e8bceb5dad6eed1c0e0fff8ee0f2cd/windows-apps-src/monetize/get-in-app-acquisitions.md) | HandedOffSuccess | [Details](#f26d716313e78b6ec6c47067a79cc85af5977a413128)
 
 ## Item Details
+##### <a name='d1b27fb66d836496179ab422fd105259f0e053af3123'></a> Source: [windows-apps-src\monetize\get-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/704a153434e8bceb5dad6eed1c0e0fff8ee0f2cd/windows-apps-src/monetize/get-app-acquisitions.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/c75bcc780aec4f99205dfaab3eb0e2fa1a5dcd42/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ja-jp.xlf)
+* Handoff Datetime: 2016-03-14 22:54:36
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='9ac1c868d6262f08b011a7d174b97e41ba18ba243125'></a> Source: [windows-apps-src\monetize\get-app-ratings.md](https://github.com/Microsoft/windows-apps/blob/704a153434e8bceb5dad6eed1c0e0fff8ee0f2cd/windows-apps-src/monetize/get-app-ratings.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [get-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/c75bcc780aec4f99205dfaab3eb0e2fa1a5dcd42/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ja-jp.xlf)
+* Handoff Datetime: 2016-03-14 22:54:36
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='7dc0395d8474cab0365b15cc232dcbc82e331b4d3127'></a> Source: [windows-apps-src\monetize\get-error-reporting-data.md](https://github.com/Microsoft/windows-apps/blob/704a153434e8bceb5dad6eed1c0e0fff8ee0f2cd/windows-apps-src/monetize/get-error-reporting-data.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [get-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/c75bcc780aec4f99205dfaab3eb0e2fa1a5dcd42/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ja-jp.xlf)
+* Handoff Datetime: 2016-03-14 22:54:36
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='f26d716313e78b6ec6c47067a79cc85af5977a413128'></a> Source: [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/704a153434e8bceb5dad6eed1c0e0fff8ee0f2cd/windows-apps-src/monetize/get-in-app-acquisitions.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/c75bcc780aec4f99205dfaab3eb0e2fa1a5dcd42/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ja-jp.xlf)
+* Handoff Datetime: 2016-03-14 22:54:36
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
