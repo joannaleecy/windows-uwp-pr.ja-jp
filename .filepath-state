@@ -3624,6 +3624,9 @@
   "c30b559ac044f389c7bdd716ee67d83be59f9039": [
     "windows-apps-src\\networking\\web-feeds.md"
   ],
+  "6a1a57d46ec79d433686536c42327441f82ec11c": [
+    "windows-apps-src\\networking\\websockets.md"
+  ],
   "3f54ae1cd1b590f31927a5348c34cad31d159fc3": [
     "windows-apps-src\\networking\\websockets.md"
   ],
