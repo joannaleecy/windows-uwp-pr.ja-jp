@@ -1,32 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/98b6e3cbc7b6b77b091574d5f2d50c2e3561a4c2/windows-apps-src/debug-test-perf/test-with-the-emulator.md) | HandedOffSuccess | [Details](#39ae1280961ddf90a7d95acd8fb74d131d8c07a31931)
- [windows-apps-src\networking\websockets.md](https://github.com/Microsoft/windows-apps/blob/98b6e3cbc7b6b77b091574d5f2d50c2e3561a4c2/windows-apps-src/networking/websockets.md) | HandedOffSuccess | [Details](#101657345a3bf5ee1ea1c38c35b0091fab203c223158)
+ [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/debug-test-perf/test-with-the-emulator.md) | HandedOffSuccess | [Details](#dfdddd4a42530d0b84af88370ee659a365ea47d11931)
 
 ## Item Details
-##### <a name='39ae1280961ddf90a7d95acd8fb74d131d8c07a31931'></a> Source: [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/98b6e3cbc7b6b77b091574d5f2d50c2e3561a4c2/windows-apps-src/debug-test-perf/test-with-the-emulator.md)
+##### <a name='dfdddd4a42530d0b84af88370ee659a365ea47d11931'></a> Source: [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/debug-test-perf/test-with-the-emulator.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/684eec735ca2d096c73bc20feb2d32d78890994b/ol-handoff/Microsoft/windows-apps.ja-jp/master/test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf)
-* Handoff Datetime: 2016-03-15 21:22:38
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='101657345a3bf5ee1ea1c38c35b0091fab203c223158'></a> Source: [windows-apps-src\networking\websockets.md](https://github.com/Microsoft/windows-apps/blob/98b6e3cbc7b6b77b091574d5f2d50c2e3561a4c2/windows-apps-src/networking/websockets.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [websockets.db78d3487abb889cd595e917ef5a96f0484317ac.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/684eec735ca2d096c73bc20feb2d32d78890994b/ol-handoff/Microsoft/windows-apps.ja-jp/master/websockets.db78d3487abb889cd595e917ef5a96f0484317ac.ja-jp.xlf)
-* Handoff Datetime: 2016-03-15 21:22:38
+* Handoff File: [test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ed5e06b3321c247acbd8642f3bc033163eb48a8c/ol-handoff/Microsoft/windows-apps.ja-jp/master/test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf)
+* Handoff Datetime: 2016-03-15 22:51:55
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00

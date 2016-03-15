@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "98b6e3cbc7b6b77b091574d5f2d50c2e3561a4c2",
+  "LastProcessedCommit": "d03e316b9f6f415c8ad864bb984cfcd2f8430ffe",
   "LastTranslatedCommit": null,
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -45954,6 +45954,34 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\websockets.db78d3487abb889cd595e917ef5a96f0484317ac.ja-jp.xlf",
       "HandoffFileCommit": "684eec735ca2d096c73bc20feb2d32d78890994b",
       "HandoffDateTime": "2016-03-15T21:22:38.3653766Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "dfdddd4a42530d0b84af88370ee659a365ea47d1": {
+      "FileHash": "dfdddd4a42530d0b84af88370ee659a365ea47d1",
+      "SourceFileCommit": "d03e316b9f6f415c8ad864bb984cfcd2f8430ffe",
+      "SourceFilePath": "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "FilePathList": [
+        "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf",
+      "HandoffFileCommit": "ed5e06b3321c247acbd8642f3bc033163eb48a8c",
+      "HandoffDateTime": "2016-03-15T22:51:55.7465861Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
