@@ -1667,6 +1667,9 @@
   "540b6d68ed9b9f32a6a0ee3211621c896441aaf2": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
+  "39ae1280961ddf90a7d95acd8fb74d131d8c07a3": [
+    "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
+  ],
   "baf59c6730e8cdf61101c0b3799320a15b5cc491": [
     "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
   ],
@@ -1707,7 +1710,7 @@
     "windows-apps-src\\debug-test-perf\\images\\em-sensors.png"
   ],
   "49d5c6b9b25d3dee65e09aeb7726c3695132bc60": [
-    "windows-apps-src\\debug-test-perf\\images\\em-frameratecounters.png"
+    "windows-apps-src\\debug-test-perf\\images\\em-frameratecounters.PNG"
   ],
   "e619f11107c41b4fe6fe191d96ed719c80a8b84b": [
     "windows-apps-src\\debug-test-perf\\tools-for-profiling-and-performance.md"
@@ -3623,6 +3626,9 @@
   ],
   "c30b559ac044f389c7bdd716ee67d83be59f9039": [
     "windows-apps-src\\networking\\web-feeds.md"
+  ],
+  "101657345a3bf5ee1ea1c38c35b0091fab203c22": [
+    "windows-apps-src\\networking\\websockets.md"
   ],
   "6a1a57d46ec79d433686536c42327441f82ec11c": [
     "windows-apps-src\\networking\\websockets.md"
