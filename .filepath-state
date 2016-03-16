@@ -4179,8 +4179,14 @@
   "7ac4433f4acda4543a3d38f2487cbdbb15423f23": [
     "windows-apps-src\\publish\\write-a-great-app-description.md"
   ],
+  "7dca3624c47b75b4c1b44cf2f45135f3a5ca38f7": [
+    "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
   "8f690ac45f1a7926fd62eae2bd151dbd32e20b01": [
     "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
+  "d9e74376dfbb57670f1c8799fa3bd038a8b9f4e9": [
+    "windows-apps-src\\security\\certificates.md"
   ],
   "7c64a3f3c233cec9b57848b44aef9e23c9a06345": [
     "windows-apps-src\\security\\certificates.md"
@@ -4188,44 +4194,86 @@
   "975ff6acff2568af82366f7e8c2738385c4b4fd3": [
     "windows-apps-src\\security\\images\\x509certificateversions.png"
   ],
+  "919cb2e3f5e9727a42f6c186269da69ed78452db": [
+    "windows-apps-src\\security\\common-cryptography-tasks.md"
+  ],
   "c8e6fe42dcb5f6c88fc9017f509556f48fc7e757": [
     "windows-apps-src\\security\\common-cryptography-tasks.md"
+  ],
+  "e59b3a04bb90d9d522f5cf3dbaa910740c73b4b8": [
+    "windows-apps-src\\security\\compare-buffers.md"
   ],
   "19823765408d6eb37e6cb122479f2ba93635edf2": [
     "windows-apps-src\\security\\compare-buffers.md"
   ],
+  "83ec4a09225937496d610431ec8a8368aa2c11f8": [
+    "windows-apps-src\\security\\convert-between-strings-and-binary-data.md"
+  ],
   "80134f92bdbc61fb82a2a7cdd7f097649088618d": [
     "windows-apps-src\\security\\convert-between-strings-and-binary-data.md"
+  ],
+  "d5b4e2cbabfc2843117348107217f890875d7b08": [
+    "windows-apps-src\\security\\copy-to-and-from-byte-arrays.md"
   ],
   "77490fcc64f3f10efeaf370fb99ee87a4f21a3ab": [
     "windows-apps-src\\security\\copy-to-and-from-byte-arrays.md"
   ],
+  "9fbcb41b62ae582dae98e7e92d6803cb36e299e0": [
+    "windows-apps-src\\security\\create-random-numbers.md"
+  ],
   "5d035bfcd6d34fa73089a4ea9ed11507870f1a45": [
     "windows-apps-src\\security\\create-random-numbers.md"
+  ],
+  "afddcaa073deb678825a76a7701c4dcb1b2e0c4b": [
+    "windows-apps-src\\security\\credential-locker.md"
   ],
   "cd3797159dd4448635f988d2869979cc00de72ca": [
     "windows-apps-src\\security\\credential-locker.md"
   ],
+  "018b546fceaaa1d4f9e834998f6b15de0d16b78e": [
+    "windows-apps-src\\security\\cryptographic-keys.md"
+  ],
   "7927b24c44f0c2941884d94f27576d4d1d90e4a3": [
     "windows-apps-src\\security\\cryptographic-keys.md"
+  ],
+  "5f0bf6787760d7586849ac88b77e2fd9a56e8a20": [
+    "windows-apps-src\\security\\cryptography.md"
   ],
   "5c8490eb382cd3181b922bf817aeeff63d36528f": [
     "windows-apps-src\\security\\cryptography.md"
   ],
+  "38e67488d4ba94d1bc4fa71addee273ab7e61c32": [
+    "windows-apps-src\\security\\data-protection.md"
+  ],
   "d221b0f2b40fc5cfb3b5ab84600ab323e0132e6b": [
     "windows-apps-src\\security\\data-protection.md"
+  ],
+  "60702f104b9047d9b8da294280fc5ee4e808b290": [
+    "windows-apps-src\\security\\encode-and-decode-data.md"
   ],
   "1afb372fb26233f466620e9de859600c8677fa25": [
     "windows-apps-src\\security\\encode-and-decode-data.md"
   ],
+  "879a35cd6e863a36c71dd76597267cd384038fb5": [
+    "windows-apps-src\\security\\export-restrictions-on-cryptography.md"
+  ],
   "c9a704c04796577b6b0ef02119bf61a20b038f6c": [
     "windows-apps-src\\security\\export-restrictions-on-cryptography.md"
+  ],
+  "7fdc76f75984d41e7c454e0fb28559068953fd86": [
+    "windows-apps-src\\security\\fingerprint-biometrics.md"
   ],
   "4a127e98e1c86df38d9ea5da7d7ab2e7db5c5b11": [
     "windows-apps-src\\security\\fingerprint-biometrics.md"
   ],
+  "ee62d35e5351206cb5ffb881905e33f35191691c": [
+    "windows-apps-src\\security\\index.md"
+  ],
   "417b9e3cf1103d83d34b17e94378b03718534a5f": [
     "windows-apps-src\\security\\index.md"
+  ],
+  "2b623f52d618a788c5b8907a856349e2deec64a3": [
+    "windows-apps-src\\security\\intro-to-secure-windows-app-development.md"
   ],
   "81e61ebc1d9b7ad6b7954562f6183a6e84166058": [
     "windows-apps-src\\security\\intro-to-secure-windows-app-development.md"
@@ -4251,8 +4299,14 @@
   "cbfb7116b6de5094b8a172ba10bdf17667f276ea": [
     "windows-apps-src\\security\\images\\secure-digital-signatures.png"
   ],
+  "df951e10352f6495677a34c3ddd2ad8f703fea4e": [
+    "windows-apps-src\\security\\macs-hashes-and-signatures.md"
+  ],
   "cdc04311c9989db87d4179f91c0f2480f15c7f57": [
     "windows-apps-src\\security\\macs-hashes-and-signatures.md"
+  ],
+  "908fd48ef123cfb84e12d69f84310fb095db7b33": [
+    "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"
   ],
   "845f281e6bda3d1d3fde31c95a200626c3595cd8": [
     "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"
@@ -4271,6 +4325,9 @@
   ],
   "3e888fe14fa9928cf16d1f5f5e617b7b9eef1fdb": [
     "windows-apps-src\\security\\images\\passport-auth-5.png"
+  ],
+  "efd697858aaff144833dc263448d7a44f7325032": [
+    "windows-apps-src\\security\\microsoft-passport-login.md"
   ],
   "2a8ab3658b3f5ca9dcde5f2243146b4d482c7873": [
     "windows-apps-src\\security\\microsoft-passport-login.md"
@@ -4305,6 +4362,9 @@
   "f4e22f247da742830d662a7fab0f23094f0c7ca9": [
     "windows-apps-src\\security\\images\\passport-login-11.png"
   ],
+  "6b531840361d19b5d5d42b6bb409b9208948df04": [
+    "windows-apps-src\\security\\microsoft-passport.md"
+  ],
   "2dcb31da558faa771b959245089eb86dfa2d5f7a": [
     "windows-apps-src\\security\\microsoft-passport.md"
   ],
@@ -4323,11 +4383,20 @@
   "f33087e3871feeb7e8625e23069e1d29256f1616": [
     "windows-apps-src\\security\\images\\passport-ui.png"
   ],
+  "b6831250909cb93b3bb3843be6fbc49d2aff7964": [
+    "windows-apps-src\\security\\share-certificates.md"
+  ],
   "29b0955543fc8e69bf21fb3f262e9f3db3ace82d": [
     "windows-apps-src\\security\\share-certificates.md"
   ],
+  "2902249fff7a87992e6777cad2a18b93d9d99bce": [
+    "windows-apps-src\\security\\smart-cards.md"
+  ],
   "0ea623c2590df8a58520a971415185a0969009a1": [
     "windows-apps-src\\security\\smart-cards.md"
+  ],
+  "87a457db20ba34036141ccf47f5885497894cefe": [
+    "windows-apps-src\\security\\web-authentication-broker.md"
   ],
   "6577390b2dd483f17c1173be16d513c80ec6ab9f": [
     "windows-apps-src\\security\\web-authentication-broker.md"
