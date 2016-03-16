@@ -5,13 +5,13 @@
  -------- | ----- 
  Total Files | 3463
 [ Handoff Failed Files ](#handoff-failed-list)| 0
-[ Handoff Success Files ](#handoff-success-list)| 1679
+[ Handoff Success Files ](#handoff-success-list)| 1678
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 0
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 0
-[ Ignored Files ](#ignored-list)| 1784
+[ Ignored Files ](#ignored-list)| 1785
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
 
@@ -1399,7 +1399,6 @@
  [windows-apps-src\monetize\query-for-products.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/query-for-products.md) | HandedOffSuccess | [Details](#0e4851d290bf2277352e27a9306eaa236b72c9b23136)
  [windows-apps-src\monetize\renew-a-windows-store-id-key.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/renew-a-windows-store-id-key.md) | HandedOffSuccess | [Details](#fea2e0a03fffc4900ae60b303ead816b716bff513137)
  [windows-apps-src\monetize\report-consumable-products-as-fulfilled.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/report-consumable-products-as-fulfilled.md) | HandedOffSuccess | [Details](#add9550f6651d21d4099fa3eee9a2164a88c1c303138)
- [windows-apps-src\monetize\select-and-manage-your-ad-networks.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/select-and-manage-your-ad-networks.md) | HandedOffSuccess | [Details](#d757d01dff9af5b8113d723cbee06e7c97560d673139)
  [windows-apps-src\monetize\submit-your-app-and-configure-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/submit-your-app-and-configure-ad-mediation.md) | HandedOffSuccess | [Details](#e3be27d82d178f8662a5e47e0cac3b5a0e6e746e3140)
  [windows-apps-src\monetize\test-your-ad-mediation-implementation.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/test-your-ad-mediation-implementation.md) | HandedOffSuccess | [Details](#8fd7e26f3851ff5f0e86fe8e51a67988be84b1e53141)
  [windows-apps-src\monetize\troubleshoot-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/monetize/troubleshoot-ad-mediation.md) | HandedOffSuccess | [Details](#027bf65cd88a1ddd98c62e2813cbf289816443c73142)
@@ -3469,6 +3468,7 @@
  [windows-apps-src\maps-and-location\images\mapctrl-simplemap.png](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/maps-and-location/images/mapctrl-simplemap.png) | Ignored | [Details](#a1d695579d800a8b325baf0056651e7f3b4af7133100)
  [windows-apps-src\maps-and-location\images\mapsinmapcontrolbasicmsdn-730width.png](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/maps-and-location/images/mapsinmapcontrolbasicmsdn-730width.png) | Ignored | [Details](#83e8316c73dbba7b2eb74c46165f0ff9f6a305cb3102)
  [windows-apps-src\maps-and-location\images\win10fa\controls-maps-3dstreetview.jpg](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/maps-and-location/images/win10fa/controls-maps-3dstreetview.jpg) | Ignored | [Details](#48ebaeb1e7558d01b60a65ceb880bca32266242a3106)
+ [windows-apps-src\monetize\select-and-manage-your-ad-networks.md](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/monetize/select-and-manage-your-ad-networks.md) | Ignored | [Details](#a7226e22ff1bbde27949868d6548d0378a73be3c3139)
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstart\js\main.js](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/networking/code/backgroundtransfer/download_quickstart/js/main.js) | Ignored | [Details](#639df51fbe4cbdc8364d8a4c17dc7a5e0f40f3d33148)
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstartcs\cs\main.cs](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/networking/code/backgroundtransfer/download_quickstartcs/cs/main.cs) | Ignored | [Details](#d2f1964af629846416bee9445f7c564660fd72ff3149)
  [windows-apps-src\networking\code\backgroundtransfer\download_quickstartcs\cs\main.xaml.cs](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/networking/code/backgroundtransfer/download_quickstartcs/cs/main.xaml.cs) | Ignored | [Details](#4d2b2e0b87673696d9c7fcfb48cc309729099f303150)
@@ -42121,12 +42121,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='d757d01dff9af5b8113d723cbee06e7c97560d673139'></a> Source: [windows-apps-src\monetize\select-and-manage-your-ad-networks.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/monetize/select-and-manage-your-ad-networks.md)
-* Status: HandedOffSuccess
+##### <a name='a7226e22ff1bbde27949868d6548d0378a73be3c3139'></a> Source: [windows-apps-src\monetize\select-and-manage-your-ad-networks.md](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/monetize/select-and-manage-your-ad-networks.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [select-and-manage-your-ad-networks.982177b3e83790340b3b8fd5a9e270779f76b670.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/da42b93e19e12ac4922355bff672b9a738da90c4/ol-handoff/Microsoft/windows-apps.ja-jp/master/select-and-manage-your-ad-networks.982177b3e83790340b3b8fd5a9e270779f76b670.ja-jp.xlf)
-* Handoff Datetime: 2016-03-04 18:09:41
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
