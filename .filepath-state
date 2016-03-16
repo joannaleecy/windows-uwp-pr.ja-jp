@@ -26,6 +26,9 @@
   "8f3ec44999f8dcc62af1bd7ee0b058db077f24ac": [
     "windows-apps-src\\accessibility\\images\\inspect.png"
   ],
+  "4aac60e92317fab8f6fd6646ea21bada37fd4b80": [
+    "windows-apps-src\\accessibility\\accessibility.md"
+  ],
   "1d1ace3a4518d8b64e63fe0107b35b64f37abbb7": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
@@ -4482,6 +4485,9 @@
   "f418ec9cfe9f8f26b6c74e5b5ae42098f0e4f9cf": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "536f4affb27226fb3614872cea88079e15b3259a": [
+    "windows-apps-src\\TOC.md"
+  ],
   "b7d68785591b771f89b77adb03e63a097114ff50": [
     "windows-apps-src\\TOC.md"
   ],
@@ -4835,6 +4841,9 @@
   ],
   "6feae624441c686128bb5af6b8980435f1e6f7c4": [
     "windows-apps-src\\monetize\\get-app-failures.md"
+  ],
+  "4f472617f767a2e5a69d16825dc26ad8c13cbc42": [
+    "windows-apps-src\\accessibility\\designing-inclusive-software.md"
   ],
   "9309199c51bb14f4a5bf771be0d9375045fbe92a": [
     "windows-apps-src\\accessibility\\designing-inclusive-software.md"
