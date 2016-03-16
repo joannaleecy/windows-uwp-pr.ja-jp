@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "d03e316b9f6f415c8ad864bb984cfcd2f8430ffe",
+  "LastProcessedCommit": "9891dbeb9733f8a1093f122bc6740cd6d0996980",
   "LastTranslatedCommit": null,
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -45982,6 +45982,34 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf",
       "HandoffFileCommit": "ed5e06b3321c247acbd8642f3bc033163eb48a8c",
       "HandoffDateTime": "2016-03-15T22:51:55.7465861Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "a7226e22ff1bbde27949868d6548d0378a73be3c": {
+      "FileHash": "a7226e22ff1bbde27949868d6548d0378a73be3c",
+      "SourceFileCommit": "9891dbeb9733f8a1093f122bc6740cd6d0996980",
+      "SourceFilePath": "windows-apps-src\\monetize\\select-and-manage-your-ad-networks.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "FilePathList": [
+        "windows-apps-src\\monetize\\select-and-manage-your-ad-networks.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\select-and-manage-your-ad-networks.982177b3e83790340b3b8fd5a9e270779f76b670.ja-jp.xlf",
+      "HandoffFileCommit": "a247e1480e049bd219cf46424874e7a6ef9c72c7",
+      "HandoffDateTime": "2016-03-16T16:24:35.4470382Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
