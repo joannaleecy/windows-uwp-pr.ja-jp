@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/ecdaeab109bb3dd3616954f7e5bf09d4e83fe15d/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | HandedOffSuccess | [Details](#d04ced196ffb1c5887915498182ee2465b8718d03119)
- [windows-apps-src\monetize\submit-your-app-and-configure-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/ecdaeab109bb3dd3616954f7e5bf09d4e83fe15d/windows-apps-src/monetize/submit-your-app-and-configure-ad-mediation.md) | HandedOffSuccess | [Details](#4f8bdad18504abde25cc946a8b12fe783c20b0a73142)
 
 ## Item Details
-##### <a name='d04ced196ffb1c5887915498182ee2465b8718d03119'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/ecdaeab109bb3dd3616954f7e5bf09d4e83fe15d/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/165ca7cf585fa5f949bedf3994288bf185701f4f/ol-handoff/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
-* Handoff Datetime: 2016-03-17 17:53:44
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='4f8bdad18504abde25cc946a8b12fe783c20b0a73142'></a> Source: [windows-apps-src\monetize\submit-your-app-and-configure-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/ecdaeab109bb3dd3616954f7e5bf09d4e83fe15d/windows-apps-src/monetize/submit-your-app-and-configure-ad-mediation.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [submit-your-app-and-configure-ad-mediation.990983e488fec0db24f094bf655441d5d0454731.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/165ca7cf585fa5f949bedf3994288bf185701f4f/ol-handoff/Microsoft/windows-apps.ja-jp/master/submit-your-app-and-configure-ad-mediation.990983e488fec0db24f094bf655441d5d0454731.ja-jp.xlf)
-* Handoff Datetime: 2016-03-17 17:53:44
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
