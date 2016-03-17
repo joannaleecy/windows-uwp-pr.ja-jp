@@ -3903,6 +3903,9 @@
   "151cbeda4b70a5faff11ff8db0aa152537a4c01b": [
     "windows-apps-src\\porting\\images\\w8x-to-uwp-case-studies\\c02-10-mob10-zo-ported.png"
   ],
+  "c6ca7078ece05329f3786f2fbfa8e0f157420a8b": [
+    "windows-apps-src\\porting\\w8x-to-uwp-case-study-quizgame.md"
+  ],
   "a121898d939fec1b031af9d669a82c77d63f9ce9": [
     "windows-apps-src\\porting\\w8x-to-uwp-case-study-quizgame.md"
   ],

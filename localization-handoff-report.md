@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\porting\w8x-to-uwp-case-study-quizgame.md](https://github.com/Microsoft/windows-apps/blob/ab2ee048f4f65fcbe4f52d5138d2554747d29c73/windows-apps-src/porting/w8x-to-uwp-case-study-quizgame.md) | HandedOffSuccess | [Details](#c6ca7078ece05329f3786f2fbfa8e0f157420a8b3245)
 
 ## Item Details
+##### <a name='c6ca7078ece05329f3786f2fbfa8e0f157420a8b3245'></a> Source: [windows-apps-src\porting\w8x-to-uwp-case-study-quizgame.md](https://github.com/Microsoft/windows-apps/blob/ab2ee048f4f65fcbe4f52d5138d2554747d29c73/windows-apps-src/porting/w8x-to-uwp-case-study-quizgame.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/587373626e7378f78268ebc9ee5b16db5ed43172/ol-handoff/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ja-jp.xlf)
+* Handoff Datetime: 2016-03-17 21:22:44
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
