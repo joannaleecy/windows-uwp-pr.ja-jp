@@ -1,21 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\accessibility\accessibility.md](https://github.com/Microsoft/windows-apps/blob/fdae910c94b29f7aa9f02d436836cada8ad2474b/windows-apps-src/accessibility/accessibility.md) | HandedOffSuccess | [Details](#4aac60e92317fab8f6fd6646ea21bada37fd4b809)
- [windows-apps-src\accessibility\designing-inclusive-software.md](https://github.com/Microsoft/windows-apps/blob/fdae910c94b29f7aa9f02d436836cada8ad2474b/windows-apps-src/accessibility/designing-inclusive-software.md) | HandedOffSuccess | [Details](#4f472617f767a2e5a69d16825dc26ad8c13cbc4214)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/fdae910c94b29f7aa9f02d436836cada8ad2474b/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#536f4affb27226fb3614872cea88079e15b3259a3420)
+ [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/ecdaeab109bb3dd3616954f7e5bf09d4e83fe15d/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | HandedOffSuccess | [Details](#d04ced196ffb1c5887915498182ee2465b8718d03119)
+ [windows-apps-src\monetize\submit-your-app-and-configure-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/ecdaeab109bb3dd3616954f7e5bf09d4e83fe15d/windows-apps-src/monetize/submit-your-app-and-configure-ad-mediation.md) | HandedOffSuccess | [Details](#4f8bdad18504abde25cc946a8b12fe783c20b0a73142)
 
 ## Item Details
-##### <a name='4aac60e92317fab8f6fd6646ea21bada37fd4b809'></a> Source: [windows-apps-src\accessibility\accessibility.md](https://github.com/Microsoft/windows-apps/blob/fdae910c94b29f7aa9f02d436836cada8ad2474b/windows-apps-src/accessibility/accessibility.md)
+##### <a name='d04ced196ffb1c5887915498182ee2465b8718d03119'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/ecdaeab109bb3dd3616954f7e5bf09d4e83fe15d/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [accessibility.c5af33aaf4b5c1afcbdc516d45cbba0978a332da.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2c65538d7760526c0dc96106814f7977186c2f48/ol-handoff/Microsoft/windows-apps.ja-jp/master/accessibility.c5af33aaf4b5c1afcbdc516d45cbba0978a332da.ja-jp.xlf)
-* Handoff Datetime: 2016-03-16 22:51:34
+* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/165ca7cf585fa5f949bedf3994288bf185701f4f/ol-handoff/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
+* Handoff Datetime: 2016-03-17 17:53:44
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -23,23 +22,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='4f472617f767a2e5a69d16825dc26ad8c13cbc4214'></a> Source: [windows-apps-src\accessibility\designing-inclusive-software.md](https://github.com/Microsoft/windows-apps/blob/fdae910c94b29f7aa9f02d436836cada8ad2474b/windows-apps-src/accessibility/designing-inclusive-software.md)
+##### <a name='4f8bdad18504abde25cc946a8b12fe783c20b0a73142'></a> Source: [windows-apps-src\monetize\submit-your-app-and-configure-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/ecdaeab109bb3dd3616954f7e5bf09d4e83fe15d/windows-apps-src/monetize/submit-your-app-and-configure-ad-mediation.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [designing-inclusive-software.cace2c94cd90e8f06f4407c372de9ef7748f95e7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2c65538d7760526c0dc96106814f7977186c2f48/ol-handoff/Microsoft/windows-apps.ja-jp/master/designing-inclusive-software.cace2c94cd90e8f06f4407c372de9ef7748f95e7.ja-jp.xlf)
-* Handoff Datetime: 2016-03-16 22:51:34
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='536f4affb27226fb3614872cea88079e15b3259a3420'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/fdae910c94b29f7aa9f02d436836cada8ad2474b/windows-apps-src/TOC.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2c65538d7760526c0dc96106814f7977186c2f48/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Handoff Datetime: 2016-03-16 22:51:34
+* Handoff File: [submit-your-app-and-configure-ad-mediation.990983e488fec0db24f094bf655441d5d0454731.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/165ca7cf585fa5f949bedf3994288bf185701f4f/ol-handoff/Microsoft/windows-apps.ja-jp/master/submit-your-app-and-configure-ad-mediation.990983e488fec0db24f094bf655441d5d0454731.ja-jp.xlf)
+* Handoff Datetime: 2016-03-17 17:53:44
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
