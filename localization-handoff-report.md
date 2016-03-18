@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\w8x-to-uwp-case-study-quizgame.md](https://github.com/Microsoft/windows-apps/blob/ab2ee048f4f65fcbe4f52d5138d2554747d29c73/windows-apps-src/porting/w8x-to-uwp-case-study-quizgame.md) | HandedOffSuccess | [Details](#c6ca7078ece05329f3786f2fbfa8e0f157420a8b3245)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/f2f8c66022803c418a3bda4b2f74189973d4edf3/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#fd6dae54e3f57d2fd13663f70c9c9f72237836603420)
 
 ## Item Details
-##### <a name='c6ca7078ece05329f3786f2fbfa8e0f157420a8b3245'></a> Source: [windows-apps-src\porting\w8x-to-uwp-case-study-quizgame.md](https://github.com/Microsoft/windows-apps/blob/ab2ee048f4f65fcbe4f52d5138d2554747d29c73/windows-apps-src/porting/w8x-to-uwp-case-study-quizgame.md)
+##### <a name='fd6dae54e3f57d2fd13663f70c9c9f72237836603420'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/f2f8c66022803c418a3bda4b2f74189973d4edf3/windows-apps-src/TOC.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/587373626e7378f78268ebc9ee5b16db5ed43172/ol-handoff/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ja-jp.xlf)
-* Handoff Datetime: 2016-03-17 21:22:44
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/4825f3aef51c37d61e3b55153cde328e8d2d8860/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
+* Handoff Datetime: 2016-03-18 19:24:24
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
