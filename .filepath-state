@@ -4862,5 +4862,65 @@
   ],
   "18926811ddf7746b1698c3e2a4ca630b4a9d94ce": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
+  ],
+  "6315745171fb0657e52039bc726eeca66b5d6769": [
+    "windows-apps-src\\style\\color.md"
+  ],
+  "85337202764956117d2d5bdbc8e006047e4c7e75": [
+    "windows-apps-src\\style\\content-transition-animations.md"
+  ],
+  "dfa4916d049cbe6164435765d4a461a9835af417": [
+    "windows-apps-src\\style\\images\\character-count.png"
+  ],
+  "4f0f7b0d27e5e3e053a552ad86b8d3a3f6b5bca2": [
+    "windows-apps-src\\style\\images\\clipping.png"
+  ],
+  "9ddd38d91e3c0f38a1fa52104024814900f7aa89": [
+    "windows-apps-src\\style\\images\\edgevsreposition.png"
+  ],
+  "5c1b87168e5bfef52fc6059c0c71ea75810d576c": [
+    "windows-apps-src\\style\\images\\hanging-text-alignment.png"
+  ],
+  "bc7476c4a09b4198ef99756322360ddaa169d18f": [
+    "windows-apps-src\\style\\images\\line-height-stacking.png"
+  ],
+  "0d90f3f692fa79ad9cd8799c64ec47b7b9e3405e": [
+    "windows-apps-src\\style\\images\\line-spacing.png"
+  ],
+  "095718794413bff309481502bda3d637a02292aa": [
+    "windows-apps-src\\style\\images\\paragraphs.png"
+  ],
+  "72f1581bb2c2bfba2d4016d5aba8de931525aab1": [
+    "windows-apps-src\\style\\images\\segoe-sample.png"
+  ],
+  "3d900a0b25395f9c30a2008719b4c332b718815f": [
+    "windows-apps-src\\style\\images\\shades.png"
+  ],
+  "dd0fc3a161fe7cd5af6a89c7800daf117099f069": [
+    "windows-apps-src\\style\\motion.md"
+  ],
+  "1e8dd6aae2d9685a548d69d9a9588f939f4f9173": [
+    "windows-apps-src\\style\\motion-dragdrop.md"
+  ],
+  "32341463b6dc639fedaa5a2bca61547227436bf1": [
+    "windows-apps-src\\style\\motion-edgebased.md"
+  ],
+  "329b24455a1030f9fbf124185e2f7f3da104db6b": [
+    "windows-apps-src\\style\\motion-fade.md"
+  ],
+  "6a2c61d4c613b67bd58060eaadfe47f5b8601fa4": [
+    "windows-apps-src\\style\\motion-list.md"
+  ],
+  "d81759411bedff1b4c1b853ab7a7b3642a1a2b93": [
+    "windows-apps-src\\style\\motion-pointer.md"
+  ],
+  "7537c059dd14d685a7f3f8276a38ae91840574ad": [
+    "windows-apps-src\\style\\motion-popup-animations.md"
+  ],
+  "e483bb9408d4e99c5b72413fc6780b1bdc81737c": [
+    "windows-apps-src\\style\\motion-reposition.md"
+  ],
+  "e19746ab7f38f0929559f49ec91b0d2fb1f6c0f5": [
+    "windows-apps-src\\style\\typography.md"
   ]
 }
