@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "40251e5f5a4b2f99656196fccf5095f6cb340e21",
+  "LastProcessedCommit": "c1afb75234783c9892da609ec6c1c9b99eaf5d3b",
   "LastTranslatedCommit": null,
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -47876,6 +47876,64 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\typography.4206d1eaa813ffdc0f1da4c7d33d63c3a5d928d3.ja-jp.xlf",
       "HandoffFileCommit": "b920e6976b044b02444a146c321629faf994d846",
       "HandoffDateTime": "2016-03-18T22:21:35.1724448Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "4959b5d380d820ea2a28f13d7cdf13caa50e1418": {
+      "FileHash": "4959b5d380d820ea2a28f13d7cdf13caa50e1418",
+      "SourceFileCommit": "c1afb75234783c9892da609ec6c1c9b99eaf5d3b",
+      "SourceFilePath": "windows-apps-src\\style\\color.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "FilePathList": [
+        "windows-apps-src\\style\\color.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\color.0395eb0e5ede1939b9b46492efe596c9853dcace.ja-jp.xlf",
+      "HandoffFileCommit": "f4cf1011abd9ca29c8004a91a53e69b0db676c6d",
+      "HandoffDateTime": "2016-03-19T02:24:08.8297198Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "89ebd15f0da89013e867d8ad9d54325f8b49c4fc": {
+      "FileHash": "89ebd15f0da89013e867d8ad9d54325f8b49c4fc",
+      "SourceFileCommit": "c1afb75234783c9892da609ec6c1c9b99eaf5d3b",
+      "SourceFilePath": "windows-apps-src\\style\\images\\accentcolorswatch.png",
+      "HandoffReason": 2,
+      "DependencyFrom": [
+        "windows-apps-src\\style\\color.md"
+      ],
+      "FilePathList": [
+        "windows-apps-src\\style\\images\\accentcolorswatch.png"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\89ebd15f0da89013e867d8ad9d54325f8b49c4fc.png",
+      "HandoffFileCommit": "f4cf1011abd9ca29c8004a91a53e69b0db676c6d",
+      "HandoffDateTime": "2016-03-19T02:24:08.8297198Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,

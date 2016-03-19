@@ -4863,6 +4863,9 @@
   "18926811ddf7746b1698c3e2a4ca630b4a9d94ce": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
+  "4959b5d380d820ea2a28f13d7cdf13caa50e1418": [
+    "windows-apps-src\\style\\color.md"
+  ],
   "6315745171fb0657e52039bc726eeca66b5d6769": [
     "windows-apps-src\\style\\color.md"
   ],
@@ -4922,5 +4925,8 @@
   ],
   "e19746ab7f38f0929559f49ec91b0d2fb1f6c0f5": [
     "windows-apps-src\\style\\typography.md"
+  ],
+  "89ebd15f0da89013e867d8ad9d54325f8b49c4fc": [
+    "windows-apps-src\\style\\images\\accentcolorswatch.png"
   ]
 }
