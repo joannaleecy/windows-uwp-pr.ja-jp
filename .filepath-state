@@ -1769,8 +1769,12 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
-  "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
+  "10985dec69a38e1ec7452de069768b572e2f5aca": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
+  "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md",
+    "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
   ],
   "97c82c9a06ad120110e748250f687a54b604b755": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
@@ -1823,6 +1827,9 @@
   ],
   "d0ca1c2b792d95199b7c692d4be7852a6413440d": [
     "windows-apps-src\\devices-sensors\\images\\nfc-settings.png"
+  ],
+  "2e5857327dd1f218fa66552d81a31dc6088cebaa": [
+    "windows-apps-src\\devices-sensors\\index.md"
   ],
   "e79e27ec430cbd46d7e3a1c8123f42d82b4daaf2": [
     "windows-apps-src\\devices-sensors\\index.md"
@@ -4494,6 +4501,9 @@
   "f418ec9cfe9f8f26b6c74e5b5ae42098f0e4f9cf": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "5e75c56b6156675aecb14928fd2226068ec1a762": [
+    "windows-apps-src\\TOC.md"
+  ],
   "fd6dae54e3f57d2fd13663f70c9c9f7223783660": [
     "windows-apps-src\\TOC.md"
   ],
@@ -4928,5 +4938,8 @@
   ],
   "89ebd15f0da89013e867d8ad9d54325f8b49c4fc": [
     "windows-apps-src\\style\\images\\accentcolorswatch.png"
+  ],
+  "6ac30be914c46cf953a3f1c344fa0441bed2f8d9": [
+    "windows-apps-src\\devices-sensors\\generate-3mf.md"
   ]
 }
