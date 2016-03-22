@@ -1571,6 +1571,9 @@
   "443792c0a836f5f922314351dc29340bfb6cbe70": [
     "windows-apps-src\\data-binding\\images\\sezo.png"
   ],
+  "850d19c38afdad4d6eb043fa3a429e9f178c0f81": [
+    "windows-apps-src\\data-binding\\data-binding-quickstart.md"
+  ],
   "2a843ebbc528590bb4b14be27aa97878f57fb645": [
     "windows-apps-src\\data-binding\\data-binding-quickstart.md"
   ],
@@ -1769,12 +1772,12 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
-  "10985dec69a38e1ec7452de069768b572e2f5aca": [
-    "windows-apps-src\\devices-sensors\\3d-printing.md"
-  ],
   "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
     "windows-apps-src\\devices-sensors\\3d-printing.md",
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
+  ],
+  "10985dec69a38e1ec7452de069768b572e2f5aca": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
   "97c82c9a06ad120110e748250f687a54b604b755": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"

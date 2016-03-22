@@ -6,15 +6,15 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md) | HandedOffSuccess | [Details](#10985dec69a38e1ec7452de069768b572e2f5aca1939)
- [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/9ef8132f91d36933c7cdb6424fde5154a01190dc/windows-apps-src/gaming/e2e.md) | HandedOffSuccess | [Details](#a9ed95fd3b36fff92d29b514b02622889a34989f2057)
+ [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/fd6616d774a0fce5ae4642219d292fb674025438/windows-apps-src/data-binding/data-binding-quickstart.md) | HandedOffSuccess | [Details](#850d19c38afdad4d6eb043fa3a429e9f178c0f811875)
+ [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/fd6616d774a0fce5ae4642219d292fb674025438/windows-apps-src/devices-sensors/3d-print-from-app.md) | HandedOffSuccess | [Details](#cff85c5a2446c6c16faba670ad43135a8be6afc71938)
 
 ## Item Details
-##### <a name='10985dec69a38e1ec7452de069768b572e2f5aca1939'></a> Source: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md)
+##### <a name='850d19c38afdad4d6eb043fa3a429e9f178c0f811875'></a> Source: [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/fd6616d774a0fce5ae4642219d292fb674025438/windows-apps-src/data-binding/data-binding-quickstart.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/5eba815bad03fdf2e2c2e66d23849d2772df6713/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
-* Handoff Datetime: 2016-03-22 18:53:20
+* Handoff File: [data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/e26849838cd64dbbac01263a24e4a3288332deb2/ol-handoff/Microsoft/windows-apps.ja-jp/master/data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ja-jp.xlf)
+* Handoff Datetime: 2016-03-22 23:22:25
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,11 +22,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='a9ed95fd3b36fff92d29b514b02622889a34989f2057'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/9ef8132f91d36933c7cdb6424fde5154a01190dc/windows-apps-src/gaming/e2e.md)
+##### <a name='cff85c5a2446c6c16faba670ad43135a8be6afc71938'></a> Source: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/fd6616d774a0fce5ae4642219d292fb674025438/windows-apps-src/devices-sensors/3d-print-from-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/5eba815bad03fdf2e2c2e66d23849d2772df6713/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
-* Handoff Datetime: 2016-03-22 18:53:20
+* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/e26849838cd64dbbac01263a24e4a3288332deb2/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
+* Handoff Datetime: 2016-03-22 23:22:25
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
