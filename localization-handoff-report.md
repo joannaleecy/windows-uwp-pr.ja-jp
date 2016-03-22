@@ -1,22 +1,21 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md) | HandedOffSuccess | [Details](#10985dec69a38e1ec7452de069768b572e2f5aca1939)
- [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/generate-3mf.md) | HandedOffSuccess | [Details](#6ac30be914c46cf953a3f1c344fa0441bed2f8d91975)
- [windows-apps-src\devices-sensors\index.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/index.md) | HandedOffSuccess | [Details](#2e5857327dd1f218fa66552d81a31dc6088cebaa2001)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#5e75c56b6156675aecb14928fd2226068ec1a7623474)
+ [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/178dfd1d96e46b46002791f66ac6d51c39ef3340/windows-apps-src/devices-sensors/3d-print-from-app.md) | HandedOffSuccess | [Details](#cff85c5a2446c6c16faba670ad43135a8be6afc71938)
+ [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/178dfd1d96e46b46002791f66ac6d51c39ef3340/windows-apps-src/gaming/e2e.md) | HandedOffSuccess | [Details](#88176df4db6bbef7d817a28fa4e20a030402cd2e2057)
+ [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/178dfd1d96e46b46002791f66ac6d51c39ef3340/windows-apps-src/publish/mobile-operator-billing.md) | HandedOffSuccess | [Details](#f346e2af2a1a370f6c3a566110924bf2390598ad3312)
 
 ## Item Details
-##### <a name='10985dec69a38e1ec7452de069768b572e2f5aca1939'></a> Source: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md)
+##### <a name='cff85c5a2446c6c16faba670ad43135a8be6afc71938'></a> Source: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/178dfd1d96e46b46002791f66ac6d51c39ef3340/windows-apps-src/devices-sensors/3d-print-from-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83d6ab7a03fc78a1b303b01e969fc65cacdb48d2/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
-* Handoff Datetime: 2016-03-21 19:54:43
+* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f3aeecc9b23f0002bcce85b1eac87f4e5d908ae5/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
+* Handoff Datetime: 2016-03-22 17:54:11
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -24,11 +23,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='6ac30be914c46cf953a3f1c344fa0441bed2f8d91975'></a> Source: [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/generate-3mf.md)
+##### <a name='88176df4db6bbef7d817a28fa4e20a030402cd2e2057'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/178dfd1d96e46b46002791f66ac6d51c39ef3340/windows-apps-src/gaming/e2e.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83d6ab7a03fc78a1b303b01e969fc65cacdb48d2/ol-handoff/Microsoft/windows-apps.ja-jp/master/generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf)
-* Handoff Datetime: 2016-03-21 19:54:43
+* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f3aeecc9b23f0002bcce85b1eac87f4e5d908ae5/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
+* Handoff Datetime: 2016-03-22 17:54:11
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -36,23 +35,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='2e5857327dd1f218fa66552d81a31dc6088cebaa2001'></a> Source: [windows-apps-src\devices-sensors\index.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/index.md)
+##### <a name='f346e2af2a1a370f6c3a566110924bf2390598ad3312'></a> Source: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/178dfd1d96e46b46002791f66ac6d51c39ef3340/windows-apps-src/publish/mobile-operator-billing.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.fc3d81ed1a3f85413621f4e68363314faff3fb09.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83d6ab7a03fc78a1b303b01e969fc65cacdb48d2/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.fc3d81ed1a3f85413621f4e68363314faff3fb09.ja-jp.xlf)
-* Handoff Datetime: 2016-03-21 19:54:43
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='5e75c56b6156675aecb14928fd2226068ec1a7623474'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/TOC.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83d6ab7a03fc78a1b303b01e969fc65cacdb48d2/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Handoff Datetime: 2016-03-21 19:54:43
+* Handoff File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f3aeecc9b23f0002bcce85b1eac87f4e5d908ae5/ol-handoff/Microsoft/windows-apps.ja-jp/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf)
+* Handoff Datetime: 2016-03-22 17:54:11
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00

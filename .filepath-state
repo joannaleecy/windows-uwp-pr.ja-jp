@@ -1769,12 +1769,12 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
-  "10985dec69a38e1ec7452de069768b572e2f5aca": [
-    "windows-apps-src\\devices-sensors\\3d-printing.md"
-  ],
   "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
     "windows-apps-src\\devices-sensors\\3d-printing.md",
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
+  ],
+  "10985dec69a38e1ec7452de069768b572e2f5aca": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
   "97c82c9a06ad120110e748250f687a54b604b755": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
@@ -2058,6 +2058,9 @@
   ],
   "a3fe5511da03533b19bfb1abeb2222ff9a92f6fa": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
+  ],
+  "88176df4db6bbef7d817a28fa4e20a030402cd2e": [
+    "windows-apps-src\\gaming\\e2e.md"
   ],
   "c3384a35344cdace2ed41574dc65fdea1a44e4e4": [
     "windows-apps-src\\gaming\\e2e.md"
@@ -4143,6 +4146,9 @@
   ],
   "90184defe421975ceec9ec17e953d5e6b3b23fe1": [
     "windows-apps-src\\publish\\managing-your-profile.md"
+  ],
+  "f346e2af2a1a370f6c3a566110924bf2390598ad": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
   "2981c20329a8988f43ce2039157508a2dbd21df4": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
