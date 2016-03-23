@@ -1,20 +1,22 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 4
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md) | HandedOffSuccess | [Details](#10985dec69a38e1ec7452de069768b572e2f5aca1939)
- [windows-apps-src\publish\opening-a-developer-account.md](https://github.com/Microsoft/windows-apps/blob/dd0da5871a59ddc35af36e3b64b3af8439585774/windows-apps-src/publish/opening-a-developer-account.md) | HandedOffSuccess | [Details](#2b07eedf5596703ef4cb07cdf6fbd946e33ff0503315)
+ [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/1623d0d8e9c2266dbb006f46183bb9326ae3ac78/windows-apps-src/devices-sensors/3d-print-from-app.md) | HandedOffSuccess | [Details](#cff85c5a2446c6c16faba670ad43135a8be6afc71938)
+ [windows-apps-src\devices-sensors\out-of-band-pairing.md](https://github.com/Microsoft/windows-apps/blob/1623d0d8e9c2266dbb006f46183bb9326ae3ac78/windows-apps-src/devices-sensors/out-of-band-pairing.md) | HandedOffSuccess | [Details](#18690644e61971a10c2f8999ea1d757590ed76e52002)
+ [windows-apps-src\enterprise\enterprise-shared-storage.md](https://github.com/Microsoft/windows-apps/blob/1623d0d8e9c2266dbb006f46183bb9326ae3ac78/windows-apps-src/enterprise/enterprise-shared-storage.md) | HandedOffSuccess | [Details](#b0e0d0e51311b53529e9bba20ebd327082ffa85e2017)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/1623d0d8e9c2266dbb006f46183bb9326ae3ac78/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#726fcc06dab624fd15f27b0e87dd515d866d0d363476)
 
 ## Item Details
-##### <a name='10985dec69a38e1ec7452de069768b572e2f5aca1939'></a> Source: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md)
+##### <a name='cff85c5a2446c6c16faba670ad43135a8be6afc71938'></a> Source: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/1623d0d8e9c2266dbb006f46183bb9326ae3ac78/windows-apps-src/devices-sensors/3d-print-from-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/310fea0cbde27099ae17d8a75b784169fa16354b/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
-* Handoff Datetime: 2016-03-23 04:53:08
+* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1dece805570b078a186e1115b62801fc90b90ec3/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
+* Handoff Datetime: 2016-03-23 19:13:07
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,11 +24,35 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='2b07eedf5596703ef4cb07cdf6fbd946e33ff0503315'></a> Source: [windows-apps-src\publish\opening-a-developer-account.md](https://github.com/Microsoft/windows-apps/blob/dd0da5871a59ddc35af36e3b64b3af8439585774/windows-apps-src/publish/opening-a-developer-account.md)
+##### <a name='18690644e61971a10c2f8999ea1d757590ed76e52002'></a> Source: [windows-apps-src\devices-sensors\out-of-band-pairing.md](https://github.com/Microsoft/windows-apps/blob/1623d0d8e9c2266dbb006f46183bb9326ae3ac78/windows-apps-src/devices-sensors/out-of-band-pairing.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/310fea0cbde27099ae17d8a75b784169fa16354b/ol-handoff/Microsoft/windows-apps.ja-jp/master/opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf)
-* Handoff Datetime: 2016-03-23 04:53:08
+* Handoff File: [out-of-band-pairing.cfc62289b905dcdab61b435e55cffcd598972abd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1dece805570b078a186e1115b62801fc90b90ec3/ol-handoff/Microsoft/windows-apps.ja-jp/master/out-of-band-pairing.cfc62289b905dcdab61b435e55cffcd598972abd.ja-jp.xlf)
+* Handoff Datetime: 2016-03-23 19:13:07
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='b0e0d0e51311b53529e9bba20ebd327082ffa85e2017'></a> Source: [windows-apps-src\enterprise\enterprise-shared-storage.md](https://github.com/Microsoft/windows-apps/blob/1623d0d8e9c2266dbb006f46183bb9326ae3ac78/windows-apps-src/enterprise/enterprise-shared-storage.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [enterprise-shared-storage.9f2cb23bf38eae776ba549b6885921ce61b8a54c.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1dece805570b078a186e1115b62801fc90b90ec3/ol-handoff/Microsoft/windows-apps.ja-jp/master/enterprise-shared-storage.9f2cb23bf38eae776ba549b6885921ce61b8a54c.ja-jp.xlf)
+* Handoff Datetime: 2016-03-23 19:13:07
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='726fcc06dab624fd15f27b0e87dd515d866d0d363476'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/1623d0d8e9c2266dbb006f46183bb9326ae3ac78/windows-apps-src/TOC.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1dece805570b078a186e1115b62801fc90b90ec3/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
+* Handoff Datetime: 2016-03-23 19:13:07
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
