@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "1623d0d8e9c2266dbb006f46183bb9326ae3ac78",
+  "LastProcessedCommit": "70439cad75e13d6345f3afadc1e457ceca79b2eb",
   "LastTranslatedCommit": null,
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -49609,8 +49609,8 @@
         "windows-apps-src\\devices-sensors\\3d-printing.md"
       ],
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf",
-      "HandoffFileCommit": "310fea0cbde27099ae17d8a75b784169fa16354b",
-      "HandoffDateTime": "2016-03-23T04:53:08.6534749Z",
+      "HandoffFileCommit": "1eeae8480854ef228acc7a332a9c0081e2476824",
+      "HandoffDateTime": "2016-03-23T19:40:51.5294546Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
@@ -49930,6 +49930,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf",
       "HandoffFileCommit": "1dece805570b078a186e1115b62801fc90b90ec3",
       "HandoffDateTime": "2016-03-23T19:13:07.6705884Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "79ebf52bc42f2afb7d367e24d44a98439d06b829": {
+      "FileHash": "79ebf52bc42f2afb7d367e24d44a98439d06b829",
+      "SourceFileCommit": "70439cad75e13d6345f3afadc1e457ceca79b2eb",
+      "SourceFilePath": "windows-apps-src\\gaming\\e2e.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\gaming\\e2e.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf",
+      "HandoffFileCommit": "1eeae8480854ef228acc7a332a9c0081e2476824",
+      "HandoffDateTime": "2016-03-23T19:40:51.5294546Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,

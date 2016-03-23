@@ -1772,12 +1772,12 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
+  "10985dec69a38e1ec7452de069768b572e2f5aca": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
     "windows-apps-src\\devices-sensors\\3d-printing.md",
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
-  ],
-  "10985dec69a38e1ec7452de069768b572e2f5aca": [
-    "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
   "97c82c9a06ad120110e748250f687a54b604b755": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
@@ -2061,6 +2061,9 @@
   ],
   "a3fe5511da03533b19bfb1abeb2222ff9a92f6fa": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
+  ],
+  "79ebf52bc42f2afb7d367e24d44a98439d06b829": [
+    "windows-apps-src\\gaming\\e2e.md"
   ],
   "a9ed95fd3b36fff92d29b514b02622889a34989f": [
     "windows-apps-src\\gaming\\e2e.md"
