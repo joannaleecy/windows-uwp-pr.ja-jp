@@ -6,15 +6,15 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/fd6616d774a0fce5ae4642219d292fb674025438/windows-apps-src/data-binding/data-binding-quickstart.md) | HandedOffSuccess | [Details](#850d19c38afdad4d6eb043fa3a429e9f178c0f811875)
- [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/fd6616d774a0fce5ae4642219d292fb674025438/windows-apps-src/devices-sensors/3d-print-from-app.md) | HandedOffSuccess | [Details](#cff85c5a2446c6c16faba670ad43135a8be6afc71938)
+ [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md) | HandedOffSuccess | [Details](#10985dec69a38e1ec7452de069768b572e2f5aca1939)
+ [windows-apps-src\publish\opening-a-developer-account.md](https://github.com/Microsoft/windows-apps/blob/dd0da5871a59ddc35af36e3b64b3af8439585774/windows-apps-src/publish/opening-a-developer-account.md) | HandedOffSuccess | [Details](#2b07eedf5596703ef4cb07cdf6fbd946e33ff0503315)
 
 ## Item Details
-##### <a name='850d19c38afdad4d6eb043fa3a429e9f178c0f811875'></a> Source: [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/fd6616d774a0fce5ae4642219d292fb674025438/windows-apps-src/data-binding/data-binding-quickstart.md)
+##### <a name='10985dec69a38e1ec7452de069768b572e2f5aca1939'></a> Source: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/e26849838cd64dbbac01263a24e4a3288332deb2/ol-handoff/Microsoft/windows-apps.ja-jp/master/data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ja-jp.xlf)
-* Handoff Datetime: 2016-03-22 23:22:25
+* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/310fea0cbde27099ae17d8a75b784169fa16354b/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
+* Handoff Datetime: 2016-03-23 04:53:08
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,11 +22,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='cff85c5a2446c6c16faba670ad43135a8be6afc71938'></a> Source: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/fd6616d774a0fce5ae4642219d292fb674025438/windows-apps-src/devices-sensors/3d-print-from-app.md)
+##### <a name='2b07eedf5596703ef4cb07cdf6fbd946e33ff0503315'></a> Source: [windows-apps-src\publish\opening-a-developer-account.md](https://github.com/Microsoft/windows-apps/blob/dd0da5871a59ddc35af36e3b64b3af8439585774/windows-apps-src/publish/opening-a-developer-account.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/e26849838cd64dbbac01263a24e4a3288332deb2/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
-* Handoff Datetime: 2016-03-22 23:22:25
+* Handoff File: [opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/310fea0cbde27099ae17d8a75b784169fa16354b/ol-handoff/Microsoft/windows-apps.ja-jp/master/opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf)
+* Handoff Datetime: 2016-03-23 04:53:08
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
