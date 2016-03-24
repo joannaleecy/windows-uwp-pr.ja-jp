@@ -83,6 +83,9 @@
   "7ba1605136bdf940bfd481f488fccb35feeebc9c": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
   ],
+  "ae6cfce0f298a255ca7c97e762a93b59a9b61b9e": [
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
+  ],
   "3d522eb8e303dc3eb785dc59c3beda71643b6b9b": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
@@ -103,6 +106,9 @@
   ],
   "012c9abb1b7a791fcadb117e647a8aa1178196fb": [
     "windows-apps-src\\app-settings\\images\\appsettings-about.png"
+  ],
+  "080071e81f3f490b4e28e6a5a1d2b50f8a00f112": [
+    "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
   "1dbcaa1e486410fb0812834edf0038ec666003a8": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
@@ -245,6 +251,9 @@
   "475460c478b437d2854ccbb5ede23b09e7678824": [
     "windows-apps-src\\contacts-and-calendar\\sending-email.md"
   ],
+  "2df1b998e338787e0523565800137a2d1932d591": [
+    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
+  ],
   "86c4fdf4d4c42ce27cfbf0ad02f5f1c7e0a944e5": [
     "windows-apps-src\\controls-and-patterns\\active-canvas.md"
   ],
@@ -253,6 +262,9 @@
   ],
   "8064fb60db4863f36ac1b875cf731f24260ec9f0": [
     "windows-apps-src\\controls-and-patterns\\images\\uap-subway-pc-phone-700.png"
+  ],
+  "bc00806e584eac3382431a6486d278d09832114a": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
   "72bb9cbba3662bb4bbbb0d45d02b6f3d122d169f": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
@@ -290,6 +302,9 @@
   "8f1fc7c00968cf850970311af7e0cc6ab42e010a": [
     "windows-apps-src\\controls-and-patterns\\images\\AppbarGuidelines_Illustration.png"
   ],
+  "c9518dab6e0e93b1a23044bc32bb52282a28a7e5": [
+    "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
+  ],
   "90999e137aafe08cf79b9e623db72f907568e415": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
@@ -304,6 +319,9 @@
   ],
   "2c835e27da1b2d12abbbc4d8f8241b58d353612f": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_autosuggest_noresults.png"
+  ],
+  "4fa55e882a7bfbe5aab61dd9cb76a05ce402e038": [
+    "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
   "9af3aa134e9b068fecf62358018662bbe0eb9b73": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
@@ -329,6 +347,9 @@
   "cbb22a8e8cd0e47c804c65b5068a61222ccb5f31": [
     "windows-apps-src\\controls-and-patterns\\images\\nav-back-surfacehub.png"
   ],
+  "a811309e9f5dea08b63e2ed84d497d9d7234ef24": [
+    "windows-apps-src\\controls-and-patterns\\calendar-date-picker.md"
+  ],
   "04c383474abf9c85058bf75ed820128e1762ddba": [
     "windows-apps-src\\controls-and-patterns\\calendar-date-picker.md"
   ],
@@ -340,6 +361,9 @@
   ],
   "e2adcabe4787c4269a1f8ceed6985b11e7df5e5d": [
     "windows-apps-src\\controls-and-patterns\\images\\calendar-date-picker-closed.png"
+  ],
+  "1d481e11ff57b6834967890182cd57fc055a7a79": [
+    "windows-apps-src\\controls-and-patterns\\calendar-view.md"
   ],
   "f9ab1d6ee6820fcd6896d3c25545298096e74c23": [
     "windows-apps-src\\controls-and-patterns\\calendar-view.md"
@@ -358,6 +382,9 @@
   ],
   "5149f3092fb31f2c21b3447389aa46dab8f196b7": [
     "windows-apps-src\\controls-and-patterns\\images\\calendar-view-density-bars.png"
+  ],
+  "a36a43d77a67a06f6eade52d05177a04a38853de": [
+    "windows-apps-src\\controls-and-patterns\\checkbox.md"
   ],
   "1e3ac5a102a744603ac6c76b3d4caa45c82ba9d8": [
     "windows-apps-src\\controls-and-patterns\\checkbox.md"
@@ -428,6 +455,9 @@
   "a0a86971d0c663daa7d2374ddebbb95b5ca56c3c": [
     "windows-apps-src\\controls-and-patterns\\custom-transport-controls.md"
   ],
+  "1d8d504bf7b0e6de5c84d646624cb9eac248013c": [
+    "windows-apps-src\\controls-and-patterns\\date-and-time.md"
+  ],
   "0226dc9c3cd902389ee4f2c411f846325156c462": [
     "windows-apps-src\\controls-and-patterns\\date-and-time.md"
   ],
@@ -449,11 +479,17 @@
   "78fd1a9464ca9fcc66dfacac6403d092fc757d5c": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_timepicker_expand.png"
   ],
+  "142bfcb66b753c45465565378ebbed01f25a1576": [
+    "windows-apps-src\\controls-and-patterns\\date-picker.md"
+  ],
   "f9c16baaa2cd21d976c5d316c3a691430d7f4a56": [
     "windows-apps-src\\controls-and-patterns\\date-picker.md"
   ],
   "598870df73558020a8cc458f01e5ccdc0dbf475e": [
     "windows-apps-src\\controls-and-patterns\\date-picker.md"
+  ],
+  "bb8eb497ae910c4651ddc2f2ec7ee78c6cfe7efe": [
+    "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
   ],
   "2468d90d645052f182b5194c18f1e2a92dd36960": [
     "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
@@ -473,6 +509,9 @@
   "ea06324c5561ed3030108a445b0496ce45046e36": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_dialog_twobutton.png"
   ],
+  "f5788ef552fedd2bded8721f0c4aadd9e0a8dfbb": [
+    "windows-apps-src\\controls-and-patterns\\flipview.md"
+  ],
   "0ad8e79c0a11ef315703c3585aa08e17dd47a33d": [
     "windows-apps-src\\controls-and-patterns\\flipview.md"
   ],
@@ -490,6 +529,9 @@
   ],
   "a0d387e957e1e922b5d0dc401fcf9cc1afa8c80b": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_contextindicator.jpg"
+  ],
+  "1c93d9f76b33fdfc41cb3a830bf61f48009af3ab": [
+    "windows-apps-src\\controls-and-patterns\\fonts.md"
   ],
   "98085dff4bd23e01896c022f9234f3e5def8dc8b": [
     "windows-apps-src\\controls-and-patterns\\fonts.md"
@@ -621,6 +663,9 @@
   "abdb784635e5d8d2175fe825cd2f6e8f308c1db7": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_mtc_doublerow_phone.png"
   ],
+  "3d64d5496d25a525a7c49b848482db9d84aa73df": [
+    "windows-apps-src\\controls-and-patterns\\nav-pane.md"
+  ],
   "87ed59c2e3053edf1500c2ed5079b038bdfea707": [
     "windows-apps-src\\controls-and-patterns\\nav-pane.md"
   ],
@@ -635,15 +680,6 @@
   ],
   "4f291606904c1317c7ae32aea2bedd8221cc915d": [
     "windows-apps-src\\controls-and-patterns\\images\\NAVPANE_PANE.png"
-  ],
-  "70ad7216f73d42105d88eb7f8ccc44e94afd5bf8": [
-    "windows-apps-src\\controls-and-patterns\\images\\UAP_NEWSREADER_PHONE_SBS.png"
-  ],
-  "b28ca266138492e56b3d55e5e12427e30da6fff6": [
-    "windows-apps-src\\controls-and-patterns\\images\\UAP_NEWSREADER_DESKTOP_COLLAPSED.png"
-  ],
-  "00917b325fbc53196249904a885cfae92894bed4": [
-    "windows-apps-src\\controls-and-patterns\\images\\UAP_NEWSREADER_DESKTOP_EXPANDED.png"
   ],
   "223b952d17c321159b7e97d9acc5da38ee1499f9": [
     "windows-apps-src\\controls-and-patterns\\password-box.md"
@@ -1526,6 +1562,9 @@
   "e13354293e742ff98bf70065d2348879346b7b63": [
     "windows-apps-src\\controls-and-patterns\\images\\guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png"
   ],
+  "a8cab30a1078f246422f46b70d2ae8fa8d1b923b": [
+    "windows-apps-src\\controls-and-patterns\\tooltips.md"
+  ],
   "3c94dcb94e6654a9a4752eb6b3fc79ed45211951": [
     "windows-apps-src\\controls-and-patterns\\tooltips.md"
   ],
@@ -1772,12 +1811,12 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
+  "10985dec69a38e1ec7452de069768b572e2f5aca": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
     "windows-apps-src\\devices-sensors\\3d-printing.md",
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
-  ],
-  "10985dec69a38e1ec7452de069768b572e2f5aca": [
-    "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
   "97c82c9a06ad120110e748250f687a54b604b755": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
@@ -2498,20 +2537,26 @@
   "4adc00dd1386fb0505e21823fce9a0fa4cf223ba": [
     "windows-apps-src\\get-started\\your-first-app.md"
   ],
-  "71a9991961059fdd618e5cb50a53901a9dbb554a": [
+  "a767ca9a377ffdf9ae8f34d6316097f4eaec0dd4": [
     "windows-apps-src\\globalizing\\adjust-layout-and-fonts--and-support-rtl.md"
   ],
-  "a767ca9a377ffdf9ae8f34d6316097f4eaec0dd4": [
+  "71a9991961059fdd618e5cb50a53901a9dbb554a": [
     "windows-apps-src\\globalizing\\adjust-layout-and-fonts--and-support-rtl.md"
   ],
   "f219d96fbba4cfe1079959ea6467d6384565ee4b": [
     "windows-apps-src\\globalizing\\globalizing-portal.md"
+  ],
+  "35c8357ce558df9eb0e16eceae0fd0baadf2f527": [
+    "windows-apps-src\\globalizing\\guidelines-and-checklist-for-globalizing-your-app.md"
   ],
   "870a686048e3e711bcb3ccdc8d7b5a53049fab2a": [
     "windows-apps-src\\globalizing\\guidelines-and-checklist-for-globalizing-your-app.md"
   ],
   "ddf148fddc7268fa9918ccba2cd2bf173c48255d": [
     "windows-apps-src\\globalizing\\manage-language-and-region.md"
+  ],
+  "1c173d383941f7f81ea8c0e41d7812ea17ce5bf2": [
+    "windows-apps-src\\globalizing\\prepare-your-app-for-localization.md"
   ],
   "54bbdc700dfec7d910db7e3b3a2fcdff9ed30d2a": [
     "windows-apps-src\\globalizing\\prepare-your-app-for-localization.md"
@@ -2697,15 +2742,13 @@
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
   "a1040f4045bc68278877bd700f61a3fb2db4fc51": [
-    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-overview.png",
-    "windows-apps-src\\input-and-devices\\images\\cortana-overview.png"
+    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-overview.png"
   ],
   "6ea0582f7be5e7a8f28868a83cfd7b23a832082d": [
     "windows-apps-src\\input-and-devices\\images\\speech\\e2e-canceltrip.png"
   ],
   "a6f4110cb6456c78ed5035b8a17ad8d39b4ee670": [
-    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-backgroundapp-result.png",
-    "windows-apps-src\\input-and-devices\\images\\cortana-backgroundapp-result.png"
+    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-backgroundapp-result.png"
   ],
   "14402bc0cea657c4df3019f78b4cc8e4c1661d2b": [
     "windows-apps-src\\input-and-devices\\images\\speech\\cortana-backgroundapp-progress-result.png"
@@ -2727,6 +2770,9 @@
   ],
   "335b0a20abdc53954c4b9dd25fb187b7df9a8251": [
     "windows-apps-src\\input-and-devices\\images\\speech\\e2e-canceltrip-error.png"
+  ],
+  "591eb64f6324e69e94557f711b9f42af02a0bb11": [
+    "windows-apps-src\\input-and-devices\\cortana-interactions.md"
   ],
   "584809a1806bcd461d79ed399aaee5983ef3b472": [
     "windows-apps-src\\input-and-devices\\cortana-interactions.md"
@@ -2761,6 +2807,9 @@
   "362395ba3a10d79c6f4db991f18a22c3b39ed32e": [
     "windows-apps-src\\input-and-devices\\images\\coretext\\stream-8.png"
   ],
+  "ef1e954b4005ad54d940d5b66f050c11eb9fed15": [
+    "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
+  ],
   "31f37b76094a533c2518407424169169895c38be": [
     "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
   ],
@@ -2772,6 +2821,9 @@
   ],
   "fad8a0839df53f71902361a16627f352424dbda2": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
+  ],
+  "c9ad0ab53e99304a7f249a7b8b3a2c35c40f28f8": [
+    "windows-apps-src\\input-and-devices\\device-primer.md"
   ],
   "f53f9c7d221b5ccdeb3fab3db9ecf872e4eef974": [
     "windows-apps-src\\input-and-devices\\device-primer.md"
@@ -2790,6 +2842,9 @@
   ],
   "f122a854a62ceafb3df0ba4f14fedc0d3ac34ca2": [
     "windows-apps-src\\input-and-devices\\images\\device-primer\\1894834-hig-device-primer-02.png"
+  ],
+  "3822da3c609c15a6dabf274c79c45efd74cd9fc0": [
+    "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition--vcd--phrase-lists.md"
   ],
   "d9163eaa252f360d20155201945c6bcb638b0411": [
     "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition--vcd--phrase-lists.md"
@@ -2908,10 +2963,10 @@
   "243073efd6a5caf6af8ac14f60fd08533ed4bdd4": [
     "windows-apps-src\\input-and-devices\\guidelines-for-user-interaction.md"
   ],
-  "dd09206cc7975f6b54ffe4e7a7e303bddfc1a616": [
+  "f7680f82001e713d46b2a86f0330539ec2bd3cc2": [
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
   ],
-  "f7680f82001e713d46b2a86f0330539ec2bd3cc2": [
+  "dd09206cc7975f6b54ffe4e7a7e303bddfc1a616": [
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
   ],
   "edb2a02c7ac1ad9ba9796dc4269f7fef737e1102": [
@@ -2920,10 +2975,10 @@
   "06e437a91bf2846bf2a4ad9fe96b0ba49446a883": [
     "windows-apps-src\\input-and-devices\\images\\flyout.png"
   ],
-  "9f449718b718beb9512b2d05828d2ad326c1a38c": [
+  "b7641b7512e08759ed175bd71b2eddd3803274c8": [
     "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
   ],
-  "b7641b7512e08759ed175bd71b2eddd3803274c8": [
+  "9f449718b718beb9512b2d05828d2ad326c1a38c": [
     "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
   ],
   "21ea9df4a05a9a61891495e842bb35b723981747": [
@@ -2965,13 +3020,16 @@
   "d109a84726ad07c9132a6a5a1aa9f4955ffaa192": [
     "windows-apps-src\\input-and-devices\\images\\input-interactions\\icons-inputdevices03-vertical.png"
   ],
+  "7708ef78e0b1e478ff28728037207a5d4cbcc880": [
+    "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
+  ],
   "25bf53888a79cdb18252cfde65d773d011b2b9e1": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
-  "24ba2386709b046259bca0c81abafd8bcd3bb31d": [
+  "890031cbd7bf3645504547172ff72fbb218bad43": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
-  "890031cbd7bf3645504547172ff72fbb218bad43": [
+  "24ba2386709b046259bca0c81abafd8bcd3bb31d": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
   "a1dc3e5eed795b371193ee288ad778da0c4b265f": [
@@ -3015,11 +3073,17 @@
   "94dbf523e0d4e1e31d02d5a09adf9bbccca963af": [
     "windows-apps-src\\input-and-devices\\images\\input-patterns\\notepad.png"
   ],
+  "e2a1ebee8f3c1a487640878a14433fb77b83d571": [
+    "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
+  ],
   "95a625e6e2c692eefb02a962966830abec615e19": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
   ],
   "62c5aaaf77a2a6ed6cb3a6dd2c93913a3a532432": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
+  ],
+  "98945ddc11d4c848cca621c26f5a95a094fdf16b": [
+    "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
   ],
   "27ec64d42de952080eb477c073ab7f3a0f01293c": [
     "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
@@ -3096,6 +3160,9 @@
   "9531b80885d860cdf8bf306ed7a3e1674f4daa58": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
   ],
+  "1b059b1ba6cc4ea29c37ab324d202a301fc4cf39": [
+    "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
+  ],
   "2d2fae5a2bce7c3d078a1c3b95743444f8687e0b": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
@@ -3120,11 +3187,14 @@
     "windows-apps-src\\input-and-devices\\images\\speech\\speech-listening-complete.png",
     "windows-apps-src\\input-and-devices\\images\\speech-listening-complete.png"
   ],
+  "147f48b734dfab3c78ae4c91e04c4a6a02930a47": [
+    "windows-apps-src\\input-and-devices\\speech-recognition.md"
+  ],
   "6a84cec5bbbfad28407eb421330cebbb73b2ce90": [
     "windows-apps-src\\input-and-devices\\speech-recognition.md"
   ],
-  "147f48b734dfab3c78ae4c91e04c4a6a02930a47": [
-    "windows-apps-src\\input-and-devices\\speech-recognition.md"
+  "ee17c79e3f6d785f54b8c562375ecab56f0cbe90": [
+    "windows-apps-src\\input-and-devices\\support-natural-language-voice-commands-in-cortana.md"
   ],
   "51d5af70429d17ec2454f7d1c37db34ad882e5d5": [
     "windows-apps-src\\input-and-devices\\support-natural-language-voice-commands-in-cortana.md"
@@ -3304,8 +3374,14 @@
   "b29b50a93e5f88bfd15297d6bd1dba4ce106bc5a": [
     "windows-apps-src\\launch-resume\\use-a-maintenance-trigger.md"
   ],
+  "b098494040f9977aa10c4c1a8bd8b275bd577499": [
+    "windows-apps-src\\layout\\alignment-margin-padding.md"
+  ],
   "d7c8c0917d0c97ff28f3d8efcf74468088b8f865": [
     "windows-apps-src\\layout\\alignment-margin-padding.md"
+  ],
+  "17e150899ea6384307712c5c97b8d8722f1bb027": [
+    "windows-apps-src\\layout\\boxpanel-example-custom-panel.md"
   ],
   "72c9bec8e96dcea4900e847b16fc2b3f07a9ed07": [
     "windows-apps-src\\layout\\boxpanel-example-custom-panel.md"
@@ -3321,6 +3397,9 @@
   ],
   "3310d397d6034a75924d76b50962449ac2eac843": [
     "windows-apps-src\\layout\\images\\photo-editor\\uap-photo-tabletphone-sbs.png"
+  ],
+  "5908cd03b58d09a8ba793deeb737f7f8ed738492": [
+    "windows-apps-src\\layout\\custom-panels-overview.md"
   ],
   "05654e371c417363d4ef17f5636e6c5bfcdd4515": [
     "windows-apps-src\\layout\\custom-panels-overview.md"
@@ -3391,6 +3470,9 @@
   "2af881747918c3ab0690d6a72472de10fe8e2509": [
     "windows-apps-src\\layout\\images\\layout-panel-canvas.png"
   ],
+  "92b2ec338d886dd58af31ae20fcfb25a986fbef8": [
+    "windows-apps-src\\layout\\layouts-with-xaml.md"
+  ],
   "74bda267e8a8722d03ffe07faeb7a2a06f096171": [
     "windows-apps-src\\layout\\layouts-with-xaml.md"
   ],
@@ -3447,6 +3529,9 @@
   ],
   "4634916fa6960c25710a03e5bf66ee2f55d8df46": [
     "windows-apps-src\\layout\\images\\nav-peertopeer-2page.png"
+  ],
+  "ea7320dec086539bc67f8ae8fc853ffb7b957442": [
+    "windows-apps-src\\layout\\screen-sizes-and-breakpoints-for-responsive-design.md"
   ],
   "72007d22c9494e1a9a390ad9d391ef7a1c1927c0": [
     "windows-apps-src\\layout\\screen-sizes-and-breakpoints-for-responsive-design.md"
@@ -4729,17 +4814,17 @@
   "af817df780f291b6367a374e535cce22a84ba4c1": [
     "windows-apps-src\\xaml-platform\\xaml-syntax-guide.md"
   ],
-  "743848d76285055d9d3d374f633e5848dc17e4c4": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-edge.png"
+  "8f872a2a4c66846022dd16171463a0375b58ad9f": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-calendar-phone.png"
   ],
   "302792ef62bb237d319e9e77b30c45c641e0c14e": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-calendar-phone.png"
   ],
-  "2fdeba5c66f31f755c6ceee0a457e7dbd5229745": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-mtc.png"
-  ],
   "7648313723ea7fb66b5b60220413f287965d8423": [
     "windows-apps-src\\controls-and-patterns\\images\\controls\\auto-suggest-box-open.png"
+  ],
+  "029c407768e2b6f544002c85eea18b5e0ef8c7ea": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\auto-suggest-box-groove.png"
   ],
   "9c1f15791dbcce9776ff6b44e361b23b12c4d53f": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\auto-suggest-box-groove.png"
@@ -4747,11 +4832,18 @@
   "8dfacafcd8701329b6b69078b9dc4d2c5e221dc7": [
     "windows-apps-src\\controls-and-patterns\\images\\controls\\button.png"
   ],
+  "171f503fa6459ec0f28aff23722a9658f4d07684": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\buttons-edge.png",
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\check-box-edge.png"
+  ],
   "4415fdb3ab8838f2f3b251947392db3de6d05232": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\buttons-edge.png"
   ],
   "90cc7602bc9c8c3c58ca62c6b934ab9d252a5fa1": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\check-box-edge.png"
+  ],
+  "70a19b36620474b3031ced984ff867612b7361e9": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\check-box-alarm.png"
   ],
   "6220162e55cdc7def8eb4000957b43a61b46681b": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\check-box-alarm.png"
@@ -4852,11 +4944,20 @@
   "a0b6dd9d0cbc21ec39bae02159e7c5bb48f3d604": [
     "windows-apps-src\\controls-and-patterns\\images\\controls\\toggle-switch.png"
   ],
+  "48ebef0fdf8971a7a0fccc5dabf5c65718f61e06": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\hyperlinks-calculator.png"
+  ],
   "5cba068996340d4f208c2600c1ab148c6080527c": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\hyperlinks-calculator.png"
   ],
+  "8e5a753fa23ad58bdba03b14b3d706e070703274": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\media-element-getstarted.png"
+  ],
   "0423e56bdf5f9152055b66d7da8c2074940516fb": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\media-element-getstarted.png"
+  ],
+  "ae51ceda1183c2b56e9dc068afedd75b44a55cbd": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\radio-buttons-edge.png"
   ],
   "382b99522812137252f065d73cc2269c03ec3bee": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\radio-buttons-edge.png"
@@ -4864,20 +4965,38 @@
   "3be3dc17769a245e32c70f2b6fa2388f18d2db64": [
     "windows-apps-src\\controls-and-patterns\\images\\radio-button-groups.png"
   ],
+  "3de56da590e8d3b12cfeb4d98b825dc3d96ddc1b": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\semantic-zoom-photos.png"
+  ],
   "86894e13740cec1ae46b2ad289111d3b2fdcf4b5": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\semantic-zoom-photos.png"
+  ],
+  "6c8ba33344ad9d1646b06f18c243c14b8550ff7f": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-phone.png"
   ],
   "1e465502d17a0b17da6ffe67dab514cbccd03a40": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-phone.png"
   ],
+  "763bf02e176fb49faf18e066708236ad61095ca1": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-display-settings.png"
+  ],
   "2d4909257bb4006d3f85b7207438e36fece6e6b2": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-display-settings.png"
+  ],
+  "c0ab215627acd9693df4a26deef78d9d6b104d12": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\toggle-switch-news.png"
   ],
   "86cf56f14db4e1d1d4135eeba22fb62fb153a642": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\toggle-switch-news.png"
   ],
+  "1d8de9b88952e0a1ceb2235b0fda29c237524694": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\toggle-switch-start-settings.png"
+  ],
   "fb1e9bd5d3a1f7bb2be2f4d1970a4dfdbe53542a": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\toggle-switch-start-settings.png"
+  ],
+  "dc352a5b7f47a4658957b73b3266412a1e50ad67": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\tool-tip-maps.png"
   ],
   "64b1d8c5bc8069dafbd743ecf496b14b359be912": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\tool-tip-maps.png"
@@ -4971,5 +5090,77 @@
   ],
   "b01b83b61995d55cafc7918a1ae0183ff50124d6": [
     "windows-apps-src\\audio-video-camera\\audio-device-information-properties.md"
+  ],
+  "3afc5890653e57db71a982dc84922b14a33c9021": [
+    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-photos.png"
+  ],
+  "5957dbac94c192126b4655ad1543179ab0f12c99": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
+  "b15d7439c079a03a84ed4e68e9008270b8029d46": [
+    "windows-apps-src\\input-and-devices\\images\\cortana-completion-screen-upcomingtrip-small.png"
+  ],
+  "bde5acdb3e19ed802226c8ce8061f484990124b0": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdgokey.png"
+  ],
+  "2d35d93141bac8c869ff5b76141116bdaa8060d9": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdpccurrencyamountandsymbol.png"
+  ],
+  "39b6446062beb4f1de1fde49eab7ab961975a6b0": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdpcdefault.png"
+  ],
+  "cb0e7b88072e5758772df52399a67a3e2ae7b658": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdpcemailsmtpaddress.png"
+  ],
+  "022aa070bd828796b30760c49583bc80103da9d5": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdpcformula.png"
+  ],
+  "086b54998d0048af91cd38f39bdeb42ce6dab574": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdpcsearch.png"
+  ],
+  "223cd4f513d1366488eb581e9bddc4e3ee53a006": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdpcurl.png"
+  ],
+  "f297d70848d854080e587ae5d578b55ebd43cc55": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdwpcurrencyamountandsymbol.png"
+  ],
+  "a2cdb34c3270d8a358ccbefb9fc36d3520ed92cf": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdwpdefault.png"
+  ],
+  "21758ca68a386eee109fb70d6090ad4ecee40720": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdwpemailsmtpaddress.png"
+  ],
+  "6c0e780bff7b11970f88e8031ba22ba113231f67": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdwpformula.png"
+  ],
+  "941b269e3cfceef04ed3549c71f8cd53de10bdaa": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdwpnameorphonenumber.png"
+  ],
+  "f1a8dcf8f29156032d654a06be6cb12dfc6ed888": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdwpnumber.png"
+  ],
+  "1ef0be74f4cfb8f900fed4fcfdc36107fbbbe11b": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdwpsearch.png"
+  ],
+  "13da5f3fc11aa3a716b232622257ee40c372e740": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdwptelephonenumber.png"
+  ],
+  "4608c2e707481824d2dcdfa22cf97379043e8a37": [
+    "windows-apps-src\\input-and-devices\\images\\input-scopes\\kbdwpurl.png"
+  ],
+  "05b48d1e98a80fc56f8b96e6b838154408e91343": [
+    "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
+  ],
+  "c10028eb7d8d3e3ba55d633aefff83ceaa614cbc": [
+    "windows-apps-src\\layout\\assets\\grid\\grid.png"
+  ],
+  "4af08fe09866b3054cc93f2f6bdf43e53c520c96": [
+    "windows-apps-src\\layout\\assets\\grid\\touch-target.png"
+  ],
+  "4c0021799ae22353cc57d4de4607a136751abecc": [
+    "windows-apps-src\\layout\\grid.md"
+  ],
+  "dcd32f9209665abbdd6c7696643a59aacdaecf98": [
+    "windows-apps-src\\style\\sound.md"
   ]
 }
