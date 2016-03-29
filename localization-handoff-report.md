@@ -1,20 +1,21 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md) | HandedOffSuccess | [Details](#10985dec69a38e1ec7452de069768b572e2f5aca1927)
- [windows-apps-src\publish\package-flights.md](https://github.com/Microsoft/windows-apps/blob/0d22828981ebef279bfa779994a16021eade6b8b/windows-apps-src/publish/package-flights.md) | HandedOffSuccess | [Details](#32d8bda5bf7b7f3e384dd9ecf0742740fa62754b3344)
+ [windows-apps-src\audio-video-camera\capture-photos-and-video-with-mediacapture.md](https://github.com/Microsoft/windows-apps/blob/0e9dbeca454e276bd264084d323436232cca86b5/windows-apps-src/audio-video-camera/capture-photos-and-video-with-mediacapture.md) | HandedOffSuccess | [Details](#2464544621af36f88e937fcbe08e3073e60e7904134)
+ [windows-apps-src\audio-video-camera\simple-camera-preview-access.md](https://github.com/Microsoft/windows-apps/blob/0e9dbeca454e276bd264084d323436232cca86b5/windows-apps-src/audio-video-camera/simple-camera-preview-access.md) | HandedOffSuccess | [Details](#9a45ae84446b8257378847fa1967e7722e3a35ac450)
+ [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/0e9dbeca454e276bd264084d323436232cca86b5/windows-apps-src/devices-sensors/3d-print-from-app.md) | HandedOffSuccess | [Details](#cff85c5a2446c6c16faba670ad43135a8be6afc71926)
 
 ## Item Details
-##### <a name='10985dec69a38e1ec7452de069768b572e2f5aca1927'></a> Source: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/5d115a7944efa26c1bb733aecfbfeb0b9a407ccd/windows-apps-src/devices-sensors/3d-printing.md)
+##### <a name='2464544621af36f88e937fcbe08e3073e60e7904134'></a> Source: [windows-apps-src\audio-video-camera\capture-photos-and-video-with-mediacapture.md](https://github.com/Microsoft/windows-apps/blob/0e9dbeca454e276bd264084d323436232cca86b5/windows-apps-src/audio-video-camera/capture-photos-and-video-with-mediacapture.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0d39a3dbb6462a6b1346c8482656866a03716e76/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
-* Handoff Datetime: 2016-03-29 19:44:08
+* Handoff File: [capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ccafea7f2d3f229cb1b1a54ba7bd75ed84e8879e/ol-handoff/Microsoft/windows-apps.ja-jp/master/capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ja-jp.xlf)
+* Handoff Datetime: 2016-03-29 21:15:09
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,11 +23,23 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='32d8bda5bf7b7f3e384dd9ecf0742740fa62754b3344'></a> Source: [windows-apps-src\publish\package-flights.md](https://github.com/Microsoft/windows-apps/blob/0d22828981ebef279bfa779994a16021eade6b8b/windows-apps-src/publish/package-flights.md)
+##### <a name='9a45ae84446b8257378847fa1967e7722e3a35ac450'></a> Source: [windows-apps-src\audio-video-camera\simple-camera-preview-access.md](https://github.com/Microsoft/windows-apps/blob/0e9dbeca454e276bd264084d323436232cca86b5/windows-apps-src/audio-video-camera/simple-camera-preview-access.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [package-flights.01f17a418d82f23d1aa9d2df8fc583f11c6c61bf.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0d39a3dbb6462a6b1346c8482656866a03716e76/ol-handoff/Microsoft/windows-apps.ja-jp/master/package-flights.01f17a418d82f23d1aa9d2df8fc583f11c6c61bf.ja-jp.xlf)
-* Handoff Datetime: 2016-03-29 19:44:08
+* Handoff File: [simple-camera-preview-access.d4463226833217e13f4feeb4eae3b9442bcb8846.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ccafea7f2d3f229cb1b1a54ba7bd75ed84e8879e/ol-handoff/Microsoft/windows-apps.ja-jp/master/simple-camera-preview-access.d4463226833217e13f4feeb4eae3b9442bcb8846.ja-jp.xlf)
+* Handoff Datetime: 2016-03-29 21:15:09
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='cff85c5a2446c6c16faba670ad43135a8be6afc71926'></a> Source: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/0e9dbeca454e276bd264084d323436232cca86b5/windows-apps-src/devices-sensors/3d-print-from-app.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ccafea7f2d3f229cb1b1a54ba7bd75ed84e8879e/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
+* Handoff Datetime: 2016-03-29 21:15:09
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
