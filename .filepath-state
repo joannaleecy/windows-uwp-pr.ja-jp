@@ -1814,12 +1814,12 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
+  "10985dec69a38e1ec7452de069768b572e2f5aca": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
     "windows-apps-src\\devices-sensors\\3d-printing.md",
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
-  ],
-  "10985dec69a38e1ec7452de069768b572e2f5aca": [
-    "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
   "97c82c9a06ad120110e748250f687a54b604b755": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
@@ -4619,6 +4619,9 @@
   "f418ec9cfe9f8f26b6c74e5b5ae42098f0e4f9cf": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "437f9d3687923f666e31b23bdbb75f55ffc4491b": [
+    "windows-apps-src\\TOC.md"
+  ],
   "c94a1432b6b1e433f524860620a3b9a4254eefb5": [
     "windows-apps-src\\TOC.md"
   ],
@@ -5186,6 +5189,9 @@
   ],
   "05b48d1e98a80fc56f8b96e6b838154408e91343": [
     "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
+  ],
+  "047e500e5edfffbe93c7d1be51813009994a3e06": [
+    "windows-apps-src\\style\\sound.md"
   ],
   "49b6865d2c0aa4d5f280e5e6330f34fb3b05674d": [
     "windows-apps-src\\style\\sound.md"
