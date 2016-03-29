@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "f1b52280b9b473b8353983fa5a4a57f3164fdf5b",
+  "LastProcessedCommit": "0075b95e7e37bc6c3412dc3afc95967fa14a3eb4",
   "LastTranslatedCommit": null,
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -42993,8 +42993,8 @@
         "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
       ],
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf",
-      "HandoffFileCommit": "63e8ed057a51350a7214ba96ff1805bc6a7e97d9",
-      "HandoffDateTime": "2016-03-29T16:14:31.8044287Z",
+      "HandoffFileCommit": "be1420aa017a3e99645e5d7d0255f07f5c488f15",
+      "HandoffDateTime": "2016-03-29T17:13:00.034642Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
@@ -55981,6 +55981,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\windows-10-version-1511-november-2015.999fc15aa938c751cca71d5ab571a1259715fd6d.ja-jp.xlf",
       "HandoffFileCommit": "4903129c636b6f0a10e1aafca8f328c50099f9ff",
       "HandoffDateTime": "2016-03-29T16:46:11.8669813Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "06ba9804a3ad99cc4cb8a32e16afb4cc65107bbc": {
+      "FileHash": "06ba9804a3ad99cc4cb8a32e16afb4cc65107bbc",
+      "SourceFileCommit": "0075b95e7e37bc6c3412dc3afc95967fa14a3eb4",
+      "SourceFilePath": "windows-apps-src\\TOC.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\TOC.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf",
+      "HandoffFileCommit": "be1420aa017a3e99645e5d7d0255f07f5c488f15",
+      "HandoffDateTime": "2016-03-29T17:13:00.034642Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
