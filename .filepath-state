@@ -113,17 +113,32 @@
   "1dbcaa1e486410fb0812834edf0038ec666003a8": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
+  "1d98623371655bc177cca661417d38c175ce9963": [
+    "windows-apps-src\\app-to-app\\copy-and-paste.md"
+  ],
   "01824bcfa52c096e3e372fc450e3146fbbec5296": [
     "windows-apps-src\\app-to-app\\copy-and-paste.md"
+  ],
+  "fc6d3193f95b7dcadaa2d4ebf2952deffc3bcdc0": [
+    "windows-apps-src\\app-to-app\\drag-and-drop.md"
   ],
   "23cb0dafe7afdbe10fbf31094ed6ba7886f7e67e": [
     "windows-apps-src\\app-to-app\\drag-and-drop.md"
   ],
+  "5f6f5f0dc8809b503f34122cd77519e6ec18ee47": [
+    "windows-apps-src\\app-to-app\\index.md"
+  ],
   "38f2349a274f59376240e301236742d0bd1b44dd": [
     "windows-apps-src\\app-to-app\\index.md"
   ],
+  "c188ac4937a66bc547ce4cac64e653160c2fc7aa": [
+    "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
   "3f6a4ce84f8dbfba2c16de1acdb4fe5289778848": [
     "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
+  "c56c12a25bba4536472686df0c75e83a8d7f5822": [
+    "windows-apps-src\\app-to-app\\share-data.md"
   ],
   "08fb6a4b8e809843f17dc544bb5dfdf1ac557b64": [
     "windows-apps-src\\app-to-app\\share-data.md"
@@ -262,6 +277,9 @@
   ],
   "8064fb60db4863f36ac1b875cf731f24260ec9f0": [
     "windows-apps-src\\controls-and-patterns\\images\\uap-subway-pc-phone-700.png"
+  ],
+  "cd5890732e8be7b59fcb7ed8a50f0fd2bc00432c": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
   "bc00806e584eac3382431a6486d278d09832114a": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
@@ -1691,6 +1709,9 @@
   "4d48e0a8011192d2d96a9fb9c1cea9801523a15d": [
     "windows-apps-src\\debug-test-perf\\improve-garbage-collection-performance.md"
   ],
+  "125b694a151ed478671c5749b86a8c1e252716f7": [
+    "windows-apps-src\\debug-test-perf\\index.md"
+  ],
   "badf46d0a23f28b8279c90e2075ab082a8fc0449": [
     "windows-apps-src\\debug-test-perf\\index.md"
   ],
@@ -1814,12 +1835,12 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
+  "10985dec69a38e1ec7452de069768b572e2f5aca": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
     "windows-apps-src\\devices-sensors\\3d-printing.md",
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
-  ],
-  "10985dec69a38e1ec7452de069768b572e2f5aca": [
-    "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
   "97c82c9a06ad120110e748250f687a54b604b755": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
@@ -1980,6 +2001,9 @@
   ],
   "e082c1eb5460a8b6cbadfd248b6ad43931172130": [
     "windows-apps-src\\devices-sensors\\use-the-orientation-sensor.md"
+  ],
+  "b83bcc11c4890ff5a8678c1728c26b45ff34b2a8": [
+    "windows-apps-src\\enterprise\\index.md"
   ],
   "ef79cf30480aa076391cd576fe1d16c0c2e3a3d9": [
     "windows-apps-src\\enterprise\\index.md"
@@ -2480,8 +2504,23 @@
   "6202620f9a2e0b2205a70103f8d32e6b041ec3dd": [
     "windows-apps-src\\get-started\\images\\helloworld-2-cs-phone.png"
   ],
+  "bf1aad45a71701883dc1aa9d9708e6aee8b74807": [
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
   "ee2bde728bf1df26366c8e59e3c787effa97c0d5": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
+  "d209a2f9e87fbd7e39a595fe28ebb9479355b46b": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-dev-mode-options.png"
+  ],
+  "1efd7c8d330b047d6d3e90afc4824597e33b2964": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-dev-mode-pairing.png"
+  ],
+  "67a8d613493a7b1d6fdda3d7eeae0ab23043d07d": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-browser.png"
+  ],
+  "46b6f0dd49dd16ae8364d050cd7684b496e2b9e6": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-dev-mode-portal.png"
   ],
   "5a92b2591e7157c09dc3c54b1eb271e28f7d60b4": [
     "windows-apps-src\\get-started\\get-set-up.md"
@@ -2711,11 +2750,17 @@
   "507713648daccde14b704092011c1a488739945b": [
     "windows-apps-src\\home.md"
   ],
+  "cdd3e393b21db0ea127ecb593213b5bf83ad1e39": [
+    "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
+  ],
   "409fee0f57d31878bef6b70da0bbc30cea53c267": [
     "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
   ],
   "61ac1ca6899f8e64dc9b19bc47cd0b6e6710674f": [
     "windows-apps-src\\in-app-help\\in-app-help-and-instructions.md"
+  ],
+  "8551e482f6c993afb30384a86dab19a31f432341": [
+    "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
   "76dda5dbc23b746325aa9d0bbe4514bcaf0fedd9": [
     "windows-apps-src\\in-app-help\\instructional-ui.md"
@@ -2734,6 +2779,21 @@
   ],
   "0b5665bcfae3e9a96859a5c1cb92fda686804ec5": [
     "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-flyout.png"
+  ],
+  "d19d400c7fadec70429482948667d09c9c4b3747": [
+    "windows-apps-src\\index.md"
+  ],
+  "8ce405a5f04fb1374642d102e876ed717cd18c81": [
+    "windows-apps-src\\index.md"
+  ],
+  "2ebbb5faef7cd2777359235420554e6f05060fcb": [
+    "windows-apps-src\\index.md"
+  ],
+  "02fae94dc137ee1d2ad0fc369d6f3292d7c1df4c": [
+    "windows-apps-src\\index.md"
+  ],
+  "855ca081879b043e9d89d0c931964ace73a72b80": [
+    "windows-apps-src\\index.md"
   ],
   "8279af980f0022382bf47036028f7da8ab14c539": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
@@ -3314,6 +3374,9 @@
   "c75de5d18b0ce09281359ca7e84f6b6f2b0dfdb1": [
     "windows-apps-src\\launch-resume\\images\\privacyawarenesssettingsapp.png"
   ],
+  "f7ac50e3493dd67e6714cd32f04697bb2be4b902": [
+    "windows-apps-src\\launch-resume\\launch-maps-app.md"
+  ],
   "0e65a5ad094b952e9e4bb3bcef33250c4255cbab": [
     "windows-apps-src\\launch-resume\\launch-maps-app.md"
   ],
@@ -3641,8 +3704,14 @@
   "b597e6f3bf0b8baa3bc2dcb35d93e36410e452e9": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
+  "7da378000723a9765a67235b3a6598dd983ef99d": [
+    "windows-apps-src\\monetize\\add-ads-to-apps-with-microsoft-advertising.md"
+  ],
   "46caa280af512498dea823200678398b15e8cb42": [
     "windows-apps-src\\monetize\\add-ads-to-apps-with-microsoft-advertising.md"
+  ],
+  "1c632f2e3fccda7e62aca45fef81c8fddf76f715": [
+    "windows-apps-src\\monetize\\add-and-use-the-ad-mediator-control.md"
   ],
   "e7180817e9a4a4d18722f746a8d260bf9d459fa5": [
     "windows-apps-src\\monetize\\add-and-use-the-ad-mediator-control.md"
@@ -3710,8 +3779,14 @@
   "fba2083caea35db71705db4181331131d3a99d88": [
     "windows-apps-src\\monetize\\grant-free-products.md"
   ],
+  "9d8736247e8f256fe7221f3f05ac747598a7508a": [
+    "windows-apps-src\\monetize\\index.md"
+  ],
   "db97965b4fd19d6bc04cfcdca91071c2e4fd0a2c": [
     "windows-apps-src\\monetize\\index.md"
+  ],
+  "e1cd2e39e21bd815d005ed1932a7d2f0d67e1d7f": [
+    "windows-apps-src\\monetize\\install-the-microsoft-universal-ad-client-sdk.md"
   ],
   "7972f86e242bb19eb2d51fa42f1976b00155c8f4": [
     "windows-apps-src\\monetize\\install-the-microsoft-universal-ad-client-sdk.md"
@@ -3728,11 +3803,17 @@
   "add9550f6651d21d4099fa3eee9a2164a88c1c30": [
     "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
   ],
+  "554992e0b497f1ff32948683e18db966eaaf793e": [
+    "windows-apps-src\\monetize\\select-and-manage-your-ad-networks.md"
+  ],
   "a7226e22ff1bbde27949868d6548d0378a73be3c": [
     "windows-apps-src\\monetize\\select-and-manage-your-ad-networks.md"
   ],
   "d757d01dff9af5b8113d723cbee06e7c97560d67": [
     "windows-apps-src\\monetize\\select-and-manage-your-ad-networks.md"
+  ],
+  "cf1b13d58fc0b5c113b582ce66040f45daa02e22": [
+    "windows-apps-src\\monetize\\submit-your-app-and-configure-ad-mediation.md"
   ],
   "4f8bdad18504abde25cc946a8b12fe783c20b0a7": [
     "windows-apps-src\\monetize\\submit-your-app-and-configure-ad-mediation.md"
@@ -3743,8 +3824,14 @@
   "8fd7e26f3851ff5f0e86fe8e51a67988be84b1e5": [
     "windows-apps-src\\monetize\\test-your-ad-mediation-implementation.md"
   ],
+  "549fb6a2b396b71d7b774bdde52d2b391dd8526c": [
+    "windows-apps-src\\monetize\\troubleshoot-ad-mediation.md"
+  ],
   "027bf65cd88a1ddd98c62e2813cbf289816443c7": [
     "windows-apps-src\\monetize\\troubleshoot-ad-mediation.md"
+  ],
+  "bba151a02759a1b17c319807e03a1c6de8b86c18": [
+    "windows-apps-src\\monetize\\use-ad-mediation-to-maximize-revenue.md"
   ],
   "c906f909f680277b1e12e9fc76e06d73efeb2c91": [
     "windows-apps-src\\monetize\\use-ad-mediation-to-maximize-revenue.md"
@@ -3793,6 +3880,9 @@
   ],
   "00de660fa7d41a6b9b0698d0857864d25036ace3": [
     "windows-apps-src\\networking\\which-networking-technology.md"
+  ],
+  "2d319c00f892a84468ac511fc92621c1ddabc765": [
+    "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
   "fd15703f573d3bcf8174442f4bfb738293ec9056": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
@@ -4091,6 +4181,9 @@
   "cb09ba3c6a44ec7eef1ccb9e80609352582a0e3e": [
     "windows-apps-src\\porting\\wpsl-to-uwp-troubleshooting.md"
   ],
+  "db35abe3198933a4758a54f80b44d96ecaf65f61": [
+    "windows-apps-src\\publish\\about-house-ads.md"
+  ],
   "70df7045066bdc7da9aad7673a2b94a38a54c717": [
     "windows-apps-src\\publish\\about-house-ads.md"
   ],
@@ -4103,11 +4196,17 @@
   "011fa6fb219acefd41dfc58381d58991c0ac61e0": [
     "windows-apps-src\\publish\\ad-mediation-report.md"
   ],
+  "f472b6711535db1f0c7d2f3ac62de14d0112ac1a": [
+    "windows-apps-src\\publish\\advertising-performance-report.md"
+  ],
   "bc482fcea5dc2e3369ca0a474be416002156dc53": [
     "windows-apps-src\\publish\\advertising-performance-report.md"
   ],
   "b232b8175c163251c114b9de729ed53753b11e52": [
     "windows-apps-src\\publish\\age-ratings.md"
+  ],
+  "cb21173dd0dbaf1946a3b814637839d5c6d5a72f": [
+    "windows-apps-src\\publish\\analytics.md"
   ],
   "572ea5acea7befc1024e9c80e23c7bf50587f4bf": [
     "windows-apps-src\\publish\\analytics.md"
@@ -4117,6 +4216,9 @@
   ],
   "f4ff9bdb6392c91a01e801b86fd34fc5eaebb30f": [
     "windows-apps-src\\publish\\app-install-ads-reports.md"
+  ],
+  "29e9dc748534bce5df0bafd02d611505895375ef": [
+    "windows-apps-src\\publish\\app-management-and-services.md"
   ],
   "5efd82cf351c06b1753d492020c43153fe21de8a": [
     "windows-apps-src\\publish\\app-management-and-services.md"
@@ -4151,6 +4253,9 @@
   "e1c39e7123b878a62f55ad659480f32581415e00": [
     "windows-apps-src\\publish\\avoid-common-certification-failures.md"
   ],
+  "e0b751df9505e02dda45d9b141e9004b0474e155": [
+    "windows-apps-src\\publish\\beta-testing-and-targeted-distribution.md"
+  ],
   "4246f0bc03e2b2c14f08055fa6c459a58fb9cade": [
     "windows-apps-src\\publish\\beta-testing-and-targeted-distribution.md"
   ],
@@ -4166,8 +4271,14 @@
   "d4588455732f548e4d0bc7dcb90d219cdadec74c": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
   ],
+  "b692331ca29e5b309989d01b9a87efd9798a0f01": [
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
+  ],
   "e9238d308316cbc268b3392474cfa65f4e644de2": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
+  ],
+  "98c43645e94d6582f24f3c0c19755d91c1781c15": [
+    "windows-apps-src\\publish\\create-app-descriptions.md"
   ],
   "d5a31a3b5699882ebf24935985610385637a307d": [
     "windows-apps-src\\publish\\create-app-descriptions.md"
@@ -4201,6 +4312,9 @@
   ],
   "8489fc43293016c956af3e12eaad15d79154ac46": [
     "windows-apps-src\\publish\\generate-promotional-codes.md"
+  ],
+  "3e1788d1fd3f77b56e752beef0bf280937f5e473": [
+    "windows-apps-src\\publish\\getting-paid-apps.md"
   ],
   "ed3f9d197f6a93ffc674a774355f3de08f731394": [
     "windows-apps-src\\publish\\getting-paid-apps.md"
@@ -4246,6 +4360,9 @@
   ],
   "2981c20329a8988f43ce2039157508a2dbd21df4": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
+  ],
+  "90df3bbb493e9f868536908eab071d8e648400b8": [
+    "windows-apps-src\\publish\\monetize-with-ads.md"
   ],
   "8e4a9aa8320f63e8f764f8b753e9fb4fb21d5e7e": [
     "windows-apps-src\\publish\\monetize-with-ads.md"
@@ -4295,6 +4412,9 @@
   "23207beed6e3af11e7c33ff39a837a2a82d15aa8": [
     "windows-apps-src\\publish\\reviews-report.md"
   ],
+  "9ec29b30bfd370c523ffb6349cace00c01cea396": [
+    "windows-apps-src\\publish\\set-app-pricing-and-availability.md"
+  ],
   "dd8480d5ce3621ee19d1c5e86ce7d024b3e9b046": [
     "windows-apps-src\\publish\\set-app-pricing-and-availability.md"
   ],
@@ -4313,11 +4433,17 @@
   "9c594c1e262ca6b92fdebcd07ba3f6e6faf56fd5": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
   ],
+  "72f17cd0621fcaa8a51f8c4f5592b85c255cca1b": [
+    "windows-apps-src\\publish\\the-app-certification-process.md"
+  ],
   "83c2668a5231f4bd8e58cf4e97ccab58b2372169": [
     "windows-apps-src\\publish\\the-app-certification-process.md"
   ],
   "36b0a10da05f7144aee882324be9f1a246dbb13d": [
     "windows-apps-src\\publish\\trademark-and-copyright-protection.md"
+  ],
+  "631d99ed3f4e4d83a3bdc69c913c1d806cd3feb2": [
+    "windows-apps-src\\publish\\upload-app-packages.md"
   ],
   "a4710a88a49e6e15afab2f92bc918d76d148b1f6": [
     "windows-apps-src\\publish\\upload-app-packages.md"
@@ -4340,11 +4466,17 @@
   "7ac4433f4acda4543a3d38f2487cbdbb15423f23": [
     "windows-apps-src\\publish\\write-a-great-app-description.md"
   ],
+  "83f0b598df8e16bcb497386fe32e52fb93586988": [
+    "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
   "7dca3624c47b75b4c1b44cf2f45135f3a5ca38f7": [
     "windows-apps-src\\security\\authentication-and-user-identity.md"
   ],
   "8f690ac45f1a7926fd62eae2bd151dbd32e20b01": [
     "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
+  "84596f70a5deee6cebb5f4bac442a6aaca8210cd": [
+    "windows-apps-src\\security\\certificates.md"
   ],
   "d9e74376dfbb57670f1c8799fa3bd038a8b9f4e9": [
     "windows-apps-src\\security\\certificates.md"
@@ -4355,11 +4487,17 @@
   "975ff6acff2568af82366f7e8c2738385c4b4fd3": [
     "windows-apps-src\\security\\images\\x509certificateversions.png"
   ],
+  "38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c": [
+    "windows-apps-src\\security\\common-cryptography-tasks.md"
+  ],
   "919cb2e3f5e9727a42f6c186269da69ed78452db": [
     "windows-apps-src\\security\\common-cryptography-tasks.md"
   ],
   "c8e6fe42dcb5f6c88fc9017f509556f48fc7e757": [
     "windows-apps-src\\security\\common-cryptography-tasks.md"
+  ],
+  "fcbc3c8a3f70613635201732f3ca5053d58325c7": [
+    "windows-apps-src\\security\\compare-buffers.md"
   ],
   "e59b3a04bb90d9d522f5cf3dbaa910740c73b4b8": [
     "windows-apps-src\\security\\compare-buffers.md"
@@ -4367,11 +4505,17 @@
   "19823765408d6eb37e6cb122479f2ba93635edf2": [
     "windows-apps-src\\security\\compare-buffers.md"
   ],
+  "667338ed3808f79b75230bc0c3ea00cc7e274d5a": [
+    "windows-apps-src\\security\\convert-between-strings-and-binary-data.md"
+  ],
   "83ec4a09225937496d610431ec8a8368aa2c11f8": [
     "windows-apps-src\\security\\convert-between-strings-and-binary-data.md"
   ],
   "80134f92bdbc61fb82a2a7cdd7f097649088618d": [
     "windows-apps-src\\security\\convert-between-strings-and-binary-data.md"
+  ],
+  "db1691421cf4e540c9593efb4bbf2a608426c0ed": [
+    "windows-apps-src\\security\\copy-to-and-from-byte-arrays.md"
   ],
   "d5b4e2cbabfc2843117348107217f890875d7b08": [
     "windows-apps-src\\security\\copy-to-and-from-byte-arrays.md"
@@ -4379,11 +4523,17 @@
   "77490fcc64f3f10efeaf370fb99ee87a4f21a3ab": [
     "windows-apps-src\\security\\copy-to-and-from-byte-arrays.md"
   ],
+  "1faa3477acd0cf1a5a2acc7c6c0a62910299254b": [
+    "windows-apps-src\\security\\create-random-numbers.md"
+  ],
   "9fbcb41b62ae582dae98e7e92d6803cb36e299e0": [
     "windows-apps-src\\security\\create-random-numbers.md"
   ],
   "5d035bfcd6d34fa73089a4ea9ed11507870f1a45": [
     "windows-apps-src\\security\\create-random-numbers.md"
+  ],
+  "a1d709fdfbe44f051f78a6528ff382a2e0a1c565": [
+    "windows-apps-src\\security\\credential-locker.md"
   ],
   "afddcaa073deb678825a76a7701c4dcb1b2e0c4b": [
     "windows-apps-src\\security\\credential-locker.md"
@@ -4391,11 +4541,17 @@
   "cd3797159dd4448635f988d2869979cc00de72ca": [
     "windows-apps-src\\security\\credential-locker.md"
   ],
+  "56cd7ed371bc119b7eebf64b85aea32c9317a7bf": [
+    "windows-apps-src\\security\\cryptographic-keys.md"
+  ],
   "018b546fceaaa1d4f9e834998f6b15de0d16b78e": [
     "windows-apps-src\\security\\cryptographic-keys.md"
   ],
   "7927b24c44f0c2941884d94f27576d4d1d90e4a3": [
     "windows-apps-src\\security\\cryptographic-keys.md"
+  ],
+  "b8cccf54e414de084c5b3fd080007b225b9a9b12": [
+    "windows-apps-src\\security\\cryptography.md"
   ],
   "5f0bf6787760d7586849ac88b77e2fd9a56e8a20": [
     "windows-apps-src\\security\\cryptography.md"
@@ -4403,11 +4559,17 @@
   "5c8490eb382cd3181b922bf817aeeff63d36528f": [
     "windows-apps-src\\security\\cryptography.md"
   ],
+  "958d5dd1c5f61078a0b288d53debe93875d65f06": [
+    "windows-apps-src\\security\\data-protection.md"
+  ],
   "38e67488d4ba94d1bc4fa71addee273ab7e61c32": [
     "windows-apps-src\\security\\data-protection.md"
   ],
   "d221b0f2b40fc5cfb3b5ab84600ab323e0132e6b": [
     "windows-apps-src\\security\\data-protection.md"
+  ],
+  "cd70a84e498c390684a59b33ec8a34375e1eb863": [
+    "windows-apps-src\\security\\encode-and-decode-data.md"
   ],
   "60702f104b9047d9b8da294280fc5ee4e808b290": [
     "windows-apps-src\\security\\encode-and-decode-data.md"
@@ -4415,11 +4577,17 @@
   "1afb372fb26233f466620e9de859600c8677fa25": [
     "windows-apps-src\\security\\encode-and-decode-data.md"
   ],
+  "37d6131891e93d73021c860df45d1b5fdd7cfa53": [
+    "windows-apps-src\\security\\export-restrictions-on-cryptography.md"
+  ],
   "879a35cd6e863a36c71dd76597267cd384038fb5": [
     "windows-apps-src\\security\\export-restrictions-on-cryptography.md"
   ],
   "c9a704c04796577b6b0ef02119bf61a20b038f6c": [
     "windows-apps-src\\security\\export-restrictions-on-cryptography.md"
+  ],
+  "d7ae61cae68b34cb9a3b536d63b53677797a140e": [
+    "windows-apps-src\\security\\fingerprint-biometrics.md"
   ],
   "7fdc76f75984d41e7c454e0fb28559068953fd86": [
     "windows-apps-src\\security\\fingerprint-biometrics.md"
@@ -4427,11 +4595,17 @@
   "4a127e98e1c86df38d9ea5da7d7ab2e7db5c5b11": [
     "windows-apps-src\\security\\fingerprint-biometrics.md"
   ],
+  "1e20d0fafc527133bd17f0dca3c1116ede4fba24": [
+    "windows-apps-src\\security\\index.md"
+  ],
   "ee62d35e5351206cb5ffb881905e33f35191691c": [
     "windows-apps-src\\security\\index.md"
   ],
   "417b9e3cf1103d83d34b17e94378b03718534a5f": [
     "windows-apps-src\\security\\index.md"
+  ],
+  "6e09ebd211244779e68d7e0022417b8ab9c5ced5": [
+    "windows-apps-src\\security\\intro-to-secure-windows-app-development.md"
   ],
   "2b623f52d618a788c5b8907a856349e2deec64a3": [
     "windows-apps-src\\security\\intro-to-secure-windows-app-development.md"
@@ -4460,11 +4634,17 @@
   "cbfb7116b6de5094b8a172ba10bdf17667f276ea": [
     "windows-apps-src\\security\\images\\secure-digital-signatures.png"
   ],
+  "d7c66d9ead6e3dbf750f1d058e311ef3c84a204f": [
+    "windows-apps-src\\security\\macs-hashes-and-signatures.md"
+  ],
   "df951e10352f6495677a34c3ddd2ad8f703fea4e": [
     "windows-apps-src\\security\\macs-hashes-and-signatures.md"
   ],
   "cdc04311c9989db87d4179f91c0f2480f15c7f57": [
     "windows-apps-src\\security\\macs-hashes-and-signatures.md"
+  ],
+  "cfaa522d9b51e032604033bfd17a5a137c78b2b3": [
+    "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"
   ],
   "908fd48ef123cfb84e12d69f84310fb095db7b33": [
     "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"
@@ -4486,6 +4666,9 @@
   ],
   "3e888fe14fa9928cf16d1f5f5e617b7b9eef1fdb": [
     "windows-apps-src\\security\\images\\passport-auth-5.png"
+  ],
+  "bd769db416c1bfaa8d09fe9c57160163fcf6b688": [
+    "windows-apps-src\\security\\microsoft-passport-login.md"
   ],
   "efd697858aaff144833dc263448d7a44f7325032": [
     "windows-apps-src\\security\\microsoft-passport-login.md"
@@ -4523,6 +4706,9 @@
   "f4e22f247da742830d662a7fab0f23094f0c7ca9": [
     "windows-apps-src\\security\\images\\passport-login-11.png"
   ],
+  "d103c3cff8e5b8461782a58f7c097c90abc4d3c0": [
+    "windows-apps-src\\security\\microsoft-passport.md"
+  ],
   "6b531840361d19b5d5d42b6bb409b9208948df04": [
     "windows-apps-src\\security\\microsoft-passport.md"
   ],
@@ -4544,17 +4730,26 @@
   "f33087e3871feeb7e8625e23069e1d29256f1616": [
     "windows-apps-src\\security\\images\\passport-ui.png"
   ],
+  "1033f174c5c2b5039dab2bb6a4ff70d91d80b1fb": [
+    "windows-apps-src\\security\\share-certificates.md"
+  ],
   "b6831250909cb93b3bb3843be6fbc49d2aff7964": [
     "windows-apps-src\\security\\share-certificates.md"
   ],
   "29b0955543fc8e69bf21fb3f262e9f3db3ace82d": [
     "windows-apps-src\\security\\share-certificates.md"
   ],
+  "6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce": [
+    "windows-apps-src\\security\\smart-cards.md"
+  ],
   "2902249fff7a87992e6777cad2a18b93d9d99bce": [
     "windows-apps-src\\security\\smart-cards.md"
   ],
   "0ea623c2590df8a58520a971415185a0969009a1": [
     "windows-apps-src\\security\\smart-cards.md"
+  ],
+  "647257b76e2a7948d0672f888b6b27685b3112d5": [
+    "windows-apps-src\\security\\web-authentication-broker.md"
   ],
   "87a457db20ba34036141ccf47f5885497894cefe": [
     "windows-apps-src\\security\\web-authentication-broker.md"
@@ -4606,6 +4801,9 @@
   ],
   "f418ec9cfe9f8f26b6c74e5b5ae42098f0e4f9cf": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "13f606fa56b00bd73df88b0dd06054621be67d32": [
+    "windows-apps-src\\TOC.md"
   ],
   "3ec7242547765a336785267cd6dc247adf3c00f4": [
     "windows-apps-src\\TOC.md"
@@ -5219,5 +5417,149 @@
   ],
   "390c5083a3f9b257512a3d7c483d16f8a1bb5138": [
     "windows-apps-src\\style\\images\\themes-light-list.png"
+  ],
+  "40df2f4ef7b188f55666f22650bc99cfb5862c46": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
+  "4ca691115f64fec0d84f181e2439fc176c0c7e76": [
+    "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
+  ],
+  "3da70f5e4e1207650cfffaf495eeafb6bbaecdb3": [
+    "windows-apps-src\\debug-test-perf\\device-portal-api-hololens.md"
+  ],
+  "996377495761e421835345780bd18aaa572beb5b": [
+    "windows-apps-src\\debug-test-perf\\device-portal-hololens.md"
+  ],
+  "5e214f9c0f2698cb9f51340bb987be745df79bb4": [
+    "windows-apps-src\\debug-test-perf\\device-portal-mobile.md"
+  ],
+  "03ae12c5a9f8ee30e96647b5db37992875dc45ee": [
+    "windows-apps-src\\debug-test-perf\\device-portal-xbox.md"
+  ],
+  "2671420f201e4bb061a535472cad141f428c3cdb": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\iot-installapp0.png"
+  ],
+  "6d0f190636e6d7740d141c376c1ad8801208b409": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-apps.png"
+  ],
+  "d50f129b6d352bf7b56edda52c61232da8d7b35a": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-devices.png"
+  ],
+  "c0a5a71718b188e18529d1d12627e6e940c5e245": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-etw.png"
+  ],
+  "abfaecc77bfdab6bc6b940d9f6bbdcb47d696beb": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-network.png"
+  ],
+  "bf6df275a34f1bcfcc63dcba03e818a56d95be6f": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-perf.png"
+  ],
+  "f5454e185df5fd427236164e11a86663436d6a99": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-perf-tracing.png"
+  ],
+  "226a9556b1a4cc8bb4dbe63ff61de308dc3fdee8": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-processes.png"
+  ],
+  "e3468643a14406a41c815b1720329bbe96e78eed": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\xbox-certificate-error.png"
+  ],
+  "02481aae1a6d2cbe387086bbe1e60c4420c0b427": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\xbox-dev-home-tile.png"
+  ],
+  "0946b80a62c670d1278a0c30ac7a5efdd062457e": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\xbox-remote-management-tool.png"
+  ],
+  "b92880dbd358cd221f7d0f02045a89ab4f65ed25": [
+    "windows-apps-src\\debug-test-perf\\images\\vs-debug-target.png"
+  ],
+  "2cac002f459ce70b64e92ed67d1486dc1470aad2": [
+    "windows-apps-src\\debug-test-perf\\images\\vs-simulator-resolutions.png"
+  ],
+  "78e1b0600cc65659f5f72b13c731b3ce91f6b02f": [
+    "windows-apps-src\\debug-test-perf\\test-surface-hub-apps-using-visual-studio.md"
+  ],
+  "9daa4081bbc4915556ecf057ed5b05c5f1017c54": [
+    "windows-apps-src\\in-app-help\\external-help.md"
+  ],
+  "9646eef97964d60955c04889c46f717d9469a52a": [
+    "windows-apps-src\\in-app-help\\in-app-help.md"
+  ],
+  "9b9e4b5803d5de30af62a66460ca87564f13cef3": [
+    "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
+  ],
+  "86df1d3b520f67de5b44cd2855d9d862ab8c848e": [
+    "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
+  "6d4a97042b52f2f2a3d778ad4fdc8d56a4c715f2": [
+    "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
+  ],
+  "9b827abe4fd9a0d13d4b47502634003f656e85b2": [
+    "windows-apps-src\\monetize\\display-ads-in-your-app.md"
+  ],
+  "83ccd7685aaf1d8ec1687e6298f0af6802146814": [
+    "windows-apps-src\\monetize\\images\\feedback_appbar_placement.png"
+  ],
+  "17324ec7248a681bfd744ca4fb8a3d48be2aad25": [
+    "windows-apps-src\\monetize\\images\\feedback_icon.png"
+  ],
+  "586b601969c28d6a25ed64ae30d78f0575c015c2": [
+    "windows-apps-src\\monetize\\images\\feedback_settings_placement.png"
+  ],
+  "50c342c49ee1aacc2beceb68acf828aca54928b3": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
+  ],
+  "4a0fa0a6f22fda52a2eebb978badd0da582dcfd6": [
+    "windows-apps-src\\monetize\\manage-your-experiment.md"
+  ],
+  "b8ea6a74f728999c2f1a4c556a893c0ecb2d2801": [
+    "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
+  ],
+  "1db4a5eaec99196851fcd7fb8dc3d938a1f5ccc5": [
+    "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md"
+  ],
+  "e6107faf185d3b2812aac8c2bd4a13416cf5a498": [
+    "windows-apps-src\\publish\\about-affiliate-ads.md"
+  ],
+  "0e8a118804a36ad1bff0d21344cb375aaac6565d": [
+    "windows-apps-src\\publish\\about-community-ads.md"
+  ],
+  "9efbaff58f03eb073f20b303613ab0e5c5f998a0": [
+    "windows-apps-src\\publish\\affiliates-performance-report.md"
+  ],
+  "6e0ec4247a46572274cf7d355ff19f8f020aac60": [
+    "windows-apps-src\\publish\\customer-groups.md"
+  ],
+  "6e95ead42a49a4b8ac914b736a60516713ddf2ec": [
+    "windows-apps-src\\publish\\feedback-report.md"
+  ],
+  "eef04bd9eaa37910abb56ff929742f6259af7051": [
+    "windows-apps-src\\publish\\package-flights.md"
+  ],
+  "e54154116ca6381d045a5451638ae594ddbcd04b": [
+    "windows-apps-src\\security\\companion-device-unlock.md"
+  ],
+  "1df1df6f3456d3955d596fce2b3b8b68162e5b22": [
+    "windows-apps-src\\security\\images\\companion-device-1.png"
+  ],
+  "21a1f32773f6d59207961a00b8bc6791be4d5143": [
+    "windows-apps-src\\security\\images\\companion-device-2.png"
+  ],
+  "16fc71e869bc86b2be6c0b24cf9df7a468b6397f": [
+    "windows-apps-src\\security\\images\\companion-device-3.png"
+  ],
+  "750d5fdb71ce1c2dee326c7b8a300ceebfe70baf": [
+    "windows-apps-src\\security\\images\\companion-device-4.png"
+  ],
+  "5cf50bf01ea93dfdb714741c5b5d1c5e549e2143": [
+    "windows-apps-src\\security\\images\\companion-device-5.png"
+  ],
+  "c2692fc46ac5421745d5574bc8d4500efcb92cdc": [
+    "windows-apps-src\\whats-new\\index.md"
+  ],
+  "bf7a7284c96f488e90c2689a989641a4d16fd268": [
+    "windows-apps-src\\whats-new\\windows-10-rtm-july-2015.md"
+  ],
+  "612cace196def2e71f198836236140763367af46": [
+    "windows-apps-src\\whats-new\\windows-10-version-1511-november-2015.md"
   ]
 }
