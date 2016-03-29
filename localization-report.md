@@ -5,13 +5,13 @@
  -------- | ----- 
  Total Files | 3555
 [ Handoff Failed Files ](#handoff-failed-list)| 0
-[ Handoff Success Files ](#handoff-success-list)| 1742
+[ Handoff Success Files ](#handoff-success-list)| 1740
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 0
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 0
-[ Ignored Files ](#ignored-list)| 1813
+[ Ignored Files ](#ignored-list)| 1815
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
 
@@ -1706,7 +1706,6 @@
  [windows-apps-src\style\motion-pointer.md](https://github.com/Microsoft/windows-apps/blob/40251e5f5a4b2f99656196fccf5095f6cb340e21/windows-apps-src/style/motion-pointer.md) | HandedOffSuccess | [Details](#d81759411bedff1b4c1b853ab7a7b3642a1a2b933476)
  [windows-apps-src\style\motion-popup-animations.md](https://github.com/Microsoft/windows-apps/blob/40251e5f5a4b2f99656196fccf5095f6cb340e21/windows-apps-src/style/motion-popup-animations.md) | HandedOffSuccess | [Details](#7537c059dd14d685a7f3f8276a38ae91840574ad3477)
  [windows-apps-src\style\motion-reposition.md](https://github.com/Microsoft/windows-apps/blob/40251e5f5a4b2f99656196fccf5095f6cb340e21/windows-apps-src/style/motion-reposition.md) | HandedOffSuccess | [Details](#e483bb9408d4e99c5b72413fc6780b1bdc81737c3478)
- [windows-apps-src\style\sound.md](https://github.com/Microsoft/windows-apps/blob/08c5cd6159546bfe9d486a58cf8fd7fbad7eb0a8/windows-apps-src/style/sound.md) | HandedOffSuccess | [Details](#49b6865d2c0aa4d5f280e5e6330f34fb3b05674d3480)
  [windows-apps-src\style\typography.md](https://github.com/Microsoft/windows-apps/blob/29c63b9e83192424e780c7fd80220f9a9347a675/windows-apps-src/style/typography.md) | HandedOffSuccess | [Details](#c69ff97ebdb4433cecc9d93d58f5e78cd7dc78723481)
  [windows-apps-src\threading-async\asynchronous-programming-in-cpp-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/4a6d51c7938e8f9c97cad7cfc65e926018b6cd90/windows-apps-src/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md) | HandedOffSuccess | [Details](#8e580d7698bd61babf3c2c1a068d9abc166f5e7f3482)
  [windows-apps-src\threading-async\asynchronous-programming-universal-windows-platform-apps.md](https://github.com/Microsoft/windows-apps/blob/2b275fea01db21850ec5245deb67a479422dee6e/windows-apps-src/threading-async/asynchronous-programming-universal-windows-platform-apps.md) | HandedOffSuccess | [Details](#2a0f4772e002479333abf6a271468269c4f46deb3483)
@@ -1716,7 +1715,6 @@
  [windows-apps-src\threading-async\index.md](https://github.com/Microsoft/windows-apps/blob/88c71f0df5e7f89923cc717d90a6998d98fc4b03/windows-apps-src/threading-async/index.md) | HandedOffSuccess | [Details](#e8708e4e847fc4bb085418f5b0ba4be5f1651e423507)
  [windows-apps-src\threading-async\submit-a-work-item-to-the-thread-pool.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/threading-async/submit-a-work-item-to-the-thread-pool.md) | HandedOffSuccess | [Details](#2d6bc6d750027e26359e24d4d95ad4c52d9c86e93508)
  [windows-apps-src\threading-async\use-a-timer-to-submit-a-work-item.md](https://github.com/Microsoft/windows-apps/blob/9621ebfe4078509bc2d232894a38794b326f63e8/windows-apps-src/threading-async/use-a-timer-to-submit-a-work-item.md) | HandedOffSuccess | [Details](#cbfd24134820acbb570a5b81c2b04b99b0eb15433509)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/473610079b3d7ef636d506473e9e436806e644c2/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#c94a1432b6b1e433f524860620a3b9a4254eefb53510)
  [windows-apps-src\winrt-components\creating-windows-runtime-components-in-cpp.md](https://github.com/Microsoft/windows-apps/blob/88c71f0df5e7f89923cc717d90a6998d98fc4b03/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md) | HandedOffSuccess | [Details](#00dee3becd8f84a4f80c8a1c32fe33de36608a5b3511)
  [windows-apps-src\winrt-components\creating-windows-runtime-components-in-csharp-and-visual-basic.md](https://github.com/Microsoft/windows-apps/blob/88c71f0df5e7f89923cc717d90a6998d98fc4b03/windows-apps-src/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) | HandedOffSuccess | [Details](#fe18c8200e4bcdc3420ee4f6d279839ef20963e63512)
  [windows-apps-src\winrt-components\custom-events-and-event-accessors-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/88c71f0df5e7f89923cc717d90a6998d98fc4b03/windows-apps-src/winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md) | HandedOffSuccess | [Details](#e0a63e9e79cf385ac1fedc3943db0d3791a360b53513)
@@ -3566,6 +3564,7 @@
  [windows-apps-src\style\images\variants.png](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/style/images/variants.png) | Ignored | [Details](#94ddff1b7ec6706599884fe2fcaa8e73f5d6b5ae3469)
  [windows-apps-src\style\images\weights.png](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/style/images/weights.png) | Ignored | [Details](#c662d56ede98396783a8fcd82794c417b7e4dbbf3470)
  [windows-apps-src\style\images\word-letter.png](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/style/images/word-letter.png) | Ignored | [Details](#3e4ea7aad183ebf768d8c6ab7fd94b8d5835c4703471)
+ [windows-apps-src\style\sound.md](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/style/sound.md) | Ignored | [Details](#047e500e5edfffbe93c7d1be51813009994a3e063480)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\App.xaml](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/threading-async/AsyncSnippets/csharp/App.xaml) | Ignored | [Details](#236cce255e2fb88a4730bc835da46f5e2ad881933484)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\App.xaml.cs](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/threading-async/AsyncSnippets/csharp/App.xaml.cs) | Ignored | [Details](#5fe4b50b0ecd38d9f54650f315434382e60ebf6c3485)
  [windows-apps-src\threading-async\AsyncSnippets\csharp\AsyncSnippets.csproj](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/threading-async/AsyncSnippets/csharp/AsyncSnippets.csproj) | Ignored | [Details](#06450872e2e7fede582e023139fc3f0acb5748923486)
@@ -3586,6 +3585,7 @@
  [windows-apps-src\threading-async\AsyncSnippets\vbnet\My Project\AssemblyInfo.vb](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/threading-async/AsyncSnippets/vbnet/My Project/AssemblyInfo.vb) | Ignored | [Details](#9330ad5b077989dcfe92b1055480db8ed7212ee73501)
  [windows-apps-src\threading-async\AsyncSnippets\vbnet\Package.appxmanifest](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/threading-async/AsyncSnippets/vbnet/Package.appxmanifest) | Ignored | [Details](#86de7932acf1ad56d65ff8b0c68c4e4a4da2e53a3502)
  [windows-apps-src\threading-async\AsyncSnippets\vbnet\VBAsync.vbproj](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/threading-async/AsyncSnippets/vbnet/VBAsync.vbproj) | Ignored | [Details](#1e9df380bcf03b42e8b6618be85b7686ef61fe7a3503)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/TOC.md) | Ignored | [Details](#437f9d3687923f666e31b23bdbb75f55ffc4491b3510)
  [windows-apps-src\winrt-components\images\buildevents.png](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/winrt-components/images/buildevents.png) | Ignored | [Details](#73597c689abe7946a4896c6a123c8d8fa513dbe03516)
 
 ## Item Details
@@ -46442,12 +46442,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='49b6865d2c0aa4d5f280e5e6330f34fb3b05674d3480'></a> Source: [windows-apps-src\style\sound.md](https://github.com/Microsoft/windows-apps/blob/08c5cd6159546bfe9d486a58cf8fd7fbad7eb0a8/windows-apps-src/style/sound.md)
-* Status: HandedOffSuccess
+##### <a name='047e500e5edfffbe93c7d1be51813009994a3e063480'></a> Source: [windows-apps-src\style\sound.md](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/style/sound.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [sound.640badc71d5e71614fef1214ebef20367f363e08.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/e93912b16ae8b4da0665066af1ea61df3bc1eb13/ol-handoff/Microsoft/windows-apps.ja-jp/master/sound.640badc71d5e71614fef1214ebef20367f363e08.ja-jp.xlf)
-* Handoff Datetime: 2016-03-29 14:16:33
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -46802,12 +46802,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='c94a1432b6b1e433f524860620a3b9a4254eefb53510'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/473610079b3d7ef636d506473e9e436806e644c2/windows-apps-src/TOC.md)
-* Status: HandedOffSuccess
+##### <a name='437f9d3687923f666e31b23bdbb75f55ffc4491b3510'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/4478915d3413b05e413c6d5be32b46cc8853e5b1/windows-apps-src/TOC.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea105aefae4bcc37c68c421c2651c177b138884d/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Handoff Datetime: 2016-03-25 20:10:05
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
