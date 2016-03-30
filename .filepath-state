@@ -2750,6 +2750,9 @@
   "41ab8f5f5566e88d1a5a7d8cfa3e0fa2900ef328": [
     "windows-apps-src\\graphics\\images\\layers-win-ui-composition.png"
   ],
+  "5d0cca643c26458165c388215d34eec76dfe8cf6": [
+    "windows-apps-src\\home.md"
+  ],
   "507713648daccde14b704092011c1a488739945b": [
     "windows-apps-src\\home.md"
   ],
@@ -2782,6 +2785,9 @@
   ],
   "0b5665bcfae3e9a96859a5c1cb92fda686804ec5": [
     "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-flyout.png"
+  ],
+  "a6d8e074c3ba464be3cb55765bb9783bb681cffe": [
+    "windows-apps-src\\index.md"
   ],
   "4fc056c7b4c1f4fb229307b0fceeed8e6340627f": [
     "windows-apps-src\\index.md"
