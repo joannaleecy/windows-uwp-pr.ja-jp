@@ -125,6 +125,9 @@
   "23cb0dafe7afdbe10fbf31094ed6ba7886f7e67e": [
     "windows-apps-src\\app-to-app\\drag-and-drop.md"
   ],
+  "63550064b6f31b85cd3b6fa2a09bac4b7cfcf895": [
+    "windows-apps-src\\app-to-app\\index.md"
+  ],
   "5f6f5f0dc8809b503f34122cd77519e6ec18ee47": [
     "windows-apps-src\\app-to-app\\index.md"
   ],
@@ -1838,6 +1841,9 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
+  "10985dec69a38e1ec7452de069768b572e2f5aca": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "cff85c5a2446c6c16faba670ad43135a8be6afc7": [
     "windows-apps-src\\devices-sensors\\3d-printing.md",
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
@@ -1999,6 +2005,9 @@
   "e082c1eb5460a8b6cbadfd248b6ad43931172130": [
     "windows-apps-src\\devices-sensors\\use-the-orientation-sensor.md"
   ],
+  "c2cfcc270d6b1380f065e7ada275c1c60ae05b04": [
+    "windows-apps-src\\enterprise\\index.md"
+  ],
   "b83bcc11c4890ff5a8678c1728c26b45ff34b2a8": [
     "windows-apps-src\\enterprise\\index.md"
   ],
@@ -2016,6 +2025,9 @@
   ],
   "c1b88a124f704e345c3c6853b2d0af627931a038": [
     "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md"
+  ],
+  "42b7e992a4316243b40a243dc8a8a4cfac74e0d0": [
+    "windows-apps-src\\files\\index.md"
   ],
   "4c44cd6f9a29513f91dc2162ae159af364bfb105": [
     "windows-apps-src\\files\\index.md"
@@ -2513,9 +2525,6 @@
   "1efd7c8d330b047d6d3e90afc4824597e33b2964": [
     "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-dev-mode-pairing.png"
   ],
-  "67a8d613493a7b1d6fdda3d7eeae0ab23043d07d": [
-    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-browser.png"
-  ],
   "46b6f0dd49dd16ae8364d050cd7684b496e2b9e6": [
     "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-dev-mode-portal.png"
   ],
@@ -2773,6 +2782,9 @@
   ],
   "0b5665bcfae3e9a96859a5c1cb92fda686804ec5": [
     "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-flyout.png"
+  ],
+  "4fc056c7b4c1f4fb229307b0fceeed8e6340627f": [
+    "windows-apps-src\\index.md"
   ],
   "d19d400c7fadec70429482948667d09c9c4b3747": [
     "windows-apps-src\\index.md"
@@ -3830,6 +3842,9 @@
   "2ba0c22d0dc6d60c19e65fee5b28a74184d1bd06": [
     "windows-apps-src\\networking\\httpclient.md"
   ],
+  "e39e091146e0568b478c7a16fb5e395fc4930bd2": [
+    "windows-apps-src\\networking\\index.md"
+  ],
   "77f54cf5c2a2cda3f4f34ff177cb8ec2913b1805": [
     "windows-apps-src\\networking\\index.md"
   ],
@@ -4246,6 +4261,9 @@
   ],
   "d4588455732f548e4d0bc7dcb90d219cdadec74c": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
+  ],
+  "46c8f5eb38226c41be6b19da8facbe620d675165": [
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
   "b692331ca29e5b309989d01b9a87efd9798a0f01": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
@@ -4769,6 +4787,9 @@
   "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "191c26ae248170bda64e01e6da51c33ffc20a2de": [
+    "windows-apps-src\\TOC.md"
+  ],
   "a212ceddce5ffd5f0045589a8e4ed815ad98d2fc": [
     "windows-apps-src\\TOC.md"
   ],
@@ -5271,6 +5292,12 @@
   "3afc5890653e57db71a982dc84922b14a33c9021": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-photos.png"
   ],
+  "b78c561efd5d055e8b9fd3f21be423143859e487": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
+  "5957dbac94c192126b4655ad1543179ab0f12c99": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
   "b15d7439c079a03a84ed4e68e9008270b8029d46": [
     "windows-apps-src\\input-and-devices\\images\\cortana-completion-screen-upcomingtrip-small.png"
   ],
@@ -5376,6 +5403,9 @@
   "996377495761e421835345780bd18aaa572beb5b": [
     "windows-apps-src\\debug-test-perf\\device-portal-hololens.md"
   ],
+  "986219686b385fabdfbee4e6ae4b95e648450a76": [
+    "windows-apps-src\\debug-test-perf\\device-portal-mobile.md"
+  ],
   "5e214f9c0f2698cb9f51340bb987be745df79bb4": [
     "windows-apps-src\\debug-test-perf\\device-portal-mobile.md"
   ],
@@ -5457,11 +5487,17 @@
   "4a0fa0a6f22fda52a2eebb978badd0da582dcfd6": [
     "windows-apps-src\\monetize\\manage-your-experiment.md"
   ],
+  "3a37fbfdac1aea85023d8376b806e1400ee5dddb": [
+    "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
+  ],
   "b8ea6a74f728999c2f1a4c556a893c0ecb2d2801": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
   ],
   "1db4a5eaec99196851fcd7fb8dc3d938a1f5ccc5": [
     "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md"
+  ],
+  "5e13fea9b0846e7e3e49e4b9a9693d3f23990548": [
+    "windows-apps-src\\publish\\about-affiliate-ads.md"
   ],
   "e6107faf185d3b2812aac8c2bd4a13416cf5a498": [
     "windows-apps-src\\publish\\about-affiliate-ads.md"
@@ -5510,5 +5546,254 @@
   ],
   "612cace196def2e71f198836236140763367af46": [
     "windows-apps-src\\whats-new\\windows-10-version-1511-november-2015.md"
+  ],
+  "3d3d773d16fe9fd93c093977baad6e3898162576": [
+    "windows-apps-src\\app-to-app\\use-edp-to-protect-enterprise-data-transferred-between-apps.md"
+  ],
+  "20d8417b80ea55474e9109d07d4dfb84d9552370": [
+    "windows-apps-src\\enterprise\\edp-hub.md"
+  ],
+  "b61e038c79e6072ecc39b1e1a7ee93ff8ba4af3d": [
+    "windows-apps-src\\files\\protect-your-enterprise-data-with-edp.md"
+  ],
+  "e96c3a5579a0512a5631c69acbca49b1b64f625a": [
+    "windows-apps-src\\files\\use-edp-to-protect-streams-and-buffers.md"
+  ],
+  "512cdbefa22b735a26fbc68cbc3a5bae32a606fa": [
+    "windows-apps-src\\input-and-devices\\gamepad-and-remote-interactions.md"
+  ],
+  "4849875e9017f6c2a341f944ea518de48a916aa9": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-focus-navigation-and-interaction-engagement.png"
+  ],
+  "40abce096ff9278142f4fe23915433c4d41d4295": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-focus-navigation-and-interaction-real-estate-app.png"
+  ],
+  "94386a7381d5659d5c82cfce79b80c1bfa7acfc9": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-focus-navigation-and-interaction-real-estate-app-list.png"
+  ],
+  "6a1499ed204f00c6362f377d3da0a608b7e18433": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-focus-navigation-and-interaction-scrollviewer.png"
+  ],
+  "d9fa55b291dc1c899bce9de27b0cdbddb9644edc": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-focus-navigation-and-interaction-ui-rearrange.png"
+  ],
+  "4ff3d6bcd8f0ef06467e7fa11f4891c126ac5a24": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-commandbar-and-contextflyout.png"
+  ],
+  "f78951c003eed0ce123ca21c61ae9400039ae64d": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-provide-path-with-least-clicks.png"
+  ],
+  "de00d0fc65ea38b59aa59e9c22e295b21b331fe5": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-provide-path-with-least-clicks-2.png"
+  ],
+  "1b11f6c0b9df678dbd3ace5ab8c38f9b6e0f4cfc": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-ui-elements-display-on-mouse-hover.png"
+  ],
+  "62e6d37c7113a33135403d98dc95ac591bc14367": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-ui-layout-to-avoid.png"
+  ],
+  "ef7a903582a7855f54a769c2416e808052270acb": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\button-100-200.png"
+  ],
+  "342102eccf567276cf96cf83b01b773ef67fb540": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\clamping-vs-scaling.png"
+  ],
+  "e6f45a8ee5b9560408f0af33da49f871c8424659": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\core-window-bounds.png"
+  ],
+  "9b870fd5161664688ff6a08eed1edae040c82aa5": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\focus-engagement-focus-trapping.png"
+  ],
+  "8f0f1b1b81c111d64f60109f69e9d06a000de327": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\focus-engagement-focus-trapping-2.png"
+  ],
+  "ab6d8822adc53a5a0d1076711228914b7b1f00b0": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\focus-engagement-list-and-grid-controls.png"
+  ],
+  "19e0163ba38a82272d0ffcfc9b349b21c69a70db": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\focus-engagement-list-and-grid-controls-2.png"
+  ],
+  "2dfa6ee835e8186a59da406933a2fb018e9d5913": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\focus-engagement-slider.png"
+  ],
+  "16199fd80bb0d9418339999171538a06cacda19a": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\hardware-buttons-gamepad-remote.png"
+  ],
+  "29c4c1bd91645d66c12a235118958f0e42a5a068": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\map-mouse-mode.png"
+  ],
+  "9e03d0d9eb931c8efddb102eecc85f58b7c52cd5": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\mouse-mode.png"
+  ],
+  "326af067ae27d5164a460d7807a48dbe94e64dd2": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\scrolling-grid-focus.png"
+  ],
+  "2fb66156ee293ac4b73f119c40b145ff5c960812": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\six-clicks.png"
+  ],
+  "5b4c66da48e8be64b74fa55239d83bfdd5bbdb1c": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\tv-safe-area.png"
+  ],
+  "34849ac62bc0cc03530d789e08295f741abe67d7": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\tv-safe-area-grid-cutoff.png"
+  ],
+  "652da64c2a6d0cce2cd3dc2e1b46041ecd61a513": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\tv-safe-areas-2.png"
+  ],
+  "4fe8e7f93f0738415b8f1a5f2cc1142fb046f087": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\tv-safe-colors.png"
+  ],
+  "e0de1b74a627a943313a4baabd66654c78cf8aa9": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\tv-unsafe-area.png"
+  ],
+  "2191565d26333a89fd8fa4a7b5c43c4b077a34ad": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\ui-scaling.png"
+  ],
+  "9baf065823ca52d1d65665ecdcbad94463f4c90a": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\xbox-avatar-app.png"
+  ],
+  "3425d3a830b86493df128b51e56ecacfbccfa85c": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\xbox-home-screen.png"
+  ],
+  "bda7704029f2b936981549b37275a69648ac1a16": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\xbox-movies-app.png"
+  ],
+  "a346cd39e23eac05935140b3e6ac39db5e1e769e": [
+    "windows-apps-src\\networking\\tagging_network_connections_with_edp_identity.md"
+  ],
+  "9e8e6d5764c047ae6cc1241856f0986cc5a1999a": [
+    "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+  ],
+  "c20cbafd1ffad88a7de6cd66256add2b7dfb2be5": [
+    "windows-apps-src\\xbox-apps\\devkit-activation.md"
+  ],
+  "7f5b0feb4624a07b3505a58ff511f7620cf3d670": [
+    "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
+  ],
+  "7f201a2fecbf8a0b0213627432b74b7776339754": [
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
+  ],
+  "cdc6949a3307a0728a1e6b4034b554f83b2f855f": [
+    "windows-apps-src\\xbox-apps\\getting-started.md"
+  ],
+  "90c95dd005731cff18961e790a75b3f631fdacd6": [
+    "windows-apps-src\\xbox-apps\\images\\activation-step-11.png"
+  ],
+  "62d9acc5c855a8e736b8f61bb048c0e694fd2eea": [
+    "windows-apps-src\\xbox-apps\\images\\activation-step-12.png"
+  ],
+  "d12355d3711c566f3edadb97fe4779b08b40ca27": [
+    "windows-apps-src\\xbox-apps\\images\\activation-step-13.png"
+  ],
+  "891b73edb66f12bc7245ab99b10dbdf3ff1b59c5": [
+    "windows-apps-src\\xbox-apps\\images\\activation-step-3.png"
+  ],
+  "84119964d253bcc32ba76f8e53f06df010523683": [
+    "windows-apps-src\\xbox-apps\\images\\activation-step-5.png"
+  ],
+  "78f743f172eefaeea8c3cc000e3c55aacd3325a1": [
+    "windows-apps-src\\xbox-apps\\images\\activation-step-8.png"
+  ],
+  "0dcfbf1c6a907a96bbc514292e4df3470db58ffd": [
+    "windows-apps-src\\xbox-apps\\images\\activation-store-search.png"
+  ],
+  "307559f31730beecc3f98d44f061f6311cdce416": [
+    "windows-apps-src\\xbox-apps\\images\\deactivation-app.png"
+  ],
+  "d89e3d1efe898c154d5ac46517077115366d1713": [
+    "windows-apps-src\\xbox-apps\\images\\deactivation-console-info-updates.png"
+  ],
+  "e521780e47853d7febac7d4050524394d21ad1aa": [
+    "windows-apps-src\\xbox-apps\\images\\deactivation-devcenter.png"
+  ],
+  "dd073d8866c68a77674022af30861f6976a56ea6": [
+    "windows-apps-src\\xbox-apps\\images\\deactivation-leave-dev-mode.png"
+  ],
+  "5ee945ab8320d997271855e9107f904a8f4e21da": [
+    "windows-apps-src\\xbox-apps\\images\\deactivation-reset-console.png"
+  ],
+  "d1847b18ae31b29cfd49ddf7893f51e0c6c23200": [
+    "windows-apps-src\\xbox-apps\\images\\deactivation-reset-remove.png"
+  ],
+  "4dc0edc12e8188ce8abf73ca7b13b36f8ac5c14c": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_colors.png"
+  ],
+  "68f67c4e479c518de786abe912b9c31bf1c045d9": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_feedback.png"
+  ],
+  "c0f4698e7b9dec3cb01675415f980acccdfd7da2": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_mainmenu.png"
+  ],
+  "881c289e3751e6d9a07c7b79990fa6b84c73c456": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_move.png"
+  ],
+  "8b0422010544da07e24e66377d4d42f93dde663b": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_nexus.png"
+  ],
+  "5c158e9f7b8f352c9d3951aec8b38bba1e1d9bf4": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_pin.png"
+  ],
+  "95131bcd222bde13a4b948a736dbcd4b3ff4cfe3": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_snapmode.png"
+  ],
+  "500cc779cd0d3b4a91b78ba65ab15bead5dc31fa": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_ui.png"
+  ],
+  "49f07d555255d30a4ead6c2500b18247377f91d4": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_visualstudio.png"
+  ],
+  "0c2d2a0d99b074077064c4a3da100d379dd2acaf": [
+    "windows-apps-src\\xbox-apps\\images\\dev-mode-flow.png"
+  ],
+  "545c6856bc01d8f0a511f238ebe0bdd59be61f5d": [
+    "windows-apps-src\\xbox-apps\\images\\getting-started-hello-world.png"
+  ],
+  "2e7429cb294ffccc3314888db2fbd8478875a892": [
+    "windows-apps-src\\xbox-apps\\images\\security_cert_warning.jpg"
+  ],
+  "ad0dd2561e17ab02b8665eb12ed53c7b545e6811": [
+    "windows-apps-src\\xbox-apps\\images\\vs_install_tools.png"
+  ],
+  "39789fe3d9e0f912d5641a6b441c7c361dcd65ad": [
+    "windows-apps-src\\xbox-apps\\images\\vs_remote.jpg"
+  ],
+  "f0822c1cba7aea2551be8958921d43b319fff236": [
+    "windows-apps-src\\xbox-apps\\images\\vs_remote_cpp.jpg"
+  ],
+  "5a7196293363e51c23530b5770c3837ba3436033": [
+    "windows-apps-src\\xbox-apps\\images\\vs_universal_blank.jpg"
+  ],
+  "8ae958984fc3ed2d6621a1d2a1b0e036885734a9": [
+    "windows-apps-src\\xbox-apps\\images\\vs_universal_cpp_blank.jpg"
+  ],
+  "ffdd40357494d8a9e004120e7a21d908d16fb4af": [
+    "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_1.png"
+  ],
+  "72706a1901d7b8fcd3ef265d5d230da44d939800": [
+    "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
+  ],
+  "1828a4183fab9853e522941bc9bfc10cdab1e81d": [
+    "windows-apps-src\\xbox-apps\\index.md"
+  ],
+  "e5d8c55bfd4baf52e06ad3f46034e7e47eda17b7": [
+    "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
+  "470848ebeee509e1e6f01162453bd1bfcd1e0fe0": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
+  "3b49b485a2ea927f9f7b9bbabaab8da8bb6e4d73": [
+    "windows-apps-src\\xbox-apps\\multi-user-applications.md"
+  ],
+  "fcfaa3faadc8ea788ab2863660b0b33fdcafece7": [
+    "windows-apps-src\\xbox-apps\\samples.md"
+  ],
+  "2db012c2b445b296300559f90ffdf840799e8f1e": [
+    "windows-apps-src\\xbox-apps\\samples-xaml-dev.md"
+  ],
+  "91f6c6020437c51b0c18a82edd5ff0b6d802f95a": [
+    "windows-apps-src\\xbox-apps\\samples-xaml-media.md"
+  ],
+  "45b1cdc8df40e4da73a0e742f824726a4a1c16a8": [
+    "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
   ]
 }
