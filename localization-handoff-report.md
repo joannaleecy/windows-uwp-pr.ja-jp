@@ -1,35 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\home.md](https://github.com/Microsoft/windows-apps/blob/e58e04e3e7163763d702805de0045c55e0e6bab9/windows-apps-src/home.md) | OutofSyncHandedBackSuccess | [Details](#5d0cca643c26458165c388215d34eec76dfe8cf62553)
- [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/e58e04e3e7163763d702805de0045c55e0e6bab9/windows-apps-src/index.md) | OutofSyncHandedBackSuccess | [Details](#a6d8e074c3ba464be3cb55765bb9783bb681cffe2564)
+ [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/753a917c0ecbf445560203dbc1406acae52e5265/windows-apps-src/index.md) | OutofSyncHandedBackSuccess | [Details](#97e016047c864026fe0c72e4b7cb819f0fc807482564)
 
 ## Item Details
-##### <a name='5d0cca643c26458165c388215d34eec76dfe8cf62553'></a> Source: [windows-apps-src\home.md](https://github.com/Microsoft/windows-apps/blob/e58e04e3e7163763d702805de0045c55e0e6bab9/windows-apps-src/home.md)
+##### <a name='97e016047c864026fe0c72e4b7cb819f0fc807482564'></a> Source: [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/753a917c0ecbf445560203dbc1406acae52e5265/windows-apps-src/index.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/4f2feec2e37d50bc3aaa7a2dbc3503c15831ceb7/ol-handoff/Microsoft/windows-apps.ja-jp/master/home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.ja-jp.xlf)
-* Handoff Datetime: 2016-03-30 20:17:56
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\home.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/07be5122e91ac7362ec48ba24a5713a40e1deabe/windows-apps-src/home.md)
-* Current Handback File: [home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/8be93990f1a1d8c5e0e1a536c9e58b19172208bc/ol-handback/Microsoft/windows-apps.ja-jp/master/home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.ja-jp.xlf)
-* Current Handback Datetime: 2016-03-30 09:09:02
-* [Back to Top](#report-top)
-
-##### <a name='a6d8e074c3ba464be3cb55765bb9783bb681cffe2564'></a> Source: [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/e58e04e3e7163763d702805de0045c55e0e6bab9/windows-apps-src/index.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/4f2feec2e37d50bc3aaa7a2dbc3503c15831ceb7/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf)
-* Handoff Datetime: 2016-03-30 20:17:56
+* Handoff File: [index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/9fd4a6d144b44efdf42002749f6b52f395243e35/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf)
+* Handoff Datetime: 2016-03-30 20:45:54
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
