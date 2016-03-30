@@ -5,7 +5,7 @@
         {
             "docset_name": "windows-apps",
             "build_output_subfolder": "windows-apps-src",
-            "locale": "en-us",
+            "locale": "ja-jp",
             "version": 0,
             "open_to_public_contributors": "false",
             "type_mapping": {
