@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/40b765df53bfa140e6c2d56a6e4e6714728aafad/windows-apps-src/xbox-apps/known-issues.md) | HandedOffSuccess | [Details](#e1caf0c44620d9054ea18bc4d86155d7832965203699)
+ [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/fb3671f7366eadf71151f5783bd3f50ab2b45511/windows-apps-src/xbox-apps/index.md) | HandedOffSuccess | [Details](#6ef95bc227725a0a8962a77e77aab8e10491cd7e3697)
 
 ## Item Details
-##### <a name='e1caf0c44620d9054ea18bc4d86155d7832965203699'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/40b765df53bfa140e6c2d56a6e4e6714728aafad/windows-apps-src/xbox-apps/known-issues.md)
+##### <a name='6ef95bc227725a0a8962a77e77aab8e10491cd7e3697'></a> Source: [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/fb3671f7366eadf71151f5783bd3f50ab2b45511/windows-apps-src/xbox-apps/index.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a774bb1f336496e7f2703ad029dfa5610afd6ab9/ol-handoff/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
-* Handoff Datetime: 2016-03-31 21:50:47
+* Handoff File: [index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ad06ce1ef5d2b9e35bd5627543159db500359f83/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf)
+* Handoff Datetime: 2016-03-31 22:49:36
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
