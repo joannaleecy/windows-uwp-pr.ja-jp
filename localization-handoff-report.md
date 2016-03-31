@@ -6,22 +6,19 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/753a917c0ecbf445560203dbc1406acae52e5265/windows-apps-src/index.md) | OutofSyncHandedBackSuccess | [Details](#97e016047c864026fe0c72e4b7cb819f0fc807482564)
+ [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/62d40bbeb6684fc6be6e0868b210d3bbb324ed49/windows-apps-src/xbox-apps/known-issues.md) | HandedOffSuccess | [Details](#0020895d01024aa86c985195454ffc6d47e2298a3698)
 
 ## Item Details
-##### <a name='97e016047c864026fe0c72e4b7cb819f0fc807482564'></a> Source: [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/753a917c0ecbf445560203dbc1406acae52e5265/windows-apps-src/index.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='0020895d01024aa86c985195454ffc6d47e2298a3698'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/62d40bbeb6684fc6be6e0868b210d3bbb324ed49/windows-apps-src/xbox-apps/known-issues.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/9fd4a6d144b44efdf42002749f6b52f395243e35/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf)
-* Handoff Datetime: 2016-03-30 20:45:54
+* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/677627d3e465dd58ce150b99913c9382faa71d99/ol-handoff/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
+* Handoff Datetime: 2016-03-31 15:52:03
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/07be5122e91ac7362ec48ba24a5713a40e1deabe/windows-apps-src/index.md)
-* Current Handback File: [index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/8be93990f1a1d8c5e0e1a536c9e58b19172208bc/ol-handback/Microsoft/windows-apps.ja-jp/master/index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf)
-* Current Handback Datetime: 2016-03-30 09:09:02
 * [Back to Top](#report-top)
 
 
