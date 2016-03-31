@@ -1851,6 +1851,9 @@
   "6b693f18c99c31e744497428a8b405204d7c69d3": [
     "windows-apps-src\\devices-sensors\\aep-service-class-ids.md"
   ],
+  "718e62b071195747a30b85a50d21334e8ea57b70": [
+    "windows-apps-src\\devices-sensors\\bluetooth.md"
+  ],
   "75d55b591cd207215302b327b520f2eb0ab5fb93": [
     "windows-apps-src\\devices-sensors\\bluetooth.md"
   ],
@@ -1881,6 +1884,9 @@
   ],
   "15046b9b3ce1dd577d4477fc40c0a10aa46f41d1": [
     "windows-apps-src\\devices-sensors\\epson-esc-pos-with-formatting.md"
+  ],
+  "a05afdbfeb7112283d063f7c7eec00bad97e6475": [
+    "windows-apps-src\\devices-sensors\\gatt-scenarios.md"
   ],
   "2d764d768701e365e423a44f8ed8edea5be93d38": [
     "windows-apps-src\\devices-sensors\\gatt-scenarios.md"
@@ -1917,6 +1923,9 @@
   ],
   "ada98e12d8d2ac555f4d7f785e95a00c1aa8bf9f": [
     "windows-apps-src\\devices-sensors\\scan-from-your-app.md"
+  ],
+  "be157fc0ae48ac3b181f929b54bb7c0eaf7a7142": [
+    "windows-apps-src\\devices-sensors\\send-or-receive-files-with-rfcomm.md"
   ],
   "3e3933b64f9f20b56db9a065d0b6f3e1c398b5e2": [
     "windows-apps-src\\devices-sensors\\send-or-receive-files-with-rfcomm.md"
@@ -5816,5 +5825,8 @@
   ],
   "45b1cdc8df40e4da73a0e742f824726a4a1c16a8": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
+  ],
+  "1b3c5a0be6078a48cb2dc6d0d855e7423cd38324": [
+    "windows-apps-src\\devices-sensors\\ble-beacon.md"
   ]
 }
