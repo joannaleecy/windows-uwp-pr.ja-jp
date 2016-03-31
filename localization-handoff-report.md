@@ -1,35 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/bc7b9ace2749f047ecf9f3429103abf30e09b1cf/windows-apps-src/devices-sensors/3d-print-from-app.md) | OutofSyncHandedBackSuccess | [Details](#11f140741fd89bb21f453be33aff87057b6455391927)
- [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps/blob/bc7b9ace2749f047ecf9f3429103abf30e09b1cf/windows-apps-src/devices-sensors/generate-3mf.md) | HandedOffSuccess | [Details](#c7ace72ad2acf1b8041a2171968d9b98dec3b95c1965)
+ [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/40b765df53bfa140e6c2d56a6e4e6714728aafad/windows-apps-src/xbox-apps/known-issues.md) | HandedOffSuccess | [Details](#e1caf0c44620d9054ea18bc4d86155d7832965203699)
 
 ## Item Details
-##### <a name='11f140741fd89bb21f453be33aff87057b6455391927'></a> Source: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/bc7b9ace2749f047ecf9f3429103abf30e09b1cf/windows-apps-src/devices-sensors/3d-print-from-app.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fdcc8962d26f10d23c9bcc0f549f8deaa17ac4f4/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.ja-jp.xlf)
-* Handoff Datetime: 2016-03-31 21:19:44
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/07be5122e91ac7362ec48ba24a5713a40e1deabe/windows-apps-src/devices-sensors/3d-printing.md)
-* Current Handback File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/8be93990f1a1d8c5e0e1a536c9e58b19172208bc/ol-handback/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
-* Current Handback Datetime: 2016-03-30 09:09:02
-* [Back to Top](#report-top)
-
-##### <a name='c7ace72ad2acf1b8041a2171968d9b98dec3b95c1965'></a> Source: [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps/blob/bc7b9ace2749f047ecf9f3429103abf30e09b1cf/windows-apps-src/devices-sensors/generate-3mf.md)
+##### <a name='e1caf0c44620d9054ea18bc4d86155d7832965203699'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/40b765df53bfa140e6c2d56a6e4e6714728aafad/windows-apps-src/xbox-apps/known-issues.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fdcc8962d26f10d23c9bcc0f549f8deaa17ac4f4/ol-handoff/Microsoft/windows-apps.ja-jp/master/generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf)
-* Handoff Datetime: 2016-03-31 21:19:44
+* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a774bb1f336496e7f2703ad029dfa5610afd6ab9/ol-handoff/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
+* Handoff Datetime: 2016-03-31 21:50:47
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
