@@ -5018,6 +5018,9 @@
   "af817df780f291b6367a374e535cce22a84ba4c1": [
     "windows-apps-src\\xaml-platform\\xaml-syntax-guide.md"
   ],
+  "11f140741fd89bb21f453be33aff87057b645539": [
+    "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
+  ],
   "8f872a2a4c66846022dd16171463a0375b58ad9f": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-calendar-phone.png"
   ],
@@ -5297,6 +5300,9 @@
   ],
   "89ebd15f0da89013e867d8ad9d54325f8b49c4fc": [
     "windows-apps-src\\style\\images\\accentcolorswatch.png"
+  ],
+  "c7ace72ad2acf1b8041a2171968d9b98dec3b95c": [
+    "windows-apps-src\\devices-sensors\\generate-3mf.md"
   ],
   "6ac30be914c46cf953a3f1c344fa0441bed2f8d9": [
     "windows-apps-src\\devices-sensors\\generate-3mf.md"
