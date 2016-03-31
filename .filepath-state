@@ -5682,6 +5682,9 @@
   "c20cbafd1ffad88a7de6cd66256add2b7dfb2be5": [
     "windows-apps-src\\xbox-apps\\devkit-activation.md"
   ],
+  "fe856eed79151ce9f5fce10640fbe23215d9a322": [
+    "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
+  ],
   "7f5b0feb4624a07b3505a58ff511f7620cf3d670": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
   ],
