@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/fb3671f7366eadf71151f5783bd3f50ab2b45511/windows-apps-src/xbox-apps/index.md) | HandedOffSuccess | [Details](#6ef95bc227725a0a8962a77e77aab8e10491cd7e3697)
+ [windows-apps-src\publish\account-types-locations-and-fees.md](https://github.com/Microsoft/windows-apps/blob/5adfc59d4d1d1c289ac4d723ad103d088aae12c3/windows-apps-src/publish/account-types-locations-and-fees.md) | OutofSyncHandedBackSuccess | [Details](#22f1983bdc028657552d8144bffa9071a352606a3332)
 
 ## Item Details
-##### <a name='6ef95bc227725a0a8962a77e77aab8e10491cd7e3697'></a> Source: [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/fb3671f7366eadf71151f5783bd3f50ab2b45511/windows-apps-src/xbox-apps/index.md)
-* Status: HandedOffSuccess
+##### <a name='22f1983bdc028657552d8144bffa9071a352606a3332'></a> Source: [windows-apps-src\publish\account-types-locations-and-fees.md](https://github.com/Microsoft/windows-apps/blob/5adfc59d4d1d1c289ac4d723ad103d088aae12c3/windows-apps-src/publish/account-types-locations-and-fees.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ad06ce1ef5d2b9e35bd5627543159db500359f83/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf)
-* Handoff Datetime: 2016-03-31 22:49:36
+* Handoff File: [account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/05076454392f5f39b0c1071d9df32fe8332b20a8/ol-handoff/Microsoft/windows-apps.ja-jp/master/account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.ja-jp.xlf)
+* Handoff Datetime: 2016-04-01 15:52:55
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\account-types-locations-and-fees.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/07be5122e91ac7362ec48ba24a5713a40e1deabe/windows-apps-src/publish/account-types-locations-and-fees.md)
+* Current Handback File: [account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/8be93990f1a1d8c5e0e1a536c9e58b19172208bc/ol-handback/Microsoft/windows-apps.ja-jp/master/account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.ja-jp.xlf)
+* Current Handback Datetime: 2016-03-30 09:09:02
 * [Back to Top](#report-top)
 
 
