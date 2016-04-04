@@ -4817,6 +4817,9 @@
   "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "6e79f94a49e1a61f99eb947a1ba34cb09a40145e": [
+    "windows-apps-src\\TOC.md"
+  ],
   "45051cc1731c1b1b2a48be53f4df7c7a2b38772f": [
     "windows-apps-src\\TOC.md"
   ],
@@ -5861,5 +5864,8 @@
   ],
   "1b3c5a0be6078a48cb2dc6d0d855e7423cd38324": [
     "windows-apps-src\\devices-sensors\\ble-beacon.md"
+  ],
+  "a3f5e78af3f3b7ace06d0cc5eff22b9b5d5fc05a": [
+    "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
   ]
 }

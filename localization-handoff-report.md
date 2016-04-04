@@ -6,15 +6,15 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/0189cf2891134aa2915f163bb8f769b845753c23/windows-apps-src/debug-test-perf/device-portal-api-core.md) | HandedOffSuccess | [Details](#f3dbd46f0c5ef656a76065845704d5c5e36971041858)
- [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/68a7e100ec90cc4728aaa1896b87fa1a13dfb848/windows-apps-src/gaming/e2e.md) | OutofSyncHandedBackSuccess | [Details](#af5243a21500abd36f4af9c26c021b999d9a0eba2052)
+ [windows-apps-src\audio-video-camera\custom-video-effects.md](https://github.com/Microsoft/windows-apps/blob/fa583bb3cadd7c7b86856e39d940cdbafe305ce5/windows-apps-src/audio-video-camera/custom-video-effects.md) | HandedOffSuccess | [Details](#a3f5e78af3f3b7ace06d0cc5eff22b9b5d5fc05a458)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/fa583bb3cadd7c7b86856e39d940cdbafe305ce5/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#6e79f94a49e1a61f99eb947a1ba34cb09a40145e3631)
 
 ## Item Details
-##### <a name='f3dbd46f0c5ef656a76065845704d5c5e36971041858'></a> Source: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/0189cf2891134aa2915f163bb8f769b845753c23/windows-apps-src/debug-test-perf/device-portal-api-core.md)
+##### <a name='a3f5e78af3f3b7ace06d0cc5eff22b9b5d5fc05a458'></a> Source: [windows-apps-src\audio-video-camera\custom-video-effects.md](https://github.com/Microsoft/windows-apps/blob/fa583bb3cadd7c7b86856e39d940cdbafe305ce5/windows-apps-src/audio-video-camera/custom-video-effects.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b3558af4e344cb1435ce2c5d8b026dc1f2abd252/ol-handoff/Microsoft/windows-apps.ja-jp/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf)
-* Handoff Datetime: 2016-04-04 20:22:43
+* Handoff File: [custom-video-effects.1bd057b1f63255f934b8823c25bdcbf98a602221.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1eb287c43eb5c3a2ed1f12f880cef1210542e46c/ol-handoff/Microsoft/windows-apps.ja-jp/master/custom-video-effects.1bd057b1f63255f934b8823c25bdcbf98a602221.ja-jp.xlf)
+* Handoff Datetime: 2016-04-04 20:50:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,18 +22,18 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='af5243a21500abd36f4af9c26c021b999d9a0eba2052'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/68a7e100ec90cc4728aaa1896b87fa1a13dfb848/windows-apps-src/gaming/e2e.md)
+##### <a name='6e79f94a49e1a61f99eb947a1ba34cb09a40145e3631'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/fa583bb3cadd7c7b86856e39d940cdbafe305ce5/windows-apps-src/TOC.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b3558af4e344cb1435ce2c5d8b026dc1f2abd252/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
-* Handoff Datetime: 2016-04-04 20:22:43
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1eb287c43eb5c3a2ed1f12f880cef1210542e46c/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
+* Handoff Datetime: 2016-04-04 20:50:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/07be5122e91ac7362ec48ba24a5713a40e1deabe/windows-apps-src/gaming/e2e.md)
-* Current Handback File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/8be93990f1a1d8c5e0e1a536c9e58b19172208bc/ol-handback/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/07be5122e91ac7362ec48ba24a5713a40e1deabe/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/8be93990f1a1d8c5e0e1a536c9e58b19172208bc/ol-handback/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
 * Current Handback Datetime: 2016-03-30 09:09:02
 * [Back to Top](#report-top)
 
