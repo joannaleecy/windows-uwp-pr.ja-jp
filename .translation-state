@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "0189cf2891134aa2915f163bb8f769b845753c23",
+  "LastProcessedCommit": "68a7e100ec90cc4728aaa1896b87fa1a13dfb848",
   "LastTranslatedCommit": "07be5122e91ac7362ec48ba24a5713a40e1deabe",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -59560,20 +59560,12 @@
       "FilePathList": [
         "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
       ],
-      "HandoffFilePath": null,
-      "HandoffFileCommit": null,
-      "HandoffDateTime": "2016-04-01T21:49:26.0457708Z",
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf",
+      "HandoffFileCommit": "b3558af4e344cb1435ce2c5d8b026dc1f2abd252",
+      "HandoffDateTime": "2016-04-04T20:22:43.7248113Z",
       "HandoffPriority": "",
-      "HandoffException": {
-        "internal_error_code": "handoff_transform_failed",
-        "internal_error_message": "Handoff source file: windows-apps-src\\debug-test-perf\\device-portal-api-core.md transformed failed.",
-        "internal_error_retriable": false,
-        "exception_message": "One or more errors occurred.",
-        "exception_type": "System.AggregateException",
-        "stack_trace": "   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)\r\n   at Microsoft.OpenLocalization.Transformer.MarkdownJavascriptTransformer.MarkdownToXliffCore(Stream sourceStream, Stream xliffStream, Stream skeletonStream, String contentClass, String locale)\r\n   at Microsoft.OpenLocalization.Transformer.XliffTransformerExtensions.MarkdownToXliff(IMarkdownTransformer markdownTransformer, Stream sourceStream, Stream xliffStream, Stream skeletonStream, String contentClass, String locale, String xliffVersion)\r\n   at Microsoft.OpenLocalization.Transformer.XliffTransformerExtensions.MarkdownToXliff(IMarkdownTransformer markdownTransformer, String markdownFile, String xliffFile, String skeletonFile, String locale, String xliffVersion)\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.MarkdownToXliff(String mdfile, String xliffFile, String skeletonFile, String targetLocale, String xliffVersion, Boolean useJavascriptTransformer) in C:\\code\\deploy\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 27\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass10_1.<GetHandoffFiles>b__1(Tuple`3 handoff) in C:\\code\\deploy\\src\\OpenLocalization\\Localization\\HandoffCore.cs:line 388",
-        "extended_information": null
-      },
-      "HandoffFailureTimes": 1,
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
       "TargetFileCommit": null,
       "TargetFilePath": null,
       "HandbackFilePath": null,
@@ -59629,6 +59621,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf",
       "HandoffFileCommit": "71a3179255f97912d2201382a37462010ef89c33",
       "HandoffDateTime": "2016-04-01T21:49:26.0457708Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "af5243a21500abd36f4af9c26c021b999d9a0eba": {
+      "FileHash": "af5243a21500abd36f4af9c26c021b999d9a0eba",
+      "SourceFileCommit": "68a7e100ec90cc4728aaa1896b87fa1a13dfb848",
+      "SourceFilePath": "windows-apps-src\\gaming\\e2e.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\gaming\\e2e.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf",
+      "HandoffFileCommit": "b3558af4e344cb1435ce2c5d8b026dc1f2abd252",
+      "HandoffDateTime": "2016-04-04T20:22:43.7248113Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
