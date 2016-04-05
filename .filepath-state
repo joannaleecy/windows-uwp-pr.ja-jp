@@ -209,6 +209,9 @@
   "0e69633b69b7e5a7ee4206aaf3c68b3201fd0c16": [
     "windows-apps-src\\audio-video-camera\\imaging.md"
   ],
+  "1f58d30078fc5d6e15fbba0a3363d21d2ee97767": [
+    "windows-apps-src\\audio-video-camera\\index.md"
+  ],
   "9102a6fa2b3e89d209dc36ddca80dff47694e416": [
     "windows-apps-src\\audio-video-camera\\index.md"
   ],
@@ -217,6 +220,9 @@
   ],
   "d4995c7c3aea5045bb9da1870774fe80bb64cf96": [
     "windows-apps-src\\audio-video-camera\\images\\media-element-casting-button.png"
+  ],
+  "50b72544b1131c50b224ca83e4f62ed00ff1d2df": [
+    "windows-apps-src\\audio-video-camera\\media-compositions-and-editing.md"
   ],
   "4787d925eb802060ecdca297db4c28277e4863a9": [
     "windows-apps-src\\audio-video-camera\\media-compositions-and-editing.md"
@@ -2531,7 +2537,17 @@
   "ee2bde728bf1df26366c8e59e3c787effa97c0d5": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
+  "ead1d64ee6515974a434ea77c4ef0f14031d8958": [
+    "windows-apps-src\\get-started\\images\\latestenabledialog.png"
+  ],
+  "834e44aa121a8071febd7e495e0d14b9a1da8e10": [
+    "windows-apps-src\\get-started\\images\\devmode-pc-options.png"
+  ],
+  "1226f248f29981f9645e7dd833eb9ff80f5d0202": [
+    "windows-apps-src\\get-started\\images\\devmode-mob.png"
+  ],
   "d209a2f9e87fbd7e39a595fe28ebb9479355b46b": [
+    "windows-apps-src\\get-started\\images\\devmode-mob-options.png",
     "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-dev-mode-options.png"
   ],
   "1efd7c8d330b047d6d3e90afc4824597e33b2964": [
@@ -2823,13 +2839,15 @@
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
   "a1040f4045bc68278877bd700f61a3fb2db4fc51": [
-    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-overview.png"
+    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-overview.png",
+    "windows-apps-src\\input-and-devices\\images\\cortana-overview.png"
   ],
   "6ea0582f7be5e7a8f28868a83cfd7b23a832082d": [
     "windows-apps-src\\input-and-devices\\images\\speech\\e2e-canceltrip.png"
   ],
   "a6f4110cb6456c78ed5035b8a17ad8d39b4ee670": [
-    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-backgroundapp-result.png"
+    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-backgroundapp-result.png",
+    "windows-apps-src\\input-and-devices\\images\\cortana-backgroundapp-result.png"
   ],
   "14402bc0cea657c4df3019f78b4cc8e4c1661d2b": [
     "windows-apps-src\\input-and-devices\\images\\speech\\cortana-backgroundapp-progress-result.png"
@@ -5870,5 +5888,83 @@
   ],
   "a3f5e78af3f3b7ace06d0cc5eff22b9b5d5fc05a": [
     "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
+  ],
+  "095c2bb9f5629b7ddceb753c1347f1df2db45433": [
+    "windows-apps-src\\style\\images\\icons-16x16.png"
+  ],
+  "9578de6c8f2a2a1f90ae4bdbdcfe3a4c4f25baa9": [
+    "windows-apps-src\\style\\images\\icons-24x24.png"
+  ],
+  "1ebc76759857943740a8e353f933a20143a6d1f8": [
+    "windows-apps-src\\style\\images\\icons-32x32.png"
+  ],
+  "220af6a87b75fcc45167bf1cb5310714b185fc4b": [
+    "windows-apps-src\\style\\images\\icons-48x48.png"
+  ],
+  "b444778b699c36746ab3187902e852d5ca967dc4": [
+    "windows-apps-src\\style\\images\\icons-angles-examples-1.png"
+  ],
+  "97187f2d39dd597227baf7bd4c54c963c20605c6": [
+    "windows-apps-src\\style\\images\\icons-angles-examples-2.png"
+  ],
+  "ed775e2c826f17f9e127fa49d144d30773ada14a": [
+    "windows-apps-src\\style\\images\\icons-angles-examples-3.png"
+  ],
+  "84d897eb9a8c6e8a39ecbbb12c689fced94a8ec9": [
+    "windows-apps-src\\style\\images\\icons-angles-examples-4.png"
+  ],
+  "32541493ce1133595622b153278dbd184ca71231": [
+    "windows-apps-src\\style\\images\\icons-badge-action.png"
+  ],
+  "a4fb2500a8829ca8ff8571683fd82d3bd7de5fc0": [
+    "windows-apps-src\\style\\images\\icons-badge-common-states-1.png"
+  ],
+  "62039195c60bc7432bd597df9411182e4c79705c": [
+    "windows-apps-src\\style\\images\\icons-badge-common-states-2.png"
+  ],
+  "5c80759426634a998dbc7268140971704bcfffbe": [
+    "windows-apps-src\\style\\images\\icons-badge-status.png"
+  ],
+  "7d22cc8a2dba8e940ca9c356de3e3435738e96f1": [
+    "windows-apps-src\\style\\images\\icons-color-inbadging-1.png"
+  ],
+  "d801c3488ff86986ae3be4764447e0382da18424": [
+    "windows-apps-src\\style\\images\\icons-color-inbadging-2.png"
+  ],
+  "5cfd39e0fe8e2137b21e0bedf356d84495952497": [
+    "windows-apps-src\\style\\images\\icons-color-inbadging-3.png"
+  ],
+  "ae03b7b21078b1178fb4cebc6156db06828a2ab7": [
+    "windows-apps-src\\style\\images\\icons-common-shapes.png"
+  ],
+  "ae7c42df995da7ec9046b26626cf3349d3c6fe65": [
+    "windows-apps-src\\style\\images\\icons-curves-14circle.png"
+  ],
+  "ce8bdced5114017f77d21b81e04faf68aef16e8f": [
+    "windows-apps-src\\style\\images\\icons-curves-18circle.png"
+  ],
+  "ee4b4f02be73c50dd17f124a002c3a84dc82f904": [
+    "windows-apps-src\\style\\images\\icons-curves-examples-1.png"
+  ],
+  "71319c31698fdbabd707c560687a75da1ea2438d": [
+    "windows-apps-src\\style\\images\\icons-curves-examples-2.png"
+  ],
+  "ae4dfc35a88fc1f57fd1d5dd80adfd2c224cf238": [
+    "windows-apps-src\\style\\images\\icons-filled-shapes.png"
+  ],
+  "d8440974f3b46b1bebefcebc4c25ab3145a26951": [
+    "windows-apps-src\\style\\images\\icons-geometric-construction.png"
+  ],
+  "b87a484ed2745d957de1f1ea8c31a6ac39a4a734": [
+    "windows-apps-src\\style\\images\\icons-grid-1-1.png"
+  ],
+  "e8f8ab7556428e71dd8e56d509b487cab0cd9e2a": [
+    "windows-apps-src\\style\\images\\icons-grid-1-2.png"
+  ],
+  "039d95dcc3d567cefb6998b27e1cd64de6e14522": [
+    "windows-apps-src\\style\\images\\icons-grid-1-3.png"
+  ],
+  "432353da052ac7e9e4f304cf03536a8d738e5202": [
+    "windows-apps-src\\style\\images\\icons-grid-1-4.png"
   ]
 }
