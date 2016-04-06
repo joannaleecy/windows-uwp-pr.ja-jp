@@ -4712,9 +4712,6 @@
   "8f872a2a4c66846022dd16171463a0375b58ad9f": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-calendar-phone.png"
   ],
-  "302792ef62bb237d319e9e77b30c45c641e0c14e": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-calendar-phone.png"
-  ],
   "7648313723ea7fb66b5b60220413f287965d8423": [
     "windows-apps-src\\controls-and-patterns\\images\\controls\\auto-suggest-box-open.png"
   ],
@@ -4729,9 +4726,6 @@
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\check-box-edge.png"
   ],
   "70a19b36620474b3031ced984ff867612b7361e9": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\check-box-alarm.png"
-  ],
-  "6220162e55cdc7def8eb4000957b43a61b46681b": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\check-box-alarm.png"
   ],
   "a238376f5a1459ebf45429df97e61d027407a73d": [
@@ -4836,13 +4830,7 @@
   "8e5a753fa23ad58bdba03b14b3d706e070703274": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\media-element-getstarted.png"
   ],
-  "0423e56bdf5f9152055b66d7da8c2074940516fb": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\media-element-getstarted.png"
-  ],
   "ae51ceda1183c2b56e9dc068afedd75b44a55cbd": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\radio-buttons-edge.png"
-  ],
-  "382b99522812137252f065d73cc2269c03ec3bee": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\radio-buttons-edge.png"
   ],
   "3be3dc17769a245e32c70f2b6fa2388f18d2db64": [
@@ -4851,34 +4839,19 @@
   "3de56da590e8d3b12cfeb4d98b825dc3d96ddc1b": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\semantic-zoom-photos.png"
   ],
-  "86894e13740cec1ae46b2ad289111d3b2fdcf4b5": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\semantic-zoom-photos.png"
-  ],
   "6c8ba33344ad9d1646b06f18c243c14b8550ff7f": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-phone.png"
-  ],
-  "1e465502d17a0b17da6ffe67dab514cbccd03a40": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-phone.png"
   ],
   "763bf02e176fb49faf18e066708236ad61095ca1": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-display-settings.png"
   ],
-  "2d4909257bb4006d3f85b7207438e36fece6e6b2": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\slider-display-settings.png"
-  ],
   "c0ab215627acd9693df4a26deef78d9d6b104d12": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\toggle-switch-news.png"
-  ],
-  "86cf56f14db4e1d1d4135eeba22fb62fb153a642": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\toggle-switch-news.png"
   ],
   "1d8de9b88952e0a1ceb2235b0fda29c237524694": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\toggle-switch-start-settings.png"
   ],
   "dc352a5b7f47a4658957b73b3266412a1e50ad67": [
-    "windows-apps-src\\controls-and-patterns\\images\\control-examples\\tool-tip-maps.png"
-  ],
-  "64b1d8c5bc8069dafbd743ecf496b14b359be912": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\tool-tip-maps.png"
   ],
   "6feae624441c686128bb5af6b8980435f1e6f7c4": [
