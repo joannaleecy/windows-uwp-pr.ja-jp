@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps/blob/cf423961378c635ced07faed6494c21b79301a13/windows-apps-src/packaging/app-capability-declarations.md) | OutofSyncHandedBackSuccess | [Details](#a5e5ea1140b58d83ae1e80742293cb5de8fd83b23259)
+ [windows-apps-src\publish\package-version-numbering.md](https://github.com/Microsoft/windows-apps/blob/6faa6d7209ac102c2f6ed242cfa0211663c5ef1a/windows-apps-src/publish/package-version-numbering.md) | OutofSyncHandedBackSuccess | [Details](#c7dc934adf386cde27f1fbe4d885b65c45e659793417)
 
 ## Item Details
-##### <a name='a5e5ea1140b58d83ae1e80742293cb5de8fd83b23259'></a> Source: [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps/blob/cf423961378c635ced07faed6494c21b79301a13/windows-apps-src/packaging/app-capability-declarations.md)
+##### <a name='c7dc934adf386cde27f1fbe4d885b65c45e659793417'></a> Source: [windows-apps-src\publish\package-version-numbering.md](https://github.com/Microsoft/windows-apps/blob/6faa6d7209ac102c2f6ed242cfa0211663c5ef1a/windows-apps-src/publish/package-version-numbering.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/9a449a0ccd56ef3a7e4b6bef617a63b189621854/ol-handoff/Microsoft/windows-apps.ja-jp/master/app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ja-jp.xlf)
-* Handoff Datetime: 2016-04-06 21:32:01
+* Handoff File: [package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0f2756d7c80dc3b8c4fc00553c940cf51d0215d2/ol-handoff/Microsoft/windows-apps.ja-jp/master/package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.ja-jp.xlf)
+* Handoff Datetime: 2016-04-06 23:32:00
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/packaging/app-capability-declarations.md)
-* Current Handback File: [app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ja-jp.xlf)
+* Current Target File: [windows-apps-src\publish\package-version-numbering.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/publish/package-version-numbering.md)
+* Current Handback File: [package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.ja-jp.xlf)
 * Current Handback Datetime: 2016-04-06 10:36:57
 * [Back to Top](#report-top)
 
