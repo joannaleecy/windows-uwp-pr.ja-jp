@@ -2592,6 +2592,9 @@
   "26b4cb6834188153b9ab7a5569aca02e3f34bdd8": [
     "windows-apps-src\\graphics\\images\\composition-compositionsurfacebrush.png"
   ],
+  "ab30691583a785a05deff8021ef479bb47e193df": [
+    "windows-apps-src\\graphics\\composition-effects.md"
+  ],
   "c7ceaf4d2d016619c2a3d1e6ac4cd148352305f6": [
     "windows-apps-src\\graphics\\composition-effects.md"
   ],
