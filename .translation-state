@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "f5c6bac498de9d93f2513b532b0ecc2c6fa7a7a9",
+  "LastProcessedCommit": "45443f2b42b8eab1febc70ef2fe370a2b04c15e9",
   "LastTranslatedCommit": "8ca18deb49eacd3d3b566ea2e3acf27b7af90d82",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -5449,7 +5449,8 @@
       ],
       "TokenReference": null,
       "FilePathList": [
-        "windows-apps-src\\controls-and-patterns\\images\\NAV_PANE_EXAMPLE.png"
+        "windows-apps-src\\controls-and-patterns\\images\\NAV_PANE_EXAMPLE.png",
+        "windows-apps-src\\controls-and-patterns\\images\\nav_pane_example.png"
       ],
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\74dcfc0bbf150bb4e101e70bc30d3ba734d95477.png",
       "HandoffFileCommit": "1518ff78d9538dd35cb976fca1aa67b84f465b02",
@@ -60630,6 +60631,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\composition-effects.edede44d930f977b680649c1d498ceca2c092923.ja-jp.xlf",
       "HandoffFileCommit": "1971d355267422fa06ce420f7a7e4d9f1900a8ce",
       "HandoffDateTime": "2016-04-06T17:34:55.1880286Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "89639014a69a23b8ebf0a30bf518601c48f09b67": {
+      "FileHash": "89639014a69a23b8ebf0a30bf518601c48f09b67",
+      "SourceFileCommit": "45443f2b42b8eab1febc70ef2fe370a2b04c15e9",
+      "SourceFilePath": "windows-apps-src\\controls-and-patterns\\nav-pane.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\controls-and-patterns\\nav-pane.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf",
+      "HandoffFileCommit": "c7a68ecff5a30ca9dc7307e3a694d21e7dd6d13b",
+      "HandoffDateTime": "2016-04-06T18:00:41.3296328Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
