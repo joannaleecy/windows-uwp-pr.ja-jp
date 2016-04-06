@@ -654,6 +654,9 @@
   "abdb784635e5d8d2175fe825cd2f6e8f308c1db7": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_mtc_doublerow_phone.png"
   ],
+  "6728e75a84c1b07044a77fde531fddc9c2489768": [
+    "windows-apps-src\\controls-and-patterns\\nav-pane.md"
+  ],
   "89639014a69a23b8ebf0a30bf518601c48f09b67": [
     "windows-apps-src\\controls-and-patterns\\nav-pane.md"
   ],
@@ -661,7 +664,7 @@
     "windows-apps-src\\controls-and-patterns\\nav-pane.md"
   ],
   "74dcfc0bbf150bb4e101e70bc30d3ba734d95477": [
-    "windows-apps-src\\controls-and-patterns\\images\\nav_pane_example.png"
+    "windows-apps-src\\controls-and-patterns\\images\\nav-pane-example.png"
   ],
   "72731248d50d78bef1c124f6d5e416cfb5b0ceac": [
     "windows-apps-src\\controls-and-patterns\\images\\NAVPANE_BUTTONONLY.png"

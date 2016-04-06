@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\nav-pane.md](https://github.com/Microsoft/windows-apps/blob/45443f2b42b8eab1febc70ef2fe370a2b04c15e9/windows-apps-src/controls-and-patterns/nav-pane.md) | OutofSyncHandedBackSuccess | [Details](#89639014a69a23b8ebf0a30bf518601c48f09b671823)
+ [windows-apps-src\controls-and-patterns\nav-pane.md](https://github.com/Microsoft/windows-apps/blob/53b0cb3347abfee912121883af18e5f198ee15cf/windows-apps-src/controls-and-patterns/nav-pane.md) | OutofSyncHandedBackSuccess | [Details](#6728e75a84c1b07044a77fde531fddc9c24897681824)
 
 ## Item Details
-##### <a name='89639014a69a23b8ebf0a30bf518601c48f09b671823'></a> Source: [windows-apps-src\controls-and-patterns\nav-pane.md](https://github.com/Microsoft/windows-apps/blob/45443f2b42b8eab1febc70ef2fe370a2b04c15e9/windows-apps-src/controls-and-patterns/nav-pane.md)
+##### <a name='6728e75a84c1b07044a77fde531fddc9c24897681824'></a> Source: [windows-apps-src\controls-and-patterns\nav-pane.md](https://github.com/Microsoft/windows-apps/blob/53b0cb3347abfee912121883af18e5f198ee15cf/windows-apps-src/controls-and-patterns/nav-pane.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/c7a68ecff5a30ca9dc7307e3a694d21e7dd6d13b/ol-handoff/Microsoft/windows-apps.ja-jp/master/nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf)
-* Handoff Datetime: 2016-04-06 18:00:41
+* Handoff File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/306884377ca8075e97a98baab533178ef5aa33eb/ol-handoff/Microsoft/windows-apps.ja-jp/master/nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf)
+* Handoff Datetime: 2016-04-06 20:32:24
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
